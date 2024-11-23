@@ -1,0 +1,15 @@
+{
+    "files": [
+        "mainwindow.py",
+        "form.ui",
+        "MathEquation.py",
+        "resources.qrc",
+        "check_connection.py",
+        "MainMenuHandler.py",
+        "FanControlsHandler.py",
+        "HeaterControlsHandler.py",
+        "PID.py",
+        "BB.py",
+        "Graph.py"
+    ]
+}

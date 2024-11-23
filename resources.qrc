@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/assets">
+        <file alias="template">assets/template.html</file>
+    </qresource>
+</RCC>
