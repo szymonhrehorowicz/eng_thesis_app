@@ -12,29 +12,39 @@ class FanControlsHandler:
         self.equation.update(self.PID.Kp, self.PID.Ki, self.PID.Kd, self.PID.Ti, self.PID.Td)
 
     # BB
-    @Slot(float)
-    def bb_setValue(self, value):
-        self.BB.set_value = value
+    @Slot()
+    def bb_setValue(self):
+        self.BB.set_value = self.ui.inFanBBSetValue.value()
 
-    @Slot(float)
-    def bb_setHysteresis(self, value):
-        self.BB.hysteresis = value
+    @Slot()
+    def bb_setHysteresis(self):
+        self.BB.hysteresis = self.ui.inFanBBHysteresis.value()
 
     # PID
-    @Slot(float)
-    def pid_setValue(self, value):
-        self.PID.set_value = value
+    @Slot()
+    def pid_setValue(self):
+        self.PID.set_value = self.ui.inFanPIDSetValue.value()
         self._update_equation()
 
-    @Slot(float)
-    def pid_setKp(self, value):
-        self.PID.Kp = value
+    @Slot()
+    def pid_setKp(self):
+        self.PID.Kp = self.ui.inFanPID_Kp.value()
+        try:
+            self.PID.Ti = self.PID.Kp / self.PID.Ki
+        except ZeroDivisionError:
+            self.PID.Ti = 0
+        try:
+            self.PID.Td = self.PID.Kd / self.PID.Kp
+        except ZeroDivisionError:
+            self.PID.Td = 0
+        self.ui.inFanPID_Ti.setValue(self.PID.Ti)
+        self.ui.inFanPID_Td.setValue(self.PID.Td)
         self._update_equation()
 
-    @Slot(float)
-    def pid_setKi(self, value):
+    @Slot()
+    def pid_setKi(self):
         # Ti = Kp / Ki
-        self.PID.Ki = value
+        self.PID.Ki = self.ui.inFanPID_Ki.value()
         try:
             self.PID.Ti = self.PID.Kp / self.PID.Ki
         except ZeroDivisionError:
@@ -42,10 +52,10 @@ class FanControlsHandler:
         self.ui.inFanPID_Ti.setValue(self.PID.Ti)
         self._update_equation()
 
-    @Slot(float)
-    def pid_setKd(self, value):
+    @Slot()
+    def pid_setKd(self):
         # Td = Kd / Kp
-        self.PID.Kd = value
+        self.PID.Kd = self.ui.inFanPID_Kd.value()
         try:
             self.PID.Td = self.PID.Kd / self.PID.Kp
         except ZeroDivisionError:
@@ -53,15 +63,14 @@ class FanControlsHandler:
         self.ui.inFanPID_Td.setValue(self.PID.Td)
         self._update_equation()
 
-    @Slot(float)
-    def pid_setKaw(self, value):
-        self.PID.Kaw = value
-        self._update_equation()
+    @Slot()
+    def pid_setKaw(self):
+        self.PID.Kaw = self.ui.inFanPID_Kaw.value()
 
-    @Slot(float)
-    def pid_setTi(self, value):
+    @Slot()
+    def pid_setTi(self):
         # Ki = Kp / Ti
-        self.PID.Ti = value
+        self.PID.Ti = self.ui.inFanPID_Ti.value()
         try:
             self.PID.Ki = self.PID.Kp / self.PID.Ti
         except ZeroDivisionError:
@@ -69,10 +78,10 @@ class FanControlsHandler:
         self.ui.inFanPID_Ki.setValue(self.PID.Ki)
         self._update_equation()
 
-    @Slot(float)
-    def pid_setTd(self, value):
+    @Slot()
+    def pid_setTd(self):
         # Kd = Kp * Td
-        self.PID.Td = value
+        self.PID.Td = self.ui.inFanPID_T.value()
         self.PID.Kd = self.PID.Kp * self.PID.Td
         self.ui.inFanPID_Kd.setValue(self.PID.Kd)
         self._update_equation()

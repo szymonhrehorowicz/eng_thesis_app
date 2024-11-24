@@ -36,6 +36,19 @@ class Ui_MainWindow(object):
         self.menubar.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.menubar)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.btnConnect = QPushButton(self.menubar)
+        self.btnConnect.setObjectName(u"btnConnect")
+        self.btnConnect.setCheckable(True)
+
+        self.horizontalLayout.addWidget(self.btnConnect)
+
+        self.line = QFrame(self.menubar)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.Shape.VLine)
+        self.line.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.horizontalLayout.addWidget(self.line)
+
         self.btnHeaterControls = QPushButton(self.menubar)
         self.btnHeaterControls.setObjectName(u"btnHeaterControls")
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
@@ -921,9 +934,21 @@ class Ui_MainWindow(object):
         self.FanGraphs.setObjectName(u"FanGraphs")
         self.verticalLayout_4 = QVBoxLayout(self.FanGraphs)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.label_8 = QLabel(self.FanGraphs)
+        self.label_8.setObjectName(u"label_8")
+
+        self.verticalLayout_4.addWidget(self.label_8)
+
         self.stackGraphs.addWidget(self.FanGraphs)
         self.HeaterGraphs = QWidget()
         self.HeaterGraphs.setObjectName(u"HeaterGraphs")
+        self.verticalLayout_8 = QVBoxLayout(self.HeaterGraphs)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.label_46 = QLabel(self.HeaterGraphs)
+        self.label_46.setObjectName(u"label_46")
+
+        self.verticalLayout_8.addWidget(self.label_46)
+
         self.stackGraphs.addWidget(self.HeaterGraphs)
 
         self.verticalLayout.addWidget(self.stackGraphs)
@@ -954,8 +979,8 @@ class Ui_MainWindow(object):
         self.container.setCurrentIndex(0)
         self.stackControllerDesc.setCurrentIndex(1)
         self.stackControllerSelect.setCurrentIndex(0)
-        self.stackController.setCurrentIndex(0)
-        self.stackGraphs.setCurrentIndex(0)
+        self.stackController.setCurrentIndex(1)
+        self.stackGraphs.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -963,6 +988,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Sterowanie Procesami Ci\u0105g\u0142ymi", None))
+        self.btnConnect.setText(QCoreApplication.translate("MainWindow", u"Connect", None))
         self.btnHeaterControls.setText(QCoreApplication.translate("MainWindow", u"Grza\u0142ka", None))
         self.btnFanControls.setText(QCoreApplication.translate("MainWindow", u"Wentylator", None))
         self.btnDataExport.setText(QCoreApplication.translate("MainWindow", u"Eksport danych", None))
@@ -1064,6 +1090,8 @@ class Ui_MainWindow(object):
         self.inFanPID_Kaw.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0.0 | Max: 1.0", None))
 #endif // QT_CONFIG(statustip)
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"jed", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Fan", None))
+        self.label_46.setText(QCoreApplication.translate("MainWindow", u"Heater", None))
         self.label_36.setText(QCoreApplication.translate("MainWindow", u"Export", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"Help", None))
     # retranslateUi

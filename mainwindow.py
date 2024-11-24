@@ -11,6 +11,8 @@ from FanControlsHandler import FanControlsHandler
 from HeaterControlsHandler import HeaterControlsHandler
 from BB import BB
 from PID import PID
+from Serial import Serial
+from COM import COM
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -29,10 +31,16 @@ class MainWindow(QMainWindow):
         self.heaterBBcontroller = BB()
         self.heaterPIDcontroller = PID()
         self.heaterControlsHandler = HeaterControlsHandler(self, self.heaterPIDcontroller, self.heaterBBcontroller)
+        # Serial
+        self.serial = Serial(self)
+        self.COM = COM(self)
 
         # DEFAULT LOCATION
         self.mainMenuHandler.open_heater()
         self.mainMenuHandler.set_heater_bb()
+
+        # Connect button
+        self.ui.btnConnect.clicked.connect(self.serial.slot_btnConnect)
 
         # Main menu buttons
         self.ui.btnHeaterControls.clicked.connect(self.mainMenuHandler.open_heater)
@@ -49,29 +57,29 @@ class MainWindow(QMainWindow):
         # Fan controller select buttons
         self.ui.btnFanControllerSetBB.clicked.connect(self.mainMenuHandler.set_fan_bb)
         self.ui.btnFanControllerSetPID.clicked.connect(self.mainMenuHandler.set_fan_pid)
-        #Heater BB buttons
-        self.ui.inHeaterBBSetValue.valueChanged.connect(self.heaterControlsHandler.bb_setValue)
-        self.ui.inHeaterBBHysteresis.valueChanged.connect(self.heaterControlsHandler.bb_setHysteresis)
+        #Heater BB inputs
+        self.ui.inHeaterBBSetValue.editingFinished.connect(self.heaterControlsHandler.bb_setValue)
+        self.ui.inHeaterBBHysteresis.editingFinished.connect(self.heaterControlsHandler.bb_setHysteresis)
         self.ui.inHeaterBBPower.valueChanged.connect(self.heaterControlsHandler.bb_setPower)
-        # Heater PID buttons
-        self.ui.inHeaterPIDSetValue.valueChanged.connect(self.heaterControlsHandler.pid_setValue)
-        self.ui.inHeaterPID_Kp.valueChanged.connect(self.heaterControlsHandler.pid_setKp)
-        self.ui.inHeaterPID_Ki.valueChanged.connect(self.heaterControlsHandler.pid_setKi)
-        self.ui.inHeaterPID_Kd.valueChanged.connect(self.heaterControlsHandler.pid_setKd)
-        self.ui.inHeaterPID_Kaw.valueChanged.connect(self.heaterControlsHandler.pid_setKaw)
-        self.ui.inHeaterPID_Ti.valueChanged.connect(self.heaterControlsHandler.pid_setTi)
-        self.ui.inHeaterPID_Td.valueChanged.connect(self.heaterControlsHandler.pid_setTd)
-        # Fan BB buttons
-        self.ui.inFanBBSetValue.valueChanged.connect(self.fanControlsHandler.bb_setValue)
-        self.ui.inFanBBHysteresis.valueChanged.connect(self.fanControlsHandler.bb_setHysteresis)
-        # Fan PID buttons
-        self.ui.inFanPIDSetValue.valueChanged.connect(self.fanControlsHandler.pid_setValue)
-        self.ui.inFanPID_Kp.valueChanged.connect(self.fanControlsHandler.pid_setKp)
-        self.ui.inFanPID_Ki.valueChanged.connect(self.fanControlsHandler.pid_setKi)
-        self.ui.inFanPID_Kd.valueChanged.connect(self.fanControlsHandler.pid_setKd)
-        self.ui.inFanPID_Kaw.valueChanged.connect(self.fanControlsHandler.pid_setKaw)
-        self.ui.inFanPID_Ti.valueChanged.connect(self.fanControlsHandler.pid_setTi)
-        self.ui.inFanPID_Td.valueChanged.connect(self.fanControlsHandler.pid_setTd)
+        # Heater PID inputs
+        self.ui.inHeaterPIDSetValue.editingFinished.connect(self.heaterControlsHandler.pid_setValue)
+        self.ui.inHeaterPID_Kp.editingFinished.connect(self.heaterControlsHandler.pid_setKp)
+        self.ui.inHeaterPID_Ki.editingFinished.connect(self.heaterControlsHandler.pid_setKi)
+        self.ui.inHeaterPID_Kd.editingFinished.connect(self.heaterControlsHandler.pid_setKd)
+        self.ui.inHeaterPID_Kaw.editingFinished.connect(self.heaterControlsHandler.pid_setKaw)
+        self.ui.inHeaterPID_Ti.editingFinished.connect(self.heaterControlsHandler.pid_setTi)
+        self.ui.inHeaterPID_Td.editingFinished.connect(self.heaterControlsHandler.pid_setTd)
+        # Fan BB inputs
+        self.ui.inFanBBSetValue.editingFinished.connect(self.fanControlsHandler.bb_setValue)
+        self.ui.inFanBBHysteresis.editingFinished.connect(self.fanControlsHandler.bb_setHysteresis)
+        # Fan PID inputs
+        self.ui.inFanPIDSetValue.editingFinished.connect(self.fanControlsHandler.pid_setValue)
+        self.ui.inFanPID_Kp.editingFinished.connect(self.fanControlsHandler.pid_setKp)
+        self.ui.inFanPID_Ki.editingFinished.connect(self.fanControlsHandler.pid_setKi)
+        self.ui.inFanPID_Kd.editingFinished.connect(self.fanControlsHandler.pid_setKd)
+        self.ui.inFanPID_Kaw.editingFinished.connect(self.fanControlsHandler.pid_setKaw)
+        self.ui.inFanPID_Ti.editingFinished.connect(self.fanControlsHandler.pid_setTi)
+        self.ui.inFanPID_Td.editingFinished.connect(self.fanControlsHandler.pid_setTd)
 
 
         if is_connected():

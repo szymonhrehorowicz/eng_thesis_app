@@ -1,6 +1,4 @@
 # This Python file uses the following encoding: utf-8
-import numpy as np
-import time
 from PySide6.QtCore import Slot
 from PySide6.QtWidgets import QSizePolicy
 from matplotlib.backends.backend_qtagg import FigureCanvas
@@ -26,14 +24,32 @@ class Graph:
         self.label = label
         # Controls
         self.controls = {
-            'x'  : True,
-            'e_a': True,
-            'e_b': False,
-            'y_a': True,
-            'y_b': False,
-            'P'  : True,
-            'I'  : True,
-            'D'  : True,
+            # BB
+            'x1'  : True,
+            'u_max': True,
+            'u_min': True,
+            'x1_threshold_top': True,
+            'x1_threshold_bottom': True,
+            'mode': True,
+            # PID
+            'x2': True,
+            'error': True,
+            'int_error': True,
+            'aw_int_error': True,
+            'Kp': True,
+            'Ki': True,
+            'Kd': True,
+            'Kaw': True,
+            'u': True,
+            'u_saturated': True,
+            'u_p': True,
+            'u_i': True,
+            'u_d': True,
+            'u_max': True,
+            'mode': True,
+            # Common
+            'y1' : True,
+            'y2' : True,
         }
         self.figure.tight_layout()
 

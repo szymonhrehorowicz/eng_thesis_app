@@ -10,6 +10,11 @@
         "HeaterControlsHandler.py",
         "PID.py",
         "BB.py",
-        "Graph.py"
+        "Graph.py",
+        "Serial.py",
+        "utils.py",
+        "COM.py",
+        "FanController.py",
+        "HeaterController.py"
     ]
 }
