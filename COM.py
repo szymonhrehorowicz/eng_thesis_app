@@ -200,9 +200,9 @@ class COM:
     def get_all_fan_data():
         pass
 
-    def handle_all_fan_data(data):
+    def handle_all_fan_data(self, data):
         data = data.split('_')[1:]
-        fan_all_data = {
+        self.handler.fanController.update_all({
             "BB_SET_VALUE": int(data[0]),
             "BB_THRESHOLD_TOP": int(data[1]),
             "BB_THRESHOLD_BOTTOM": int(data[2]),
@@ -213,27 +213,29 @@ class COM:
             "PID_ERROR": float(data[7]),
             "PID_INT_ERROR": float(data[8]),
             "PID_AW_INT_ERROR": float(data[9]),
-            "PID_KP": float(data[0]),
-            "PID_KI": float(data[1]),
-            "PID_KD": float(data[2]),
-            "PID_KAW": float(data[3]),
-            "PID_U": int(data[4]),
-            "PID_U_SATURATED": int(data[5]),
-            "PID_U_P": float(data[6]),
-            "PID_U_I": float(data[7]),
-            "PID_U_D": float(data[8]),
-            "PID_MAX": int(data[9]),
-            "PID_MIN": int(data[0]),
-            "PID_SPEED": int(data[1]),
-            "PID_MODE": int(data[2]),
-        }
+            "PID_KP": float(data[10]),
+            "PID_KI": float(data[11]),
+            "PID_KD": float(data[12]),
+            "PID_KAW": float(data[13]),
+            "PID_U": int(data[14]),
+            "PID_U_SATURATED": int(data[15]),
+            "PID_U_P": float(data[16]),
+            "PID_U_I": float(data[17]),
+            "PID_U_D": float(data[18]),
+            "PID_MAX": int(data[19]),
+            "PID_MIN": int(data[20]),
+            "PID_SPEED": int(data[21]),
+            "PID_MODE": int(data[22]),
+        })
+        self.handler.fanBBgraph.update_graph()
+        self.handler.fanPIDgraph.update_graph()
 
     def get_fast_fan_data():
         pass
 
     def handle_fast_fan_data(self, data):
         data = data.split('_')[1:]
-        fan_fast_data = {
+        self.handler.fanController.update_fast({
             "BB_CMD": int(data[0]),
             "PID_ERROR": float(data[1]),
             "PID_INT_ERROR": float(data[2]),
@@ -245,23 +247,51 @@ class COM:
             "PID_U_D": float(data[8]),
             "PID_SPEED": int(data[9]),
             "PID_MODE": int(data[10]),
-        }
-        print(fan_fast_data)
+        })
+        self.handler.fanBBgraph.update_graph()
+        self.handler.fanPIDgraph.update_graph()
 
     # HEATER GETTERS
     def get_all_heater_data():
         pass
 
-    def handle_all_heater_data(data):
+    def handle_all_heater_data(self, data):
         data = data.split('_')[1:]
-        
+        self.handler.heaterController.update_all({
+            "BB_SET_VALUE": int(data[0]),
+            "BB_THRESHOLD_TOP": int(data[1]),
+            "BB_THRESHOLD_BOTTOM": int(data[2]),
+            "BB_U_MAX": int(data[3]),
+            "BB_U_MIN": int(data[4]),
+            "BB_CMD": int(data[5]),
+            "PID_SET_VALUE": int(data[6]),
+            "PID_ERROR": float(data[7]),
+            "PID_INT_ERROR": float(data[8]),
+            "PID_AW_INT_ERROR": float(data[9]),
+            "PID_KP": float(data[10]),
+            "PID_KI": float(data[11]),
+            "PID_KD": float(data[12]),
+            "PID_KAW": float(data[13]),
+            "PID_U": int(data[14]),
+            "PID_U_SATURATED": int(data[15]),
+            "PID_U_P": float(data[16]),
+            "PID_U_I": float(data[17]),
+            "PID_U_D": float(data[18]),
+            "PID_MAX": int(data[19]),
+            "PID_MIN": int(data[20]),
+            "PID_TEMP_LEFT": int(data[21]),
+            "PID_TEMP_RIGHT": int(data[22]),
+            "PID_MODE": int(data[23]),
+        })
+        self.handler.heaterBBgraph.update_graph()
+        self.handler.heaterPIDgraph.update_graph()
     
     def get_fast_heater_data():
         pass
 
     def handle_fast_heater_data(self, data):
         data = data.split('_')[1:]
-        heater_fast_data = {
+        self.handler.heaterController.update_fast({
             "BB_CMD": int(data[0]),
             "PID_ERROR": float(data[1]),
             "PID_INT_ERROR": float(data[2]),
@@ -274,5 +304,6 @@ class COM:
             "PID_TEMP_LEFT": int(data[9]),
             "PID_TEMP_RIGHT": int(data[10]),
             "PID_MODE": int(data[11]),
-        }
-        print(heater_fast_data)
+        }) 
+        self.handler.heaterBBgraph.update_graph()
+        self.handler.heaterPIDgraph.update_graph()

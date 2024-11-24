@@ -1,8 +1,7 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtCore import QIODeviceBase, Slot, QByteArray
 from PySide6.QtSerialPort import QSerialPort, QSerialPortInfo
-from utils import error_dialog
-import time
+from utilities import error_dialog
 
 BLANK_STRING = "N/A"
 DEBUG = True
@@ -119,8 +118,6 @@ class Serial:
         elif 'FASTFAN_' in data:
             if data.index('FASTFAN') == 0:
                 self.handler.COM.handle_fast_fan_data(data)
-        if DEBUG:
-            print(data)
 
     @Slot(QSerialPort.SerialPortError)
     def handle_error(self, error):

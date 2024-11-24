@@ -81,7 +81,7 @@ class FanControlsHandler:
     @Slot()
     def pid_setTd(self):
         # Kd = Kp * Td
-        self.PID.Td = self.ui.inFanPID_T.value()
+        self.PID.Td = self.ui.inFanPID_Td.value()
         self.PID.Kd = self.PID.Kp * self.PID.Td
         self.ui.inFanPID_Kd.setValue(self.PID.Kd)
         self._update_equation()

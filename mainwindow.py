@@ -1,6 +1,5 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
-from PySide6.QtCore import QTimer
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from ui_form import Ui_MainWindow
 ###
@@ -13,6 +12,12 @@ from BB import BB
 from PID import PID
 from Serial import Serial
 from COM import COM
+from HeaterController import HeaterController
+from FanController import FanController
+from FanBBGraph import FanBBGraph
+from FanPIDGraph import FanPIDGraph
+from HeaterBBGraph import HeaterBBGraph
+from HeaterPIDGraph import HeaterPIDGraph
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -31,9 +36,16 @@ class MainWindow(QMainWindow):
         self.heaterBBcontroller = BB()
         self.heaterPIDcontroller = PID()
         self.heaterControlsHandler = HeaterControlsHandler(self, self.heaterPIDcontroller, self.heaterBBcontroller)
+        self.fanController = FanController()
+        self.heaterController = HeaterController()
         # Serial
         self.serial = Serial(self)
         self.COM = COM(self)
+        # Graphs
+        self.fanBBgraph = FanBBGraph(self, self.ui.layFanBBGraph, 'RPM')
+        self.fanPIDgraph = FanPIDGraph(self, self.ui.layFanPIDGraph, 'RPM')
+        self.heaterBBgraph = HeaterBBGraph(self, self.ui.layHeaterBBGraph, 'degC')
+        self.heaterPIDgraph = HeaterPIDGraph(self, self.ui.layHeaterPIDGraph, 'degC')
 
         # DEFAULT LOCATION
         self.mainMenuHandler.open_heater()
@@ -81,6 +93,60 @@ class MainWindow(QMainWindow):
         self.ui.inFanPID_Ti.editingFinished.connect(self.fanControlsHandler.pid_setTi)
         self.ui.inFanPID_Td.editingFinished.connect(self.fanControlsHandler.pid_setTd)
 
+        # Fan BB Graph buttons
+        self.ui.btnFanBB_graph_x.clicked.connect(self.fanBBgraph.set_value)
+        self.ui.btnFanBB_graph_x_max.clicked.connect(self.fanBBgraph.set_threshold_top)
+        self.ui.btnFanBB_graph_x_min.clicked.connect(self.fanBBgraph.set_threshold_bottom)
+        self.ui.btnFanBB_graph_u_max.clicked.connect(self.fanBBgraph.set_u_max)
+        self.ui.btnFanBB_graph_u_min.clicked.connect(self.fanBBgraph.set_u_min)
+        self.ui.btnFanBB_graph_y.clicked.connect(self.fanBBgraph.set_y)
+        self.ui.btnFanBB_graph_mode.clicked.connect(self.fanBBgraph.set_mode)
+        # Fan PID Graph buttons
+        self.ui.btnFanPID_graph_x.clicked.connect(self.fanPIDgraph.set_value)
+        self.ui.btnFanPID_graph_e.clicked.connect(self.fanPIDgraph.set_e)
+        self.ui.btnFanPID_graph_int_e.clicked.connect(self.fanPIDgraph.set_int_e)
+        self.ui.btnFanPID_graph_aw_int_e.clicked.connect(self.fanPIDgraph.set_aw_int_e)
+        self.ui.btnFanPID_graph_k_p.clicked.connect(self.fanPIDgraph.set_k_p)
+        self.ui.btnFanPID_graph_k_i.clicked.connect(self.fanPIDgraph.set_k_i)
+        self.ui.btnFanPID_graph_k_d.clicked.connect(self.fanPIDgraph.set_k_d)
+        self.ui.btnFanPID_graph_k_aw.clicked.connect(self.fanPIDgraph.set_k_aw)
+        self.ui.btnFanPID_graph_u.clicked.connect(self.fanPIDgraph.set_u)
+        self.ui.btnFanPID_graph_u_sat.clicked.connect(self.fanPIDgraph.set_u_sat)
+        self.ui.btnFanPID_graph_u_p.clicked.connect(self.fanPIDgraph.set_u_p)
+        self.ui.btnFanPID_graph_u_i.clicked.connect(self.fanPIDgraph.set_u_i)
+        self.ui.btnFanPID_graph_u_d.clicked.connect(self.fanPIDgraph.set_u_d)
+        self.ui.btnFanPID_graph_u_max.clicked.connect(self.fanPIDgraph.set_u_max)
+        self.ui.btnFanPID_graph_u_max.clicked.connect(self.fanPIDgraph.set_u_min)
+        self.ui.btnFanPID_graph_y.clicked.connect(self.fanPIDgraph.set_y)
+        self.ui.btnFanPID_graph_mode.clicked.connect(self.fanPIDgraph.set_mode)
+        # Heater BB Graph buttons
+        self.ui.btnHeaterBB_graph_x.clicked.connect(self.heaterBBgraph.set_value)
+        self.ui.btnHeaterBB_graph_x_max.clicked.connect(self.heaterBBgraph.set_threshold_top)
+        self.ui.btnHeaterBB_graph_x_min.clicked.connect(self.heaterBBgraph.set_threshold_bottom)
+        self.ui.btnHeaterBB_graph_u_max.clicked.connect(self.heaterBBgraph.set_u_max)
+        self.ui.btnHeaterBB_graph_u_min.clicked.connect(self.heaterBBgraph.set_u_min)
+        self.ui.btnHeaterBB_graph_y_1.clicked.connect(self.heaterBBgraph.set_y_1)
+        self.ui.btnHeaterBB_graph_y_2.clicked.connect(self.heaterBBgraph.set_y_2)
+        self.ui.btnHeaterBB_graph_mode.clicked.connect(self.heaterBBgraph.set_mode)
+        # Heater PID Graph buttons
+        self.ui.btnHeaterPID_graph_x.clicked.connect(self.heaterPIDgraph.set_value)
+        self.ui.btnHeaterPID_graph_e.clicked.connect(self.heaterPIDgraph.set_e)
+        self.ui.btnHeaterPID_graph_int_e.clicked.connect(self.heaterPIDgraph.set_int_e)
+        self.ui.btnHeaterPID_graph_aw_int_e.clicked.connect(self.heaterPIDgraph.set_aw_int_e)
+        self.ui.btnHeaterPID_graph_k_p.clicked.connect(self.heaterPIDgraph.set_k_p)
+        self.ui.btnHeaterPID_graph_k_i.clicked.connect(self.heaterPIDgraph.set_k_i)
+        self.ui.btnHeaterPID_graph_k_d.clicked.connect(self.heaterPIDgraph.set_k_d)
+        self.ui.btnHeaterPID_graph_k_aw.clicked.connect(self.heaterPIDgraph.set_k_aw)
+        self.ui.btnHeaterPID_graph_u.clicked.connect(self.heaterPIDgraph.set_u)
+        self.ui.btnHeaterPID_graph_u_sat.clicked.connect(self.heaterPIDgraph.set_u_sat)
+        self.ui.btnHeaterPID_graph_u_p.clicked.connect(self.heaterPIDgraph.set_u_p)
+        self.ui.btnHeaterPID_graph_u_i.clicked.connect(self.heaterPIDgraph.set_u_i)
+        self.ui.btnHeaterPID_graph_u_d.clicked.connect(self.heaterPIDgraph.set_u_d)
+        self.ui.btnHeaterPID_graph_u_max.clicked.connect(self.heaterPIDgraph.set_u_max)
+        self.ui.btnHeaterPID_graph_u_max.clicked.connect(self.heaterPIDgraph.set_u_min)
+        self.ui.btnHeaterPID_graph_y_1.clicked.connect(self.heaterPIDgraph.set_y_1)
+        self.ui.btnHeaterPID_graph_y_2.clicked.connect(self.heaterPIDgraph.set_y_2)
+        self.ui.btnHeaterPID_graph_mode.clicked.connect(self.heaterPIDgraph.set_mode)
 
         if is_connected():
             self.ui.fanEquation.addWidget(self.fanPIDequationwebView)

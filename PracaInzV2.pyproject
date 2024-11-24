@@ -12,9 +12,14 @@
         "BB.py",
         "Graph.py",
         "Serial.py",
-        "utils.py",
+        "utilities.py",
         "COM.py",
         "FanController.py",
-        "HeaterController.py"
+        "HeaterController.py",
+        "FanBBGraph.py",
+        "FanPIDGraph.py",
+        "HeaterBBGraph.py",
+        "HeaterPIDGraph.py",
+        "StackedWidget.py"
     ]
 }
