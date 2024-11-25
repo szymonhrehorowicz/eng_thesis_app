@@ -2,10 +2,11 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from ui_form import Ui_MainWindow
+from PySide6.QtCore import QTimer
 ###
 from check_connection import is_connected
 from MathEquation import MathEquation
-from MainMenuHandler import MainMenuHandler
+from MainMenuHandler import MainMenuHandler, INDICES
 from FanControlsHandler import FanControlsHandler
 from HeaterControlsHandler import HeaterControlsHandler
 from BB import BB
@@ -153,13 +154,23 @@ class MainWindow(QMainWindow):
             self.ui.heaterEquation.addWidget(self.heaterPIDequationwebView)
 
 
-        #self.timer = QTimer()
-        #self.timer.setInterval(1000)
-        #self.timer.timeout.connect(self.tim_1000ms_IRS)
-        #self.timer.start()
+        self.timer = QTimer()
+        self.timer.setInterval(1000)
+        self.timer.timeout.connect(self.tim_1000ms_IRS)
+        self.timer.start()
 
     def tim_1000ms_IRS(self):
-        pass
+        current_window = self.ui.stackGraphs.currentIndex()
+        if current_window == INDICES["heater_bb"]:
+            self.heaterBBgraph.update_graph()
+        elif current_window == INDICES["heater_pid"]:
+            self.heaterPIDgraph.update_graph()
+        elif current_window == INDICES["fan_bb"]:
+            self.fanBBgraph.update_graph()
+        elif current_window == INDICES["fan_pid"]:
+            self.fanPIDgraph.update_graph()
+        
+        
 
 
 

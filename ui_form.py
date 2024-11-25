@@ -947,6 +947,11 @@ class Ui_MainWindow(object):
         self.pageHeaterBBGraph.setObjectName(u"pageHeaterBBGraph")
         self.verticalLayout_9 = QVBoxLayout(self.pageHeaterBBGraph)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.layHeaterBBGraph = QVBoxLayout()
+        self.layHeaterBBGraph.setObjectName(u"layHeaterBBGraph")
+
+        self.verticalLayout_9.addLayout(self.layHeaterBBGraph)
+
         self.frame_29 = QFrame(self.pageHeaterBBGraph)
         self.frame_29.setObjectName(u"frame_29")
         self.frame_29.setFrameShape(QFrame.StyledPanel)
@@ -1016,16 +1021,16 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.frame_29)
 
-        self.layHeaterBBGraph = QVBoxLayout()
-        self.layHeaterBBGraph.setObjectName(u"layHeaterBBGraph")
-
-        self.verticalLayout_9.addLayout(self.layHeaterBBGraph)
-
         self.stackGraphs.addWidget(self.pageHeaterBBGraph)
         self.pageHeaterPIDGraph = QWidget()
         self.pageHeaterPIDGraph.setObjectName(u"pageHeaterPIDGraph")
         self.verticalLayout_11 = QVBoxLayout(self.pageHeaterPIDGraph)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.layHeaterPIDGraph = QVBoxLayout()
+        self.layHeaterPIDGraph.setObjectName(u"layHeaterPIDGraph")
+
+        self.verticalLayout_11.addLayout(self.layHeaterPIDGraph)
+
         self.frame_30 = QFrame(self.pageHeaterPIDGraph)
         self.frame_30.setObjectName(u"frame_30")
         sizePolicy2.setHeightForWidth(self.frame_30.sizePolicy().hasHeightForWidth())
@@ -1163,16 +1168,16 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.frame_30)
 
-        self.layHeaterPIDGraph = QVBoxLayout()
-        self.layHeaterPIDGraph.setObjectName(u"layHeaterPIDGraph")
-
-        self.verticalLayout_11.addLayout(self.layHeaterPIDGraph)
-
         self.stackGraphs.addWidget(self.pageHeaterPIDGraph)
         self.pageFanBBGraph = QWidget()
         self.pageFanBBGraph.setObjectName(u"pageFanBBGraph")
         self.verticalLayout_4 = QVBoxLayout(self.pageFanBBGraph)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.layFanBBGraph = QVBoxLayout()
+        self.layFanBBGraph.setObjectName(u"layFanBBGraph")
+
+        self.verticalLayout_4.addLayout(self.layFanBBGraph)
+
         self.frame_27 = QFrame(self.pageFanBBGraph)
         self.frame_27.setObjectName(u"frame_27")
         sizePolicy2.setHeightForWidth(self.frame_27.sizePolicy().hasHeightForWidth())
@@ -1237,16 +1242,16 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.frame_27)
 
-        self.layFanBBGraph = QVBoxLayout()
-        self.layFanBBGraph.setObjectName(u"layFanBBGraph")
-
-        self.verticalLayout_4.addLayout(self.layFanBBGraph)
-
         self.stackGraphs.addWidget(self.pageFanBBGraph)
         self.pageFanPIDGraph = QWidget()
         self.pageFanPIDGraph.setObjectName(u"pageFanPIDGraph")
         self.verticalLayout_8 = QVBoxLayout(self.pageFanPIDGraph)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.layFanPIDGraph = QVBoxLayout()
+        self.layFanPIDGraph.setObjectName(u"layFanPIDGraph")
+
+        self.verticalLayout_8.addLayout(self.layFanPIDGraph)
+
         self.frame_28 = QFrame(self.pageFanPIDGraph)
         self.frame_28.setObjectName(u"frame_28")
         sizePolicy2.setHeightForWidth(self.frame_28.sizePolicy().hasHeightForWidth())
@@ -1377,11 +1382,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.frame_28)
 
-        self.layFanPIDGraph = QVBoxLayout()
-        self.layFanPIDGraph.setObjectName(u"layFanPIDGraph")
-
-        self.verticalLayout_8.addLayout(self.layFanPIDGraph)
-
         self.stackGraphs.addWidget(self.pageFanPIDGraph)
 
         self.verticalLayout.addWidget(self.stackGraphs)
@@ -1411,7 +1411,7 @@ class Ui_MainWindow(object):
 
         self.container.setCurrentIndex(0)
         self.stackControllerDesc.setCurrentIndex(1)
-        self.stackControllerSelect.setCurrentIndex(0)
+        self.stackControllerSelect.setCurrentIndex(1)
         self.stackController.setCurrentIndex(2)
         self.stackGraphs.setCurrentIndex(1)
 

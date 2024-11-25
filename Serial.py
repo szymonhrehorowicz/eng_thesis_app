@@ -102,22 +102,62 @@ class Serial:
     @Slot()
     def read_data(self):
         data = self._serial.readAll().data().decode()
-        if data == 'DEV_CON_ACK':
+        if 'DEV_CON_ACK' in data:
             # Handle successful connection
             self.ui.btnConnect.setText("Disconnect")
             self.ui.btnConnect.setStatusTip("Rozłącz się z urządzeniem")
-        elif 'ALLCOIL_' in data:
-            if data.index('ALLCOIL_') == 0:
-                self.handler.COM.handle_all_heater_data(data)
-        elif 'FASTCOIL_' in data:
-            if data.index('FASTCOIL_') == 0:
-                self.handler.COM.handle_fast_heater_data(data)
-        elif 'ALLFAN_' in data:
-            if data.index('ALLFAN_') == 0:
-                self.handler.COM.handle_all_fan_data(data)
-        elif 'FASTFAN_' in data:
-            if data.index('FASTFAN') == 0:
-                self.handler.COM.handle_fast_fan_data(data)
+        else:
+            packets = []
+            num_of_packets = data.count('ALLFAN_') + data.count('ALLCOIL_')
+            
+            for i in range(0, num_of_packets):
+                try:
+                    idx_fan = data.index('ALLFAN_')
+                except ValueError:
+                    idx_fan = len(data)
+                try:
+                    idx_coil = data.index('ALLCOIL_')
+                except ValueError:
+                    idx_coil = len(data)
+                isFan = True if idx_fan < idx_coil else False
+                dataToCut = 0
+                if isFan:
+                    dataToCut = idx_fan + len('ALLFAN_')
+                    packets.append({"type": "ALLFAN_", "data": data[idx_fan:idx_coil]})
+                else:
+                    dataToCut = idx_coil + len('ALLCOIL_')
+                    packets.append({"type": "ALLCOIL_", "data": data[idx_coil:idx_fan]})
+                data = data[dataToCut:]
+            
+            for packet in packets:
+                if packet["type"] == "ALLFAN_":
+                    self.handler.COM.handle_all_fan_data(packet["data"])
+                else:
+                    self.handler.COM.handle_all_heater_data(packet["data"])
+
+        # elif ('ALLCOIL_' in data) and ('ALLFAN_' in data):
+        #     idx_coil = data.index('ALLCOIL_')
+        #     idx_fan  = data.index('ALLFAN_')
+        #     if idx_coil > idx_fan:
+        #         data_coil = data[idx_coil:]
+        #         data_fan = data[idx_fan:idx_coil]
+        #     else:
+        #         data_coil = data[idx_coil:idx_fan]
+        #         data_fan = data[idx_fan:]
+        #     self.handler.COM.handle_all_heater_data(data_coil)
+        #     self.handler.COM.handle_all_fan_data(data_fan)
+        # elif 'ALLCOIL_' in data:
+        #     if data.index('ALLCOIL_') == 0:
+        #         self.handler.COM.handle_all_heater_data(data)
+        # elif 'FASTCOIL_' in data:
+        #     if data.index('FASTCOIL_') == 0:
+        #         self.handler.COM.handle_fast_heater_data(data)
+        # elif 'ALLFAN_' in data:
+        #     if data.index('ALLFAN_') == 0:
+        #         self.handler.COM.handle_all_fan_data(data)
+        # elif 'FASTFAN_' in data:
+        #     if data.index('FASTFAN') == 0:
+        #         self.handler.COM.handle_fast_fan_data(data)
 
     @Slot(QSerialPort.SerialPortError)
     def handle_error(self, error):

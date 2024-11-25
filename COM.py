@@ -227,8 +227,6 @@ class COM:
             "PID_SPEED": int(data[21]),
             "PID_MODE": int(data[22]),
         })
-        self.handler.fanBBgraph.update_graph()
-        self.handler.fanPIDgraph.update_graph()
 
     def get_fast_fan_data():
         pass
@@ -248,8 +246,6 @@ class COM:
             "PID_SPEED": int(data[9]),
             "PID_MODE": int(data[10]),
         })
-        self.handler.fanBBgraph.update_graph()
-        self.handler.fanPIDgraph.update_graph()
 
     # HEATER GETTERS
     def get_all_heater_data():
@@ -283,8 +279,6 @@ class COM:
             "PID_TEMP_RIGHT": int(data[22]),
             "PID_MODE": int(data[23]),
         })
-        self.handler.heaterBBgraph.update_graph()
-        self.handler.heaterPIDgraph.update_graph()
     
     def get_fast_heater_data():
         pass
@@ -305,5 +299,3 @@ class COM:
             "PID_TEMP_RIGHT": int(data[10]),
             "PID_MODE": int(data[11]),
         }) 
-        self.handler.heaterBBgraph.update_graph()
-        self.handler.heaterPIDgraph.update_graph()

@@ -224,7 +224,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="pageHeaterControllerSelect">
            <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -1567,6 +1567,9 @@
           <widget class="QWidget" name="pageHeaterBBGraph">
            <layout class="QVBoxLayout" name="verticalLayout_9">
             <item>
+             <layout class="QVBoxLayout" name="layHeaterBBGraph"/>
+            </item>
+            <item>
              <widget class="QFrame" name="frame_29">
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -1695,13 +1698,13 @@
               </layout>
              </widget>
             </item>
-            <item>
-             <layout class="QVBoxLayout" name="layHeaterBBGraph"/>
-            </item>
            </layout>
           </widget>
           <widget class="QWidget" name="pageHeaterPIDGraph">
            <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <layout class="QVBoxLayout" name="layHeaterPIDGraph"/>
+            </item>
             <item>
              <widget class="QFrame" name="frame_30">
               <property name="sizePolicy">
@@ -1954,13 +1957,13 @@
               </layout>
              </widget>
             </item>
-            <item>
-             <layout class="QVBoxLayout" name="layHeaterPIDGraph"/>
-            </item>
            </layout>
           </widget>
           <widget class="QWidget" name="pageFanBBGraph">
            <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <layout class="QVBoxLayout" name="layFanBBGraph"/>
+            </item>
             <item>
              <widget class="QFrame" name="frame_27">
               <property name="sizePolicy">
@@ -2083,13 +2086,13 @@
               </layout>
              </widget>
             </item>
-            <item>
-             <layout class="QVBoxLayout" name="layFanBBGraph"/>
-            </item>
            </layout>
           </widget>
           <widget class="QWidget" name="pageFanPIDGraph">
            <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <layout class="QVBoxLayout" name="layFanPIDGraph"/>
+            </item>
             <item>
              <widget class="QFrame" name="frame_28">
               <property name="sizePolicy">
@@ -2328,9 +2331,6 @@
                </item>
               </layout>
              </widget>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="layFanPIDGraph"/>
             </item>
            </layout>
           </widget>
