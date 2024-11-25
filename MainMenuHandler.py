@@ -20,6 +20,11 @@ class MainMenuHandler:
     # MAIN MENU
     @Slot()
     def open_heater(self):
+        self.handler.ui.btnHeaterControls.setChecked(True)
+        self.handler.ui.btnFanControls.setChecked(False)
+        self.handler.ui.btnDataExport.setChecked(False)
+        self.handler.ui.btnHelp.setChecked(False)
+
         self.handler.ui.container.setCurrentIndex(INDICES["controls"])
         self.handler.ui.stackControllerDesc.setCurrentIndex(INDICES["heater"])
         self.handler.ui.stackControllerSelect.setCurrentIndex(INDICES["heater"])
@@ -33,6 +38,11 @@ class MainMenuHandler:
 
     @Slot()
     def open_fan(self):
+        self.handler.ui.btnHeaterControls.setChecked(False)
+        self.handler.ui.btnFanControls.setChecked(True)
+        self.handler.ui.btnDataExport.setChecked(False)
+        self.handler.ui.btnHelp.setChecked(False)
+
         self.handler.ui.container.setCurrentIndex(INDICES["controls"])
         self.handler.ui.stackControllerDesc.setCurrentIndex(INDICES["fan"])
         self.handler.ui.stackControllerSelect.setCurrentIndex(INDICES["fan"])
@@ -46,10 +56,19 @@ class MainMenuHandler:
 
     @Slot()
     def open_export(self):
+        self.handler.ui.btnHeaterControls.setChecked(False)
+        self.handler.ui.btnFanControls.setChecked(False)
+        self.handler.ui.btnDataExport.setChecked(True)
+        self.handler.ui.btnHelp.setChecked(False)
+
         self.handler.ui.container.setCurrentIndex(INDICES["export"])
 
     @Slot()
     def open_help(self):
+        self.handler.ui.btnHeaterControls.setChecked(False)
+        self.handler.ui.btnFanControls.setChecked(False)
+        self.handler.ui.btnDataExport.setChecked(False)
+        self.handler.ui.btnHelp.setChecked(True)
         self.handler.ui.container.setCurrentIndex(INDICES["help"])
 
     # HEATER

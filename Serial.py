@@ -40,14 +40,13 @@ class Serial:
         return res
 
     def close_serial_port(self):
-        #self.ui.btnConnect.setText("Connect")
-        #self.ui.btnConnect.setStatusTip("Połącz się z urządzeniem")
-        #self.ui.btnConnect.setChecked(False)
+        self.ui.btnConnect.setText("Connect")
+        self.ui.btnConnect.setStatusTip("Połącz się z urządzeniem")
+        self.ui.btnConnect.setChecked(False)
 
-        #self.ui.btnStartCoil.setEnabled(False)
-        #self.ui.btnStartFan.setEnabled(False)
-        #self.ui.btnUpdateCoil.setEnabled(False)
-        #self.ui.btnUpdateFan.setEnabled(False)
+        self.ui.btnHeaterControls.setEnabled(False)
+        self.ui.btnFanControls.setEnabled(False)
+        self.handler.mainMenuHandler.open_help()
 
         if self._serial.isOpen():
             self._serial.close()
@@ -86,11 +85,8 @@ class Serial:
                 self.ui.btnConnect.setChecked(False)
                 error_dialog(self.handler, "Nie znaleziono urządzenia")
             else:
-                #self.ui.btnStartCoil.setEnabled(True)
-                #self.ui.btnStartFan.setEnabled(True)
-                #self.ui.btnUpdateCoil.setEnabled(True)
-                #self.ui.btnUpdateFan.setEnabled(True)
-                pass
+                self.ui.btnHeaterControls.setEnabled(True)
+                self.ui.btnFanControls.setEnabled(True)
         else:
             # If data is False, then button was just UNCHECKED - disconnect with device
             self.close_serial_port()
@@ -135,34 +131,11 @@ class Serial:
                 else:
                     self.handler.COM.handle_all_heater_data(packet["data"])
 
-        # elif ('ALLCOIL_' in data) and ('ALLFAN_' in data):
-        #     idx_coil = data.index('ALLCOIL_')
-        #     idx_fan  = data.index('ALLFAN_')
-        #     if idx_coil > idx_fan:
-        #         data_coil = data[idx_coil:]
-        #         data_fan = data[idx_fan:idx_coil]
-        #     else:
-        #         data_coil = data[idx_coil:idx_fan]
-        #         data_fan = data[idx_fan:]
-        #     self.handler.COM.handle_all_heater_data(data_coil)
-        #     self.handler.COM.handle_all_fan_data(data_fan)
-        # elif 'ALLCOIL_' in data:
-        #     if data.index('ALLCOIL_') == 0:
-        #         self.handler.COM.handle_all_heater_data(data)
-        # elif 'FASTCOIL_' in data:
-        #     if data.index('FASTCOIL_') == 0:
-        #         self.handler.COM.handle_fast_heater_data(data)
-        # elif 'ALLFAN_' in data:
-        #     if data.index('ALLFAN_') == 0:
-        #         self.handler.COM.handle_all_fan_data(data)
-        # elif 'FASTFAN_' in data:
-        #     if data.index('FASTFAN') == 0:
-        #         self.handler.COM.handle_fast_fan_data(data)
-
     @Slot(QSerialPort.SerialPortError)
     def handle_error(self, error):
         if error == QSerialPort.ResourceError:
             print("Serial error\n", self._serial.errorString())
+            error_dialog(self.handler, "Połączenie z urządzeniem zostało przerwane")
             self.close_serial_port()
 
 """

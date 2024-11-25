@@ -49,8 +49,9 @@ class MainWindow(QMainWindow):
         self.heaterPIDgraph = HeaterPIDGraph(self, self.ui.layHeaterPIDGraph, 'degC')
 
         # DEFAULT LOCATION
-        self.mainMenuHandler.open_heater()
-        self.mainMenuHandler.set_heater_bb()
+        self.ui.btnHeaterControls.setEnabled(False)
+        self.ui.btnFanControls.setEnabled(False)
+        self.mainMenuHandler.open_help()
 
         # Connect button
         self.ui.btnConnect.clicked.connect(self.serial.slot_btnConnect)
@@ -117,7 +118,7 @@ class MainWindow(QMainWindow):
         self.ui.btnFanPID_graph_u_i.clicked.connect(self.fanPIDgraph.set_u_i)
         self.ui.btnFanPID_graph_u_d.clicked.connect(self.fanPIDgraph.set_u_d)
         self.ui.btnFanPID_graph_u_max.clicked.connect(self.fanPIDgraph.set_u_max)
-        self.ui.btnFanPID_graph_u_max.clicked.connect(self.fanPIDgraph.set_u_min)
+        self.ui.btnFanPID_graph_u_min.clicked.connect(self.fanPIDgraph.set_u_min)
         self.ui.btnFanPID_graph_y.clicked.connect(self.fanPIDgraph.set_y)
         self.ui.btnFanPID_graph_mode.clicked.connect(self.fanPIDgraph.set_mode)
         # Heater BB Graph buttons
@@ -149,17 +150,21 @@ class MainWindow(QMainWindow):
         self.ui.btnHeaterPID_graph_y_2.clicked.connect(self.heaterPIDgraph.set_y_2)
         self.ui.btnHeaterPID_graph_mode.clicked.connect(self.heaterPIDgraph.set_mode)
 
+        # Start/Stop buttons
+        self.ui.btnHeaterStart.clicked.connect(self.COM.set_heater_config)
+        self.ui.btnFanStart.clicked.connect(self.COM.set_fan_config)
+
         if is_connected():
             self.ui.fanEquation.addWidget(self.fanPIDequationwebView)
             self.ui.heaterEquation.addWidget(self.heaterPIDequationwebView)
 
 
         self.timer = QTimer()
-        self.timer.setInterval(1000)
-        self.timer.timeout.connect(self.tim_1000ms_IRS)
+        self.timer.setInterval(100)
+        self.timer.timeout.connect(self.tim_100ms_IRS)
         self.timer.start()
 
-    def tim_1000ms_IRS(self):
+    def tim_100ms_IRS(self):
         current_window = self.ui.stackGraphs.currentIndex()
         if current_window == INDICES["heater_bb"]:
             self.heaterBBgraph.update_graph()

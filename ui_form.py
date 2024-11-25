@@ -59,16 +59,19 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.btnHeaterControls.sizePolicy().hasHeightForWidth())
         self.btnHeaterControls.setSizePolicy(sizePolicy)
+        self.btnHeaterControls.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnHeaterControls)
 
         self.btnFanControls = QPushButton(self.menubar)
         self.btnFanControls.setObjectName(u"btnFanControls")
+        self.btnFanControls.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnFanControls)
 
         self.btnDataExport = QPushButton(self.menubar)
         self.btnDataExport.setObjectName(u"btnDataExport")
+        self.btnDataExport.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnDataExport)
 
@@ -78,6 +81,7 @@ class Ui_MainWindow(object):
 
         self.btnHelp = QPushButton(self.menubar)
         self.btnHelp.setObjectName(u"btnHelp")
+        self.btnHelp.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnHelp)
 
@@ -123,14 +127,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_17.addItem(self.horizontalSpacer_12)
 
-        self.pushButton_7 = QPushButton(self.controllerDescHeater)
-        self.pushButton_7.setObjectName(u"pushButton_7")
+        self.btnHeaterStart = QPushButton(self.controllerDescHeater)
+        self.btnHeaterStart.setObjectName(u"btnHeaterStart")
         font2 = QFont()
         font2.setPointSize(9)
-        self.pushButton_7.setFont(font2)
-        self.pushButton_7.setCheckable(True)
+        self.btnHeaterStart.setFont(font2)
+        self.btnHeaterStart.setCheckable(True)
 
-        self.horizontalLayout_17.addWidget(self.pushButton_7)
+        self.horizontalLayout_17.addWidget(self.btnHeaterStart)
 
         self.stackControllerDesc.addWidget(self.controllerDescHeater)
         self.controllerDescFan = QWidget()
@@ -147,12 +151,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_18.addItem(self.horizontalSpacer_13)
 
-        self.pushButton_8 = QPushButton(self.controllerDescFan)
-        self.pushButton_8.setObjectName(u"pushButton_8")
-        self.pushButton_8.setFont(font2)
-        self.pushButton_8.setCheckable(True)
+        self.btnFanStart = QPushButton(self.controllerDescFan)
+        self.btnFanStart.setObjectName(u"btnFanStart")
+        self.btnFanStart.setFont(font2)
+        self.btnFanStart.setCheckable(True)
 
-        self.horizontalLayout_18.addWidget(self.pushButton_8)
+        self.horizontalLayout_18.addWidget(self.btnFanStart)
 
         self.stackControllerDesc.addWidget(self.controllerDescFan)
 
@@ -1411,8 +1415,8 @@ class Ui_MainWindow(object):
 
         self.container.setCurrentIndex(0)
         self.stackControllerDesc.setCurrentIndex(1)
-        self.stackControllerSelect.setCurrentIndex(1)
-        self.stackController.setCurrentIndex(2)
+        self.stackControllerSelect.setCurrentIndex(0)
+        self.stackController.setCurrentIndex(3)
         self.stackGraphs.setCurrentIndex(1)
 
 
@@ -1427,9 +1431,9 @@ class Ui_MainWindow(object):
         self.btnDataExport.setText(QCoreApplication.translate("MainWindow", u"Eksport danych", None))
         self.btnHelp.setText(QCoreApplication.translate("MainWindow", u"Pomoc", None))
         self.lblControls.setText(QCoreApplication.translate("MainWindow", u"Ustawienia grza\u0142ki", None))
-        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"START", None))
+        self.btnHeaterStart.setText(QCoreApplication.translate("MainWindow", u"START", None))
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"Ustawienia wentylatora", None))
-        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"START", None))
+        self.btnFanStart.setText(QCoreApplication.translate("MainWindow", u"START", None))
         self.lblHeaterController.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Wyb\u00f3r regulatora	</p></body></html>", None))
         self.btnHeaterControllerSetBB.setText(QCoreApplication.translate("MainWindow", u"Dwupo\u0142o\u017ceniowy", None))
         self.btnHeaterControllerSetPID.setText(QCoreApplication.translate("MainWindow", u"PID", None))

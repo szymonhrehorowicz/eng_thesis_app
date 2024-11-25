@@ -12,32 +12,25 @@ class FanBBGraph(Graph):
         self.controller = self.handler.fanController
         self.controls = {
             "x(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnFanBB_graph_x,
+                "state": self.handler.ui.btnFanBB_graph_x.isChecked(),
             },
             "x_max(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnFanBB_graph_x_max,
+                "state": self.handler.ui.btnFanBB_graph_x_max.isChecked(),
             },
             "x_min(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnFanBB_graph_x_min,
+                "state": self.handler.ui.btnFanBB_graph_x_min.isChecked(),
             },
             "u_max(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnFanBB_graph_u_max,
+                "state": self.handler.ui.btnFanBB_graph_u_max.isChecked(),
             },
             "u_min(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnFanBB_graph_u_min,
+                "state": self.handler.ui.btnFanBB_graph_u_min.isChecked(),
             },
             "y(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnFanBB_graph_y,
+                "state": self.handler.ui.btnFanBB_graph_y.isChecked(),
             },
             "stan": {
-                "state": True,
-                "handler": self.handler.ui.btnFanBB_graph_mode,
+                "state": self.handler.ui.btnFanBB_graph_mode.isChecked(),
             }
         }
 

@@ -1,4 +1,5 @@
 # This Python file uses the following encoding: utf-8
+from PySide6.QtCore import QByteArray, Slot
 
 MSG_TYPE = {
     "APP_CON_REQ": 0,
@@ -9,43 +10,8 @@ MSG_TYPE = {
 }
 
 CONTROL_MSG = {
-    # Set messages
-    "SET_CONTROLLER": 0,
-    "SET_REF_VALUE": 1,
-    "SET_MODE": 2,
-    "SET_REF_TEMP": 3,
-    "SET_REF_COIL": 4,
-    "SET_KP": 5,
-    "SET_KI": 6,
-    "SET_KD": 7,
-    "SET_HYST": 8,
-    "SET_HYST_SHIFT": 9,
-    # Data messages
-    "GET_BB_SET_VALUE": 10,
-    "GET_BB_THRESHOLD_TOP": 11,
-    "GET_BB_THRESHOLD_BOTTOM": 12,
-    "GET_BB_U_MAX": 13,
-    "GET_BB_U_MIN": 14,
-    "GET_BB_CMD": 15,
-    "GET_PID_SET_VALUE": 16,
-    "GET_PID_ERROR": 17,
-    "GET_PID_INTEGRAL_ERROR": 18,
-    "GET_PID_AW_INTEGRAL_ERROR": 19,
-    "GET_PID_KP": 20,
-    "GET_PID_KI": 21,
-    "GET_PID_KD": 22,
-    "GET_PID_KAW": 23,
-    "GET_PID_U": 24,
-    "GET_PID_U_SATURATED": 25,
-    "GET_PID_U_P": 26,
-    "GET_PID_U_I": 27,
-    "GET_PID_U_D": 28,
-    "GET_PID_MAX": 29,
-    "GET_PID_MIN": 30,
-    "GET_COIL_TEMPERATURES": 31,
-    "GET_COIL_MODE": 32,
-    "GET_FAN_SPEED": 33,
-    "GET_FAN_MODE": 34
+    "SET_FAN_CONFIG": 39,
+    "SET_HEATER_CONFIG": 40,
 }
 
 FAN_ALL_DATA = {
@@ -135,71 +101,104 @@ class COM:
         self.handler = handler
 
     # FAN SETTERS
-    def set_fan_controller(value):
-        pass
-
-    def set_fan_mode(value):
-        pass
-
-    def set_fan_Kp(value):
-        pass
-
-    def set_fan_Ki(value):
-        pass
-
-    def set_fan_Kd(value):
-        pass
-
-    def set_fan_Kaw(value):
-        pass
-
-    def set_fan_hysteresis(value):
-        pass
-
-    def set_fan_hysteresisShift(value):
-        pass
-
-    def set_fan_refValue(value):
-        pass
+    @Slot(bool)
+    def set_fan_config(self, isOn: bool):
+        if isOn:
+            self.handler.ui.btnFanStart.setText("STOP")
+        else:
+            self.handler.ui.btnFanStart.setText("START")
+        msg = ""
+        msg += str(MSG_TYPE["FAN_CONF_MSG"])
+        msg += str(CONTROL_MSG["SET_FAN_CONFIG"])
+        # Controller type: 0-PID | 1-BANG BANG
+        msg += "0" if self.handler.ui.btnFanControllerSetPID.isChecked() else "1"
+        # BB set value: 0000 - 6000
+        msg += str(self.handler.ui.inFanBBSetValue.value()).zfill(4)
+        # BB hysteresis: 0000 - 6000
+        msg += str(self.handler.ui.inFanBBHysteresis.value()).zfill(4)
+        # PID set value: 0000 - 6000
+        msg += str(self.handler.ui.inFanPIDSetValue.value()).zfill(4)
+        # PID Kp: 000.00 - 100.00
+        Kp = self.handler.ui.inFanPID_Kp.value()
+        Kp = "%.2f"%(Kp)
+        for _ in range(0, 6 - len(Kp)):
+            Kp = '0' + Kp
+        msg += Kp
+        # PID Ki: 000.00 - 100.00
+        Ki = self.handler.ui.inFanPID_Ki.value()
+        Ki = "%.2f"%(Ki)
+        for _ in range(0, 6 - len(Ki)):
+            Ki = '0' + Ki
+        msg += Ki
+        # PID Kd: 000.00 - 100.00
+        Kd = self.handler.ui.inFanPID_Kd.value()
+        Kd = "%.2f"%(Kd)
+        for _ in range(0, 6 - len(Kd)):
+            Kd = '0' + Kd
+        msg += Kd
+        # PID Kaw: 000.00 - 100.00
+        Kaw = self.handler.ui.inFanPID_Kaw.value()
+        Kaw = "%.2f"%(Kaw)
+        for _ in range(0, 6 - len(Kaw)):
+            Kaw = '0' + Kaw
+        msg += Kaw
+        # ON/OFF : 0 - OFF | 1 - ON
+        msg += '1' if isOn else '0'
+        self.handler.serial.write_data(QByteArray(msg))
 
     # HEATER SETTERS
-    def set_heater_controller(value):
-        pass
-
-    def set_heater_mode(value):
-        pass
-
-    def set_heater_Kp(value):
-        pass
-
-    def set_heater_Ki(value):
-        pass
-
-    def set_heater_Kd(value):
-        pass
-
-    def set_heater_Kaw(value):
-        pass
-
-    def set_heater_hysteresis(value):
-        pass
-
-    def set_heater_hysteresisShift(value):
-        pass
-
-    def set_heater_refValue(value):
-        pass
-
-    def set_heater_refCoil(value):
-        pass
-
-    def set_heater_refTemp(value):
-        pass
+    @Slot(bool)
+    def set_heater_config(self, isOn: bool):
+        if isOn:
+            self.handler.ui.btnHeaterStart.setText("STOP")
+        else:
+            self.handler.ui.btnHeaterStart.setText("START")
+        msg = ""
+        msg += str(MSG_TYPE["FAN_CONF_MSG"])
+        msg += str(CONTROL_MSG["SET_FAN_CONFIG"])
+        # Controller type: 0-PID | 1-BANG BANG
+        msg += "0" if self.handler.ui.btnFanControllerSetPID.isChecked() else "1"
+        # BB set value: 0000 - 6000
+        msg += str(self.handler.ui.inFanBBSetValue.value()).zfill(4)
+        # BB hysteresis: 0000 - 6000
+        msg += str(self.handler.ui.inFanBBHysteresis.value()).zfill(4)
+        # PID set value: 0000 - 6000
+        msg += str(self.handler.ui.inFanPIDSetValue.value()).zfill(4)
+        # PID Kp: 000.00 - 100.00
+        Kp = self.handler.ui.inFanPID_Kp.value()
+        Kp = "%.2f"%(Kp)
+        for _ in range(0, 6 - len(Kp)):
+            Kp = '0' + Kp
+        msg += Kp
+        # PID Ki: 000.00 - 100.00
+        Ki = self.handler.ui.inFanPID_Ki.value()
+        Ki = "%.2f"%(Ki)
+        for _ in range(0, 6 - len(Ki)):
+            Ki = '0' + Ki
+        msg += Ki
+        # PID Kd: 000.00 - 100.00
+        Kd = self.handler.ui.inFanPID_Kd.value()
+        Kd = "%.2f"%(Kd)
+        for _ in range(0, 6 - len(Kd)):
+            Kd = '0' + Kd
+        msg += Kd
+        # PID Kaw: 000.00 - 100.00
+        Kaw = self.handler.ui.inFanPID_Kaw.value()
+        Kaw = "%.2f"%(Kaw)
+        for _ in range(0, 6 - len(Kaw)):
+            Kaw = '0' + Kaw
+        msg += Kaw
+        # ON/OFF : 0 - OFF | 1 - ON
+        msg += '1' if isOn else '0'
+        # 17/33R : 0 - COIL_B | 1 - COIL_A
+        msg += '0' if self.handler.ui.btnHeaterControllerSetHighPower.isChecked() else '1'
+        # LEFT/RIGHT: 
+        msg += '0' if self.handler.ui.btnHeaterControllerSetLeftCoil.isChecked() else '1'
+        # POWER: 000 - 100
+        msg += str(self.handler.ui.inHeaterBBPower.value()).zfill(3)
+        self.handler.serial.write_data(QByteArray(msg))
 
     # FAN GETTERS
-    def get_all_fan_data():
-        pass
-
     def handle_all_fan_data(self, data):
         data = data.split('_')[1:]
         self.handler.fanController.update_all({
@@ -228,9 +227,6 @@ class COM:
             "PID_MODE": int(data[22]),
         })
 
-    def get_fast_fan_data():
-        pass
-
     def handle_fast_fan_data(self, data):
         data = data.split('_')[1:]
         self.handler.fanController.update_fast({
@@ -248,9 +244,6 @@ class COM:
         })
 
     # HEATER GETTERS
-    def get_all_heater_data():
-        pass
-
     def handle_all_heater_data(self, data):
         data = data.split('_')[1:]
         self.handler.heaterController.update_all({
@@ -280,9 +273,6 @@ class COM:
             "PID_MODE": int(data[23]),
         })
     
-    def get_fast_heater_data():
-        pass
-
     def handle_fast_heater_data(self, data):
         data = data.split('_')[1:]
         self.handler.heaterController.update_fast({

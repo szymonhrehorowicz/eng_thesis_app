@@ -12,36 +12,28 @@ class HeaterBBGraph(Graph):
         self.controller = self.handler.heaterController
         self.controls = {
             "x(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterBB_graph_x,
+                "state": self.handler.ui.btnHeaterBB_graph_x.isChecked(),
             },
             "x_max(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterBB_graph_x_max,
+                "state": self.handler.ui.btnHeaterBB_graph_x_max.isChecked(),
             },
             "x_min(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterBB_graph_x_min,
+                "state": self.handler.ui.btnHeaterBB_graph_x_min.isChecked(),
             },
             "u_max(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterBB_graph_u_max,
+                "state": self.handler.ui.btnHeaterBB_graph_u_max.isChecked(),
             },
             "u_min(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterBB_graph_u_min,
+                "state": self.handler.ui.btnHeaterBB_graph_u_min.isChecked(),
             },
             "y_1(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterBB_graph_y_1,
+                "state": self.handler.ui.btnHeaterBB_graph_y_1.isChecked(),
             },
             "y_2(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterBB_graph_y_2,
+                "state": self.handler.ui.btnHeaterBB_graph_y_2.isChecked(),
             },
             "stan": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterBB_graph_mode,
+                "state": self.handler.ui.btnHeaterBB_graph_mode.isChecked(),
             }
         }
 

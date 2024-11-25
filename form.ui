@@ -55,6 +55,9 @@
          <property name="text">
           <string>Grzałka</string>
          </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -62,12 +65,18 @@
          <property name="text">
           <string>Wentylator</string>
          </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QPushButton" name="btnDataExport">
          <property name="text">
           <string>Eksport danych</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -88,6 +97,9 @@
         <widget class="QPushButton" name="btnHelp">
          <property name="text">
           <string>Pomoc</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -153,7 +165,7 @@
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_7">
+             <widget class="QPushButton" name="btnHeaterStart">
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
@@ -197,7 +209,7 @@
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_8">
+             <widget class="QPushButton" name="btnFanStart">
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
@@ -224,7 +236,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="pageHeaterControllerSelect">
            <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -453,7 +465,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="pageHeaterControllerConfigBB">
            <layout class="QHBoxLayout" name="horizontalLayout_2">

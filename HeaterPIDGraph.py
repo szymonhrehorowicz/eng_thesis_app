@@ -12,76 +12,58 @@ class HeaterPIDGraph(Graph):
         self.controller = self.handler.heaterController
         self.controls = {
             "x(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_x,
+                "state": self.handler.ui.btnHeaterPID_graph_x.isChecked(),
             },
             "e(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_e,
+                "state": self.handler.ui.btnHeaterPID_graph_e.isChecked(),
             },
             "int_e(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_int_e,
+                "state": self.handler.ui.btnHeaterPID_graph_int_e.isChecked(),
             },
             "aw_int_e(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_aw_int_e,
+                "state": self.handler.ui.btnHeaterPID_graph_aw_int_e.isChecked(),
             },
             "k_p(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_k_p,
+                "state": self.handler.ui.btnHeaterPID_graph_k_p.isChecked(),
             },
             "k_i(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_k_i,
+                "state": self.handler.ui.btnHeaterPID_graph_k_i.isChecked(),
             },
             "k_d(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_k_d,
+                "state": self.handler.ui.btnHeaterPID_graph_k_d.isChecked(),
             },
             "k_aw(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_k_aw,
+                "state": self.handler.ui.btnHeaterPID_graph_k_aw.isChecked(),
             },
             "u(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_u,
+                "state": self.handler.ui.btnHeaterPID_graph_u.isChecked(),
             },
             "u_sat(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_u_sat,
+                "state": self.handler.ui.btnHeaterPID_graph_u_sat.isChecked(),
             },
             "u_p(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_u_p,
+                "state": self.handler.ui.btnHeaterPID_graph_u_p.isChecked(),
             },
             "u_i(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_u_i,
+                "state": self.handler.ui.btnHeaterPID_graph_u_i.isChecked(),
             },
             "u_d(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_u_d,
+                "state": self.handler.ui.btnHeaterPID_graph_u_d.isChecked(),
             },
             "u_max(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_u_max,
+                "state": self.handler.ui.btnHeaterPID_graph_u_max.isChecked(),
             },
             "u_min(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_u_min,
+                "state": self.handler.ui.btnHeaterPID_graph_u_min.isChecked(),
             },
             "y_1(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_y_1,
+                "state": self.handler.ui.btnHeaterPID_graph_y_1.isChecked(),
             },
             "y_2(t)": {
-                "state": True,
-                "handler": self.handler.ui.btnHeaterPID_graph_y_2,
+                "state": self.handler.ui.btnHeaterPID_graph_y_2.isChecked(),
             },
             "stan": {
-                "state": True,
-                "handelr": self.handler.ui.btnHeaterPID_graph_mode,
+                "state": self.handler.ui.btnHeaterPID_graph_mode.isChecked(),
             }
         }
 
