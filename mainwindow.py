@@ -19,6 +19,7 @@ from FanBBGraph import FanBBGraph
 from FanPIDGraph import FanPIDGraph
 from HeaterBBGraph import HeaterBBGraph
 from HeaterPIDGraph import HeaterPIDGraph
+import rc_resources
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -154,10 +155,23 @@ class MainWindow(QMainWindow):
         self.ui.btnHeaterStart.clicked.connect(self.COM.set_heater_config)
         self.ui.btnFanStart.clicked.connect(self.COM.set_fan_config)
 
+        # Graph controls
+        self.isFanBB_graph_running = True
+        self.ui.btnFanBB_graph_Stop.clicked.connect(self.mainMenuHandler.stop_fan_bb_graph)
+        self.ui.btnFanBB_graph_Clear.clicked.connect(self.mainMenuHandler.clear_fan_bb_graph)
+        self.isFanPID_graph_running = True
+        self.ui.btnFanPID_graph_Stop.clicked.connect(self.mainMenuHandler.stop_fan_pid_graph)
+        self.ui.btnFanPID_graph_Clear.clicked.connect(self.mainMenuHandler.clear_fan_pid_graph)
+        self.isHeaterBB_graph_running = True
+        self.ui.btnHeaterBB_graph_Stop.clicked.connect(self.mainMenuHandler.stop_heater_bb_graph)
+        self.ui.btnHeaterBB_graph_Clear.clicked.connect(self.mainMenuHandler.clear_heater_bb_graph)
+        self.isHeaterPID_graph_running = True
+        self.ui.btnHeaterPID_graph_Stop.clicked.connect(self.mainMenuHandler.stop_heater_pid_graph)
+        self.ui.btnHeaterPID_graph_Clear.clicked.connect(self.mainMenuHandler.clear_heater_pid_graph)
+
         if is_connected():
             self.ui.fanEquation.addWidget(self.fanPIDequationwebView)
             self.ui.heaterEquation.addWidget(self.heaterPIDequationwebView)
-
 
         self.timer = QTimer()
         self.timer.setInterval(100)
@@ -166,13 +180,13 @@ class MainWindow(QMainWindow):
 
     def tim_100ms_IRS(self):
         current_window = self.ui.stackGraphs.currentIndex()
-        if current_window == INDICES["heater_bb"]:
+        if (current_window == INDICES["heater_bb"]) and self.isHeaterBB_graph_running:
             self.heaterBBgraph.update_graph()
-        elif current_window == INDICES["heater_pid"]:
+        elif (current_window == INDICES["heater_pid"]) and self.isHeaterPID_graph_running:
             self.heaterPIDgraph.update_graph()
-        elif current_window == INDICES["fan_bb"]:
+        elif (current_window == INDICES["fan_bb"]) and self.isFanBB_graph_running:
             self.fanBBgraph.update_graph()
-        elif current_window == INDICES["fan_pid"]:
+        elif (current_window == INDICES["fan_pid"]) and self.isFanPID_graph_running:
             self.fanPIDgraph.update_graph()
         
         

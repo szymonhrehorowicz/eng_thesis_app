@@ -34,7 +34,7 @@ class Graph:
         # Plot lines
         for idx, signal in enumerate(signals):
             if self.controls[self.keys[idx]]["state"]:
-                self.ax.plot(t, signal, label=self.keys[idx], marker='.')
+                self.ax.plot(t, signal, label=self.keys[idx], marker='')
         if any([self.controls[key]["state"] for key in self.keys]):
             self.ax.legend(loc="lower left")
         self.ax.set_xlabel('t, s')  # Label x-axis

@@ -3,16 +3,19 @@ import time
 
 class FanController:
     def __init__(self):
-        self.t0 = 0
-        self.time = []
         # BB
+        self.t0_bb = 0
+        self.bb_time = []
         self.bb_set_value = []
         self.bb_threshold_top = []
         self.bb_threshold_bottom = []
         self.bb_u_max = []
         self.bb_u_min = []
+        self.bb_speed = []
         self.bb_mode = []
         # PID
+        self.t0_pid = 0
+        self.pid_time = []
         self.pid_set_value = []
         self.pid_error = []
         self.pid_int_error = []
@@ -32,17 +35,23 @@ class FanController:
         self.pid_mode = []
 
     def update_all(self, data):
-        if self.t0 == 0:
-            self.t0 = time.time()
-            self.time.append(0)
+        if self.t0_bb == 0:
+            self.t0_bb = time.time()
+            self.bb_time.append(0)
         else:
-            self.time.append(time.time() - self.t0)
+            self.bb_time.append(time.time() - self.t0_bb)
+        if self.t0_pid == 0:
+            self.t0_pid = time.time()
+            self.pid_time.append(0)
+        else:
+            self.pid_time.append(time.time() - self.t0_pid)
         # BB
         self.bb_set_value.append(data["BB_SET_VALUE"])
         self.bb_threshold_top.append(data["BB_THRESHOLD_TOP"])
         self.bb_threshold_bottom.append(data["BB_THRESHOLD_BOTTOM"])
         self.bb_u_max.append(data["BB_U_MAX"])
         self.bb_u_min.append(data["BB_U_MIN"])
+        self.bb_speed.append(data["PID_SPEED"])
         self.bb_mode.append(data["BB_CMD"])
         # PID
         self.pid_set_value.append(data["PID_SET_VALUE"])
@@ -64,17 +73,23 @@ class FanController:
         self.pid_mode.append(data["PID_MODE"])
 
     def update_fast(self, data):
-        if self.t0 == 0:
-            self.t0 = time.time()
-            self.time.append(0)
+        if self.t0_bb == 0:
+            self.t0_bb = time.time()
+            self.bb_time.append(0)
         else:
-            self.time.append(time.time() - self.t0)
+            self.bb_time.append(time.time() - self.t0_bb)
+        if self.t0_pid == 0:
+            self.t0_pid = time.time()
+            self.pid_time.append(0)
+        else:
+            self.pid_time.append(time.time() - self.t0_pid)
         # BB
         self.bb_set_value.append(self.bb_set_value[-1])
         self.bb_threshold_top.append(self.bb_threshold_top[-1])
         self.bb_threshold_bottom.append(self.bb_threshold_bottom[-1])
         self.bb_u_max.append(self.bb_u_max[-1])
         self.bb_u_min.append(self.bb_u_min[-1])
+        self.bb_speed.append(data["PID_SPEED"])
         self.bb_mode.append(data["BB_CMD"])
         # PID
         self.pid_set_value.append(self.pid_set_value[-1])
@@ -94,3 +109,35 @@ class FanController:
         self.pid_u_min.append(self.pid_u_min[-1])
         self.pid_speed.append(data["PID_SPEED"])
         self.pid_mode.append(data["PID_MODE"])
+
+    def clear_bb(self):
+        self.t0_bb = 0
+        self.bb_time = []
+        self.bb_set_value = []
+        self.bb_threshold_top = []
+        self.bb_threshold_bottom = []
+        self.bb_u_max = []
+        self.bb_u_min = []
+        self.bb_speed = []
+        self.bb_mode = []
+
+    def clear_pid(self):
+        self.t0_pid = 0
+        self.pid_time = []
+        self.pid_set_value = []
+        self.pid_error = []
+        self.pid_int_error = []
+        self.pid_aw_int_error = []
+        self.pid_kp = []
+        self.pid_ki = []
+        self.pid_kd = []
+        self.pid_kaw = []
+        self.pid_u = []
+        self.pid_u_saturated = []
+        self.pid_u_p = []
+        self.pid_u_i = []
+        self.pid_u_d = []
+        self.pid_u_max = []
+        self.pid_u_min = []
+        self.pid_speed = []
+        self.pid_mode = []

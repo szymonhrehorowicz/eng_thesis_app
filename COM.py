@@ -154,36 +154,36 @@ class COM:
         else:
             self.handler.ui.btnHeaterStart.setText("START")
         msg = ""
-        msg += str(MSG_TYPE["FAN_CONF_MSG"])
-        msg += str(CONTROL_MSG["SET_FAN_CONFIG"])
+        msg += str(MSG_TYPE["COIL_CONF_MSG"])
+        msg += str(CONTROL_MSG["SET_HEATER_CONFIG"])
         # Controller type: 0-PID | 1-BANG BANG
-        msg += "0" if self.handler.ui.btnFanControllerSetPID.isChecked() else "1"
+        msg += "0" if self.handler.ui.btnHeaterControllerSetPID.isChecked() else "1"
         # BB set value: 0000 - 6000
-        msg += str(self.handler.ui.inFanBBSetValue.value()).zfill(4)
+        msg += str(self.handler.ui.inHeaterBBSetValue.value()).zfill(4)
         # BB hysteresis: 0000 - 6000
-        msg += str(self.handler.ui.inFanBBHysteresis.value()).zfill(4)
+        msg += str(self.handler.ui.inHeaterBBHysteresis.value()).zfill(4)
         # PID set value: 0000 - 6000
-        msg += str(self.handler.ui.inFanPIDSetValue.value()).zfill(4)
+        msg += str(self.handler.ui.inHeaterPIDSetValue.value()).zfill(4)
         # PID Kp: 000.00 - 100.00
-        Kp = self.handler.ui.inFanPID_Kp.value()
+        Kp = self.handler.ui.inHeaterPID_Kp.value()
         Kp = "%.2f"%(Kp)
         for _ in range(0, 6 - len(Kp)):
             Kp = '0' + Kp
         msg += Kp
         # PID Ki: 000.00 - 100.00
-        Ki = self.handler.ui.inFanPID_Ki.value()
+        Ki = self.handler.ui.inHeaterPID_Ki.value()
         Ki = "%.2f"%(Ki)
         for _ in range(0, 6 - len(Ki)):
             Ki = '0' + Ki
         msg += Ki
         # PID Kd: 000.00 - 100.00
-        Kd = self.handler.ui.inFanPID_Kd.value()
+        Kd = self.handler.ui.inHeaterPID_Kd.value()
         Kd = "%.2f"%(Kd)
         for _ in range(0, 6 - len(Kd)):
             Kd = '0' + Kd
         msg += Kd
         # PID Kaw: 000.00 - 100.00
-        Kaw = self.handler.ui.inFanPID_Kaw.value()
+        Kaw = self.handler.ui.inHeaterPID_Kaw.value()
         Kaw = "%.2f"%(Kaw)
         for _ in range(0, 6 - len(Kaw)):
             Kaw = '0' + Kaw
@@ -196,6 +196,7 @@ class COM:
         msg += '0' if self.handler.ui.btnHeaterControllerSetLeftCoil.isChecked() else '1'
         # POWER: 000 - 100
         msg += str(self.handler.ui.inHeaterBBPower.value()).zfill(3)
+        msg += '\n'
         self.handler.serial.write_data(QByteArray(msg))
 
     # FAN GETTERS

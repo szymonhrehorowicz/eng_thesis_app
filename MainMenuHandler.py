@@ -1,5 +1,7 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtCore import Slot
+from PySide6.QtCore import Slot, QSize
+from PySide6.QtGui import QIcon
+import rc_resources
 
 INDICES = {
     "controls": 0,
@@ -16,6 +18,10 @@ INDICES = {
 class MainMenuHandler:
     def __init__(self, handler):
         self.handler = handler
+        self.playIcon = QIcon()
+        self.pauseIcon = QIcon()
+        self.playIcon.addFile(u":/assets/assets/play.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.pauseIcon.addFile(u":/assets/assets/pause.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
 
     # MAIN MENU
     @Slot()
@@ -126,3 +132,43 @@ class MainMenuHandler:
         self.handler.ui.btnFanControllerSetBB.setChecked(False)
         self.handler.ui.stackController.setCurrentIndex(INDICES["fan_pid"])
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["fan_pid"])
+
+    @Slot(bool)
+    def stop_fan_bb_graph(self, state):
+        self.handler.ui.btnFanBB_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
+        self.handler.isFanBB_graph_running = not state
+
+    @Slot(bool)
+    def stop_fan_pid_graph(self, state):
+        self.handler.ui.btnFanPID_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
+        self.handler.isFanPID_graph_running = not state
+
+    @Slot(bool)
+    def stop_heater_bb_graph(self, state):
+        self.handler.ui.btnHeaterBB_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
+        self.handler.isHeaterBB_graph_running = not state
+
+    @Slot(bool)
+    def stop_heater_pid_graph(self, state):
+        self.handler.ui.btnHeaterPID_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
+        self.handler.isHeaterPID_graph_running = not state
+
+    @Slot()
+    def clear_fan_bb_graph(self):
+        self.handler.fanController.clear_bb()
+        self.handler.fanBBgraph.update_graph()
+
+    @Slot()
+    def clear_fan_pid_graph(self):
+        self.handler.fanController.clear_pid()
+        self.handler.fanPIDgraph.update_graph()
+
+    @Slot()
+    def clear_heater_bb_graph(self):
+        self.handler.heaterController.clear_bb()
+        self.handler.heaterBBgraph.update_graph()
+
+    @Slot()
+    def clear_heater_pid_graph(self):
+        self.handler.heaterController.clear_pid()
+        self.handler.heaterPIDgraph.update_graph()

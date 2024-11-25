@@ -20,6 +20,7 @@
         "FanPIDGraph.py",
         "HeaterBBGraph.py",
         "HeaterPIDGraph.py",
-        "StackedWidget.py"
+        "StackedWidget.py",
+        "Export.py"
     ]
 }

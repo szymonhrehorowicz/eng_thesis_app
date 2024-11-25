@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/assets">
         <file alias="template">assets/template.html</file>
+        <file>assets/pause.ico</file>
+        <file>assets/play.ico</file>
+        <file>assets/broom.ico</file>
+        <file>assets/controller.ico</file>
     </qresource>
 </RCC>
