@@ -4,6 +4,13 @@
         <file>assets/pause.ico</file>
         <file>assets/play.ico</file>
         <file>assets/broom.ico</file>
-        <file>assets/controller.ico</file>
+        <file>assets/uC.ico</file>
+        <file>assets/alert.ico</file>
+        <file>assets/oscilloscope.ico</file>
+        <file>assets/success.ico</file>
+        <file>assets/export.ico</file>
+        <file>assets/help.ico</file>
+        <file>assets/fan.ico</file>
+        <file>assets/heater.ico</file>
     </qresource>
 </RCC>

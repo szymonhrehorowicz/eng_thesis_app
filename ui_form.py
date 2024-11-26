@@ -31,11 +31,12 @@ class Ui_MainWindow(object):
         MainWindow.setWindowModality(Qt.NonModal)
         MainWindow.resize(1212, 800)
         icon = QIcon()
-        icon.addFile(u":/assets/assets/controller.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/assets/assets/oscilloscope.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet(u"")
         MainWindow.setLocale(QLocale(QLocale.Polish, QLocale.Poland))
+        MainWindow.setIconSize(QSize(40, 40))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
@@ -48,7 +49,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.btnConnect = QPushButton(self.menubar)
         self.btnConnect.setObjectName(u"btnConnect")
+        self.btnConnect.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btnConnect.setStyleSheet(u"")
+        icon1 = QIcon()
+        icon1.addFile(u":/assets/assets/uC.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnConnect.setIcon(icon1)
         self.btnConnect.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnConnect)
@@ -67,18 +72,30 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.btnHeaterControls.sizePolicy().hasHeightForWidth())
         self.btnHeaterControls.setSizePolicy(sizePolicy)
+        self.btnHeaterControls.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon2 = QIcon()
+        icon2.addFile(u":/assets/assets/heater.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnHeaterControls.setIcon(icon2)
         self.btnHeaterControls.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnHeaterControls)
 
         self.btnFanControls = QPushButton(self.menubar)
         self.btnFanControls.setObjectName(u"btnFanControls")
+        self.btnFanControls.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon3 = QIcon()
+        icon3.addFile(u":/assets/assets/fan.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnFanControls.setIcon(icon3)
         self.btnFanControls.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnFanControls)
 
         self.btnDataExport = QPushButton(self.menubar)
         self.btnDataExport.setObjectName(u"btnDataExport")
+        self.btnDataExport.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon4 = QIcon()
+        icon4.addFile(u":/assets/assets/export.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnDataExport.setIcon(icon4)
         self.btnDataExport.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnDataExport)
@@ -89,6 +106,10 @@ class Ui_MainWindow(object):
 
         self.btnHelp = QPushButton(self.menubar)
         self.btnHelp.setObjectName(u"btnHelp")
+        self.btnHelp.setCursor(QCursor(Qt.CursorShape.WhatsThisCursor))
+        icon5 = QIcon()
+        icon5.addFile(u":/assets/assets/help.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnHelp.setIcon(icon5)
         self.btnHelp.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnHelp)
@@ -990,9 +1011,9 @@ class Ui_MainWindow(object):
 
         self.btnHeaterBB_graph_Stop = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_Stop.setObjectName(u"btnHeaterBB_graph_Stop")
-        icon1 = QIcon()
-        icon1.addFile(u":/assets/assets/pause.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnHeaterBB_graph_Stop.setIcon(icon1)
+        icon6 = QIcon()
+        icon6.addFile(u":/assets/assets/pause.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnHeaterBB_graph_Stop.setIcon(icon6)
         self.btnHeaterBB_graph_Stop.setCheckable(True)
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Stop, 0, 9, 1, 1)
@@ -1020,9 +1041,9 @@ class Ui_MainWindow(object):
 
         self.btnHeaterBB_graph_Clear = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_Clear.setObjectName(u"btnHeaterBB_graph_Clear")
-        icon2 = QIcon()
-        icon2.addFile(u":/assets/assets/broom.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnHeaterBB_graph_Clear.setIcon(icon2)
+        icon7 = QIcon()
+        icon7.addFile(u":/assets/assets/broom.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnHeaterBB_graph_Clear.setIcon(icon7)
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Clear, 1, 9, 1, 1)
 
@@ -1102,7 +1123,7 @@ class Ui_MainWindow(object):
 
         self.btnHeaterPID_graph_Stop = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_Stop.setObjectName(u"btnHeaterPID_graph_Stop")
-        self.btnHeaterPID_graph_Stop.setIcon(icon1)
+        self.btnHeaterPID_graph_Stop.setIcon(icon6)
         self.btnHeaterPID_graph_Stop.setCheckable(True)
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_Stop, 0, 10, 1, 1)
@@ -1172,7 +1193,7 @@ class Ui_MainWindow(object):
 
         self.btnHeaterPID_graph_Clear = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_Clear.setObjectName(u"btnHeaterPID_graph_Clear")
-        self.btnHeaterPID_graph_Clear.setIcon(icon2)
+        self.btnHeaterPID_graph_Clear.setIcon(icon7)
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_Clear, 2, 10, 1, 1)
 
@@ -1245,7 +1266,7 @@ class Ui_MainWindow(object):
 
         self.btnFanBB_graph_Clear = QPushButton(self.frame_27)
         self.btnFanBB_graph_Clear.setObjectName(u"btnFanBB_graph_Clear")
-        self.btnFanBB_graph_Clear.setIcon(icon2)
+        self.btnFanBB_graph_Clear.setIcon(icon7)
 
         self.gridLayout_3.addWidget(self.btnFanBB_graph_Clear, 1, 8, 1, 1)
 
@@ -1258,7 +1279,7 @@ class Ui_MainWindow(object):
 
         self.btnFanBB_graph_Stop = QPushButton(self.frame_27)
         self.btnFanBB_graph_Stop.setObjectName(u"btnFanBB_graph_Stop")
-        self.btnFanBB_graph_Stop.setIcon(icon1)
+        self.btnFanBB_graph_Stop.setIcon(icon6)
         self.btnFanBB_graph_Stop.setCheckable(True)
 
         self.gridLayout_3.addWidget(self.btnFanBB_graph_Stop, 0, 8, 1, 1)
@@ -1395,13 +1416,13 @@ class Ui_MainWindow(object):
 
         self.btnFanPID_graph_Clear = QPushButton(self.frame_28)
         self.btnFanPID_graph_Clear.setObjectName(u"btnFanPID_graph_Clear")
-        self.btnFanPID_graph_Clear.setIcon(icon2)
+        self.btnFanPID_graph_Clear.setIcon(icon7)
 
         self.gridLayout.addWidget(self.btnFanPID_graph_Clear, 3, 10, 1, 1)
 
         self.btnFanPID_graph_Stop = QPushButton(self.frame_28)
         self.btnFanPID_graph_Stop.setObjectName(u"btnFanPID_graph_Stop")
-        self.btnFanPID_graph_Stop.setIcon(icon1)
+        self.btnFanPID_graph_Stop.setIcon(icon6)
         self.btnFanPID_graph_Stop.setCheckable(True)
 
         self.gridLayout.addWidget(self.btnFanPID_graph_Stop, 0, 10, 1, 1)
@@ -1497,6 +1518,7 @@ class Ui_MainWindow(object):
         font4.setPointSize(12)
         font4.setBold(False)
         self.chxExHeaterBB.setFont(font4)
+        self.chxExHeaterBB.setChecked(True)
 
         self.verticalLayout_12.addWidget(self.chxExHeaterBB)
 
@@ -1515,41 +1537,49 @@ class Ui_MainWindow(object):
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.chxExHeaterBB_u_min = QCheckBox(self.frame_35)
         self.chxExHeaterBB_u_min.setObjectName(u"chxExHeaterBB_u_min")
+        self.chxExHeaterBB_u_min.setChecked(True)
 
         self.gridLayout_6.addWidget(self.chxExHeaterBB_u_min, 1, 1, 1, 1)
 
         self.chxExHeaterBB_x_max = QCheckBox(self.frame_35)
         self.chxExHeaterBB_x_max.setObjectName(u"chxExHeaterBB_x_max")
+        self.chxExHeaterBB_x_max.setChecked(True)
 
         self.gridLayout_6.addWidget(self.chxExHeaterBB_x_max, 1, 0, 1, 1)
 
         self.chxExHeaterBB_u_max = QCheckBox(self.frame_35)
         self.chxExHeaterBB_u_max.setObjectName(u"chxExHeaterBB_u_max")
+        self.chxExHeaterBB_u_max.setChecked(True)
 
         self.gridLayout_6.addWidget(self.chxExHeaterBB_u_max, 0, 1, 1, 1)
 
         self.chxExHeaterBB_x_min = QCheckBox(self.frame_35)
         self.chxExHeaterBB_x_min.setObjectName(u"chxExHeaterBB_x_min")
+        self.chxExHeaterBB_x_min.setChecked(True)
 
         self.gridLayout_6.addWidget(self.chxExHeaterBB_x_min, 2, 0, 1, 1)
 
         self.chxExHeaterBB_y_1 = QCheckBox(self.frame_35)
         self.chxExHeaterBB_y_1.setObjectName(u"chxExHeaterBB_y_1")
+        self.chxExHeaterBB_y_1.setChecked(True)
 
         self.gridLayout_6.addWidget(self.chxExHeaterBB_y_1, 3, 0, 1, 1)
 
         self.chxExHeaterBB_x = QCheckBox(self.frame_35)
         self.chxExHeaterBB_x.setObjectName(u"chxExHeaterBB_x")
+        self.chxExHeaterBB_x.setChecked(True)
 
         self.gridLayout_6.addWidget(self.chxExHeaterBB_x, 0, 0, 1, 1)
 
         self.chxExHeaterBB_y_2 = QCheckBox(self.frame_35)
         self.chxExHeaterBB_y_2.setObjectName(u"chxExHeaterBB_y_2")
+        self.chxExHeaterBB_y_2.setChecked(True)
 
         self.gridLayout_6.addWidget(self.chxExHeaterBB_y_2, 4, 0, 1, 1)
 
         self.chxExHeaterBB_mode = QCheckBox(self.frame_35)
         self.chxExHeaterBB_mode.setObjectName(u"chxExHeaterBB_mode")
+        self.chxExHeaterBB_mode.setChecked(True)
 
         self.gridLayout_6.addWidget(self.chxExHeaterBB_mode, 4, 1, 1, 1)
 
@@ -1559,6 +1589,7 @@ class Ui_MainWindow(object):
         self.chxExHeaterPID = QCheckBox(self.frame_33)
         self.chxExHeaterPID.setObjectName(u"chxExHeaterPID")
         self.chxExHeaterPID.setFont(font4)
+        self.chxExHeaterPID.setChecked(True)
 
         self.verticalLayout_12.addWidget(self.chxExHeaterPID)
 
@@ -1577,91 +1608,109 @@ class Ui_MainWindow(object):
         self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.chxExHeaterPID_aw_int_e = QCheckBox(self.frame_36)
         self.chxExHeaterPID_aw_int_e.setObjectName(u"chxExHeaterPID_aw_int_e")
+        self.chxExHeaterPID_aw_int_e.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_aw_int_e, 3, 0, 1, 1)
 
         self.chxExHeaterPID_k_i = QCheckBox(self.frame_36)
         self.chxExHeaterPID_k_i.setObjectName(u"chxExHeaterPID_k_i")
+        self.chxExHeaterPID_k_i.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_k_i, 5, 0, 1, 1)
 
         self.chxExHeaterPID_x = QCheckBox(self.frame_36)
         self.chxExHeaterPID_x.setObjectName(u"chxExHeaterPID_x")
+        self.chxExHeaterPID_x.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_x, 0, 0, 1, 1)
 
         self.chxExHeaterPID_mode = QCheckBox(self.frame_36)
         self.chxExHeaterPID_mode.setObjectName(u"chxExHeaterPID_mode")
+        self.chxExHeaterPID_mode.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_mode, 8, 0, 1, 1)
 
         self.chxExHeaterPID_k_d = QCheckBox(self.frame_36)
         self.chxExHeaterPID_k_d.setObjectName(u"chxExHeaterPID_k_d")
+        self.chxExHeaterPID_k_d.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_k_d, 6, 0, 1, 1)
 
         self.chxExHeaterPID_int_e = QCheckBox(self.frame_36)
         self.chxExHeaterPID_int_e.setObjectName(u"chxExHeaterPID_int_e")
+        self.chxExHeaterPID_int_e.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_int_e, 2, 0, 1, 1)
 
         self.chxExHeaterPID_e = QCheckBox(self.frame_36)
         self.chxExHeaterPID_e.setObjectName(u"chxExHeaterPID_e")
+        self.chxExHeaterPID_e.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_e, 1, 0, 1, 1)
 
         self.chxExHeaterPID_k_aw = QCheckBox(self.frame_36)
         self.chxExHeaterPID_k_aw.setObjectName(u"chxExHeaterPID_k_aw")
+        self.chxExHeaterPID_k_aw.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_k_aw, 7, 0, 1, 1)
 
         self.chxExHeaterPID_k_p = QCheckBox(self.frame_36)
         self.chxExHeaterPID_k_p.setObjectName(u"chxExHeaterPID_k_p")
+        self.chxExHeaterPID_k_p.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_k_p, 4, 0, 1, 1)
 
         self.chxExHeaterPID_u_p = QCheckBox(self.frame_36)
         self.chxExHeaterPID_u_p.setObjectName(u"chxExHeaterPID_u_p")
+        self.chxExHeaterPID_u_p.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_u_p, 2, 1, 1, 1)
 
         self.chxExHeaterPID_u_i = QCheckBox(self.frame_36)
         self.chxExHeaterPID_u_i.setObjectName(u"chxExHeaterPID_u_i")
+        self.chxExHeaterPID_u_i.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_u_i, 3, 1, 1, 1)
 
         self.chxExHeaterPID_u_sat = QCheckBox(self.frame_36)
         self.chxExHeaterPID_u_sat.setObjectName(u"chxExHeaterPID_u_sat")
+        self.chxExHeaterPID_u_sat.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_u_sat, 1, 1, 1, 1)
 
         self.chxExHeaterPID_u = QCheckBox(self.frame_36)
         self.chxExHeaterPID_u.setObjectName(u"chxExHeaterPID_u")
+        self.chxExHeaterPID_u.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_u, 0, 1, 1, 1)
 
         self.chxExHeaterPID_u_d = QCheckBox(self.frame_36)
         self.chxExHeaterPID_u_d.setObjectName(u"chxExHeaterPID_u_d")
+        self.chxExHeaterPID_u_d.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_u_d, 4, 1, 1, 1)
 
         self.chxExHeaterPID_u_max = QCheckBox(self.frame_36)
         self.chxExHeaterPID_u_max.setObjectName(u"chxExHeaterPID_u_max")
+        self.chxExHeaterPID_u_max.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_u_max, 5, 1, 1, 1)
 
         self.chxExHeaterPID_u_min = QCheckBox(self.frame_36)
         self.chxExHeaterPID_u_min.setObjectName(u"chxExHeaterPID_u_min")
+        self.chxExHeaterPID_u_min.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_u_min, 6, 1, 1, 1)
 
         self.chxExHeaterPID_y_1 = QCheckBox(self.frame_36)
         self.chxExHeaterPID_y_1.setObjectName(u"chxExHeaterPID_y_1")
+        self.chxExHeaterPID_y_1.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_y_1, 7, 1, 1, 1)
 
         self.chxExHeaterPID_y_2 = QCheckBox(self.frame_36)
         self.chxExHeaterPID_y_2.setObjectName(u"chxExHeaterPID_y_2")
+        self.chxExHeaterPID_y_2.setChecked(True)
 
         self.gridLayout_7.addWidget(self.chxExHeaterPID_y_2, 8, 1, 1, 1)
 
@@ -1690,6 +1739,7 @@ class Ui_MainWindow(object):
         self.chxExFanBB = QCheckBox(self.frame_34)
         self.chxExFanBB.setObjectName(u"chxExFanBB")
         self.chxExFanBB.setFont(font4)
+        self.chxExFanBB.setChecked(True)
 
         self.verticalLayout_13.addWidget(self.chxExFanBB)
 
@@ -1708,36 +1758,43 @@ class Ui_MainWindow(object):
         self.gridLayout_8.setObjectName(u"gridLayout_8")
         self.chxExFanBB_mode = QCheckBox(self.frame_37)
         self.chxExFanBB_mode.setObjectName(u"chxExFanBB_mode")
+        self.chxExFanBB_mode.setChecked(True)
 
         self.gridLayout_8.addWidget(self.chxExFanBB_mode, 3, 1, 1, 1)
 
         self.chxExFanBB_x_max = QCheckBox(self.frame_37)
         self.chxExFanBB_x_max.setObjectName(u"chxExFanBB_x_max")
+        self.chxExFanBB_x_max.setChecked(True)
 
         self.gridLayout_8.addWidget(self.chxExFanBB_x_max, 1, 0, 1, 1)
 
         self.chxExFanBB_u_min = QCheckBox(self.frame_37)
         self.chxExFanBB_u_min.setObjectName(u"chxExFanBB_u_min")
+        self.chxExFanBB_u_min.setChecked(True)
 
         self.gridLayout_8.addWidget(self.chxExFanBB_u_min, 1, 1, 1, 1)
 
         self.chxExFanBB_x = QCheckBox(self.frame_37)
         self.chxExFanBB_x.setObjectName(u"chxExFanBB_x")
+        self.chxExFanBB_x.setChecked(True)
 
         self.gridLayout_8.addWidget(self.chxExFanBB_x, 0, 0, 1, 1)
 
         self.chxExFanBB_y = QCheckBox(self.frame_37)
         self.chxExFanBB_y.setObjectName(u"chxExFanBB_y")
+        self.chxExFanBB_y.setChecked(True)
 
         self.gridLayout_8.addWidget(self.chxExFanBB_y, 3, 0, 1, 1)
 
         self.chxExFanBB_x_min = QCheckBox(self.frame_37)
         self.chxExFanBB_x_min.setObjectName(u"chxExFanBB_x_min")
+        self.chxExFanBB_x_min.setChecked(True)
 
         self.gridLayout_8.addWidget(self.chxExFanBB_x_min, 2, 0, 1, 1)
 
         self.chxExFanBB_u_max = QCheckBox(self.frame_37)
         self.chxExFanBB_u_max.setObjectName(u"chxExFanBB_u_max")
+        self.chxExFanBB_u_max.setChecked(True)
 
         self.gridLayout_8.addWidget(self.chxExFanBB_u_max, 0, 1, 1, 1)
 
@@ -1747,6 +1804,7 @@ class Ui_MainWindow(object):
         self.chxExFanPID = QCheckBox(self.frame_34)
         self.chxExFanPID.setObjectName(u"chxExFanPID")
         self.chxExFanPID.setFont(font4)
+        self.chxExFanPID.setChecked(True)
 
         self.verticalLayout_13.addWidget(self.chxExFanPID)
 
@@ -1765,86 +1823,103 @@ class Ui_MainWindow(object):
         self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.chxExFanPID_x = QCheckBox(self.frame_38)
         self.chxExFanPID_x.setObjectName(u"chxExFanPID_x")
+        self.chxExFanPID_x.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_x, 0, 0, 1, 1)
 
         self.chxExFanPID_u = QCheckBox(self.frame_38)
         self.chxExFanPID_u.setObjectName(u"chxExFanPID_u")
+        self.chxExFanPID_u.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_u, 0, 1, 1, 1)
 
         self.chxExFanPID_e = QCheckBox(self.frame_38)
         self.chxExFanPID_e.setObjectName(u"chxExFanPID_e")
+        self.chxExFanPID_e.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_e, 1, 0, 1, 1)
 
         self.chxExFanPID_u_sat = QCheckBox(self.frame_38)
         self.chxExFanPID_u_sat.setObjectName(u"chxExFanPID_u_sat")
+        self.chxExFanPID_u_sat.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_u_sat, 1, 1, 1, 1)
 
         self.chxExFanPID_int_e = QCheckBox(self.frame_38)
         self.chxExFanPID_int_e.setObjectName(u"chxExFanPID_int_e")
+        self.chxExFanPID_int_e.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_int_e, 2, 0, 1, 1)
 
         self.chxExFanPID_u_p = QCheckBox(self.frame_38)
         self.chxExFanPID_u_p.setObjectName(u"chxExFanPID_u_p")
+        self.chxExFanPID_u_p.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_u_p, 2, 1, 1, 1)
 
         self.chxExFanPID_aw_int_e = QCheckBox(self.frame_38)
         self.chxExFanPID_aw_int_e.setObjectName(u"chxExFanPID_aw_int_e")
+        self.chxExFanPID_aw_int_e.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_aw_int_e, 3, 0, 1, 1)
 
         self.chxExFanPID_u_i = QCheckBox(self.frame_38)
         self.chxExFanPID_u_i.setObjectName(u"chxExFanPID_u_i")
+        self.chxExFanPID_u_i.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_u_i, 3, 1, 1, 1)
 
         self.chxExFanPID_k_p = QCheckBox(self.frame_38)
         self.chxExFanPID_k_p.setObjectName(u"chxExFanPID_k_p")
+        self.chxExFanPID_k_p.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_k_p, 4, 0, 1, 1)
 
         self.chxExFanPID_u_d = QCheckBox(self.frame_38)
         self.chxExFanPID_u_d.setObjectName(u"chxExFanPID_u_d")
+        self.chxExFanPID_u_d.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_u_d, 4, 1, 1, 1)
 
         self.chxExFanPID_k_i = QCheckBox(self.frame_38)
         self.chxExFanPID_k_i.setObjectName(u"chxExFanPID_k_i")
+        self.chxExFanPID_k_i.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_k_i, 5, 0, 1, 1)
 
         self.chxExFanPID_u_max = QCheckBox(self.frame_38)
         self.chxExFanPID_u_max.setObjectName(u"chxExFanPID_u_max")
+        self.chxExFanPID_u_max.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_u_max, 5, 1, 1, 1)
 
         self.chxExFanPID_k_d = QCheckBox(self.frame_38)
         self.chxExFanPID_k_d.setObjectName(u"chxExFanPID_k_d")
+        self.chxExFanPID_k_d.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_k_d, 6, 0, 1, 1)
 
         self.chxExFanPID_u_min = QCheckBox(self.frame_38)
         self.chxExFanPID_u_min.setObjectName(u"chxExFanPID_u_min")
+        self.chxExFanPID_u_min.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_u_min, 6, 1, 1, 1)
 
         self.chxExFanPID_k_aw = QCheckBox(self.frame_38)
         self.chxExFanPID_k_aw.setObjectName(u"chxExFanPID_k_aw")
+        self.chxExFanPID_k_aw.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_k_aw, 7, 0, 1, 1)
 
         self.chxExFanPID_y = QCheckBox(self.frame_38)
         self.chxExFanPID_y.setObjectName(u"chxExFanPID_y")
+        self.chxExFanPID_y.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_y, 7, 1, 1, 1)
 
         self.chxExFanPID_mode = QCheckBox(self.frame_38)
         self.chxExFanPID_mode.setObjectName(u"chxExFanPID_mode")
+        self.chxExFanPID_mode.setChecked(True)
 
         self.gridLayout_9.addWidget(self.chxExFanPID_mode, 8, 0, 1, 1)
 
@@ -1875,6 +1950,7 @@ class Ui_MainWindow(object):
 
         self.btnExportAction = QPushButton(self.frame_32)
         self.btnExportAction.setObjectName(u"btnExportAction")
+        self.btnExportAction.setIcon(icon4)
 
         self.gridLayout_5.addWidget(self.btnExportAction, 0, 0, 1, 1)
 
@@ -1888,12 +1964,41 @@ class Ui_MainWindow(object):
         self.container.addWidget(self.Export)
         self.Help = QWidget()
         self.Help.setObjectName(u"Help")
+        self.verticalLayout_14 = QVBoxLayout(self.Help)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.label_37 = QLabel(self.Help)
         self.label_37.setObjectName(u"label_37")
-        self.label_37.setGeometry(QRect(330, 400, 49, 16))
+
+        self.verticalLayout_14.addWidget(self.label_37)
+
+        self.line_6 = QFrame(self.Help)
+        self.line_6.setObjectName(u"line_6")
+        self.line_6.setFrameShape(QFrame.Shape.HLine)
+        self.line_6.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.verticalLayout_14.addWidget(self.line_6)
+
         self.label_8 = QLabel(self.Help)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(490, 450, 261, 31))
+        font5 = QFont()
+        font5.setItalic(True)
+        self.label_8.setFont(font5)
+
+        self.verticalLayout_14.addWidget(self.label_8)
+
+        self.label_47 = QLabel(self.Help)
+        self.label_47.setObjectName(u"label_47")
+        font6 = QFont()
+        font6.setPointSize(10)
+        font6.setItalic(False)
+        self.label_47.setFont(font6)
+
+        self.verticalLayout_14.addWidget(self.label_47)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_14.addItem(self.verticalSpacer_4)
+
         self.container.addWidget(self.Help)
 
         self.verticalLayout_2.addWidget(self.container)
@@ -1905,7 +2010,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.container.setCurrentIndex(1)
+        self.container.setCurrentIndex(2)
         self.stackControllerDesc.setCurrentIndex(1)
         self.stackControllerSelect.setCurrentIndex(0)
         self.stackController.setCurrentIndex(1)
@@ -2365,7 +2470,11 @@ class Ui_MainWindow(object):
         self.chxExFanPID_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
         self.chxExFanPID_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
         self.btnExportAction.setText(QCoreApplication.translate("MainWindow", u"Eksportuj", None))
-        self.label_37.setText(QCoreApplication.translate("MainWindow", u"Help", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>\u0179r\u00f3d\u0142o wszystkich ikon w aplikacji: Flaticon.com</p></body></html>", None))
+        self.label_37.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:12pt;\">Jak korzysta\u0107 z aplikacji?</span></p><p><span style=\" font-weight:700;\">1. Po\u0142\u0105cz si\u0119 z urz\u0105dzeniem</span></p><p>Upewnij si\u0119, \u017ce urz\u0105dzenie jest zasilone oraz po\u0142\u0105czone z komputerem za pomoc\u0105 przewodu USB. Nast\u0119pnie, naci\u015bnij przycisk &quot;<img src=\":/assets/assets/uC.ico\"/> Connect&quot;. Je\u015bli urz\u0105dzenie jest poprawnie podpi\u0119te, zak\u0142adki &quot;<img src=\":/assets/assets/heater.ico\"/> Grza\u0142ka&quot; oraz &quot;<img src=\":/assets/assets/fan.ico\"/> Wentylator&quot; powinny sta\u0107 si\u0119 dost\u0119pne.</p><p><span style=\" font-weight:700;\">2. Sterowanie</span></p><p>Aplikacja pozwala sterowa\u0107 grza\u0142k\u0105( w postaci ma\u0142ych rezystor\u00f3w) oraz wentylatorem. Wchodz\u0105c w zak\u0142adk\u0119 &quot;<img src=\":/assets/assets/heater.ico\"/> Grza\u0142ka&quot; lub &quot;<img src=\":/assets/assets/fan.ico\"/> Wentylator&quot; b\u0119dziesz m\u00f3"
+                        "g\u0142 wybra\u0107 odpowiadaj\u0105cy Ci regulator oraz zmieni\u0107 jego nastawy. </p><p>Po wybraniu regulatora oraz jego nastaw, mo\u017cesz go uruchomi\u0107 naciskaj\u0105c przycisk &quot;START&quot;, a p\u00f3\u017aniej zatrzyma\u0107 wciskaj\u0105c ten sam przycisk, lecz ze zmienionym napisem - &quot;STOP&quot;.</p><p><span style=\" font-weight:700;\">3. Regulator dwupo\u0142o\u017ceniowy</span></p><p>W przypadku wentylatora, mo\u017cesz wybra\u0107 warto\u015b\u0107 jego pr\u0119dko\u015bci obrotowej oraz szeroko\u015b\u0107 strefy histerezy.</p><p>W przypadku grza\u0142ki, mo\u017cesz wybra\u0107 warto\u015b\u0107 jej temperatury, szeroko\u015b\u0107 strefy histerezy, a tak\u017ce moc grza\u0142ki.</p><p><span style=\" font-weight:700;\">4. Regulator PID</span></p><p>W obu przypadkach( grza\u0142ki i wentylatora), mo\u017cesz wybra\u0107:</p><p>- warto\u015b\u0107 zadan\u0105,</p><p>- wsp\u00f3\u0142czynniki wzmocnienia: proporcjonalnego, ca\u0142kuj\u0105cego i r\u00f3\u017cniczkuj\u0105cego,</p><p>-"
+                        " czas zdwojenia i op\u00f3\u017anienia,</p><p>- warto\u015b\u0107 wsp\u00f3\u0142czynnika anti-windup.</p><p><span style=\" font-weight:700;\">5. Sterowanie grza\u0142k\u0105</span></p><p>W zak\u0142adce sterowania grza\u0142k\u0105 znajdziesz dodatkowe przyciski, kt\u00f3re pozwalaj\u0105 na wyb\u00f3r grza\u0142ki( 17 lub 33\u03a9) oraz temperatury odniesienia. </p><p>Obie grza\u0142ki znajduj\u0105 si\u0119 bezpo\u015brednio nad wentylatorem. Lewa to ta, kt\u00f3ra jest nad 17\u03a9 grza\u0142ka, natomiast prawa zlokalizowana nad 33\u03a9 grza\u0142k\u0105.</p><p><span style=\" font-weight:700;\">6. Wykresy</span></p><p>Ka\u017cdy regulator posiada sw\u00f3j wykres, kt\u00f3ry przedstawia przebiegi czasowe wszystkich jego sygna\u0142\u00f3w.</p><p>Wykres ten mo\u017cesz zatrzyma\u0107 naciskaj\u0105c przycisk &quot;<img src=\":/assets/assets/pause.ico\"/>&quot; i uruchomi\u0107 ponownie wciskaj\u0105c przycisk &quot;<img src=\":/assets/assets/play.ico\"/>&quot;.</p><p>Wykres mo\u017cesz r\u00f3wnie\u017c wy"
+                        "czy\u015bci\u0107 wciskaj\u0105c przcisk &quot;<img src=\":/assets/assets/broom.ico\"/>&quot;. <span style=\" font-weight:700; color:#ff0000;\">Uwa\u017caj</span>, gdy\u017c wyszyszczenie wykresu powoduje usuni\u0119cie danych o jego dotychczasowych przebiegach z pami\u0119ciu programu.</p><p>Ka\u017cdy regulator posiada w\u0142asn\u0105 przestrze\u0144 w pami\u0119ci programu, wi\u0119c <span style=\" font-weight:700; color:#ffaa00;\">wyczyszczenie jednego z nich nie spowoduje wyszyczenia pozosta\u0142ych</span>.</p><p>Pod ka\u017cdym wykresem znajduj\u0105 si\u0119 dodatkowe przyciski, kt\u00f3re pozwalaj\u0105 na pokazywanie i ukrywanie konkretnych sygna\u0142\u00f3w.</p><p><span style=\" font-weight:700;\">7. Eksport danych do pliku</span></p><p>W zak\u0142adce &quot;<img src=\":/assets/assets/export.ico\"/> Eksport danych&quot; mo\u017cesz \u0142atwo wyeksportowa\u0107 potrzebne Ci dane do pliku .xlsx.</p></body></html>", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Wszystkie ikony w aplikacji pochodz\u0105 z otwartego \u017ar\u00f3d\u0142a: Flaticon.com</p></body></html>", None))
+        self.label_47.setText(QCoreApplication.translate("MainWindow", u"Autor: Szymon Hrehorowicz", None))
     # retranslateUi
 

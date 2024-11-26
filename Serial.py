@@ -100,36 +100,17 @@ class Serial:
         data = self._serial.readAll().data().decode()
         if 'DEV_CON_ACK' in data:
             # Handle successful connection
+            idx = data.index('DEV_CON_ACK')
+            data = data[:idx] + data[idx+len('DEV_CON_ACK'):]
             self.ui.btnConnect.setText("Disconnect")
             self.ui.btnConnect.setStatusTip("Rozłącz się z urządzeniem")
-        else:
-            packets = []
-            num_of_packets = data.count('ALLFAN_') + data.count('ALLCOIL_')
-            
-            for i in range(0, num_of_packets):
-                try:
-                    idx_fan = data.index('ALLFAN_')
-                except ValueError:
-                    idx_fan = len(data)
-                try:
-                    idx_coil = data.index('ALLCOIL_')
-                except ValueError:
-                    idx_coil = len(data)
-                isFan = True if idx_fan < idx_coil else False
-                dataToCut = 0
-                if isFan:
-                    dataToCut = idx_fan + len('ALLFAN_')
-                    packets.append({"type": "ALLFAN_", "data": data[idx_fan:idx_coil]})
-                else:
-                    dataToCut = idx_coil + len('ALLCOIL_')
-                    packets.append({"type": "ALLCOIL_", "data": data[idx_coil:idx_fan]})
-                data = data[dataToCut:]
-            
-            for packet in packets:
-                if packet["type"] == "ALLFAN_":
-                    self.handler.COM.handle_all_fan_data(packet["data"])
-                else:
-                    self.handler.COM.handle_all_heater_data(packet["data"])
+        if ('ALLFAN_' in data) or ('ALLCOIL_' in data):
+            data = data.split('\n')
+            for packet in data:
+                if 'ALLFAN_' in packet:
+                    self.handler.COM.handle_all_fan_data(packet)
+                if 'ALLCOIL_' in packet:
+                    self.handler.COM.handle_all_heater_data(packet)
 
     @Slot(QSerialPort.SerialPortError)
     def handle_error(self, error):

@@ -18,7 +18,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
-    <normaloff>:/assets/assets/controller.ico</normaloff>:/assets/assets/controller.ico</iconset>
+    <normaloff>:/assets/assets/oscilloscope.ico</normaloff>:/assets/assets/oscilloscope.ico</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -28,6 +28,12 @@
   </property>
   <property name="locale">
    <locale language="Polish" country="Poland"/>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>40</width>
+    <height>40</height>
+   </size>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -42,6 +48,9 @@
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QPushButton" name="btnConnect">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="toolTip">
           <string>Połącz lub Rozłącz się z urządzeniem</string>
          </property>
@@ -53,6 +62,10 @@
          </property>
          <property name="text">
           <string>Connect</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/assets/assets/uC.ico</normaloff>:/assets/assets/uC.ico</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -74,6 +87,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="toolTip">
           <string>Wybierz regulator grzałki i zmień jego parametry</string>
          </property>
@@ -83,6 +99,10 @@
          <property name="text">
           <string>Grzałka</string>
          </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/assets/assets/heater.ico</normaloff>:/assets/assets/heater.ico</iconset>
+         </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
@@ -90,6 +110,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="btnFanControls">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="toolTip">
           <string>Wybierz regulator wentylatora i zmień jego parametry</string>
          </property>
@@ -99,6 +122,10 @@
          <property name="text">
           <string>Wentylator</string>
          </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/assets/assets/fan.ico</normaloff>:/assets/assets/fan.ico</iconset>
+         </property>
          <property name="checkable">
           <bool>true</bool>
          </property>
@@ -106,6 +133,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="btnDataExport">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="toolTip">
           <string>Eksportuj dane do pliku .xlsx</string>
          </property>
@@ -114,6 +144,10 @@
          </property>
          <property name="text">
           <string>Eksport danych</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/assets/assets/export.ico</normaloff>:/assets/assets/export.ico</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -135,6 +169,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="btnHelp">
+         <property name="cursor">
+          <cursorShape>WhatsThisCursor</cursorShape>
+         </property>
          <property name="toolTip">
           <string>Dowiedz się jak korzystać z programu</string>
          </property>
@@ -143,6 +180,10 @@
          </property>
          <property name="text">
           <string>Pomoc</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/assets/assets/help.ico</normaloff>:/assets/assets/help.ico</iconset>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -161,7 +202,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Controls">
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -2778,6 +2819,9 @@
                 <property name="text">
                  <string>Regulator dwupołożeniowy</string>
                 </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
                </widget>
               </item>
               <item>
@@ -2801,12 +2845,18 @@
                    <property name="text">
                     <string>u_min(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="1" column="0">
                   <widget class="QCheckBox" name="chxExHeaterBB_x_max">
                    <property name="text">
                     <string>x_max(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2815,12 +2865,18 @@
                    <property name="text">
                     <string>u_max(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="0">
                   <widget class="QCheckBox" name="chxExHeaterBB_x_min">
                    <property name="text">
                     <string>x_min(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2829,12 +2885,18 @@
                    <property name="text">
                     <string>y_1(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="0" column="0">
                   <widget class="QCheckBox" name="chxExHeaterBB_x">
                    <property name="text">
                     <string>x(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2843,12 +2905,18 @@
                    <property name="text">
                     <string>y_2(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="4" column="1">
                   <widget class="QCheckBox" name="chxExHeaterBB_mode">
                    <property name="text">
                     <string>stan</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2865,6 +2933,9 @@
                 </property>
                 <property name="text">
                  <string>Regulator PID</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -2889,12 +2960,18 @@
                    <property name="text">
                     <string>aw_int_e(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="5" column="0">
                   <widget class="QCheckBox" name="chxExHeaterPID_k_i">
                    <property name="text">
                     <string>k_i(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2903,12 +2980,18 @@
                    <property name="text">
                     <string>x(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="8" column="0">
                   <widget class="QCheckBox" name="chxExHeaterPID_mode">
                    <property name="text">
                     <string>stan</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2917,12 +3000,18 @@
                    <property name="text">
                     <string>k_d(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="0">
                   <widget class="QCheckBox" name="chxExHeaterPID_int_e">
                    <property name="text">
                     <string>int_e(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2931,12 +3020,18 @@
                    <property name="text">
                     <string>e(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="7" column="0">
                   <widget class="QCheckBox" name="chxExHeaterPID_k_aw">
                    <property name="text">
                     <string>k_aw(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2945,12 +3040,18 @@
                    <property name="text">
                     <string>k_p(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="1">
                   <widget class="QCheckBox" name="chxExHeaterPID_u_p">
                    <property name="text">
                     <string>u_p(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2959,12 +3060,18 @@
                    <property name="text">
                     <string>u_i(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
                   <widget class="QCheckBox" name="chxExHeaterPID_u_sat">
                    <property name="text">
                     <string>u_sat(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2973,12 +3080,18 @@
                    <property name="text">
                     <string>u(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="4" column="1">
                   <widget class="QCheckBox" name="chxExHeaterPID_u_d">
                    <property name="text">
                     <string>u_d(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2987,12 +3100,18 @@
                    <property name="text">
                     <string>u_max(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="6" column="1">
                   <widget class="QCheckBox" name="chxExHeaterPID_u_min">
                    <property name="text">
                     <string>u_min(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3001,12 +3120,18 @@
                    <property name="text">
                     <string>y_1(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="8" column="1">
                   <widget class="QCheckBox" name="chxExHeaterPID_y_2">
                    <property name="text">
                     <string>y_2(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3061,6 +3186,9 @@
                 <property name="text">
                  <string>Regulator dwupołożeniowy</string>
                 </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
                </widget>
               </item>
               <item>
@@ -3084,12 +3212,18 @@
                    <property name="text">
                     <string>stan</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="1" column="0">
                   <widget class="QCheckBox" name="chxExFanBB_x_max">
                    <property name="text">
                     <string>x_max(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3098,12 +3232,18 @@
                    <property name="text">
                     <string>u_min(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="0" column="0">
                   <widget class="QCheckBox" name="chxExFanBB_x">
                    <property name="text">
                     <string>x(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3112,6 +3252,9 @@
                    <property name="text">
                     <string>y(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="0">
@@ -3119,12 +3262,18 @@
                    <property name="text">
                     <string>x_min(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
                   <widget class="QCheckBox" name="chxExFanBB_u_max">
                    <property name="text">
                     <string>u_max(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3141,6 +3290,9 @@
                 </property>
                 <property name="text">
                  <string>Regulator PID</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -3165,12 +3317,18 @@
                    <property name="text">
                     <string>x(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
                   <widget class="QCheckBox" name="chxExFanPID_u">
                    <property name="text">
                     <string>u(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3179,12 +3337,18 @@
                    <property name="text">
                     <string>e(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
                   <widget class="QCheckBox" name="chxExFanPID_u_sat">
                    <property name="text">
                     <string>u_sat(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3193,12 +3357,18 @@
                    <property name="text">
                     <string>int_e(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="1">
                   <widget class="QCheckBox" name="chxExFanPID_u_p">
                    <property name="text">
                     <string>u_p(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3207,12 +3377,18 @@
                    <property name="text">
                     <string>aw_int_e(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="3" column="1">
                   <widget class="QCheckBox" name="chxExFanPID_u_i">
                    <property name="text">
                     <string>u_i(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3221,12 +3397,18 @@
                    <property name="text">
                     <string>k_p(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="4" column="1">
                   <widget class="QCheckBox" name="chxExFanPID_u_d">
                    <property name="text">
                     <string>u_d(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3235,12 +3417,18 @@
                    <property name="text">
                     <string>k_i(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="5" column="1">
                   <widget class="QCheckBox" name="chxExFanPID_u_max">
                    <property name="text">
                     <string>u_max(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3249,12 +3437,18 @@
                    <property name="text">
                     <string>k_d(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="6" column="1">
                   <widget class="QCheckBox" name="chxExFanPID_u_min">
                    <property name="text">
                     <string>u_min(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3263,6 +3457,9 @@
                    <property name="text">
                     <string>k_aw(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="7" column="1">
@@ -3270,12 +3467,18 @@
                    <property name="text">
                     <string>y(t)</string>
                    </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                  <item row="8" column="0">
                   <widget class="QCheckBox" name="chxExFanPID_mode">
                    <property name="text">
                     <string>stan</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -3334,6 +3537,10 @@
              <property name="text">
               <string>Eksportuj</string>
              </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/assets/export.ico</normaloff>:/assets/assets/export.ico</iconset>
+             </property>
             </widget>
            </item>
            <item row="1" column="0">
@@ -3355,32 +3562,60 @@
        </layout>
       </widget>
       <widget class="QWidget" name="Help">
-       <widget class="QLabel" name="label_37">
-        <property name="geometry">
-         <rect>
-          <x>330</x>
-          <y>400</y>
-          <width>49</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Help</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_8">
-        <property name="geometry">
-         <rect>
-          <x>490</x>
-          <y>450</y>
-          <width>261</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Źródło wszystkich ikon w aplikacji: Flaticon.com&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
+       <layout class="QVBoxLayout" name="verticalLayout_14">
+        <item>
+         <widget class="QLabel" name="label_37">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Jak korzystać z aplikacji?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;1. Połącz się z urządzeniem&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Upewnij się, że urządzenie jest zasilone oraz połączone z komputerem za pomocą przewodu USB. Następnie, naciśnij przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/uC.ico&quot;/&gt; Connect&amp;quot;. Jeśli urządzenie jest poprawnie podpięte, zakładki &amp;quot;&lt;img src=&quot;:/assets/assets/heater.ico&quot;/&gt; Grzałka&amp;quot; oraz &amp;quot;&lt;img src=&quot;:/assets/assets/fan.ico&quot;/&gt; Wentylator&amp;quot; powinny stać się dostępne.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;2. Sterowanie&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Aplikacja pozwala sterować grzałką( w postaci małych rezystorów) oraz wentylatorem. Wchodząc w zakładkę &amp;quot;&lt;img src=&quot;:/assets/assets/heater.ico&quot;/&gt; Grzałka&amp;quot; lub &amp;quot;&lt;img src=&quot;:/assets/assets/fan.ico&quot;/&gt; Wentylator&amp;quot; będziesz mógł wybrać odpowiadający Ci regulator oraz zmienić jego nastawy. &lt;/p&gt;&lt;p&gt;Po wybraniu regulatora oraz jego nastaw, możesz go uruchomić naciskając przycisk &amp;quot;START&amp;quot;, a później zatrzymać wciskając ten sam przycisk, lecz ze zmienionym napisem - &amp;quot;STOP&amp;quot;.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;3. Regulator dwupołożeniowy&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W przypadku wentylatora, możesz wybrać wartość jego prędkości obrotowej oraz szerokość strefy histerezy.&lt;/p&gt;&lt;p&gt;W przypadku grzałki, możesz wybrać wartość jej temperatury, szerokość strefy histerezy, a także moc grzałki.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;4. Regulator PID&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W obu przypadkach( grzałki i wentylatora), możesz wybrać:&lt;/p&gt;&lt;p&gt;- wartość zadaną,&lt;/p&gt;&lt;p&gt;- współczynniki wzmocnienia: proporcjonalnego, całkującego i różniczkującego,&lt;/p&gt;&lt;p&gt;- czas zdwojenia i opóźnienia,&lt;/p&gt;&lt;p&gt;- wartość współczynnika anti-windup.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;5. Sterowanie grzałką&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W zakładce sterowania grzałką znajdziesz dodatkowe przyciski, które pozwalają na wybór grzałki( 17 lub 33Ω) oraz temperatury odniesienia. &lt;/p&gt;&lt;p&gt;Obie grzałki znajdują się bezpośrednio nad wentylatorem. Lewa to ta, która jest nad 17Ω grzałka, natomiast prawa zlokalizowana nad 33Ω grzałką.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;6. Wykresy&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Każdy regulator posiada swój wykres, który przedstawia przebiegi czasowe wszystkich jego sygnałów.&lt;/p&gt;&lt;p&gt;Wykres ten możesz zatrzymać naciskając przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/pause.ico&quot;/&gt;&amp;quot; i uruchomić ponownie wciskając przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/play.ico&quot;/&gt;&amp;quot;.&lt;/p&gt;&lt;p&gt;Wykres możesz również wyczyścić wciskając przcisk &amp;quot;&lt;img src=&quot;:/assets/assets/broom.ico&quot;/&gt;&amp;quot;. &lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Uważaj&lt;/span&gt;, gdyż wyszyszczenie wykresu powoduje usunięcie danych o jego dotychczasowych przebiegach z pamięciu programu.&lt;/p&gt;&lt;p&gt;Każdy regulator posiada własną przestrzeń w pamięci programu, więc &lt;span style=&quot; font-weight:700; color:#ffaa00;&quot;&gt;wyczyszczenie jednego z nich nie spowoduje wyszyczenia pozostałych&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;Pod każdym wykresem znajdują się dodatkowe przyciski, które pozwalają na pokazywanie i ukrywanie konkretnych sygnałów.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;7. Eksport danych do pliku&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W zakładce &amp;quot;&lt;img src=&quot;:/assets/assets/export.ico&quot;/&gt; Eksport danych&amp;quot; możesz łatwo wyeksportować potrzebne Ci dane do pliku .xlsx.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="line_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="font">
+           <font>
+            <italic>true</italic>
+           </font>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wszystkie ikony w aplikacji pochodzą z otwartego źródła: Flaticon.com&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_47">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <italic>false</italic>
+           </font>
+          </property>
+          <property name="text">
+           <string>Autor: Szymon Hrehorowicz</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>

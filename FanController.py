@@ -34,6 +34,38 @@ class FanController:
         self.pid_speed = []
         self.pid_mode = []
 
+    def get_bb(self):
+        return [
+            self.bb_time,
+            self.bb_set_value,
+            self.bb_threshold_top,
+            self.bb_threshold_bottom,
+            self.bb_u_max,
+            self.bb_u_min,
+            self.bb_speed,
+            self.bb_mode]
+
+    def get_pid(self):
+        return [
+            self.pid_time,
+            self.pid_set_value,
+            self.pid_error,
+            self.pid_int_error,
+            self.pid_aw_int_error,
+            self.pid_kp,
+            self.pid_ki,
+            self.pid_kd,
+            self.pid_kaw,
+            self.pid_u,
+            self.pid_u_saturated,
+            self.pid_u_p,
+            self.pid_u_i,
+            self.pid_u_d,
+            self.pid_u_max,
+            self.pid_u_min,
+            self.pid_speed,
+            self.pid_mode]
+
     def update_all(self, data):
         if self.t0_bb == 0:
             self.t0_bb = time.time()
