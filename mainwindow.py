@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QAbstractSpinBox
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from ui_form import Ui_MainWindow
 from PySide6.QtCore import QTimer
@@ -76,28 +76,46 @@ class MainWindow(QMainWindow):
         self.ui.btnFanControllerSetBB.clicked.connect(self.mainMenuHandler.set_fan_bb)
         self.ui.btnFanControllerSetPID.clicked.connect(self.mainMenuHandler.set_fan_pid)
         #Heater BB inputs
-        self.ui.inHeaterBBSetValue.valueChanged.connect(self.heaterControlsHandler.bb_setValue)
-        self.ui.inHeaterBBHysteresis.valueChanged.connect(self.heaterControlsHandler.bb_setHysteresis)
+        self.ui.inHeaterBBSetValue.editingFinished.connect(self.heaterControlsHandler.bb_setValue)
+        self.ui.inHeaterBBHysteresis.editingFinished.connect(self.heaterControlsHandler.bb_setHysteresis)
         self.ui.inHeaterBBPower.valueChanged.connect(self.heaterControlsHandler.bb_setPower)
+        self.ui.inHeaterBBSetValue.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inHeaterBBHysteresis.setButtonSymbols(QAbstractSpinBox.NoButtons)
         # Heater PID inputs
-        self.ui.inHeaterPIDSetValue.valueChanged.connect(self.heaterControlsHandler.pid_setValue)
-        self.ui.inHeaterPID_Kp.valueChanged.connect(self.heaterControlsHandler.pid_setKp)
-        self.ui.inHeaterPID_Ki.valueChanged.connect(self.heaterControlsHandler.pid_setKi)
-        self.ui.inHeaterPID_Kd.valueChanged.connect(self.heaterControlsHandler.pid_setKd)
-        self.ui.inHeaterPID_Kaw.valueChanged.connect(self.heaterControlsHandler.pid_setKaw)
-        self.ui.inHeaterPID_Ti.valueChanged.connect(self.heaterControlsHandler.pid_setTi)
-        self.ui.inHeaterPID_Td.valueChanged.connect(self.heaterControlsHandler.pid_setTd)
+        self.ui.inHeaterPIDSetValue.editingFinished.connect(self.heaterControlsHandler.pid_setValue)
+        self.ui.inHeaterPID_Kp.editingFinished.connect(self.heaterControlsHandler.pid_setKp)
+        self.ui.inHeaterPID_Ki.editingFinished.connect(self.heaterControlsHandler.pid_setKi)
+        self.ui.inHeaterPID_Kd.editingFinished.connect(self.heaterControlsHandler.pid_setKd)
+        self.ui.inHeaterPID_Kaw.editingFinished.connect(self.heaterControlsHandler.pid_setKaw)
+        self.ui.inHeaterPID_Ti.editingFinished.connect(self.heaterControlsHandler.pid_setTi)
+        self.ui.inHeaterPID_Td.editingFinished.connect(self.heaterControlsHandler.pid_setTd)
+        self.ui.inHeaterPIDSetValue.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inHeaterPID_Kp.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inHeaterPID_Ki.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inHeaterPID_Kd.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inHeaterPID_Kaw.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inHeaterPID_Ti.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inHeaterPID_Td.setButtonSymbols(QAbstractSpinBox.NoButtons)
         # Fan BB inputs
-        self.ui.inFanBBSetValue.valueChanged.connect(self.fanControlsHandler.bb_setValue)
-        self.ui.inFanBBHysteresis.valueChanged.connect(self.fanControlsHandler.bb_setHysteresis)
+        self.ui.inFanBBSetValue.editingFinished.connect(self.fanControlsHandler.bb_setValue)
+        self.ui.inFanBBHysteresis.editingFinished.connect(self.fanControlsHandler.bb_setHysteresis)
+        self.ui.inFanBBSetValue.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inFanBBHysteresis.setButtonSymbols(QAbstractSpinBox.NoButtons)
         # Fan PID inputs
-        self.ui.inFanPIDSetValue.valueChanged.connect(self.fanControlsHandler.pid_setValue)
-        self.ui.inFanPID_Kp.valueChanged.connect(self.fanControlsHandler.pid_setKp)
-        self.ui.inFanPID_Ki.valueChanged.connect(self.fanControlsHandler.pid_setKi)
-        self.ui.inFanPID_Kd.valueChanged.connect(self.fanControlsHandler.pid_setKd)
-        self.ui.inFanPID_Kaw.valueChanged.connect(self.fanControlsHandler.pid_setKaw)
-        self.ui.inFanPID_Ti.valueChanged.connect(self.fanControlsHandler.pid_setTi)
-        self.ui.inFanPID_Td.valueChanged.connect(self.fanControlsHandler.pid_setTd)
+        self.ui.inFanPIDSetValue.editingFinished.connect(self.fanControlsHandler.pid_setValue)
+        self.ui.inFanPID_Kp.editingFinished.connect(self.fanControlsHandler.pid_setKp)
+        self.ui.inFanPID_Ki.editingFinished.connect(self.fanControlsHandler.pid_setKi)
+        self.ui.inFanPID_Kd.editingFinished.connect(self.fanControlsHandler.pid_setKd)
+        self.ui.inFanPID_Kaw.editingFinished.connect(self.fanControlsHandler.pid_setKaw)
+        self.ui.inFanPID_Ti.editingFinished.connect(self.fanControlsHandler.pid_setTi)
+        self.ui.inFanPID_Td.editingFinished.connect(self.fanControlsHandler.pid_setTd)
+        self.ui.inFanPIDSetValue.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inFanPID_Kp.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inFanPID_Ki.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inFanPID_Kd.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inFanPID_Kaw.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inFanPID_Ti.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inFanPID_Td.setButtonSymbols(QAbstractSpinBox.NoButtons)
 
         # Fan BB Graph buttons
         self.ui.btnFanBB_graph_x.clicked.connect(self.fanBBgraph.set_value)
