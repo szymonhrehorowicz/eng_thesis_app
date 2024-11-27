@@ -21,6 +21,7 @@
         "HeaterBBGraph.py",
         "HeaterPIDGraph.py",
         "StackedWidget.py",
-        "Export.py"
+        "Export.py",
+        "Import.py"
     ]
 }

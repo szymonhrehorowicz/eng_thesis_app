@@ -12,5 +12,6 @@
         <file>assets/help.ico</file>
         <file>assets/fan.ico</file>
         <file>assets/heater.ico</file>
+        <file>assets/import.ico</file>
     </qresource>
 </RCC>

@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QDoubleSpinBox, QFrame,
-    QGridLayout, QHBoxLayout, QLabel, QLayout,
-    QMainWindow, QPushButton, QSizePolicy, QSlider,
-    QSpacerItem, QSpinBox, QStackedWidget, QStatusBar,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDoubleSpinBox,
+    QFrame, QGridLayout, QHBoxLayout, QLabel,
+    QLayout, QMainWindow, QPushButton, QSizePolicy,
+    QSlider, QSpacerItem, QSpinBox, QStackedWidget,
+    QStatusBar, QVBoxLayout, QWidget)
 
 from StackedWidget import StackedWidget
 import rc_resources
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.NonModal)
-        MainWindow.resize(1212, 800)
+        MainWindow.resize(1361, 904)
         icon = QIcon()
         icon.addFile(u":/assets/assets/oscilloscope.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
@@ -104,12 +104,21 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
+        self.btnImport = QPushButton(self.menubar)
+        self.btnImport.setObjectName(u"btnImport")
+        icon5 = QIcon()
+        icon5.addFile(u":/assets/assets/import.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnImport.setIcon(icon5)
+        self.btnImport.setCheckable(True)
+
+        self.horizontalLayout.addWidget(self.btnImport)
+
         self.btnHelp = QPushButton(self.menubar)
         self.btnHelp.setObjectName(u"btnHelp")
         self.btnHelp.setCursor(QCursor(Qt.CursorShape.WhatsThisCursor))
-        icon5 = QIcon()
-        icon5.addFile(u":/assets/assets/help.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnHelp.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u":/assets/assets/help.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnHelp.setIcon(icon6)
         self.btnHelp.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnHelp)
@@ -484,6 +493,7 @@ class Ui_MainWindow(object):
         self.inHeaterPID_Kp = QDoubleSpinBox(self.frame_5)
         self.inHeaterPID_Kp.setObjectName(u"inHeaterPID_Kp")
         self.inHeaterPID_Kp.setMinimumSize(QSize(80, 0))
+        self.inHeaterPID_Kp.setMaximum(999.990000000000009)
 
         self.horizontalLayout_10.addWidget(self.inHeaterPID_Kp)
 
@@ -513,6 +523,7 @@ class Ui_MainWindow(object):
         self.inHeaterPID_Ki = QDoubleSpinBox(self.frame_6)
         self.inHeaterPID_Ki.setObjectName(u"inHeaterPID_Ki")
         self.inHeaterPID_Ki.setMinimumSize(QSize(80, 0))
+        self.inHeaterPID_Ki.setMaximum(999.990000000000009)
 
         self.horizontalLayout_11.addWidget(self.inHeaterPID_Ki)
 
@@ -542,6 +553,7 @@ class Ui_MainWindow(object):
         self.inHeaterPID_Ti = QDoubleSpinBox(self.frame_23)
         self.inHeaterPID_Ti.setObjectName(u"inHeaterPID_Ti")
         self.inHeaterPID_Ti.setMinimumSize(QSize(80, 0))
+        self.inHeaterPID_Ti.setMaximum(999.990000000000009)
 
         self.horizontalLayout_31.addWidget(self.inHeaterPID_Ti)
 
@@ -571,6 +583,7 @@ class Ui_MainWindow(object):
         self.inHeaterPID_Kd = QDoubleSpinBox(self.frame_7)
         self.inHeaterPID_Kd.setObjectName(u"inHeaterPID_Kd")
         self.inHeaterPID_Kd.setMinimumSize(QSize(80, 0))
+        self.inHeaterPID_Kd.setMaximum(999.990000000000009)
 
         self.horizontalLayout_12.addWidget(self.inHeaterPID_Kd)
 
@@ -600,6 +613,7 @@ class Ui_MainWindow(object):
         self.inHeaterPID_Td = QDoubleSpinBox(self.frame_24)
         self.inHeaterPID_Td.setObjectName(u"inHeaterPID_Td")
         self.inHeaterPID_Td.setMinimumSize(QSize(80, 0))
+        self.inHeaterPID_Td.setMaximum(999.990000000000009)
 
         self.horizontalLayout_8.addWidget(self.inHeaterPID_Td)
 
@@ -717,7 +731,7 @@ class Ui_MainWindow(object):
         self.inFanBBHysteresis = QSpinBox(self.frame_13)
         self.inFanBBHysteresis.setObjectName(u"inFanBBHysteresis")
         self.inFanBBHysteresis.setMinimumSize(QSize(100, 0))
-        self.inFanBBHysteresis.setMaximum(500)
+        self.inFanBBHysteresis.setMaximum(999)
 
         self.horizontalLayout_21.addWidget(self.inFanBBHysteresis)
 
@@ -1011,9 +1025,9 @@ class Ui_MainWindow(object):
 
         self.btnHeaterBB_graph_Stop = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_Stop.setObjectName(u"btnHeaterBB_graph_Stop")
-        icon6 = QIcon()
-        icon6.addFile(u":/assets/assets/pause.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnHeaterBB_graph_Stop.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u":/assets/assets/pause.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnHeaterBB_graph_Stop.setIcon(icon7)
         self.btnHeaterBB_graph_Stop.setCheckable(True)
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Stop, 0, 9, 1, 1)
@@ -1041,9 +1055,9 @@ class Ui_MainWindow(object):
 
         self.btnHeaterBB_graph_Clear = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_Clear.setObjectName(u"btnHeaterBB_graph_Clear")
-        icon7 = QIcon()
-        icon7.addFile(u":/assets/assets/broom.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnHeaterBB_graph_Clear.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/assets/assets/broom.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnHeaterBB_graph_Clear.setIcon(icon8)
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Clear, 1, 9, 1, 1)
 
@@ -1123,7 +1137,7 @@ class Ui_MainWindow(object):
 
         self.btnHeaterPID_graph_Stop = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_Stop.setObjectName(u"btnHeaterPID_graph_Stop")
-        self.btnHeaterPID_graph_Stop.setIcon(icon6)
+        self.btnHeaterPID_graph_Stop.setIcon(icon7)
         self.btnHeaterPID_graph_Stop.setCheckable(True)
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_Stop, 0, 10, 1, 1)
@@ -1193,7 +1207,7 @@ class Ui_MainWindow(object):
 
         self.btnHeaterPID_graph_Clear = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_Clear.setObjectName(u"btnHeaterPID_graph_Clear")
-        self.btnHeaterPID_graph_Clear.setIcon(icon7)
+        self.btnHeaterPID_graph_Clear.setIcon(icon8)
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_Clear, 2, 10, 1, 1)
 
@@ -1266,7 +1280,7 @@ class Ui_MainWindow(object):
 
         self.btnFanBB_graph_Clear = QPushButton(self.frame_27)
         self.btnFanBB_graph_Clear.setObjectName(u"btnFanBB_graph_Clear")
-        self.btnFanBB_graph_Clear.setIcon(icon7)
+        self.btnFanBB_graph_Clear.setIcon(icon8)
 
         self.gridLayout_3.addWidget(self.btnFanBB_graph_Clear, 1, 8, 1, 1)
 
@@ -1279,7 +1293,7 @@ class Ui_MainWindow(object):
 
         self.btnFanBB_graph_Stop = QPushButton(self.frame_27)
         self.btnFanBB_graph_Stop.setObjectName(u"btnFanBB_graph_Stop")
-        self.btnFanBB_graph_Stop.setIcon(icon6)
+        self.btnFanBB_graph_Stop.setIcon(icon7)
         self.btnFanBB_graph_Stop.setCheckable(True)
 
         self.gridLayout_3.addWidget(self.btnFanBB_graph_Stop, 0, 8, 1, 1)
@@ -1416,13 +1430,13 @@ class Ui_MainWindow(object):
 
         self.btnFanPID_graph_Clear = QPushButton(self.frame_28)
         self.btnFanPID_graph_Clear.setObjectName(u"btnFanPID_graph_Clear")
-        self.btnFanPID_graph_Clear.setIcon(icon7)
+        self.btnFanPID_graph_Clear.setIcon(icon8)
 
         self.gridLayout.addWidget(self.btnFanPID_graph_Clear, 3, 10, 1, 1)
 
         self.btnFanPID_graph_Stop = QPushButton(self.frame_28)
         self.btnFanPID_graph_Stop.setObjectName(u"btnFanPID_graph_Stop")
-        self.btnFanPID_graph_Stop.setIcon(icon6)
+        self.btnFanPID_graph_Stop.setIcon(icon7)
         self.btnFanPID_graph_Stop.setCheckable(True)
 
         self.gridLayout.addWidget(self.btnFanPID_graph_Stop, 0, 10, 1, 1)
@@ -2000,6 +2014,64 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.addItem(self.verticalSpacer_4)
 
         self.container.addWidget(self.Help)
+        self.Import = QWidget()
+        self.Import.setObjectName(u"Import")
+        self.verticalLayout_15 = QVBoxLayout(self.Import)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.frame_40 = QFrame(self.Import)
+        self.frame_40.setObjectName(u"frame_40")
+        self.frame_40.setFrameShape(QFrame.StyledPanel)
+        self.frame_40.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_34 = QHBoxLayout(self.frame_40)
+        self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
+        self.btnImportLoad = QPushButton(self.frame_40)
+        self.btnImportLoad.setObjectName(u"btnImportLoad")
+        self.btnImportLoad.setIcon(icon5)
+
+        self.horizontalLayout_34.addWidget(self.btnImportLoad)
+
+        self.horizontalSpacer_31 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_34.addItem(self.horizontalSpacer_31)
+
+
+        self.verticalLayout_15.addWidget(self.frame_40)
+
+        self.frame_39 = QFrame(self.Import)
+        self.frame_39.setObjectName(u"frame_39")
+        self.frame_39.setFrameShape(QFrame.StyledPanel)
+        self.frame_39.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_33 = QHBoxLayout(self.frame_39)
+        self.horizontalLayout_33.setObjectName(u"horizontalLayout_33")
+        self.label_48 = QLabel(self.frame_39)
+        self.label_48.setObjectName(u"label_48")
+
+        self.horizontalLayout_33.addWidget(self.label_48)
+
+        self.cmbImportIdx = QComboBox(self.frame_39)
+        self.cmbImportIdx.setObjectName(u"cmbImportIdx")
+        self.cmbImportIdx.setMinimumSize(QSize(100, 0))
+
+        self.horizontalLayout_33.addWidget(self.cmbImportIdx)
+
+        self.btnImportAction = QPushButton(self.frame_39)
+        self.btnImportAction.setObjectName(u"btnImportAction")
+        self.btnImportAction.setEnabled(False)
+
+        self.horizontalLayout_33.addWidget(self.btnImportAction)
+
+        self.horizontalSpacer_30 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_33.addItem(self.horizontalSpacer_30)
+
+
+        self.verticalLayout_15.addWidget(self.frame_39)
+
+        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_15.addItem(self.verticalSpacer_5)
+
+        self.container.addWidget(self.Import)
 
         self.verticalLayout_2.addWidget(self.container)
 
@@ -2010,10 +2082,10 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.container.setCurrentIndex(2)
+        self.container.setCurrentIndex(3)
         self.stackControllerDesc.setCurrentIndex(1)
         self.stackControllerSelect.setCurrentIndex(0)
-        self.stackController.setCurrentIndex(1)
+        self.stackController.setCurrentIndex(2)
         self.stackGraphs.setCurrentIndex(2)
 
 
@@ -2050,6 +2122,7 @@ class Ui_MainWindow(object):
         self.btnDataExport.setStatusTip(QCoreApplication.translate("MainWindow", u"Eksportuj dane do pliku .xlsx", None))
 #endif // QT_CONFIG(statustip)
         self.btnDataExport.setText(QCoreApplication.translate("MainWindow", u"Eksport danych", None))
+        self.btnImport.setText(QCoreApplication.translate("MainWindow", u"Importuj nastawy", None))
 #if QT_CONFIG(tooltip)
         self.btnHelp.setToolTip(QCoreApplication.translate("MainWindow", u"Dowiedz si\u0119 jak korzysta\u0107 z programu", None))
 #endif // QT_CONFIG(tooltip)
@@ -2476,5 +2549,9 @@ class Ui_MainWindow(object):
                         "czy\u015bci\u0107 wciskaj\u0105c przcisk &quot;<img src=\":/assets/assets/broom.ico\"/>&quot;. <span style=\" font-weight:700; color:#ff0000;\">Uwa\u017caj</span>, gdy\u017c wyszyszczenie wykresu powoduje usuni\u0119cie danych o jego dotychczasowych przebiegach z pami\u0119ciu programu.</p><p>Ka\u017cdy regulator posiada w\u0142asn\u0105 przestrze\u0144 w pami\u0119ci programu, wi\u0119c <span style=\" font-weight:700; color:#ffaa00;\">wyczyszczenie jednego z nich nie spowoduje wyszyczenia pozosta\u0142ych</span>.</p><p>Pod ka\u017cdym wykresem znajduj\u0105 si\u0119 dodatkowe przyciski, kt\u00f3re pozwalaj\u0105 na pokazywanie i ukrywanie konkretnych sygna\u0142\u00f3w.</p><p><span style=\" font-weight:700;\">7. Eksport danych do pliku</span></p><p>W zak\u0142adce &quot;<img src=\":/assets/assets/export.ico\"/> Eksport danych&quot; mo\u017cesz \u0142atwo wyeksportowa\u0107 potrzebne Ci dane do pliku .xlsx.</p></body></html>", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Wszystkie ikony w aplikacji pochodz\u0105 z otwartego \u017ar\u00f3d\u0142a: Flaticon.com</p></body></html>", None))
         self.label_47.setText(QCoreApplication.translate("MainWindow", u"Autor: Szymon Hrehorowicz", None))
+        self.btnImportLoad.setText(QCoreApplication.translate("MainWindow", u"Wczytaj dane", None))
+        self.label_48.setText(QCoreApplication.translate("MainWindow", u"Nr albumu:", None))
+        self.cmbImportIdx.setCurrentText("")
+        self.btnImportAction.setText(QCoreApplication.translate("MainWindow", u"Pobierz nastawy", None))
     # retranslateUi
 

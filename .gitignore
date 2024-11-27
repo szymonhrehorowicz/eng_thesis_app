@@ -3,3 +3,6 @@ venv
 build
 dist
 Output
+deployment
+.ropeproject
+*.exe

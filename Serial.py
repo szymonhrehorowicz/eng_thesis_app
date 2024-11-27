@@ -18,6 +18,9 @@ class Serial:
     """
     PUBLIC
     """
+    def send_ack(self):
+        self.write_data(QByteArray("0"))
+
     def open_serial_port(self):
         ports = self.__get_available_ports()
         res = False
@@ -32,7 +35,7 @@ class Serial:
                 self._serial.setFlowControl(s.flow_control)
                 if self._serial.open(QIODeviceBase.ReadWrite):
                     print(f"Connected to {port.name}")
-                    self.write_data(QByteArray("0"))
+                    self.send_ack()
                     res = True
                     break
                 else:
@@ -46,6 +49,8 @@ class Serial:
 
         self.ui.btnHeaterControls.setEnabled(False)
         self.ui.btnFanControls.setEnabled(False)
+        self.ui.btnHeaterStart.setChecked(False)
+        self.ui.btnFanStart.setChecked(False)
         self.handler.mainMenuHandler.open_help()
 
         if self._serial.isOpen():

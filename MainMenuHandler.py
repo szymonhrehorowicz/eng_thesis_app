@@ -8,6 +8,7 @@ INDICES = {
     "heater": 0,
     "fan": 1,
     "export": 1,
+    "import": 3,
     "help": 2,
     "heater_bb": 0,
     "heater_pid": 1,
@@ -30,6 +31,7 @@ class MainMenuHandler:
         self.handler.ui.btnFanControls.setChecked(False)
         self.handler.ui.btnDataExport.setChecked(False)
         self.handler.ui.btnHelp.setChecked(False)
+        self.handler.ui.btnImport.setChecked(False)
 
         self.handler.ui.container.setCurrentIndex(INDICES["controls"])
         self.handler.ui.stackControllerDesc.setCurrentIndex(INDICES["heater"])
@@ -48,6 +50,7 @@ class MainMenuHandler:
         self.handler.ui.btnFanControls.setChecked(True)
         self.handler.ui.btnDataExport.setChecked(False)
         self.handler.ui.btnHelp.setChecked(False)
+        self.handler.ui.btnImport.setChecked(False)
 
         self.handler.ui.container.setCurrentIndex(INDICES["controls"])
         self.handler.ui.stackControllerDesc.setCurrentIndex(INDICES["fan"])
@@ -66,7 +69,7 @@ class MainMenuHandler:
         self.handler.ui.btnFanControls.setChecked(False)
         self.handler.ui.btnDataExport.setChecked(True)
         self.handler.ui.btnHelp.setChecked(False)
-
+        self.handler.ui.btnImport.setChecked(False)
         self.handler.ui.container.setCurrentIndex(INDICES["export"])
 
     @Slot()
@@ -75,7 +78,17 @@ class MainMenuHandler:
         self.handler.ui.btnFanControls.setChecked(False)
         self.handler.ui.btnDataExport.setChecked(False)
         self.handler.ui.btnHelp.setChecked(True)
+        self.handler.ui.btnImport.setChecked(False)
         self.handler.ui.container.setCurrentIndex(INDICES["help"])
+
+    @Slot()
+    def open_import(self):
+        self.handler.ui.btnHeaterControls.setChecked(False)
+        self.handler.ui.btnFanControls.setChecked(False)
+        self.handler.ui.btnDataExport.setChecked(False)
+        self.handler.ui.btnHelp.setChecked(False)
+        self.handler.ui.btnImport.setChecked(True)
+        self.handler.ui.container.setCurrentIndex(INDICES["import"])
 
     # HEATER
     @Slot()

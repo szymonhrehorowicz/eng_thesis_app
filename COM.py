@@ -191,13 +191,14 @@ class COM:
         # ON/OFF : 0 - OFF | 1 - ON
         msg += '1' if isOn else '0'
         # 17/33R : 0 - COIL_B | 1 - COIL_A
-        msg += '0' if self.handler.ui.btnHeaterControllerSetHighPower.isChecked() else '1'
+        msg += '1' if self.handler.ui.btnHeaterControllerSetHighPower.isChecked() else '0'
         # LEFT/RIGHT: 
         msg += '0' if self.handler.ui.btnHeaterControllerSetLeftCoil.isChecked() else '1'
         # POWER: 000 - 100
         msg += str(self.handler.ui.inHeaterBBPower.value()).zfill(3)
         msg += '\n'
         self.handler.serial.write_data(QByteArray(msg))
+        print(msg)
 
     # FAN GETTERS
     def handle_all_fan_data(self, data):

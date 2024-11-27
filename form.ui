@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1212</width>
-    <height>800</height>
+    <width>1361</width>
+    <height>904</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -168,6 +168,20 @@
         </spacer>
        </item>
        <item>
+        <widget class="QPushButton" name="btnImport">
+         <property name="text">
+          <string>Importuj nastawy</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/assets/assets/import.ico</normaloff>:/assets/assets/import.ico</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="btnHelp">
          <property name="cursor">
           <cursorShape>WhatsThisCursor</cursorShape>
@@ -202,7 +216,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Controls">
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -896,6 +910,9 @@
                     <property name="statusTip">
                      <string>Min: 0.00 | Max: 99.99</string>
                     </property>
+                    <property name="maximum">
+                     <double>999.990000000000009</double>
+                    </property>
                    </widget>
                   </item>
                   <item>
@@ -950,6 +967,9 @@
                     </property>
                     <property name="statusTip">
                      <string>Min: 0.00 | Max: 99.99</string>
+                    </property>
+                    <property name="maximum">
+                     <double>999.990000000000009</double>
                     </property>
                    </widget>
                   </item>
@@ -1009,6 +1029,9 @@
                     <property name="whatsThis">
                      <string/>
                     </property>
+                    <property name="maximum">
+                     <double>999.990000000000009</double>
+                    </property>
                    </widget>
                   </item>
                   <item>
@@ -1067,6 +1090,9 @@
                     <property name="whatsThis">
                      <string/>
                     </property>
+                    <property name="maximum">
+                     <double>999.990000000000009</double>
+                    </property>
                    </widget>
                   </item>
                   <item>
@@ -1124,6 +1150,9 @@
                     </property>
                     <property name="whatsThis">
                      <string/>
+                    </property>
+                    <property name="maximum">
+                     <double>999.990000000000009</double>
                     </property>
                    </widget>
                   </item>
@@ -1340,7 +1369,7 @@
                   <string/>
                  </property>
                  <property name="maximum">
-                  <number>500</number>
+                  <number>999</number>
                  </property>
                 </widget>
                </item>
@@ -3604,6 +3633,114 @@
         </item>
         <item>
          <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Import">
+       <layout class="QVBoxLayout" name="verticalLayout_15">
+        <item>
+         <widget class="QFrame" name="frame_40">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_34">
+           <item>
+            <widget class="QPushButton" name="btnImportLoad">
+             <property name="text">
+              <string>Wczytaj dane</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/assets/import.ico</normaloff>:/assets/assets/import.ico</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_31">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_39">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_33">
+           <item>
+            <widget class="QLabel" name="label_48">
+             <property name="text">
+              <string>Nr albumu:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cmbImportIdx">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="currentText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnImportAction">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Pobierz nastawy</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_30">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_5">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
