@@ -2073,9 +2073,160 @@ class Ui_MainWindow(object):
         self.container.addWidget(self.Import)
         self.Graphs = QWidget()
         self.Graphs.setObjectName(u"Graphs")
-        self.label_19 = QLabel(self.Graphs)
-        self.label_19.setObjectName(u"label_19")
-        self.label_19.setGeometry(QRect(400, 330, 49, 16))
+        self.verticalLayout_16 = QVBoxLayout(self.Graphs)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.frame_41 = QFrame(self.Graphs)
+        self.frame_41.setObjectName(u"frame_41")
+        self.frame_41.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_41.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_38 = QHBoxLayout(self.frame_41)
+        self.horizontalLayout_38.setObjectName(u"horizontalLayout_38")
+        self.pushButton_5 = QPushButton(self.frame_41)
+        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.pushButton_5.setIcon(icon2)
+
+        self.horizontalLayout_38.addWidget(self.pushButton_5)
+
+        self.line_7 = QFrame(self.frame_41)
+        self.line_7.setObjectName(u"line_7")
+        self.line_7.setFrameShape(QFrame.Shape.VLine)
+        self.line_7.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.horizontalLayout_38.addWidget(self.line_7)
+
+        self.pushButton_4 = QPushButton(self.frame_41)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setIcon(icon3)
+
+        self.horizontalLayout_38.addWidget(self.pushButton_4)
+
+        self.horizontalSpacer_32 = QSpacerItem(1035, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_38.addItem(self.horizontalSpacer_32)
+
+
+        self.verticalLayout_16.addWidget(self.frame_41)
+
+        self.frame_44 = QFrame(self.Graphs)
+        self.frame_44.setObjectName(u"frame_44")
+        self.frame_44.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_44.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_37 = QHBoxLayout(self.frame_44)
+        self.horizontalLayout_37.setObjectName(u"horizontalLayout_37")
+        self.frame_45 = QFrame(self.frame_44)
+        self.frame_45.setObjectName(u"frame_45")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.frame_45.sizePolicy().hasHeightForWidth())
+        self.frame_45.setSizePolicy(sizePolicy5)
+        self.frame_45.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_45.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_23 = QVBoxLayout(self.frame_45)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.verticalLayout_20 = QVBoxLayout()
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+
+        self.verticalLayout_23.addLayout(self.verticalLayout_20)
+
+
+        self.horizontalLayout_37.addWidget(self.frame_45)
+
+        self.frame_46 = QFrame(self.frame_44)
+        self.frame_46.setObjectName(u"frame_46")
+        self.frame_46.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_46.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_17 = QVBoxLayout(self.frame_46)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.pushButton = QPushButton(self.frame_46)
+        self.pushButton.setObjectName(u"pushButton")
+
+        self.verticalLayout_17.addWidget(self.pushButton)
+
+
+        self.horizontalLayout_37.addWidget(self.frame_46)
+
+
+        self.verticalLayout_16.addWidget(self.frame_44)
+
+        self.frame_42 = QFrame(self.Graphs)
+        self.frame_42.setObjectName(u"frame_42")
+        self.frame_42.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_42.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_36 = QHBoxLayout(self.frame_42)
+        self.horizontalLayout_36.setObjectName(u"horizontalLayout_36")
+        self.frame_47 = QFrame(self.frame_42)
+        self.frame_47.setObjectName(u"frame_47")
+        sizePolicy5.setHeightForWidth(self.frame_47.sizePolicy().hasHeightForWidth())
+        self.frame_47.setSizePolicy(sizePolicy5)
+        self.frame_47.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_47.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_24 = QVBoxLayout(self.frame_47)
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.verticalLayout_21 = QVBoxLayout()
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+
+        self.verticalLayout_24.addLayout(self.verticalLayout_21)
+
+
+        self.horizontalLayout_36.addWidget(self.frame_47)
+
+        self.frame_48 = QFrame(self.frame_42)
+        self.frame_48.setObjectName(u"frame_48")
+        self.frame_48.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_48.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_18 = QVBoxLayout(self.frame_48)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.pushButton_2 = QPushButton(self.frame_48)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+
+        self.verticalLayout_18.addWidget(self.pushButton_2)
+
+
+        self.horizontalLayout_36.addWidget(self.frame_48)
+
+
+        self.verticalLayout_16.addWidget(self.frame_42)
+
+        self.frame_43 = QFrame(self.Graphs)
+        self.frame_43.setObjectName(u"frame_43")
+        self.frame_43.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_43.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayout_35 = QHBoxLayout(self.frame_43)
+        self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
+        self.frame_49 = QFrame(self.frame_43)
+        self.frame_49.setObjectName(u"frame_49")
+        sizePolicy5.setHeightForWidth(self.frame_49.sizePolicy().hasHeightForWidth())
+        self.frame_49.setSizePolicy(sizePolicy5)
+        self.frame_49.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_49.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_25 = QVBoxLayout(self.frame_49)
+        self.verticalLayout_25.setObjectName(u"verticalLayout_25")
+        self.verticalLayout_22 = QVBoxLayout()
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+
+        self.verticalLayout_25.addLayout(self.verticalLayout_22)
+
+
+        self.horizontalLayout_35.addWidget(self.frame_49)
+
+        self.frame_50 = QFrame(self.frame_43)
+        self.frame_50.setObjectName(u"frame_50")
+        self.frame_50.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_50.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_19 = QVBoxLayout(self.frame_50)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.pushButton_3 = QPushButton(self.frame_50)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+
+        self.verticalLayout_19.addWidget(self.pushButton_3)
+
+
+        self.horizontalLayout_35.addWidget(self.frame_50)
+
+
+        self.verticalLayout_16.addWidget(self.frame_43)
+
         self.container.addWidget(self.Graphs)
 
         self.verticalLayout_2.addWidget(self.container)
@@ -2557,6 +2708,10 @@ class Ui_MainWindow(object):
         self.label_48.setText(QCoreApplication.translate("MainWindow", u"Nr albumu:", None))
         self.cmbImportIdx.setCurrentText("")
         self.btnImportAction.setText(QCoreApplication.translate("MainWindow", u"Pobierz nastawy", None))
-        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Graphs", None))
+        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"Wykresy grzalki", None))
+        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"Wykresy wentylatora", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
     # retranslateUi
 

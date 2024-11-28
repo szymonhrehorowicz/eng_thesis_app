@@ -7,20 +7,21 @@ from PySide6.QtCore import QTimer
 from check_connection import is_connected
 from MathEquation import MathEquation
 from MainMenuHandler import MainMenuHandler, INDICES
-from FanControlsHandler import FanControlsHandler
-from HeaterControlsHandler import HeaterControlsHandler
-from BB import BB
-from PID import PID
+from controls.FanControlsHandler import FanControlsHandler
+from controls.HeaterControlsHandler import HeaterControlsHandler
+from controls.BB import BB
+from controls.PID import PID
 from Serial import Serial
 from COM import COM
-from HeaterController import HeaterController
-from FanController import FanController
-from FanBBGraph import FanBBGraph
-from FanPIDGraph import FanPIDGraph
-from HeaterBBGraph import HeaterBBGraph
-from HeaterPIDGraph import HeaterPIDGraph
+from controls.HeaterController import HeaterController
+from controls.FanController import FanController
+from graphs.FanBBGraph import FanBBGraph
+from graphs.FanPIDGraph import FanPIDGraph
+from graphs.HeaterBBGraph import HeaterBBGraph
+from graphs.HeaterPIDGraph import HeaterPIDGraph
 from Export import Export
 from Import import Import
+from graphs.GraphsPage import GraphsPage
 from utilities import DEGREE_SIGN
 import rc_resources
 
@@ -52,13 +53,14 @@ class MainWindow(QMainWindow):
         self.fanPIDgraph = FanPIDGraph(self, self.ui.layFanPIDGraph, 'RPM')
         self.heaterBBgraph = HeaterBBGraph(self, self.ui.layHeaterBBGraph, f'{DEGREE_SIGN}C')
         self.heaterPIDgraph = HeaterPIDGraph(self, self.ui.layHeaterPIDGraph, f'{DEGREE_SIGN}C')
+        self.graphsPage = GraphsPage(self)
         # Export
         self.export = Export(self)
         self.importer = Import(self)
 
         # DEFAULT LOCATION
-        #self.ui.btnHeaterControls.setEnabled(False)
-        #self.ui.btnFanControls.setEnabled(False)
+        self.ui.btnHeaterControls.setEnabled(False)
+        self.ui.btnFanControls.setEnabled(False)
         self.mainMenuHandler.open_help()
 
         # Connect button

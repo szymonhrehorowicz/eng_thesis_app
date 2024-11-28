@@ -1,5 +1,5 @@
 # This Python file uses the following encoding: utf-8
-from Graph import Graph
+from graphs.Graph import Graph
 from PySide6.QtCore import Slot
 
 class HeaterPIDGraph(Graph):
