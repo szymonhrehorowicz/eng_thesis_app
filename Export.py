@@ -17,10 +17,10 @@ class Export:
                 },
                 "Regulator dwupolozeniowy": {
                     "x(t)": True,
-                    "x_max(t)": True,
-                    "x_min(t)": True,
-                    "u_max(t)": True,
-                    "u_min(t)": True,
+                    "x_max": True,
+                    "x_min": True,
+                    "u_max": True,
+                    "u_min": True,
                     "y_1(t)": True,
                     "y_2(t)": True,
                     "stan": True,
@@ -30,17 +30,17 @@ class Export:
                     "e(t)": True,
                     "int_e(t)": True,
                     "aw_int_e(t)": True,
-                    "k_p(t)": True,
-                    "k_i(t)": True,
-                    "k_d(t)": True,
-                    "k_aw(t)": True,
+                    "k_p": True,
+                    "k_i": True,
+                    "k_d": True,
+                    "k_aw": True,
                     "u(t)": True,
                     "u_sat(t)": True,
                     "u_p(t)": True,
                     "u_i(t)": True,
                     "u_d(t)": True,
-                    "u_max(t)": True,
-                    "u_min(t)": True,
+                    "u_max": True,
+                    "u_min": True,
                     "y_1(t)": True,
                     "y_2(t)": True,
                     "stan": True
@@ -53,10 +53,10 @@ class Export:
                 },
                 "Regulator dwupolozeniowy": {
                     "x(t)": True,
-                    "x_max(t)": True,
-                    "x_min(t)": True,
-                    "u_max(t)": True,
-                    "u_min(t)": True,
+                    "x_max": True,
+                    "x_min": True,
+                    "u_max": True,
+                    "u_min": True,
                     "y(t)": True,
                     "stan": True,
                 },
@@ -65,17 +65,17 @@ class Export:
                     "e(t)": True,
                     "int_e(t)": True,
                     "aw_int_e(t)": True,
-                    "k_p(t)": True,
-                    "k_i(t)": True,
-                    "k_d(t)": True,
-                    "k_aw(t)": True,
+                    "k_p": True,
+                    "k_i": True,
+                    "k_d": True,
+                    "k_aw": True,
                     "u(t)": True,
                     "u_sat(t)": True,
                     "u_p(t)": True,
                     "u_i(t)": True,
                     "u_d(t)": True,
-                    "u_max(t)": True,
-                    "u_min(t)": True,
+                    "u_max": True,
+                    "u_min": True,
                     "y(t)": True,
                     "stan": True
                 }
@@ -275,22 +275,22 @@ class Export:
 
     @Slot(bool)
     def set_heater_bb_x_max(self, state):
-        self.data_to_export["Grzalka"]["Regulator dwupolozeniowy"]["x_max(t)"] = state
+        self.data_to_export["Grzalka"]["Regulator dwupolozeniowy"]["x_max"] = state
         self.sub_button_handler(state, self.handler.ui.chxExHeaterBB, "Grzalka", "Regulator dwupolozeniowy")
 
     @Slot(bool)
     def set_heater_bb_x_min(self, state):
-        self.data_to_export["Grzalka"]["Regulator dwupolozeniowy"]["x_min(t)"] = state
+        self.data_to_export["Grzalka"]["Regulator dwupolozeniowy"]["x_min"] = state
         self.sub_button_handler(state, self.handler.ui.chxExHeaterBB, "Grzalka", "Regulator dwupolozeniowy")
 
     @Slot(bool)
     def set_heater_bb_u_max(self, state):
-        self.data_to_export["Grzalka"]["Regulator dwupolozeniowy"]["u_max(t)"] = state
+        self.data_to_export["Grzalka"]["Regulator dwupolozeniowy"]["u_max"] = state
         self.sub_button_handler(state, self.handler.ui.chxExHeaterBB, "Grzalka", "Regulator dwupolozeniowy")
 
     @Slot(bool)
     def set_heater_bb_u_min(self, state):
-        self.data_to_export["Grzalka"]["Regulator dwupolozeniowy"]["u_min(t)"] = state
+        self.data_to_export["Grzalka"]["Regulator dwupolozeniowy"]["u_min"] = state
         self.sub_button_handler(state, self.handler.ui.chxExHeaterBB, "Grzalka", "Regulator dwupolozeniowy")
 
     @Slot(bool)
@@ -331,22 +331,22 @@ class Export:
 
     @Slot(bool)
     def set_heater_pid_k_p(self, state):
-        self.data_to_export["Grzalka"]["Regulator PID"]["k_p(t)"] = state
+        self.data_to_export["Grzalka"]["Regulator PID"]["k_p"] = state
         self.sub_button_handler(state, self.handler.ui.chxExHeaterPID, "Grzalka", "Regulator PID")
 
     @Slot(bool)
     def set_heater_pid_k_i(self, state):
-        self.data_to_export["Grzalka"]["Regulator PID"]["k_i(t)"] = state
+        self.data_to_export["Grzalka"]["Regulator PID"]["k_i"] = state
         self.sub_button_handler(state, self.handler.ui.chxExHeaterPID, "Grzalka", "Regulator PID")
 
     @Slot(bool)
     def set_heater_pid_k_d(self, state):
-        self.data_to_export["Grzalka"]["Regulator PID"]["k_d(t)"] = state
+        self.data_to_export["Grzalka"]["Regulator PID"]["k_d"] = state
         self.sub_button_handler(state, self.handler.ui.chxExHeaterPID, "Grzalka", "Regulator PID")
 
     @Slot(bool)
     def set_heater_pid_k_aw(self, state):
-        self.data_to_export["Grzalka"]["Regulator PID"]["k_aw(t)"] = state
+        self.data_to_export["Grzalka"]["Regulator PID"]["k_aw"] = state
         self.sub_button_handler(state, self.handler.ui.chxExHeaterPID, "Grzalka", "Regulator PID")
 
     @Slot(bool)
@@ -376,12 +376,12 @@ class Export:
 
     @Slot(bool)
     def set_heater_pid_u_max(self, state):
-        self.data_to_export["Grzalka"]["Regulator PID"]["u_max(t)"] = state
+        self.data_to_export["Grzalka"]["Regulator PID"]["u_max"] = state
         self.sub_button_handler(state, self.handler.ui.chxExHeaterPID, "Grzalka", "Regulator PID")
 
     @Slot(bool)
     def set_heater_pid_u_min(self, state):
-        self.data_to_export["Grzalka"]["Regulator PID"]["u_min(t)"] = state
+        self.data_to_export["Grzalka"]["Regulator PID"]["u_min"] = state
         self.sub_button_handler(state, self.handler.ui.chxExHeaterPID, "Grzalka", "Regulator PID")
 
     @Slot(bool)
@@ -407,22 +407,22 @@ class Export:
 
     @Slot(bool)
     def set_fan_bb_x_max(self, state):
-        self.data_to_export["Wentylator"]["Regulator dwupolozeniowy"]["x_max(t)"] = state
+        self.data_to_export["Wentylator"]["Regulator dwupolozeniowy"]["x_max"] = state
         self.sub_button_handler(state, self.handler.ui.chxExFanBB, "Wentylator", "Regulator dwupolozeniowy")
 
     @Slot(bool)
     def set_fan_bb_x_min(self, state):
-        self.data_to_export["Wentylator"]["Regulator dwupolozeniowy"]["x_min(t)"] = state
+        self.data_to_export["Wentylator"]["Regulator dwupolozeniowy"]["x_min"] = state
         self.sub_button_handler(state, self.handler.ui.chxExFanBB, "Wentylator", "Regulator dwupolozeniowy")
 
     @Slot(bool)
     def set_fan_bb_u_max(self, state):
-        self.data_to_export["Wentylator"]["Regulator dwupolozeniowy"]["u_max(t)"] = state
+        self.data_to_export["Wentylator"]["Regulator dwupolozeniowy"]["u_max"] = state
         self.sub_button_handler(state, self.handler.ui.chxExFanBB, "Wentylator", "Regulator dwupolozeniowy")
 
     @Slot(bool)
     def set_fan_bb_u_min(self, state):
-        self.data_to_export["Wentylator"]["Regulator dwupolozeniowy"]["u_min(t)"] = state
+        self.data_to_export["Wentylator"]["Regulator dwupolozeniowy"]["u_min"] = state
         self.sub_button_handler(state, self.handler.ui.chxExFanBB, "Wentylator", "Regulator dwupolozeniowy")
 
     @Slot(bool)
@@ -458,22 +458,22 @@ class Export:
 
     @Slot(bool)
     def set_fan_pid_k_p(self, state):
-        self.data_to_export["Wentylator"]["Regulator PID"]["k_p(t)"] = state
+        self.data_to_export["Wentylator"]["Regulator PID"]["k_p"] = state
         self.sub_button_handler(state, self.handler.ui.chxExFanPID, "Wentylator", "Regulator PID")
 
     @Slot(bool)
     def set_fan_pid_k_i(self, state):
-        self.data_to_export["Wentylator"]["Regulator PID"]["k_i(t)"] = state
+        self.data_to_export["Wentylator"]["Regulator PID"]["k_i"] = state
         self.sub_button_handler(state, self.handler.ui.chxExFanPID, "Wentylator", "Regulator PID")
 
     @Slot(bool)
     def set_fan_pid_k_d(self, state):
-        self.data_to_export["Wentylator"]["Regulator PID"]["k_d(t)"] = state
+        self.data_to_export["Wentylator"]["Regulator PID"]["k_d"] = state
         self.sub_button_handler(state, self.handler.ui.chxExFanPID, "Wentylator", "Regulator PID")
 
     @Slot(bool)
     def set_fan_pid_k_aw(self, state):
-        self.data_to_export["Wentylator"]["Regulator PID"]["k_aw(t)"] = state
+        self.data_to_export["Wentylator"]["Regulator PID"]["k_aw"] = state
         self.sub_button_handler(state, self.handler.ui.chxExFanPID, "Wentylator", "Regulator PID")
 
     @Slot(bool)
@@ -503,12 +503,12 @@ class Export:
 
     @Slot(bool)
     def set_fan_pid_u_max(self, state):
-        self.data_to_export["Wentylator"]["Regulator PID"]["u_max(t)"] = state
+        self.data_to_export["Wentylator"]["Regulator PID"]["u_max"] = state
         self.sub_button_handler(state, self.handler.ui.chxExFanPID, "Wentylator", "Regulator PID")
 
     @Slot(bool)
     def set_fan_pid_u_min(self, state):
-        self.data_to_export["Wentylator"]["Regulator PID"]["u_min(t)"] = state
+        self.data_to_export["Wentylator"]["Regulator PID"]["u_min"] = state
         self.sub_button_handler(state, self.handler.ui.chxExFanPID, "Wentylator", "Regulator PID")
 
     @Slot(bool)

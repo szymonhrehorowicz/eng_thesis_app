@@ -59,8 +59,8 @@ class MainWindow(QMainWindow):
         self.importer = Import(self)
 
         # DEFAULT LOCATION
-        self.ui.btnHeaterControls.setEnabled(False)
-        self.ui.btnFanControls.setEnabled(False)
+        #self.ui.btnHeaterControls.setEnabled(False)
+        #self.ui.btnFanControls.setEnabled(False)
         self.mainMenuHandler.open_help()
 
         # Connect button
@@ -261,6 +261,28 @@ class MainWindow(QMainWindow):
         self.ui.chxExFanPID_y.clicked.connect(self.export.set_fan_pid_y)
         self.ui.chxExFanPID_mode.clicked.connect(self.export.set_fan_pid_mode)
 
+        # Graphs page
+        self.ui.btnGraphsPageHeater.clicked.connect(self.graphsPage.open_heater)
+        self.ui.btnGraphsPageFan.clicked.connect(self.graphsPage.open_fan)
+        self.ui.btnGraphsPageStop.clicked.connect(self.graphsPage.stop)
+
+        self.ui.btnGraphsPageHeater_x.clicked.connect(self.graphsPage.set_heater_x)
+        self.ui.btnGraphsPageHeater_y_1.clicked.connect(self.graphsPage.set_heater_y_1)
+        self.ui.btnGraphsPageHeater_y_2.clicked.connect(self.graphsPage.set_heater_y_2)
+        self.ui.btnGraphsPageHeater_u_sat.clicked.connect(self.graphsPage.set_heater_u_sat)
+        self.ui.btnGraphsPageHeater_u.clicked.connect(self.graphsPage.set_heater_u)
+        self.ui.btnGraphsPageHeater_u_p.clicked.connect(self.graphsPage.set_heater_u_p)
+        self.ui.btnGraphsPageHeater_u_i.clicked.connect(self.graphsPage.set_heater_u_i)
+        self.ui.btnGraphsPageHeater_u_d.clicked.connect(self.graphsPage.set_heater_u_d)
+
+        self.ui.btnGraphsPageFan_x.clicked.connect(self.graphsPage.set_fan_x)
+        self.ui.btnGraphsPageFan_y.clicked.connect(self.graphsPage.set_fan_y)
+        self.ui.btnGraphsPageFan_u_sat.clicked.connect(self.graphsPage.set_fan_u_sat)
+        self.ui.btnGraphsPageFan_u.clicked.connect(self.graphsPage.set_fan_u)
+        self.ui.btnGraphsPageFan_u_p.clicked.connect(self.graphsPage.set_fan_u_p)
+        self.ui.btnGraphsPageFan_u_i.clicked.connect(self.graphsPage.set_fan_u_i)
+        self.ui.btnGraphsPageFan_u_d.clicked.connect(self.graphsPage.set_fan_u_d)
+
         # Import
         self.ui.btnImportLoad.clicked.connect(self.importer.load_file)
         self.ui.btnImportAction.clicked.connect(self.importer.import_data)
@@ -281,15 +303,19 @@ class MainWindow(QMainWindow):
         self.timer1s.start()
 
     def tim_100ms_IRS(self):
-        current_window = self.ui.stackGraphs.currentIndex()
-        if (current_window == INDICES["heater_bb"]) and self.isHeaterBB_graph_running:
-            self.heaterBBgraph.update_graph()
-        elif (current_window == INDICES["heater_pid"]) and self.isHeaterPID_graph_running:
-            self.heaterPIDgraph.update_graph()
-        elif (current_window == INDICES["fan_bb"]) and self.isFanBB_graph_running:
-            self.fanBBgraph.update_graph()
-        elif (current_window == INDICES["fan_pid"]) and self.isFanPID_graph_running:
-            self.fanPIDgraph.update_graph()
+        current_main_window = self.ui.container.currentIndex()
+        if current_main_window == INDICES["controls"]:
+            current_window = self.ui.stackGraphs.currentIndex()
+            if (current_window == INDICES["heater_bb"]) and self.isHeaterBB_graph_running:
+                self.heaterBBgraph.update_graph()
+            elif (current_window == INDICES["heater_pid"]) and self.isHeaterPID_graph_running:
+                self.heaterPIDgraph.update_graph()
+            elif (current_window == INDICES["fan_bb"]) and self.isFanBB_graph_running:
+                self.fanBBgraph.update_graph()
+            elif (current_window == INDICES["fan_pid"]) and self.isFanPID_graph_running:
+                self.fanPIDgraph.update_graph()
+        elif current_main_window == INDICES["graphs"]:
+            self.graphsPage.update()
     
     def tim_1s_IRS(self):
         if self.isSerialConnected:

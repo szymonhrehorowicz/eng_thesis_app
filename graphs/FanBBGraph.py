@@ -15,19 +15,19 @@ class FanBBGraph(Graph):
                 "state": self.handler.ui.btnFanBB_graph_x.isChecked(),
                 "color": 'indianred',
             },
-            "x_max(t)": {
+            "x_max": {
                 "state": self.handler.ui.btnFanBB_graph_x_max.isChecked(),
                 "color": 'tomato',
             },
-            "x_min(t)": {
+            "x_min": {
                 "state": self.handler.ui.btnFanBB_graph_x_min.isChecked(),
                 "color": 'peachpuff',
             },
-            "u_max(t)": {
+            "u_max": {
                 "state": self.handler.ui.btnFanBB_graph_u_max.isChecked(),
                 "color": 'darkorange',
             },
-            "u_min(t)": {
+            "u_min": {
                 "state": self.handler.ui.btnFanBB_graph_u_min.isChecked(),
                 "color": 'gold',
             },
@@ -59,19 +59,19 @@ class FanBBGraph(Graph):
 
     @Slot(bool)
     def set_threshold_top(self, state):
-        self.controls['x_max(t)']["state"] = state
+        self.controls['x_max']["state"] = state
 
     @Slot(bool)
     def set_threshold_bottom(self, state):
-        self.controls['x_min(t)']["state"] = state
+        self.controls['x_min']["state"] = state
 
     @Slot(bool)
     def set_u_max(self, state):
-        self.controls['u_max(t)']["state"] = state
+        self.controls['u_max']["state"] = state
 
     @Slot(bool)
     def set_u_min(self, state):
-        self.controls['u_min(t)']["state"] = state
+        self.controls['u_min']["state"] = state
 
     @Slot(bool)
     def set_y(self, state):

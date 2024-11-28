@@ -27,19 +27,19 @@ class FanPIDGraph(Graph):
                 "state": self.handler.ui.btnFanPID_graph_aw_int_e.isChecked(),
                 "color": "darkorange",
             },
-            "k_p(t)": {
+            "k_p": {
                 "state": self.handler.ui.btnFanPID_graph_k_p.isChecked(),
                 "color": "gold",
             },
-            "k_i(t)": {
+            "k_i": {
                 "state": self.handler.ui.btnFanPID_graph_k_i.isChecked(),
                 "color": "olive",
             },
-            "k_d(t)": {
+            "k_d": {
                 "state": self.handler.ui.btnFanPID_graph_k_d.isChecked(),
                 "color": "yellow",
             },
-            "k_aw(t)": {
+            "k_aw": {
                 "state": self.handler.ui.btnFanPID_graph_k_aw.isChecked(),
                 "color": "greenyellow",
             },
@@ -63,11 +63,11 @@ class FanPIDGraph(Graph):
                 "state": self.handler.ui.btnFanPID_graph_u_d.isChecked(),
                 "color": "navy",
             },
-            "u_max(t)": {
+            "u_max": {
                 "state": self.handler.ui.btnFanPID_graph_u_max.isChecked(),
                 "color": "blueviolet",
             },
-            "u_min(t)": {
+            "u_min": {
                 "state": self.handler.ui.btnFanPID_graph_u_min.isChecked(),
                 "color": "violet",
             },
@@ -121,19 +121,19 @@ class FanPIDGraph(Graph):
 
     @Slot(bool)
     def set_k_p(self, state):
-        self.controls['k_p(t)']["state"] = state
+        self.controls['k_p']["state"] = state
 
     @Slot(bool)
     def set_k_i(self, state):
-        self.controls['k_i(t)']["state"] = state
+        self.controls['k_i']["state"] = state
     
     @Slot(bool)
     def set_k_d(self, state):
-        self.controls['k_d(t)']["state"] = state
+        self.controls['k_d']["state"] = state
     
     @Slot(bool)
     def set_k_aw(self, state):
-        self.controls['k_aw(t)']["state"] = state
+        self.controls['k_aw']["state"] = state
     
     @Slot(bool)
     def set_u(self, state):
@@ -157,11 +157,11 @@ class FanPIDGraph(Graph):
 
     @Slot(bool)
     def set_u_max(self, state):
-        self.controls['u_max(t)']["state"] = state
+        self.controls['u_max']["state"] = state
     
     @Slot(bool)
     def set_u_min(self, state):
-        self.controls['u_min(t)']["state"] = state
+        self.controls['u_min']["state"] = state
     
     @Slot(bool)
     def set_y(self, state):

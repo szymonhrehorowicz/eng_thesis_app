@@ -15,6 +15,8 @@ INDICES = {
     "heater_pid": 1,
     "fan_bb": 2,
     "fan_pid": 3,
+    "graphs_heater": 0,
+    "graphs_fan": 1,
 }
 
 class MainMenuHandler:
