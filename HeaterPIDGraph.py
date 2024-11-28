@@ -13,57 +13,75 @@ class HeaterPIDGraph(Graph):
         self.controls = {
             "x(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_x.isChecked(),
+                "color": "indianred",
             },
             "e(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_e.isChecked(),
+                "color": "tomato",
             },
             "int_e(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_int_e.isChecked(),
+                "color": "peachpuff",
             },
             "aw_int_e(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_aw_int_e.isChecked(),
+                "color": "darkorange",
             },
             "k_p(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_k_p.isChecked(),
+                "color": "gold",
             },
             "k_i(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_k_i.isChecked(),
+                "color": "olive",
             },
             "k_d(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_k_d.isChecked(),
+                "color": "yellow",
             },
             "k_aw(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_k_aw.isChecked(),
+                "color": "greenyellow",
             },
             "u(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_u.isChecked(),
+                "color": "lime",
             },
             "u_sat(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_u_sat.isChecked(),
+                "color": "aquamarine",
             },
             "u_p(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_u_p.isChecked(),
+                "color": "darkcyan",
             },
             "u_i(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_u_i.isChecked(),
+                "color": "royalblue",
             },
             "u_d(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_u_d.isChecked(),
+                "color": "navy",
             },
             "u_max(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_u_max.isChecked(),
+                "color": "blueviolet",
             },
             "u_min(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_u_min.isChecked(),
+                "color": "violet",
             },
             "y_1(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_y_1.isChecked(),
+                "color": "hotpink",
             },
             "y_2(t)": {
                 "state": self.handler.ui.btnHeaterPID_graph_y_2.isChecked(),
+                "color": "crimson",
             },
             "stan": {
                 "state": self.handler.ui.btnHeaterPID_graph_mode.isChecked(),
+                "color": "skyblue",
             }
         }
 

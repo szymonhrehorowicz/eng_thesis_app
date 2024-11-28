@@ -13,24 +13,31 @@ class FanBBGraph(Graph):
         self.controls = {
             "x(t)": {
                 "state": self.handler.ui.btnFanBB_graph_x.isChecked(),
+                "color": 'indianred',
             },
             "x_max(t)": {
                 "state": self.handler.ui.btnFanBB_graph_x_max.isChecked(),
+                "color": 'tomato',
             },
             "x_min(t)": {
                 "state": self.handler.ui.btnFanBB_graph_x_min.isChecked(),
+                "color": 'peachpuff',
             },
             "u_max(t)": {
                 "state": self.handler.ui.btnFanBB_graph_u_max.isChecked(),
+                "color": 'darkorange',
             },
             "u_min(t)": {
                 "state": self.handler.ui.btnFanBB_graph_u_min.isChecked(),
+                "color": 'gold',
             },
             "y(t)": {
                 "state": self.handler.ui.btnFanBB_graph_y.isChecked(),
+                "color": 'olive',
             },
             "stan": {
                 "state": self.handler.ui.btnFanBB_graph_mode.isChecked(),
+                "color": 'yellow',
             }
         }
 

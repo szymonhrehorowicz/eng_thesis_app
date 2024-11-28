@@ -4,6 +4,7 @@ from PySide6.QtWidgets import QSizePolicy
 from matplotlib.backends.backend_qtagg import FigureCanvas
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
+from matplotlib.colors import CSS4_COLORS
 
 class Graph:
     def __init__(self, handler, layout, label, use_toolbar=True):
@@ -34,7 +35,7 @@ class Graph:
         # Plot lines
         for idx, signal in enumerate(signals):
             if self.controls[self.keys[idx]]["state"]:
-                self.ax.plot(t, signal, label=self.keys[idx], marker='')
+                self.ax.plot(t, signal, color=CSS4_COLORS[self.controls[self.keys[idx]]["color"]], label=self.keys[idx], marker='')
         if any([self.controls[key]["state"] for key in self.keys]):
             self.ax.legend(loc="lower left")
         self.ax.set_xlabel('t, s')  # Label x-axis

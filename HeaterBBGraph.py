@@ -13,27 +13,35 @@ class HeaterBBGraph(Graph):
         self.controls = {
             "x(t)": {
                 "state": self.handler.ui.btnHeaterBB_graph_x.isChecked(),
+                "color": "indianred",
             },
             "x_max(t)": {
                 "state": self.handler.ui.btnHeaterBB_graph_x_max.isChecked(),
+                "color": "tomato",
             },
             "x_min(t)": {
                 "state": self.handler.ui.btnHeaterBB_graph_x_min.isChecked(),
+                "color": "peachpuff",
             },
             "u_max(t)": {
                 "state": self.handler.ui.btnHeaterBB_graph_u_max.isChecked(),
+                "color": "darkorange",
             },
             "u_min(t)": {
                 "state": self.handler.ui.btnHeaterBB_graph_u_min.isChecked(),
+                "color": "gold",
             },
             "y_1(t)": {
                 "state": self.handler.ui.btnHeaterBB_graph_y_1.isChecked(),
+                "color": "olive",
             },
             "y_2(t)": {
                 "state": self.handler.ui.btnHeaterBB_graph_y_2.isChecked(),
+                "color": "yellow",
             },
             "stan": {
                 "state": self.handler.ui.btnHeaterBB_graph_mode.isChecked(),
+                "color": "greenyellow",
             }
         }
 

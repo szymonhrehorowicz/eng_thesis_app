@@ -57,8 +57,8 @@ class MainWindow(QMainWindow):
         self.importer = Import(self)
 
         # DEFAULT LOCATION
-        self.ui.btnHeaterControls.setEnabled(False)
-        self.ui.btnFanControls.setEnabled(False)
+        #self.ui.btnHeaterControls.setEnabled(False)
+        #self.ui.btnFanControls.setEnabled(False)
         self.mainMenuHandler.open_help()
 
         # Connect button
@@ -70,6 +70,7 @@ class MainWindow(QMainWindow):
         self.ui.btnDataExport.clicked.connect(self.mainMenuHandler.open_export)
         self.ui.btnHelp.clicked.connect(self.mainMenuHandler.open_help)
         self.ui.btnImport.clicked.connect(self.mainMenuHandler.open_import)
+        self.ui.btnGraphs.clicked.connect(self.mainMenuHandler.open_graphs)
         # Heater controller select buttons
         self.ui.btnHeaterControllerSetBB.clicked.connect(self.mainMenuHandler.set_heater_bb)
         self.ui.btnHeaterControllerSetPID.clicked.connect(self.mainMenuHandler.set_heater_pid)
@@ -172,7 +173,7 @@ class MainWindow(QMainWindow):
         self.ui.btnHeaterPID_graph_u_i.clicked.connect(self.heaterPIDgraph.set_u_i)
         self.ui.btnHeaterPID_graph_u_d.clicked.connect(self.heaterPIDgraph.set_u_d)
         self.ui.btnHeaterPID_graph_u_max.clicked.connect(self.heaterPIDgraph.set_u_max)
-        self.ui.btnHeaterPID_graph_u_max.clicked.connect(self.heaterPIDgraph.set_u_min)
+        self.ui.btnHeaterPID_graph_u_min.clicked.connect(self.heaterPIDgraph.set_u_min)
         self.ui.btnHeaterPID_graph_y_1.clicked.connect(self.heaterPIDgraph.set_y_1)
         self.ui.btnHeaterPID_graph_y_2.clicked.connect(self.heaterPIDgraph.set_y_2)
         self.ui.btnHeaterPID_graph_mode.clicked.connect(self.heaterPIDgraph.set_mode)

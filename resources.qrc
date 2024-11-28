@@ -13,5 +13,6 @@
         <file>assets/fan.ico</file>
         <file>assets/heater.ico</file>
         <file>assets/import.ico</file>
+        <file>assets/graph.ico</file>
     </qresource>
 </RCC>
