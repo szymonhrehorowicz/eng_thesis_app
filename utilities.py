@@ -2,6 +2,7 @@
 from PySide6.QtWidgets import QDialog, QVBoxLayout, QLabel, QDialogButtonBox
 from PySide6.QtCore import QSize
 from PySide6.QtGui import QIcon
+import struct
 import rc_resources
 
 class VariableWithBoundires:
@@ -40,3 +41,18 @@ def error_dialog(handler, text):
 
 def success_dialog(handler, text):
     dialog(handler, "Sukces", text, u":/assets/assets/success.ico")
+
+def get_uint8(data):
+    return bin(data)[2:].zfill(8)
+
+def get_uint16(data):
+    return get_uint8(data[0]) + get_uint8(data[1])
+
+def get_uint32(data):
+    return get_uint16(data) + get_uint16(data[2:])
+
+def int2(uint):
+    return int(uint, 2)
+
+def get_float(num):
+    return struct.unpack('f', struct.pack('I', num))[0]
