@@ -71,16 +71,17 @@ class HeaterController:
             self.pid_mode]
 
     def update_all(self, data):
+        # Timestamp - given in [ms]
         if self.t0_bb == 0:
-            self.t0_bb = time.time()
+            self.t0_bb = data["TIMESTAMP"]
             self.bb_time.append(0)
         else:
-            self.bb_time.append(time.time() - self.t0_bb)
+            self.bb_time.append((data["TIMESTAMP"] - self.t0_bb) / 1000)
         if self.t0_pid == 0:
-            self.t0_pid = time.time()
+            self.t0_pid = data["TIMESTAMP"]
             self.pid_time.append(0)
         else:
-            self.pid_time.append(time.time() - self.t0_pid)
+            self.pid_time.append((data["TIMESTAMP"]- self.t0_pid) / 1000)
         # BB
         self.bb_set_value.append(data["BB_SET_VALUE"])
         self.bb_threshold_top.append(data["BB_THRESHOLD_TOP"])
@@ -111,16 +112,17 @@ class HeaterController:
         self.pid_mode.append(data["PID_MODE"])
 
     def update_fast(self, data):
+        # Timestamp - given in [ms]
         if self.t0_bb == 0:
-            self.t0_bb = time.time()
+            self.t0_bb = data["TIMESTAMP"]
             self.bb_time.append(0)
         else:
-            self.bb_time.append(time.time() - self.t0_bb)
+            self.bb_time.append((data["TIMESTAMP"] - self.t0_bb) / 1000)
         if self.t0_pid == 0:
-            self.t0_pid = time.time()
+            self.t0_pid = data["TIMESTAMP"]
             self.pid_time.append(0)
         else:
-            self.pid_time.append(time.time() - self.t0_pid)
+            self.pid_time.append((data["TIMESTAMP"]- self.t0_pid) / 1000)
         # BB
         self.bb_set_value.append(self.bb_set_value[-1])
         self.bb_threshold_top.append(self.bb_threshold_top[-1])

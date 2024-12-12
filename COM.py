@@ -14,7 +14,7 @@ CONTROL_MSG = {
     "SET_HEATER_CONFIG": 40,
 }
 
-FAN_ALL_DATA = {
+ALL_DATA = {
     "BB_SET_VALUE": 0,
     "BB_THRESHOLD_TOP": 1,
     "BB_THRESHOLD_BOTTOM": 2,
@@ -40,7 +40,7 @@ FAN_ALL_DATA = {
     "PID_MODE": 22,
 }
 
-FAN_FAST_DATA = {
+FAST_DATA = {
     "BB_CMD": 0,
     "PID_ERROR": 1,
     "PID_INT_ERROR": 2,
@@ -51,48 +51,6 @@ FAN_FAST_DATA = {
     "PID_U_I": 7,
     "PID_U_D": 8,
     "PID_SPEED": 9,
-    "PID_MODE": 10,
-}
-
-HEATER_ALL_DATA = {
-    "BB_SET_VALUE": 0,
-    "BB_THRESHOLD_TOP": 1,
-    "BB_THRESHOLD_BOTTOM": 2,
-    "BB_U_MAX": 3,
-    "BB_U_MIN": 4,
-    "BB_CMD": 5,
-    "PID_SET_VALUE": 6,
-    "PID_ERROR": 7,
-    "PID_INT_ERROR": 8,
-    "PID_AW_INT_ERROR": 9,
-    "PID_KP": 10,
-    "PID_KI": 11,
-    "PID_KD": 12,
-    "PID_KAW": 13,
-    "PID_U": 14,
-    "PID_U_SATURATED": 15,
-    "PID_U_P": 16,
-    "PID_U_I": 17,
-    "PID_U_D": 18,
-    "PID_MAX": 19,
-    "PID_MIN": 20,
-    "PID_TEMP_LEFT": 21,
-    "PID_TEMP_RIGHT": 22,
-    "PID_MODE": 23,
-}
-
-HEATER_FAST_DATA = {
-    "BB_CMD": 0,
-    "PID_ERROR": 1,
-    "PID_INT_ERROR": 2,
-    "PID_AW_INT_ERROR": 3,
-    "PID_U": 4,
-    "PID_U_SATURATED": 5,
-    "PID_U_P": 6,
-    "PID_U_I": 7,
-    "PID_U_D": 8,
-    "PID_TEMP_LEFT": 21,
-    "PID_TEMP_RIGHT": 22,
     "PID_MODE": 10,
 }
 
@@ -200,15 +158,16 @@ class COM:
         self.handler.serial.write_data(QByteArray(msg))
         print(msg)
 
-    # FAN GETTERS
-    def handle_all_fan_data(self, data):
+    def handle_all_data(self, data):
         self.handler.fanController.update_all({
-            "BB_SET_VALUE": data[0],
-            "BB_THRESHOLD_TOP": data[1],
-            "BB_THRESHOLD_BOTTOM": data[2],
-            "BB_U_MAX": data[3],
-            "BB_U_MIN": data[4],
-            "BB_CMD": data[5],
+            # BB
+            "BB_SET_VALUE": data[1],
+            "BB_THRESHOLD_TOP": data[2],
+            "BB_THRESHOLD_BOTTOM": data[3],
+            "BB_U_MAX": data[4],
+            "BB_U_MIN": data[5],
+            "BB_CMD": data[0],
+            # PID
             "PID_SET_VALUE": data[6],
             "PID_ERROR": data[7],
             "PID_INT_ERROR": data[8],
@@ -224,57 +183,47 @@ class COM:
             "PID_U_D": data[18],
             "PID_MAX": data[19],
             "PID_MIN": data[20],
-            "PID_SPEED": data[21],
-            "PID_MODE": data[22],
+            "PID_SPEED": data[42],
+            "PID_MODE": data[45],
+            # TIMESTAMP
+            "TIMESTAMP": data[47],
         })
-
-    def handle_fast_fan_data(self, data):
-        self.handler.fanController.update_fast({
-            "BB_CMD": data[0],
-            "PID_ERROR": data[1],
-            "PID_INT_ERROR": data[2],
-            "PID_AW_INT_ERROR": data[3],
-            "PID_U": data[4],
-            "PID_U_SATURATED": data[5],
-            "PID_U_P": data[6],
-            "PID_U_I": data[7],
-            "PID_U_D": data[8],
-            "PID_SPEED": data[9],
-            "PID_MODE": data[10],
-        })
-
-    # HEATER GETTERS
-    def handle_all_heater_data(self, data):
         self.handler.heaterController.update_all({
-            "BB_SET_VALUE": data[0],
-            "BB_THRESHOLD_TOP": data[1],
-            "BB_THRESHOLD_BOTTOM": data[2],
-            "BB_U_MAX": data[3],
-            "BB_U_MIN": data[4],
-            "BB_CMD": data[5],
-            "PID_SET_VALUE": data[6],
-            "PID_ERROR": data[7],
-            "PID_INT_ERROR": data[8],
-            "PID_AW_INT_ERROR": data[9],
-            "PID_KP": data[10],
-            "PID_KI": data[11],
-            "PID_KD": data[12],
-            "PID_KAW": data[13],
-            "PID_U": data[14],
-            "PID_U_SATURATED": data[15],
-            "PID_U_P": data[16],
-            "PID_U_I": data[17],
-            "PID_U_D": data[18],
-            "PID_MAX": data[19],
-            "PID_MIN": data[20],
-            "PID_TEMP_LEFT": data[21],
-            "PID_TEMP_RIGHT": data[22],
-            "PID_MODE": data[23],
+            ## BB
+            "BB_SET_VALUE": data[22],
+            "BB_THRESHOLD_TOP": data[23],
+            "BB_THRESHOLD_BOTTOM": data[24],
+            "BB_U_MAX": data[25],
+            "BB_U_MIN": data[26],
+            "BB_CMD": data[21],
+            # PID
+            "PID_SET_VALUE": data[27],
+            "PID_ERROR": data[28],
+            "PID_INT_ERROR": data[29],
+            "PID_AW_INT_ERROR": data[30],
+            "PID_KP": data[31],
+            "PID_KI": data[32],
+            "PID_KD": data[33],
+            "PID_KAW": data[34],
+            "PID_U": data[35],
+            "PID_U_SATURATED": data[36],
+            "PID_U_P": data[37],
+            "PID_U_I": data[38],
+            "PID_U_D": data[39],
+            "PID_MAX": data[40],
+            "PID_MIN": data[41],
+            "PID_TEMP_LEFT": data[43],
+            "PID_TEMP_RIGHT": data[44],
+            "PID_MODE": data[46],
+            # TIMESTAMP
+            "TIMESTAMP": data[47],
         })
-    
-    def handle_fast_heater_data(self, data):
-        self.handler.heaterController.update_fast({
+
+    def handle_fast_data(self, data):
+        self.handler.fanController.update_fast({
+            # BB
             "BB_CMD": data[0],
+            # PID
             "PID_ERROR": data[1],
             "PID_INT_ERROR": data[2],
             "PID_AW_INT_ERROR": data[3],
@@ -283,7 +232,26 @@ class COM:
             "PID_U_P": data[6],
             "PID_U_I": data[7],
             "PID_U_D": data[8],
-            "PID_TEMP_LEFT": data[9],
-            "PID_TEMP_RIGHT": data[10],
-            "PID_MODE": data[11],
+            "PID_SPEED": data[18],
+            "PID_MODE": data[21],
+            # TIMESTAMP
+            "TIMESTAMP": data[23],
+        })
+        self.handler.heaterController.update_fast({
+            # BB
+            "BB_CMD": data[9],
+            # PID
+            "PID_ERROR": data[10],
+            "PID_INT_ERROR": data[11],
+            "PID_AW_INT_ERROR": data[12],
+            "PID_U": data[13],
+            "PID_U_SATURATED": data[14],
+            "PID_U_P": data[15],
+            "PID_U_I": data[16],
+            "PID_U_D": data[17],
+            "PID_TEMP_LEFT": data[19],
+            "PID_TEMP_RIGHT": data[20],
+            "PID_MODE": data[22],
+            # TIMESTAMP
+            "TIMESTAMP": data[23],
         }) 
