@@ -157,8 +157,8 @@ class Ui_MainWindow(object):
         self.stackControllerDesc.setFont(font)
         self.controllerDescHeater = QWidget()
         self.controllerDescHeater.setObjectName(u"controllerDescHeater")
-        self.horizontalLayout_17 = QHBoxLayout(self.controllerDescHeater)
-        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.horizontalLayout_43 = QHBoxLayout(self.controllerDescHeater)
+        self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
         self.lblControls = QLabel(self.controllerDescHeater)
         self.lblControls.setObjectName(u"lblControls")
         font1 = QFont()
@@ -167,13 +167,19 @@ class Ui_MainWindow(object):
         font1.setBold(False)
         self.lblControls.setFont(font1)
 
-        self.horizontalLayout_17.addWidget(self.lblControls)
+        self.horizontalLayout_43.addWidget(self.lblControls)
 
-        self.horizontalSpacer_12 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.frame_59 = QFrame(self.controllerDescHeater)
+        self.frame_59.setObjectName(u"frame_59")
+        self.frame_59.setFrameShape(QFrame.StyledPanel)
+        self.frame_59.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_17 = QHBoxLayout(self.frame_59)
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.horizontalSpacer_34 = QSpacerItem(1220, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_17.addItem(self.horizontalSpacer_12)
+        self.horizontalLayout_17.addItem(self.horizontalSpacer_34)
 
-        self.btnHeaterStart = QPushButton(self.controllerDescHeater)
+        self.btnHeaterStart = QPushButton(self.frame_59)
         self.btnHeaterStart.setObjectName(u"btnHeaterStart")
         font2 = QFont()
         font2.setPointSize(9)
@@ -182,27 +188,39 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_17.addWidget(self.btnHeaterStart)
 
+
+        self.horizontalLayout_43.addWidget(self.frame_59)
+
         self.stackControllerDesc.addWidget(self.controllerDescHeater)
         self.controllerDescFan = QWidget()
         self.controllerDescFan.setObjectName(u"controllerDescFan")
-        self.horizontalLayout_18 = QHBoxLayout(self.controllerDescFan)
-        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
+        self.horizontalLayout_42 = QHBoxLayout(self.controllerDescFan)
+        self.horizontalLayout_42.setObjectName(u"horizontalLayout_42")
         self.label_21 = QLabel(self.controllerDescFan)
         self.label_21.setObjectName(u"label_21")
         self.label_21.setFont(font)
 
-        self.horizontalLayout_18.addWidget(self.label_21)
+        self.horizontalLayout_42.addWidget(self.label_21)
 
-        self.horizontalSpacer_13 = QSpacerItem(889, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.frame_57 = QFrame(self.controllerDescFan)
+        self.frame_57.setObjectName(u"frame_57")
+        self.frame_57.setFrameShape(QFrame.StyledPanel)
+        self.frame_57.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_18 = QHBoxLayout(self.frame_57)
+        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
+        self.horizontalSpacer_33 = QSpacerItem(1184, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_18.addItem(self.horizontalSpacer_13)
+        self.horizontalLayout_18.addItem(self.horizontalSpacer_33)
 
-        self.btnFanStart = QPushButton(self.controllerDescFan)
+        self.btnFanStart = QPushButton(self.frame_57)
         self.btnFanStart.setObjectName(u"btnFanStart")
         self.btnFanStart.setFont(font2)
         self.btnFanStart.setCheckable(True)
 
         self.horizontalLayout_18.addWidget(self.btnFanStart)
+
+
+        self.horizontalLayout_42.addWidget(self.frame_57)
 
         self.stackControllerDesc.addWidget(self.controllerDescFan)
 
@@ -239,7 +257,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_14.addWidget(self.btnHeaterControllerSetPID)
 
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_14.addItem(self.horizontalSpacer_2)
 
@@ -269,7 +287,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.btnHeaterControllerSetLowPower)
 
-        self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_15.addItem(self.horizontalSpacer_10)
 
@@ -299,7 +317,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_16.addWidget(self.btnHeaterControllerSetRightCoil)
 
-        self.horizontalSpacer_11 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_11 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_16.addItem(self.horizontalSpacer_11)
 
@@ -329,7 +347,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.btnFanControllerSetPID)
 
-        self.horizontalSpacer_4 = QSpacerItem(869, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_7.addItem(self.horizontalSpacer_4)
 
@@ -411,10 +429,16 @@ class Ui_MainWindow(object):
 
         self.inHeaterBBPower = QSlider(self.frame_3)
         self.inHeaterBBPower.setObjectName(u"inHeaterBBPower")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.inHeaterBBPower.sizePolicy().hasHeightForWidth())
+        self.inHeaterBBPower.setSizePolicy(sizePolicy4)
         self.inHeaterBBPower.setMaximumSize(QSize(200, 16777215))
         self.inHeaterBBPower.setMaximum(100)
         self.inHeaterBBPower.setSingleStep(1)
         self.inHeaterBBPower.setPageStep(1)
+        self.inHeaterBBPower.setOrientation(Qt.Horizontal)
         self.inHeaterBBPower.setTickPosition(QSlider.NoTicks)
         self.inHeaterBBPower.setTickInterval(1)
 
@@ -430,7 +454,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6.addWidget(self.label_6)
 
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer_3)
 
@@ -471,7 +495,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_9.addWidget(self.label_11)
 
-        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_9.addItem(self.horizontalSpacer_5)
 
@@ -500,7 +524,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_10.addWidget(self.label_13)
 
-        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_10.addItem(self.horizontalSpacer_6)
 
@@ -529,7 +553,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_11.addWidget(self.label_15)
 
-        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_11.addItem(self.horizontalSpacer_7)
 
@@ -558,9 +582,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_31.addWidget(self.label_44)
 
-        self.horizontalSpacer_23 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_31.addItem(self.horizontalSpacer_23)
+        self.horizontalLayout_31.addItem(self.horizontalSpacer_8)
 
 
         self.horizontalLayout_30.addWidget(self.frame_23)
@@ -587,9 +611,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_12.addWidget(self.label_17)
 
-        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_12.addItem(self.horizontalSpacer_8)
+        self.horizontalLayout_12.addItem(self.horizontalSpacer_9)
 
 
         self.horizontalLayout_30.addWidget(self.frame_7)
@@ -616,9 +640,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8.addWidget(self.label_45)
 
-        self.horizontalSpacer_24 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_23 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_8.addItem(self.horizontalSpacer_24)
+        self.horizontalLayout_8.addItem(self.horizontalSpacer_23)
 
 
         self.horizontalLayout_30.addWidget(self.frame_24)
@@ -640,9 +664,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addWidget(self.inHeaterPID_Kaw)
 
-        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_24 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_13.addItem(self.horizontalSpacer_9)
+        self.horizontalLayout_13.addItem(self.horizontalSpacer_24)
 
 
         self.horizontalLayout_30.addWidget(self.frame_8)
@@ -652,11 +676,11 @@ class Ui_MainWindow(object):
 
         self.frame_25 = QFrame(self.pageHeaterControllerConfigPID)
         self.frame_25.setObjectName(u"frame_25")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.frame_25.sizePolicy().hasHeightForWidth())
-        self.frame_25.setSizePolicy(sizePolicy4)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.frame_25.sizePolicy().hasHeightForWidth())
+        self.frame_25.setSizePolicy(sizePolicy5)
         self.frame_25.setMaximumSize(QSize(16777215, 120))
         self.frame_25.setFrameShape(QFrame.NoFrame)
         self.verticalLayout_6 = QVBoxLayout(self.frame_25)
@@ -696,10 +720,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_20.addWidget(self.label_23)
 
-        self.horizontalSpacer_14 = QSpacerItem(318, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.horizontalLayout_20.addItem(self.horizontalSpacer_14)
-
 
         self.horizontalLayout_19.addWidget(self.frame_12)
 
@@ -725,9 +745,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_21.addWidget(self.label_25)
 
-        self.horizontalSpacer_15 = QSpacerItem(353, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_14 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_21.addItem(self.horizontalSpacer_15)
+        self.horizontalLayout_21.addItem(self.horizontalSpacer_14)
 
 
         self.horizontalLayout_19.addWidget(self.frame_13)
@@ -764,9 +784,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_23.addWidget(self.label_27)
 
-        self.horizontalSpacer_16 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_20 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_23.addItem(self.horizontalSpacer_16)
+        self.horizontalLayout_23.addItem(self.horizontalSpacer_20)
 
 
         self.horizontalLayout_22.addWidget(self.frame_14)
@@ -793,9 +813,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_24.addWidget(self.label_29)
 
-        self.horizontalSpacer_17 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_19 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_24.addItem(self.horizontalSpacer_17)
+        self.horizontalLayout_24.addItem(self.horizontalSpacer_19)
 
 
         self.horizontalLayout_22.addWidget(self.frame_15)
@@ -822,7 +842,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_25.addWidget(self.label_31)
 
-        self.horizontalSpacer_18 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_18 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_25.addItem(self.horizontalSpacer_18)
 
@@ -851,9 +871,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_28.addWidget(self.label_39)
 
-        self.horizontalSpacer_21 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_17 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_28.addItem(self.horizontalSpacer_21)
+        self.horizontalLayout_28.addItem(self.horizontalSpacer_17)
 
 
         self.horizontalLayout_22.addWidget(self.frame_19)
@@ -880,9 +900,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_26.addWidget(self.label_33)
 
-        self.horizontalSpacer_19 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_16 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_26.addItem(self.horizontalSpacer_19)
+        self.horizontalLayout_26.addItem(self.horizontalSpacer_16)
 
 
         self.horizontalLayout_22.addWidget(self.frame_17)
@@ -909,9 +929,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_29.addWidget(self.label_41)
 
-        self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_15 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_29.addItem(self.horizontalSpacer_22)
+        self.horizontalLayout_29.addItem(self.horizontalSpacer_15)
 
 
         self.horizontalLayout_22.addWidget(self.frame_21)
@@ -933,9 +953,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_27.addWidget(self.inFanPID_Kaw)
 
-        self.horizontalSpacer_20 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_13 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_27.addItem(self.horizontalSpacer_20)
+        self.horizontalLayout_27.addItem(self.horizontalSpacer_13)
 
 
         self.horizontalLayout_22.addWidget(self.frame_18)
@@ -963,10 +983,15 @@ class Ui_MainWindow(object):
 
         self.stackGraphs = QStackedWidget(self.Controls)
         self.stackGraphs.setObjectName(u"stackGraphs")
-        sizePolicy1.setHeightForWidth(self.stackGraphs.sizePolicy().hasHeightForWidth())
-        self.stackGraphs.setSizePolicy(sizePolicy1)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.stackGraphs.sizePolicy().hasHeightForWidth())
+        self.stackGraphs.setSizePolicy(sizePolicy6)
         self.pageHeaterBBGraph = QWidget()
         self.pageHeaterBBGraph.setObjectName(u"pageHeaterBBGraph")
+        sizePolicy6.setHeightForWidth(self.pageHeaterBBGraph.sizePolicy().hasHeightForWidth())
+        self.pageHeaterBBGraph.setSizePolicy(sizePolicy6)
         self.verticalLayout_9 = QVBoxLayout(self.pageHeaterBBGraph)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.layHeaterBBGraph = QVBoxLayout()
@@ -976,15 +1001,31 @@ class Ui_MainWindow(object):
 
         self.frame_29 = QFrame(self.pageHeaterBBGraph)
         self.frame_29.setObjectName(u"frame_29")
+        sizePolicy5.setHeightForWidth(self.frame_29.sizePolicy().hasHeightForWidth())
+        self.frame_29.setSizePolicy(sizePolicy5)
         self.frame_29.setFrameShape(QFrame.NoFrame)
         self.gridLayout_4 = QGridLayout(self.frame_29)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.btnHeaterBB_graph_mode = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_mode.setObjectName(u"btnHeaterBB_graph_mode")
-        self.btnHeaterBB_graph_mode.setCheckable(True)
-        self.btnHeaterBB_graph_mode.setChecked(False)
+        self.btnHeaterBB_graph_x_min = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_x_min.setObjectName(u"btnHeaterBB_graph_x_min")
+        self.btnHeaterBB_graph_x_min.setCheckable(True)
+        self.btnHeaterBB_graph_x_min.setChecked(False)
 
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_mode, 0, 7, 1, 1)
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_min, 0, 2, 1, 1)
+
+        self.btnHeaterBB_graph_y_1 = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_y_1.setObjectName(u"btnHeaterBB_graph_y_1")
+        self.btnHeaterBB_graph_y_1.setCheckable(True)
+        self.btnHeaterBB_graph_y_1.setChecked(True)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_y_1, 0, 5, 1, 1)
+
+        self.btnHeaterBB_graph_x_max = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_x_max.setObjectName(u"btnHeaterBB_graph_x_max")
+        self.btnHeaterBB_graph_x_max.setCheckable(True)
+        self.btnHeaterBB_graph_x_max.setChecked(False)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_max, 0, 1, 1, 1)
 
         self.btnHeaterBB_graph_u_max = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_u_max.setObjectName(u"btnHeaterBB_graph_u_max")
@@ -1000,14 +1041,14 @@ class Ui_MainWindow(object):
         self.btnHeaterBB_graph_Stop.setIcon(icon8)
         self.btnHeaterBB_graph_Stop.setCheckable(True)
 
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Stop, 0, 9, 1, 1)
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Stop, 0, 8, 1, 1)
 
-        self.btnHeaterBB_graph_y_1 = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_y_1.setObjectName(u"btnHeaterBB_graph_y_1")
-        self.btnHeaterBB_graph_y_1.setCheckable(True)
-        self.btnHeaterBB_graph_y_1.setChecked(True)
+        self.btnHeaterBB_graph_x = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_x.setObjectName(u"btnHeaterBB_graph_x")
+        self.btnHeaterBB_graph_x.setCheckable(True)
+        self.btnHeaterBB_graph_x.setChecked(True)
 
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_y_1, 0, 5, 1, 1)
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x, 0, 0, 1, 1)
 
         self.btnHeaterBB_graph_u_min = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_u_min.setObjectName(u"btnHeaterBB_graph_u_min")
@@ -1015,6 +1056,13 @@ class Ui_MainWindow(object):
         self.btnHeaterBB_graph_u_min.setChecked(False)
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_u_min, 0, 4, 1, 1)
+
+        self.btnHeaterBB_graph_mode = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_mode.setObjectName(u"btnHeaterBB_graph_mode")
+        self.btnHeaterBB_graph_mode.setCheckable(True)
+        self.btnHeaterBB_graph_mode.setChecked(False)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_mode, 0, 7, 1, 1)
 
         self.btnHeaterBB_graph_y_2 = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_y_2.setObjectName(u"btnHeaterBB_graph_y_2")
@@ -1029,32 +1077,7 @@ class Ui_MainWindow(object):
         icon9.addFile(u":/assets/assets/broom.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btnHeaterBB_graph_Clear.setIcon(icon9)
 
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Clear, 1, 9, 1, 1)
-
-        self.btnHeaterBB_graph_x = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_x.setObjectName(u"btnHeaterBB_graph_x")
-        self.btnHeaterBB_graph_x.setCheckable(True)
-        self.btnHeaterBB_graph_x.setChecked(True)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x, 0, 0, 1, 1)
-
-        self.btnHeaterBB_graph_x_min = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_x_min.setObjectName(u"btnHeaterBB_graph_x_min")
-        self.btnHeaterBB_graph_x_min.setCheckable(True)
-        self.btnHeaterBB_graph_x_min.setChecked(False)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_min, 0, 2, 1, 1)
-
-        self.btnHeaterBB_graph_x_max = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_x_max.setObjectName(u"btnHeaterBB_graph_x_max")
-        self.btnHeaterBB_graph_x_max.setCheckable(True)
-        self.btnHeaterBB_graph_x_max.setChecked(False)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_max, 0, 1, 1, 1)
-
-        self.horizontalSpacer_26 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.gridLayout_4.addItem(self.horizontalSpacer_26, 0, 8, 1, 1)
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Clear, 1, 8, 1, 1)
 
 
         self.verticalLayout_9.addWidget(self.frame_29)
@@ -1062,6 +1085,8 @@ class Ui_MainWindow(object):
         self.stackGraphs.addWidget(self.pageHeaterBBGraph)
         self.pageHeaterPIDGraph = QWidget()
         self.pageHeaterPIDGraph.setObjectName(u"pageHeaterPIDGraph")
+        sizePolicy6.setHeightForWidth(self.pageHeaterPIDGraph.sizePolicy().hasHeightForWidth())
+        self.pageHeaterPIDGraph.setSizePolicy(sizePolicy6)
         self.verticalLayout_11 = QVBoxLayout(self.pageHeaterPIDGraph)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.layHeaterPIDGraph = QVBoxLayout()
@@ -1225,6 +1250,8 @@ class Ui_MainWindow(object):
         self.stackGraphs.addWidget(self.pageHeaterPIDGraph)
         self.pageFanBBGraph = QWidget()
         self.pageFanBBGraph.setObjectName(u"pageFanBBGraph")
+        sizePolicy6.setHeightForWidth(self.pageFanBBGraph.sizePolicy().hasHeightForWidth())
+        self.pageFanBBGraph.setSizePolicy(sizePolicy6)
         self.verticalLayout_4 = QVBoxLayout(self.pageFanBBGraph)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.layFanBBGraph = QVBoxLayout()
@@ -1311,6 +1338,8 @@ class Ui_MainWindow(object):
         self.stackGraphs.addWidget(self.pageFanBBGraph)
         self.pageFanPIDGraph = QWidget()
         self.pageFanPIDGraph.setObjectName(u"pageFanPIDGraph")
+        sizePolicy6.setHeightForWidth(self.pageFanPIDGraph.sizePolicy().hasHeightForWidth())
+        self.pageFanPIDGraph.setSizePolicy(sizePolicy6)
         self.verticalLayout_8 = QVBoxLayout(self.pageFanPIDGraph)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.layFanPIDGraph = QVBoxLayout()
@@ -1989,7 +2018,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_34.addWidget(self.btnImportLoad)
 
-        self.horizontalSpacer_31 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_31 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_34.addItem(self.horizontalSpacer_31)
 
@@ -2018,7 +2047,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_33.addWidget(self.btnImportAction)
 
-        self.horizontalSpacer_30 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer_30 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_33.addItem(self.horizontalSpacer_30)
 
@@ -2075,10 +2104,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_38.addWidget(self.btnGraphsPageStop)
 
-        self.horizontalSpacer_32 = QSpacerItem(1035, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.horizontalLayout_38.addItem(self.horizontalSpacer_32)
-
 
         self.verticalLayout_16.addWidget(self.frame_41)
 
@@ -2095,11 +2120,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_37.setObjectName(u"horizontalLayout_37")
         self.frame_45 = QFrame(self.frame_44)
         self.frame_45.setObjectName(u"frame_45")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.frame_45.sizePolicy().hasHeightForWidth())
-        self.frame_45.setSizePolicy(sizePolicy5)
+        sizePolicy6.setHeightForWidth(self.frame_45.sizePolicy().hasHeightForWidth())
+        self.frame_45.setSizePolicy(sizePolicy6)
         self.frame_45.setFrameShape(QFrame.NoFrame)
         self.verticalLayout_23 = QVBoxLayout(self.frame_45)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
@@ -2154,8 +2176,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
         self.frame_49 = QFrame(self.frame_43)
         self.frame_49.setObjectName(u"frame_49")
-        sizePolicy5.setHeightForWidth(self.frame_49.sizePolicy().hasHeightForWidth())
-        self.frame_49.setSizePolicy(sizePolicy5)
+        sizePolicy6.setHeightForWidth(self.frame_49.sizePolicy().hasHeightForWidth())
+        self.frame_49.setSizePolicy(sizePolicy6)
         self.frame_49.setFrameShape(QFrame.NoFrame)
         self.verticalLayout_25 = QVBoxLayout(self.frame_49)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
@@ -2177,8 +2199,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_36.setObjectName(u"horizontalLayout_36")
         self.frame_47 = QFrame(self.frame_42)
         self.frame_47.setObjectName(u"frame_47")
-        sizePolicy5.setHeightForWidth(self.frame_47.sizePolicy().hasHeightForWidth())
-        self.frame_47.setSizePolicy(sizePolicy5)
+        sizePolicy6.setHeightForWidth(self.frame_47.sizePolicy().hasHeightForWidth())
+        self.frame_47.setSizePolicy(sizePolicy6)
         self.frame_47.setFrameShape(QFrame.NoFrame)
         self.verticalLayout_24 = QVBoxLayout(self.frame_47)
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
@@ -2253,8 +2275,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
         self.frame_55 = QFrame(self.frame_50)
         self.frame_55.setObjectName(u"frame_55")
-        sizePolicy5.setHeightForWidth(self.frame_55.sizePolicy().hasHeightForWidth())
-        self.frame_55.setSizePolicy(sizePolicy5)
+        sizePolicy6.setHeightForWidth(self.frame_55.sizePolicy().hasHeightForWidth())
+        self.frame_55.setSizePolicy(sizePolicy6)
         self.frame_55.setFrameShape(QFrame.StyledPanel)
         self.frame_55.setFrameShadow(QFrame.Raised)
         self.verticalLayout_27 = QVBoxLayout(self.frame_55)
@@ -2305,8 +2327,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
         self.frame_54 = QFrame(self.frame_51)
         self.frame_54.setObjectName(u"frame_54")
-        sizePolicy5.setHeightForWidth(self.frame_54.sizePolicy().hasHeightForWidth())
-        self.frame_54.setSizePolicy(sizePolicy5)
+        sizePolicy6.setHeightForWidth(self.frame_54.sizePolicy().hasHeightForWidth())
+        self.frame_54.setSizePolicy(sizePolicy6)
         self.frame_54.setFrameShape(QFrame.StyledPanel)
         self.frame_54.setFrameShadow(QFrame.Raised)
         self.verticalLayout_28 = QVBoxLayout(self.frame_54)
@@ -2324,16 +2346,16 @@ class Ui_MainWindow(object):
 
         self.frame_52 = QFrame(self.pageGraphsPageFan)
         self.frame_52.setObjectName(u"frame_52")
-        sizePolicy4.setHeightForWidth(self.frame_52.sizePolicy().hasHeightForWidth())
-        self.frame_52.setSizePolicy(sizePolicy4)
+        sizePolicy5.setHeightForWidth(self.frame_52.sizePolicy().hasHeightForWidth())
+        self.frame_52.setSizePolicy(sizePolicy5)
         self.frame_52.setFrameShape(QFrame.StyledPanel)
         self.frame_52.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_41 = QHBoxLayout(self.frame_52)
         self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
         self.frame_53 = QFrame(self.frame_52)
         self.frame_53.setObjectName(u"frame_53")
-        sizePolicy5.setHeightForWidth(self.frame_53.sizePolicy().hasHeightForWidth())
-        self.frame_53.setSizePolicy(sizePolicy5)
+        sizePolicy6.setHeightForWidth(self.frame_53.sizePolicy().hasHeightForWidth())
+        self.frame_53.setSizePolicy(sizePolicy6)
         self.frame_53.setFrameShape(QFrame.StyledPanel)
         self.frame_53.setFrameShadow(QFrame.Raised)
         self.verticalLayout_29 = QVBoxLayout(self.frame_53)
@@ -2413,10 +2435,10 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.container.setCurrentIndex(0)
-        self.stackControllerDesc.setCurrentIndex(1)
+        self.stackControllerDesc.setCurrentIndex(0)
         self.stackControllerSelect.setCurrentIndex(0)
         self.stackController.setCurrentIndex(1)
-        self.stackGraphs.setCurrentIndex(1)
+        self.stackGraphs.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2709,7 +2731,9 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(statustip)
         self.inFanPID_Kaw.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0.0 | Max: 1.0", None))
 #endif // QT_CONFIG(statustip)
-        self.btnHeaterBB_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
+        self.btnHeaterBB_graph_x_min.setText(QCoreApplication.translate("MainWindow", u"x_min", None))
+        self.btnHeaterBB_graph_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
+        self.btnHeaterBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"x_max", None))
         self.btnHeaterBB_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
 #if QT_CONFIG(tooltip)
         self.btnHeaterBB_graph_Stop.setToolTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
@@ -2718,8 +2742,9 @@ class Ui_MainWindow(object):
         self.btnHeaterBB_graph_Stop.setStatusTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
 #endif // QT_CONFIG(statustip)
         self.btnHeaterBB_graph_Stop.setText("")
-        self.btnHeaterBB_graph_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
+        self.btnHeaterBB_graph_x.setText(QCoreApplication.translate("MainWindow", u"x(t)", None))
         self.btnHeaterBB_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
+        self.btnHeaterBB_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
         self.btnHeaterBB_graph_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
 #if QT_CONFIG(tooltip)
         self.btnHeaterBB_graph_Clear.setToolTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
@@ -2728,9 +2753,6 @@ class Ui_MainWindow(object):
         self.btnHeaterBB_graph_Clear.setStatusTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
 #endif // QT_CONFIG(statustip)
         self.btnHeaterBB_graph_Clear.setText("")
-        self.btnHeaterBB_graph_x.setText(QCoreApplication.translate("MainWindow", u"x(t)", None))
-        self.btnHeaterBB_graph_x_min.setText(QCoreApplication.translate("MainWindow", u"x_min", None))
-        self.btnHeaterBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"x_max", None))
         self.btnHeaterPID_graph_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
         self.btnHeaterPID_graph_k_p.setText(QCoreApplication.translate("MainWindow", u"k_p", None))
         self.btnHeaterPID_graph_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
