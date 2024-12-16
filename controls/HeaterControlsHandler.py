@@ -94,3 +94,45 @@ class HeaterControlsHandler:
         self.PID.Kd = self.PID.Kp * self.PID.Td
         self.ui.inHeaterPID_Kd.setValue(self.PID.Kd)
         self._update_equation()
+
+    @Slot(bool)
+    def setRefStep(self, value):
+        self.ui.btnHeaterRefStep.setChecked(True)
+        self.ui.btnHeaterRefRamp.setChecked(False)
+        self.ui.btnHeaterRefSinewave.setChecked(False)
+
+        self.ui.frHeaterRefSlope.setVisible(False)
+        self.ui.frHeaterRefAmplitude.setVisible(False)
+        self.ui.frHeaterRefOmega.setVisible(False)
+
+    @Slot(bool)
+    def setRefRamp(self, value):
+        self.ui.btnHeaterRefStep.setChecked(False)
+        self.ui.btnHeaterRefRamp.setChecked(True)
+        self.ui.btnHeaterRefSinewave.setChecked(False)
+
+        self.ui.frHeaterRefSlope.setVisible(True)
+        self.ui.frHeaterRefAmplitude.setVisible(False)
+        self.ui.frHeaterRefOmega.setVisible(False)
+
+    @Slot(bool)
+    def setRefSinewave(self, value):
+        self.ui.btnHeaterRefStep.setChecked(False)
+        self.ui.btnHeaterRefRamp.setChecked(False)
+        self.ui.btnHeaterRefSinewave.setChecked(True)
+
+        self.ui.frHeaterRefSlope.setVisible(False)
+        self.ui.frHeaterRefAmplitude.setVisible(True)
+        self.ui.frHeaterRefOmega.setVisible(True)
+
+    @Slot(int)
+    def setSlope(self, value):
+        pass
+
+    @Slot(int)
+    def setAmplitude(self, value):
+        pass
+
+    @Slot(int)
+    def setOmega(self, value):
+        pass

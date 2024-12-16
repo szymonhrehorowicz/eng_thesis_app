@@ -85,3 +85,45 @@ class FanControlsHandler:
         self.PID.Kd = self.PID.Kp * self.PID.Td
         self.ui.inFanPID_Kd.setValue(self.PID.Kd)
         self._update_equation()
+
+    @Slot(bool)
+    def setRefStep(self, value):
+        self.ui.btnFanRefStep.setChecked(True)
+        self.ui.btnFanRefRamp.setChecked(False)
+        self.ui.btnFanRefSinewave.setChecked(False)
+
+        self.ui.frFanRefSlope.setVisible(False)
+        self.ui.frFanRefAmplitude.setVisible(False)
+        self.ui.frFanRefOmega.setVisible(False)
+
+    @Slot(bool)
+    def setRefRamp(self, value):
+        self.ui.btnFanRefStep.setChecked(False)
+        self.ui.btnFanRefRamp.setChecked(True)
+        self.ui.btnFanRefSinewave.setChecked(False)
+
+        self.ui.frFanRefSlope.setVisible(True)
+        self.ui.frFanRefAmplitude.setVisible(False)
+        self.ui.frFanRefOmega.setVisible(False)
+
+    @Slot(bool)
+    def setRefSinewave(self, value):
+        self.ui.btnFanRefStep.setChecked(False)
+        self.ui.btnFanRefRamp.setChecked(False)
+        self.ui.btnFanRefSinewave.setChecked(True)
+
+        self.ui.frFanRefSlope.setVisible(False)
+        self.ui.frFanRefAmplitude.setVisible(True)
+        self.ui.frFanRefOmega.setVisible(True)
+
+    @Slot(int)
+    def setSlope(self, value):
+        pass
+
+    @Slot(int)
+    def setAmplitude(self, value):
+        pass
+
+    @Slot(int)
+    def setOmega(self, value):
+        pass

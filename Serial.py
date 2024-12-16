@@ -5,7 +5,7 @@ from utilities import error_dialog, get_uint8, get_uint16, get_uint32, get_float
 
 BLANK_STRING = "N/A"
 DEBUG = True
-DEV_CON_ACK = "00000001"
+DEV_CON_ACK = "10000000"
 MSG_ALL_FAST = 0
 MSG_FAN_ON_OFF = 1
 MSG_HEATER_ON_OFF = 2
@@ -95,9 +95,6 @@ class Serial:
             if not self.open_serial_port():
                 self.ui.btnConnect.setChecked(False)
                 error_dialog(self.handler, "Nie znaleziono urządzenia")
-            else:
-                self.ui.btnHeaterControls.setEnabled(True)
-                self.ui.btnFanControls.setEnabled(True)
         else:
             # If data is False, then button was just UNCHECKED - disconnect with device
             self.close_serial_port()
@@ -108,14 +105,17 @@ class Serial:
 
     @Slot()
     def read_data(self):
-        data = self._serial.readAll().data()
-        header = get_uint8(data[0])[::-1]
-        data = data[1:]
-        if header == DEV_CON_ACK:
+        try:
+            data = self._serial.readAll().data()
+            header = get_uint8(data[0])[::-1]
+            data = data[1:]
+
             # Handle successful connection
             self.ui.btnConnect.setText("Disconnect")
             self.ui.btnConnect.setStatusTip("Rozłącz się z urządzeniem")
-        else:
+            self.ui.btnHeaterControls.setEnabled(True)
+            self.ui.btnFanControls.setEnabled(True)
+
             """
             Byte 0 : 
             0: ALL/FAST | 1: FAN OFF/ON | 2: COIL OFF/ON | 3: TEMP_REF_TOP/TEMP_REF_BOTTOM | 
@@ -309,7 +309,8 @@ class Serial:
                 fast_data.append(isHeaterOn)
                 fast_data.append(timestamp)
                 self.handler.COM.handle_fast_data(fast_data)
-
+        except:
+            pass
 
 
     @Slot(QSerialPort.SerialPortError)

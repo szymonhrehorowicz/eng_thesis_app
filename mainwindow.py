@@ -59,13 +59,13 @@ class MainWindow(QMainWindow):
         self.importer = Import(self)
 
         # DEFAULT LOCATION
-        #self.ui.btnHeaterControls.setEnabled(False)
-        #self.ui.btnFanControls.setEnabled(False)
+        self.ui.btnHeaterControls.setEnabled(False)
+        self.ui.btnFanControls.setEnabled(False)
         self.mainMenuHandler.open_help()
 
         # Connect button
         self.ui.btnConnect.clicked.connect(self.serial.slot_btnConnect)
-
+        
         # Main menu buttons
         self.ui.btnHeaterControls.clicked.connect(self.mainMenuHandler.open_heater)
         self.ui.btnFanControls.clicked.connect(self.mainMenuHandler.open_fan)
@@ -104,6 +104,14 @@ class MainWindow(QMainWindow):
         self.ui.inHeaterPID_Kaw.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inHeaterPID_Ti.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inHeaterPID_Td.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        # Heater PID ref inputs
+        self.ui.btnHeaterRefStep.clicked.connect(self.heaterControlsHandler.setRefStep)
+        self.ui.btnHeaterRefRamp.clicked.connect(self.heaterControlsHandler.setRefRamp)
+        self.ui.btnHeaterRefSinewave.clicked.connect(self.heaterControlsHandler.setRefSinewave)
+        self.ui.frHeaterRefSlope.setVisible(False)
+        self.ui.frHeaterRefAmplitude.setVisible(False)
+        self.ui.frHeaterRefOmega.setVisible(False)
+
         # Fan BB inputs
         self.ui.inFanBBSetValue.editingFinished.connect(self.fanControlsHandler.bb_setValue)
         self.ui.inFanBBHysteresis.editingFinished.connect(self.fanControlsHandler.bb_setHysteresis)
@@ -124,6 +132,13 @@ class MainWindow(QMainWindow):
         self.ui.inFanPID_Kaw.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inFanPID_Ti.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inFanPID_Td.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        # Fan PID ref inputs
+        self.ui.btnFanRefStep.clicked.connect(self.fanControlsHandler.setRefStep)
+        self.ui.btnFanRefRamp.clicked.connect(self.fanControlsHandler.setRefRamp)
+        self.ui.btnFanRefSinewave.clicked.connect(self.fanControlsHandler.setRefSinewave)
+        self.ui.frFanRefSlope.setVisible(False)
+        self.ui.frFanRefAmplitude.setVisible(False)
+        self.ui.frFanRefOmega.setVisible(False)
 
         # Fan BB Graph buttons
         self.ui.btnFanBB_graph_x.clicked.connect(self.fanBBgraph.set_value)
@@ -292,17 +307,17 @@ class MainWindow(QMainWindow):
             self.ui.heaterEquation.addWidget(self.heaterPIDequationwebView)
 
         # Timers
-        self.timer100ms = QTimer()
-        self.timer100ms.setInterval(100)
-        self.timer100ms.timeout.connect(self.tim_100ms_IRS)
-        self.timer100ms.start()
+        self.timer200ms = QTimer()
+        self.timer200ms.setInterval(200)
+        self.timer200ms.timeout.connect(self.tim_200ms_IRS)
+        self.timer200ms.start()
 
         self.timer1s = QTimer()
         self.timer1s.setInterval(1000)
         self.timer1s.timeout.connect(self.tim_1s_IRS)
         self.timer1s.start()
 
-    def tim_100ms_IRS(self):
+    def tim_200ms_IRS(self):
         current_main_window = self.ui.container.currentIndex()
         if current_main_window == INDICES["controls"]:
             current_window = self.ui.stackGraphs.currentIndex()

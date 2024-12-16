@@ -102,7 +102,24 @@ class COM:
         msg += Kaw
         # ON/OFF : 0 - OFF | 1 - ON
         msg += '1' if isOn else '0'
+        # REFERENCE TYPE
+        isStep = self.handler.ui.btnFanRefStep.isChecked()
+        isRamp = self.handler.ui.btnFanRefRamp.isChecked()
+        msg += '0' if isStep else ('1' if isRamp else '2')
+        # REFERENCE SLOPE
+        msg += str(self.handler.ui.inFanRefSlope.value()).zfill(4)
+        # REFERENCE AMPLITUDE
+        msg += str(self.handler.ui.inFanRefAmplitude.value()).zfill(4)
+        # REFERENCE OMEGA
+        omega = self.handler.ui.inFanRefOmega.value()
+        omega = "%.2f"%(omega)
+        for _ in range(0, 6 - len(omega)):
+            omega = '0' + omega
+        msg += omega
+
+        msg += '\n'
         self.handler.serial.write_data(QByteArray(msg))
+        print(msg)
 
     # HEATER SETTERS
     @Slot(bool)
@@ -148,12 +165,27 @@ class COM:
         msg += Kaw
         # ON/OFF : 0 - OFF | 1 - ON
         msg += '1' if isOn else '0'
+        # REFERENCE TYPE
+        isStep = self.handler.ui.btnHeaterRefStep.isChecked()
+        isRamp = self.handler.ui.btnHeaterRefRamp.isChecked()
+        msg += '0' if isStep else ('1' if isRamp else '2')
+        # REFERENCE SLOPE
+        msg += str(self.handler.ui.inHeaterRefSlope.value()).zfill(4)
+        # REFERENCE AMPLITUDE
+        msg += str(self.handler.ui.inHeaterRefAmplitude.value()).zfill(4)
+        # REFERENCE OMEGA
+        omega = self.handler.ui.inHeaterRefOmega.value()
+        omega = "%.2f"%(omega)
+        for _ in range(0, 6 - len(omega)):
+            omega = '0' + omega
+        msg += omega
         # 17/33R : 0 - COIL_B | 1 - COIL_A
         msg += '1' if self.handler.ui.btnHeaterControllerSetHighPower.isChecked() else '0'
         # LEFT/RIGHT: 
-        msg += '0' if self.handler.ui.btnHeaterControllerSetLeftCoil.isChecked() else '1'
+        msg += '1' if self.handler.ui.btnHeaterControllerSetLeftCoil.isChecked() else '0'
         # POWER: 000 - 100
         msg += str(self.handler.ui.inHeaterBBPower.value()).zfill(3)
+
         msg += '\n'
         self.handler.serial.write_data(QByteArray(msg))
         print(msg)
