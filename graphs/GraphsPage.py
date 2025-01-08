@@ -11,6 +11,7 @@ class HeaterGraphY(Graph):
         super(HeaterGraphY, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
+        self.init_plot()
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
@@ -40,29 +41,22 @@ class HeaterGraphY(Graph):
     
     @Slot()
     def on_draw(self, event):
-        if not self.handler.graphsPage.areGraphsRunning:
-            if self.handler.graphsPage.zoom_pending == 0:
-                xlim = self.ax.get_xlim()
-                ylim = self.ax.get_ylim()
-
-                self.handler.graphsPage.zoom_pending += 1
-
+        if self.handler.graphsPage.zoom_pending == 0:
+            xlim = self.ax.get_xlim()
+            if xlim != self.handler.graphsPage.heater_graph_e.ax.get_xlim():
+                self.handler.graphsPage.zoom_pending = 1
                 self.handler.graphsPage.heater_graph_e.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_e.ax.set_ylim(ylim)
-                self.handler.graphsPage.heater_graph_e.canvas.draw()
+                self.handler.graphsPage.heater_graph_e.refresh()
                 self.handler.graphsPage.heater_graph_u.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_u.ax.set_ylim(ylim)
-                self.handler.graphsPage.heater_graph_u.canvas.draw()
-            else:
-                self.handler.graphsPage.zoom_pending += 1
-                if self.handler.graphsPage.zoom_pending >=3:
-                    self.handler.graphsPage.zoom_pending = 0
+                self.handler.graphsPage.heater_graph_u.refresh()
+                self.handler.graphsPage.zoom_pending = 0
 
 class HeaterGraphE(Graph):
     def __init__(self, handler, layout, label):
         super(HeaterGraphE, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
+        self.init_plot()
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
@@ -82,29 +76,22 @@ class HeaterGraphE(Graph):
     
     @Slot()
     def on_draw(self, event):
-        if not self.handler.graphsPage.areGraphsRunning:
-            if self.handler.graphsPage.zoom_pending == 0:
-                xlim = self.ax.get_xlim()
-                ylim = self.ax.get_ylim()
-
-                self.handler.graphsPage.zoom_pending += 1
-
+        if self.handler.graphsPage.zoom_pending == 0:
+            xlim = self.ax.get_xlim()
+            if xlim != self.handler.graphsPage.heater_graph_u.ax.get_xlim():
+                self.handler.graphsPage.zoom_pending = 1
                 self.handler.graphsPage.heater_graph_u.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_u.ax.set_ylim(ylim)
-                self.handler.graphsPage.heater_graph_u.canvas.draw()
+                self.handler.graphsPage.heater_graph_u.refresh()
                 self.handler.graphsPage.heater_graph_y.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_y.ax.set_ylim(ylim)
-                self.handler.graphsPage.heater_graph_y.canvas.draw()
-            else:
-                self.handler.graphsPage.zoom_pending += 1
-                if self.handler.graphsPage.zoom_pending >=3:
-                    self.handler.graphsPage.zoom_pending = 0
+                self.handler.graphsPage.heater_graph_y.refresh()
+                self.handler.graphsPage.zoom_pending = 0
     
 class HeaterGraphU(Graph):
     def __init__(self, handler, layout, label):
         super(HeaterGraphU, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
+        self.init_plot()
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
@@ -144,29 +131,22 @@ class HeaterGraphU(Graph):
     
     @Slot()
     def on_draw(self, event):
-        if not self.handler.graphsPage.areGraphsRunning:
-            if self.handler.graphsPage.zoom_pending == 0:
-                xlim = self.ax.get_xlim()
-                ylim = self.ax.get_ylim()
-
-                self.handler.graphsPage.zoom_pending += 1
-
+        if self.handler.graphsPage.zoom_pending == 0:
+            xlim = self.ax.get_xlim()
+            if xlim != self.handler.graphsPage.heater_graph_e.ax.get_xlim():
+                self.handler.graphsPage.zoom_pending = 1
                 self.handler.graphsPage.heater_graph_e.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_e.ax.set_ylim(ylim)
-                self.handler.graphsPage.heater_graph_e.canvas.draw()
+                self.handler.graphsPage.heater_graph_e.refresh()
                 self.handler.graphsPage.heater_graph_y.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_y.ax.set_ylim(ylim)
-                self.handler.graphsPage.heater_graph_y.canvas.draw()
-            else:
-                self.handler.graphsPage.zoom_pending += 1
-                if self.handler.graphsPage.zoom_pending >=3:
-                    self.handler.graphsPage.zoom_pending = 0
+                self.handler.graphsPage.heater_graph_y.refresh()
+                self.handler.graphsPage.zoom_pending = 0
 
 class FanGraphY(Graph):
     def __init__(self, handler, layout, label):
         super(FanGraphY, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
+        self.init_plot()
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
@@ -191,29 +171,22 @@ class FanGraphY(Graph):
 
     @Slot()
     def on_draw(self, event):
-        if not self.handler.graphsPage.areGraphsRunning:
-            if self.handler.graphsPage.zoom_pending == 0:
-                xlim = self.ax.get_xlim()
-                ylim = self.ax.get_ylim()
-
-                self.handler.graphsPage.zoom_pending += 1
-
+        if self.handler.graphsPage.zoom_pending == 0:
+            xlim = self.ax.get_xlim()
+            if xlim != self.handler.graphsPage.fan_graph_e.ax.get_xlim():
+                self.handler.graphsPage.zoom_pending = 1
                 self.handler.graphsPage.fan_graph_e.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_e.ax.set_ylim(ylim)
-                self.handler.graphsPage.fan_graph_e.canvas.draw()
+                self.handler.graphsPage.fan_graph_e.refresh()
                 self.handler.graphsPage.fan_graph_u.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_u.ax.set_ylim(ylim)
-                self.handler.graphsPage.fan_graph_u.canvas.draw()
-            else:
-                self.handler.graphsPage.zoom_pending += 1
-                if self.handler.graphsPage.zoom_pending >=3:
-                    self.handler.graphsPage.zoom_pending = 0
+                self.handler.graphsPage.fan_graph_u.refresh()
+                self.handler.graphsPage.zoom_pending = 0
 
 class FanGraphE(Graph):
     def __init__(self, handler, layout, label):
         super(FanGraphE, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
+        self.init_plot()
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
@@ -233,29 +206,22 @@ class FanGraphE(Graph):
 
     @Slot()
     def on_draw(self, event):
-        if not self.handler.graphsPage.areGraphsRunning:
-            if self.handler.graphsPage.zoom_pending == 0:
-                xlim = self.ax.get_xlim()
-                ylim = self.ax.get_ylim()
-
-                self.handler.graphsPage.zoom_pending += 1
-
+        if self.handler.graphsPage.zoom_pending == 0:
+            xlim = self.ax.get_xlim()
+            if xlim != self.handler.graphsPage.fan_graph_u.ax.get_xlim():
+                self.handler.graphsPage.zoom_pending = 1
                 self.handler.graphsPage.fan_graph_u.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_u.ax.set_ylim(ylim)
-                self.handler.graphsPage.fan_graph_u.canvas.draw()
+                self.handler.graphsPage.fan_graph_u.refresh()
                 self.handler.graphsPage.fan_graph_y.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_y.ax.set_ylim(ylim)
-                self.handler.graphsPage.fan_graph_y.canvas.draw()
-            else:
-                self.handler.graphsPage.zoom_pending += 1
-                if self.handler.graphsPage.zoom_pending >=3:
-                    self.handler.graphsPage.zoom_pending = 0
+                self.handler.graphsPage.fan_graph_y.refresh()
+                self.handler.graphsPage.zoom_pending = 0
 
 class FanGraphU(Graph):
     def __init__(self, handler, layout, label):
         super(FanGraphU, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
+        self.init_plot()
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
@@ -295,34 +261,26 @@ class FanGraphU(Graph):
 
     @Slot()
     def on_draw(self, event):
-        if not self.handler.graphsPage.areGraphsRunning:
-            if self.handler.graphsPage.zoom_pending == 0:
-                xlim = self.ax.get_xlim()
-                ylim = self.ax.get_ylim()
-
-                self.handler.graphsPage.zoom_pending += 1
-
+        if self.handler.graphsPage.zoom_pending == 0:
+            xlim = self.ax.get_xlim()
+            if xlim != self.handler.graphsPage.fan_graph_e.ax.get_xlim():
+                self.handler.graphsPage.zoom_pending = 1
                 self.handler.graphsPage.fan_graph_e.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_e.ax.set_ylim(ylim)
-                self.handler.graphsPage.fan_graph_e.canvas.draw()
+                self.handler.graphsPage.fan_graph_e.refresh()
                 self.handler.graphsPage.fan_graph_y.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_y.ax.set_ylim(ylim)
-                self.handler.graphsPage.fan_graph_y.canvas.draw()
-            else:
-                self.handler.graphsPage.zoom_pending += 1
-                if self.handler.graphsPage.zoom_pending >=3:
-                    self.handler.graphsPage.zoom_pending = 0
+                self.handler.graphsPage.fan_graph_y.refresh()
+                self.handler.graphsPage.zoom_pending = 0
 
 class GraphsPage:
     def __init__(self, handler):
         self.handler = handler
+        self.areGraphsRunning = True
         self.heater_graph_y = HeaterGraphY(self.handler, self.handler.ui.layGraphsPageHeater_y, f"{DEGREE_SIGN}C")
         self.heater_graph_e = HeaterGraphE(self.handler, self.handler.ui.layGraphsPageHeater_e, f"{DEGREE_SIGN}C")
         self.heater_graph_u = HeaterGraphU(self.handler, self.handler.ui.layGraphsPageHeater_u, "")
         self.fan_graph_y = FanGraphY(self.handler, self.handler.ui.layGraphsPageFan_y, "RPM")
         self.fan_graph_e = FanGraphE(self.handler, self.handler.ui.layGraphsPageFan_e, "RPM")
         self.fan_graph_u = FanGraphU(self.handler, self.handler.ui.layGraphsPageFan_u, "")
-        self.areGraphsRunning = True
         self.playIcon = QIcon()
         self.pauseIcon = QIcon()
         self.playIcon.addFile(u":/assets/assets/play.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -344,6 +302,7 @@ class GraphsPage:
     def stop(self, state):
         self.handler.ui.btnGraphsPageStop.setIcon(self.playIcon if state else self.pauseIcon)
         self.areGraphsRunning = not state
+        self.zoom_pending = 0
 
     @Slot()
     def open_heater(self):
@@ -365,60 +324,75 @@ class GraphsPage:
     @Slot(bool)
     def set_heater_x(self, state):
         self.heater_graph_y.controls['x(t)']["state"] = state
+        self.heater_graph_y.set_line_visibility('x(t)', state)
 
     @Slot(bool)
     def set_heater_y_1(self, state):
         self.heater_graph_y.controls['y_1(t)']["state"] = state
+        self.heater_graph_y.set_line_visibility('y_1(t)', state)
         
     @Slot(bool)
     def set_heater_y_2(self, state):
         self.heater_graph_y.controls['y_2(t)']["state"] = state
+        self.heater_graph_y.set_line_visibility('y_2(t)', state)
         
     @Slot(bool)
     def set_heater_u_sat(self, state):
         self.heater_graph_u.controls['u_sat(t)']["state"] = state
+        self.heater_graph_u.set_line_visibility('u_sat(t)', state)
 
     @Slot(bool)
     def set_heater_u(self, state):
         self.heater_graph_u.controls['u(t)']["state"] = state
+        self.heater_graph_u.set_line_visibility('u(t)', state)
 
     @Slot(bool)
     def set_heater_u_p(self, state):
         self.heater_graph_u.controls['u_p(t)']["state"] = state
+        self.heater_graph_u.set_line_visibility('u_p(t)', state)
 
     @Slot(bool)
     def set_heater_u_i(self, state):
         self.heater_graph_u.controls['u_i(t)']["state"] = state
+        self.heater_graph_u.set_line_visibility('u_i(t)', state)
 
     @Slot(bool)
     def set_heater_u_d(self, state):
         self.heater_graph_u.controls['u_d(t)']["state"] = state
+        self.heater_graph_u.set_line_visibility('u_d(t)', state)
 
     # Fan
     @Slot(bool)
     def set_fan_x(self, state):
         self.fan_graph_y.controls['x(t)']["state"] = state
+        self.fan_graph_y.set_line_visibility('x(t)', state)
 
     @Slot(bool)
     def set_fan_y(self, state):
         self.fan_graph_y.controls['y(t)']["state"] = state
+        self.fan_graph_y.set_line_visibility('y(t)', state)
         
     @Slot(bool)
     def set_fan_u_sat(self, state):
         self.fan_graph_u.controls['u_sat(t)']["state"] = state
+        self.fan_graph_u.set_line_visibility('u_sat(t)', state)
 
     @Slot(bool)
     def set_fan_u(self, state):
         self.fan_graph_u.controls['u(t)']["state"] = state
+        self.fan_graph_u.set_line_visibility('u(t)', state)
 
     @Slot(bool)
     def set_fan_u_p(self, state):
         self.fan_graph_u.controls['u_p(t)']["state"] = state
+        self.fan_graph_u.set_line_visibility('u_p(t)', state)
 
     @Slot(bool)
     def set_fan_u_i(self, state):
         self.fan_graph_u.controls['u_i(t)']["state"] = state
+        self.fan_graph_u.set_line_visibility('u_i(t)', state)
 
     @Slot(bool)
     def set_fan_u_d(self, state):
         self.fan_graph_u.controls['u_d(t)']["state"] = state
+        self.fan_graph_u.set_line_visibility('u_d(t)', state)

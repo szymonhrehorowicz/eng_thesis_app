@@ -7,6 +7,7 @@ class FanBBGraph(Graph):
         super(FanBBGraph, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
+        self.init_plot()
 
     def init_controls(self):
         self.controller = self.handler.fanController
@@ -56,28 +57,35 @@ class FanBBGraph(Graph):
     @Slot(bool)
     def set_value(self, state):
         self.controls['x(t)']["state"] = state
+        self.set_line_visibility('x(t)', state)
 
     @Slot(bool)
     def set_threshold_top(self, state):
         self.controls['x_max']["state"] = state
+        self.set_line_visibility('x_max', state)
 
     @Slot(bool)
     def set_threshold_bottom(self, state):
         self.controls['x_min']["state"] = state
+        self.set_line_visibility('x_min', state)
 
     @Slot(bool)
     def set_u_max(self, state):
         self.controls['u_max']["state"] = state
+        self.set_line_visibility('u_max', state)
 
     @Slot(bool)
     def set_u_min(self, state):
         self.controls['u_min']["state"] = state
+        self.set_line_visibility('u_min', state)
 
     @Slot(bool)
     def set_y(self, state):
         self.controls['y(t)']["state"] = state
+        self.set_line_visibility('y(t)', state)
 
     @Slot(bool)
     def set_mode(self, state):
         self.controls['stan']["state"] = state
+        self.set_line_visibility('stan', state)
     

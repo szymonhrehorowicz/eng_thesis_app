@@ -49,11 +49,11 @@ class MainWindow(QMainWindow):
         self.COM = COM(self)
         self.isSerialConnected = False
         # Graphs
+        self.graphsPage = GraphsPage(self)
         self.fanBBgraph = FanBBGraph(self, self.ui.layFanBBGraph, 'RPM')
         self.fanPIDgraph = FanPIDGraph(self, self.ui.layFanPIDGraph, 'RPM')
         self.heaterBBgraph = HeaterBBGraph(self, self.ui.layHeaterBBGraph, f'{DEGREE_SIGN}C')
         self.heaterPIDgraph = HeaterPIDGraph(self, self.ui.layHeaterPIDGraph, f'{DEGREE_SIGN}C')
-        self.graphsPage = GraphsPage(self)
         # Export
         self.export = Export(self)
         self.importer = Import(self)
