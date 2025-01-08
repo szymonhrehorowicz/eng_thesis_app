@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.NonModal)
-        MainWindow.resize(1515, 939)
+        MainWindow.resize(1688, 939)
         icon = QIcon()
         icon.addFile(u":/assets/assets/oscilloscope.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
@@ -2354,6 +2354,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_38.addWidget(self.btnGraphsPageStop)
 
+        self.horizontalSpacer_28 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_38.addItem(self.horizontalSpacer_28)
+
 
         self.verticalLayout_16.addWidget(self.frame_41)
 
@@ -2688,7 +2692,7 @@ class Ui_MainWindow(object):
         self.stackControllerDesc.setCurrentIndex(0)
         self.stackControllerSelect.setCurrentIndex(0)
         self.stackController.setCurrentIndex(3)
-        self.stackGraphs.setCurrentIndex(2)
+        self.stackGraphs.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
