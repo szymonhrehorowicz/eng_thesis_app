@@ -163,8 +163,11 @@ class COM:
         for _ in range(0, 6 - len(Kaw)):
             Kaw = '0' + Kaw
         msg += Kaw
-        # ON/OFF : 0 - OFF | 1 - ON
-        msg += '1' if isOn else '0'
+        # ON/OFF : 0 - OFF | 1 - ON | 2 - COMBINED
+        if self.handler.ui.chxFanCooling.isChecked() and isOn:
+            msg += '2'
+        else:
+            msg += '1' if isOn else '0'
         # REFERENCE TYPE
         isStep = self.handler.ui.btnHeaterRefStep.isChecked()
         isRamp = self.handler.ui.btnHeaterRefRamp.isChecked()

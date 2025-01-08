@@ -245,7 +245,7 @@
            </font>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="controllerDescHeater">
            <property name="toolTip">
@@ -580,6 +580,32 @@
               </layout>
              </widget>
             </item>
+            <item>
+             <widget class="QFrame" name="frame_64">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_54">
+               <item>
+                <widget class="QLabel" name="label_61">
+                 <property name="text">
+                  <string>Chłodzenie wentylatorem</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chxFanCooling">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
            </layout>
           </widget>
           <widget class="QWidget" name="pageFanControllerSelect">
@@ -652,7 +678,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>3</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="pageHeaterControllerConfigBB">
            <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -2173,7 +2199,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>3</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="pageHeaterBBGraph">
            <property name="sizePolicy">
@@ -2198,10 +2224,23 @@
                <enum>QFrame::NoFrame</enum>
               </property>
               <layout class="QGridLayout" name="gridLayout_4">
-               <item row="0" column="7">
-                <widget class="QPushButton" name="btnHeaterBB_graph_mode">
+               <item row="0" column="2">
+                <widget class="QPushButton" name="btnHeaterBB_graph_y_2">
                  <property name="text">
-                  <string>stan</string>
+                  <string>y_2(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="7">
+                <widget class="QPushButton" name="btnHeaterBB_graph_u_min">
+                 <property name="text">
+                  <string>u_min</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2212,19 +2251,32 @@
                 </widget>
                </item>
                <item row="0" column="5">
-                <widget class="QPushButton" name="btnHeaterBB_graph_y_1">
+                <widget class="QPushButton" name="btnHeaterBB_graph_x_min">
                  <property name="text">
-                  <string>y_1(t)</string>
+                  <string>x_min</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
                  </property>
                  <property name="checked">
-                  <bool>true</bool>
+                  <bool>false</bool>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
+               <item row="0" column="11">
+                <spacer name="horizontalSpacer_22">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="4">
                 <widget class="QPushButton" name="btnHeaterBB_graph_x_max">
                  <property name="text">
                   <string>x_max</string>
@@ -2237,7 +2289,63 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="9">
+               <item row="0" column="1">
+                <widget class="QPushButton" name="btnHeaterBB_graph_y_1">
+                 <property name="text">
+                  <string>y_1(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="13">
+                <widget class="QPushButton" name="btnHeaterBB_graph_Clear">
+                 <property name="toolTip">
+                  <string>Wyczyść wykres</string>
+                 </property>
+                 <property name="statusTip">
+                  <string>Wyczyść wykres</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resources.qrc">
+                   <normaloff>:/assets/assets/broom.ico</normaloff>:/assets/assets/broom.ico</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="btnHeaterBB_graph_x">
+                 <property name="text">
+                  <string>x(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="6">
+                <widget class="QPushButton" name="btnHeaterBB_graph_u_max">
+                 <property name="text">
+                  <string>u_max</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="12">
                 <widget class="QPushButton" name="btnHeaterBB_graph_Stop">
                  <property name="toolTip">
                   <string>Zatrzymaj wykres</string>
@@ -2257,100 +2365,18 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="10">
-                <widget class="QPushButton" name="btnHeaterBB_graph_Clear">
-                 <property name="toolTip">
-                  <string>Wyczyść wykres</string>
-                 </property>
-                 <property name="statusTip">
-                  <string>Wyczyść wykres</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="resources.qrc">
-                   <normaloff>:/assets/assets/broom.ico</normaloff>:/assets/assets/broom.ico</iconset>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="btnHeaterBB_graph_x_min">
-                 <property name="text">
-                  <string>x_min</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QPushButton" name="btnHeaterBB_graph_x">
-                 <property name="text">
-                  <string>x(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <widget class="QPushButton" name="btnHeaterBB_graph_u_max">
-                 <property name="text">
-                  <string>u_max</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="4">
-                <widget class="QPushButton" name="btnHeaterBB_graph_u_min">
-                 <property name="text">
-                  <string>u_min</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="6">
-                <widget class="QPushButton" name="btnHeaterBB_graph_y_2">
-                 <property name="text">
-                  <string>y_2(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
                <item row="0" column="8">
-                <spacer name="horizontalSpacer_22">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+                <widget class="QPushButton" name="btnHeaterBB_graph_mode">
+                 <property name="text">
+                  <string>stan</string>
                  </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
+                 <property name="checkable">
+                  <bool>true</bool>
                  </property>
-                </spacer>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -2380,10 +2406,62 @@
                <enum>QFrame::NoFrame</enum>
               </property>
               <layout class="QGridLayout" name="gridLayout_2">
-               <item row="0" column="0">
-                <widget class="QPushButton" name="btnHeaterPID_graph_x">
+               <item row="0" column="12">
+                <widget class="QPushButton" name="btnHeaterPID_graph_u_sat">
                  <property name="text">
-                  <string>x(t)</string>
+                  <string>u_sat(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="16">
+                <widget class="QPushButton" name="btnHeaterPID_graph_u_i">
+                 <property name="text">
+                  <string>u_i(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="9">
+                <widget class="QPushButton" name="btnHeaterPID_graph_k_d">
+                 <property name="text">
+                  <string>k_d</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="11">
+                <widget class="QPushButton" name="btnHeaterPID_graph_u">
+                 <property name="text">
+                  <string>u(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QPushButton" name="btnHeaterPID_graph_y_2">
+                 <property name="text">
+                  <string>y_2(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2406,150 +2484,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
-                <widget class="QPushButton" name="btnHeaterPID_graph_e">
-                 <property name="text">
-                  <string>e(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="4">
-                <widget class="QPushButton" name="btnHeaterPID_graph_k_p">
-                 <property name="text">
-                  <string>k_p</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="9">
-                <widget class="QPushButton" name="btnHeaterPID_graph_u_sat">
-                 <property name="text">
-                  <string>u_sat(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="btnHeaterPID_graph_int_e">
-                 <property name="text">
-                  <string>int_e(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="17">
-                <widget class="QPushButton" name="btnHeaterPID_graph_mode">
-                 <property name="text">
-                  <string>stan</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="8">
-                <widget class="QPushButton" name="btnHeaterPID_graph_u">
-                 <property name="text">
-                  <string>u(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="15">
-                <widget class="QPushButton" name="btnHeaterPID_graph_y_1">
-                 <property name="text">
-                  <string>y_1(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="14">
-                <widget class="QPushButton" name="btnHeaterPID_graph_y_2">
-                 <property name="text">
-                  <string>y_2(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <widget class="QPushButton" name="btnHeaterPID_graph_aw_int_e">
-                 <property name="text">
-                  <string>aw_int_e(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="7">
-                <widget class="QPushButton" name="btnHeaterPID_graph_k_aw">
-                 <property name="text">
-                  <string>k_aw</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="5">
-                <widget class="QPushButton" name="btnHeaterPID_graph_k_i">
-                 <property name="text">
-                  <string>k_i</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="16">
+               <item row="0" column="21">
                 <widget class="QPushButton" name="btnHeaterPID_graph_u_d">
                  <property name="text">
                   <string>u_d(t)</string>
@@ -2562,10 +2497,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="12">
-                <widget class="QPushButton" name="btnHeaterPID_graph_u_min">
+               <item row="0" column="5">
+                <widget class="QPushButton" name="btnHeaterPID_graph_int_e">
                  <property name="text">
-                  <string>u_min</string>
+                  <string>int_e(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2575,7 +2510,141 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="19">
+               <item row="0" column="6">
+                <widget class="QPushButton" name="btnHeaterPID_graph_aw_int_e">
+                 <property name="text">
+                  <string>aw_int_e(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="10">
+                <widget class="QPushButton" name="btnHeaterPID_graph_k_aw">
+                 <property name="text">
+                  <string>k_aw</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="23">
+                <spacer name="horizontalSpacer_26">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="25">
+                <widget class="QPushButton" name="btnHeaterPID_graph_Clear">
+                 <property name="toolTip">
+                  <string>Wyczyść wykres</string>
+                 </property>
+                 <property name="statusTip">
+                  <string>Wyczyść wykres</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resources.qrc">
+                   <normaloff>:/assets/assets/broom.ico</normaloff>:/assets/assets/broom.ico</iconset>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="btnHeaterPID_graph_y_1">
+                 <property name="text">
+                  <string>y_1(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="btnHeaterPID_graph_x">
+                 <property name="text">
+                  <string>x(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <widget class="QPushButton" name="btnHeaterPID_graph_e">
+                 <property name="text">
+                  <string>e(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="7">
+                <widget class="QPushButton" name="btnHeaterPID_graph_k_p">
+                 <property name="text">
+                  <string>k_p</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="15">
+                <widget class="QPushButton" name="btnHeaterPID_graph_u_p">
+                 <property name="text">
+                  <string>u_p(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="8">
+                <widget class="QPushButton" name="btnHeaterPID_graph_k_i">
+                 <property name="text">
+                  <string>k_i</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="24">
                 <widget class="QPushButton" name="btnHeaterPID_graph_Stop">
                  <property name="toolTip">
                   <string>Zatrzymaj wykres</string>
@@ -2595,10 +2664,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="10">
-                <widget class="QPushButton" name="btnHeaterPID_graph_u_p">
+               <item row="0" column="22">
+                <widget class="QPushButton" name="btnHeaterPID_graph_mode">
                  <property name="text">
-                  <string>u_p(t)</string>
+                  <string>stan</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2608,10 +2677,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="11">
-                <widget class="QPushButton" name="btnHeaterPID_graph_u_i">
+               <item row="0" column="14">
+                <widget class="QPushButton" name="btnHeaterPID_graph_u_min">
                  <property name="text">
-                  <string>u_i(t)</string>
+                  <string>u_min</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2620,49 +2689,6 @@
                   <bool>false</bool>
                  </property>
                 </widget>
-               </item>
-               <item row="0" column="20">
-                <widget class="QPushButton" name="btnHeaterPID_graph_Clear">
-                 <property name="toolTip">
-                  <string>Wyczyść wykres</string>
-                 </property>
-                 <property name="statusTip">
-                  <string>Wyczyść wykres</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="resources.qrc">
-                   <normaloff>:/assets/assets/broom.ico</normaloff>:/assets/assets/broom.ico</iconset>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="6">
-                <widget class="QPushButton" name="btnHeaterPID_graph_k_d">
-                 <property name="text">
-                  <string>k_d</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="18">
-                <spacer name="horizontalSpacer_26">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
                </item>
               </layout>
              </widget>
@@ -2692,7 +2718,20 @@
                <enum>QFrame::NoFrame</enum>
               </property>
               <layout class="QGridLayout" name="gridLayout_3">
-               <item row="0" column="6">
+               <item row="0" column="4">
+                <widget class="QPushButton" name="btnFanBB_graph_u_max">
+                 <property name="text">
+                  <string>u_max</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="7">
                 <widget class="QPushButton" name="btnFanBB_graph_mode">
                  <property name="text">
                   <string>stan</string>
@@ -2705,7 +2744,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="4">
+               <item row="0" column="5">
                 <widget class="QPushButton" name="btnFanBB_graph_u_min">
                  <property name="text">
                   <string>u_min</string>
@@ -2718,7 +2757,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="9">
+               <item row="0" column="10">
                 <widget class="QPushButton" name="btnFanBB_graph_Clear">
                  <property name="toolTip">
                   <string>Wyczyść wykres</string>
@@ -2736,6 +2775,58 @@
                 </widget>
                </item>
                <item row="0" column="8">
+                <spacer name="horizontalSpacer_25">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="btnFanBB_graph_x">
+                 <property name="text">
+                  <string>x(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QPushButton" name="btnFanBB_graph_x_min">
+                 <property name="text">
+                  <string>x_min</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="btnFanBB_graph_x_max">
+                 <property name="text">
+                  <string>x_max</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="9">
                 <widget class="QPushButton" name="btnFanBB_graph_Stop">
                  <property name="toolTip">
                   <string>Zatrzymaj wykres</string>
@@ -2755,7 +2846,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="5">
+               <item row="0" column="1">
                 <widget class="QPushButton" name="btnFanBB_graph_y">
                  <property name="text">
                   <string>y(t)</string>
@@ -2767,71 +2858,6 @@
                   <bool>true</bool>
                  </property>
                 </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="btnFanBB_graph_x_min">
-                 <property name="text">
-                  <string>x_min</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <widget class="QPushButton" name="btnFanBB_graph_u_max">
-                 <property name="text">
-                  <string>u_max</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QPushButton" name="btnFanBB_graph_x_max">
-                 <property name="text">
-                  <string>x_max</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QPushButton" name="btnFanBB_graph_x">
-                 <property name="text">
-                  <string>x(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="7">
-                <spacer name="horizontalSpacer_25">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
                </item>
               </layout>
              </widget>
@@ -2861,10 +2887,30 @@
                <enum>QFrame::NoFrame</enum>
               </property>
               <layout class="QGridLayout" name="gridLayout">
-               <item row="0" column="12">
-                <widget class="QPushButton" name="btnFanPID_graph_u_d">
+               <item row="0" column="26">
+                <widget class="QPushButton" name="btnFanPID_graph_Stop">
+                 <property name="toolTip">
+                  <string>Zatrzymaj wykres</string>
+                 </property>
+                 <property name="statusTip">
+                  <string>Zatrzymaj wykres</string>
+                 </property>
                  <property name="text">
-                  <string>u_d(t)</string>
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resources.qrc">
+                   <normaloff>:/assets/assets/pause.ico</normaloff>:/assets/assets/pause.ico</iconset>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="btnFanPID_graph_e">
+                 <property name="text">
+                  <string>e(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2874,16 +2920,55 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="btnFanPID_graph_int_e">
+               <item row="0" column="5">
+                <widget class="QPushButton" name="btnFanPID_graph_aw_int_e">
                  <property name="text">
-                  <string>int_e(t)</string>
+                  <string>aw_int_e(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
                  </property>
                  <property name="checked">
                   <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="25">
+                <spacer name="horizontalSpacer_27">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="8">
+                <widget class="QPushButton" name="btnFanPID_graph_k_d">
+                 <property name="text">
+                  <string>k_d</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QPushButton" name="btnFanPID_graph_y">
+                 <property name="text">
+                  <string>y(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
                  </property>
                 </widget>
                </item>
@@ -2900,10 +2985,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="5">
-                <widget class="QPushButton" name="btnFanPID_graph_k_i">
+               <item row="0" column="16">
+                <widget class="QPushButton" name="btnFanPID_graph_u_max">
                  <property name="text">
-                  <string>k_i</string>
+                  <string>u_max</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2913,10 +2998,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="4">
-                <widget class="QPushButton" name="btnFanPID_graph_k_p">
+               <item row="0" column="17">
+                <widget class="QPushButton" name="btnFanPID_graph_u_min">
                  <property name="text">
-                  <string>k_p</string>
+                  <string>u_min</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2926,7 +3011,20 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="19">
+               <item row="0" column="12">
+                <widget class="QPushButton" name="btnFanPID_graph_u_sat">
+                 <property name="text">
+                  <string>u_sat(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="27">
                 <widget class="QPushButton" name="btnFanPID_graph_Clear">
                  <property name="toolTip">
                   <string>Wyczyść wykres</string>
@@ -2943,62 +3041,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="8">
+               <item row="0" column="11">
                 <widget class="QPushButton" name="btnFanPID_graph_u">
                  <property name="text">
                   <string>u(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <widget class="QPushButton" name="btnFanPID_graph_aw_int_e">
-                 <property name="text">
-                  <string>aw_int_e(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QPushButton" name="btnFanPID_graph_e">
-                 <property name="text">
-                  <string>e(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="10">
-                <widget class="QPushButton" name="btnFanPID_graph_y">
-                 <property name="text">
-                  <string>y(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="7">
-                <widget class="QPushButton" name="btnFanPID_graph_k_aw">
-                 <property name="text">
-                  <string>k_aw</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -3021,10 +3067,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="16">
-                <widget class="QPushButton" name="btnFanPID_graph_mode">
+               <item row="0" column="6">
+                <widget class="QPushButton" name="btnFanPID_graph_k_p">
                  <property name="text">
-                  <string>stan</string>
+                  <string>k_p</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -3035,9 +3081,9 @@
                 </widget>
                </item>
                <item row="0" column="9">
-                <widget class="QPushButton" name="btnFanPID_graph_u_max">
+                <widget class="QPushButton" name="btnFanPID_graph_k_aw">
                  <property name="text">
-                  <string>u_max</string>
+                  <string>k_aw</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -3047,10 +3093,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="6">
-                <widget class="QPushButton" name="btnFanPID_graph_k_d">
+               <item row="0" column="4">
+                <widget class="QPushButton" name="btnFanPID_graph_int_e">
                  <property name="text">
-                  <string>k_d</string>
+                  <string>int_e(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -3060,7 +3106,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="15">
+               <item row="0" column="13">
                 <widget class="QPushButton" name="btnFanPID_graph_u_p">
                  <property name="text">
                   <string>u_p(t)</string>
@@ -3073,10 +3119,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="11">
-                <widget class="QPushButton" name="btnFanPID_graph_u_sat">
+               <item row="0" column="7">
+                <widget class="QPushButton" name="btnFanPID_graph_k_i">
                  <property name="text">
-                  <string>u_sat(t)</string>
+                  <string>k_i</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -3086,10 +3132,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="13">
-                <widget class="QPushButton" name="btnFanPID_graph_u_min">
+               <item row="0" column="15">
+                <widget class="QPushButton" name="btnFanPID_graph_u_d">
                  <property name="text">
-                  <string>u_min</string>
+                  <string>u_d(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -3100,37 +3146,17 @@
                 </widget>
                </item>
                <item row="0" column="18">
-                <widget class="QPushButton" name="btnFanPID_graph_Stop">
-                 <property name="toolTip">
-                  <string>Zatrzymaj wykres</string>
-                 </property>
-                 <property name="statusTip">
-                  <string>Zatrzymaj wykres</string>
-                 </property>
+                <widget class="QPushButton" name="btnFanPID_graph_mode">
                  <property name="text">
-                  <string/>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="resources.qrc">
-                   <normaloff>:/assets/assets/pause.ico</normaloff>:/assets/assets/pause.ico</iconset>
+                  <string>stan</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
                  </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
                 </widget>
-               </item>
-               <item row="0" column="17">
-                <spacer name="horizontalSpacer_27">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
                </item>
               </layout>
              </widget>
