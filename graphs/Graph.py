@@ -73,17 +73,10 @@ class Graph:
 
     def plot(self, signals: list, t:list):
         lines = self.ax.get_lines()
-        x = np.array(t)
-        _x = np.linspace(x.min(), x.max(), len(t) * 500)
-
+        
         for idx, signal in enumerate(signals):
-            y = np.array(signal)
-            x_y_spline = make_interp_spline(x, y)
-            
-            y_ = x_y_spline(_x)
-
-            lines[idx].set_xdata(x)
-            lines[idx].set_ydata(y)
+            lines[idx].set_xdata(t)
+            lines[idx].set_ydata(signal)
         self.refresh()
     
     def refresh(self):

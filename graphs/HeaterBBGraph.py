@@ -12,15 +12,15 @@ class HeaterBBGraph(Graph):
     def init_controls(self):
         self.controller = self.handler.heaterController
         self.controls = {
-            "x(t)": {
+            "r(t)": {
                 "state": self.handler.ui.btnHeaterBB_graph_x.isChecked(),
                 "color": "indianred",
             },
-            "x_max": {
+            "r_max": {
                 "state": self.handler.ui.btnHeaterBB_graph_x_max.isChecked(),
                 "color": "tomato",
             },
-            "x_min": {
+            "r_min": {
                 "state": self.handler.ui.btnHeaterBB_graph_x_min.isChecked(),
                 "color": "peachpuff",
             },
@@ -61,18 +61,18 @@ class HeaterBBGraph(Graph):
 
     @Slot(bool)
     def set_value(self, state):
-        self.controls['x(t)']["state"] = state
-        self.set_line_visibility('x(t)', state)
+        self.controls['r(t)']["state"] = state
+        self.set_line_visibility('r(t)', state)
 
     @Slot(bool)
     def set_threshold_top(self, state):
-        self.controls['x_max']["state"] = state
-        self.set_line_visibility('x_max', state)
+        self.controls['r_max']["state"] = state
+        self.set_line_visibility('r_max', state)
 
     @Slot(bool)
     def set_threshold_bottom(self, state):
-        self.controls['x_min']["state"] = state
-        self.set_line_visibility('x_min', state)
+        self.controls['r_min']["state"] = state
+        self.set_line_visibility('r_min', state)
 
     @Slot(bool)
     def set_u_max(self, state):

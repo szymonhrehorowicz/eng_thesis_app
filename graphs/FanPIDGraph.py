@@ -12,7 +12,7 @@ class FanPIDGraph(Graph):
     def init_controls(self):
         self.controller = self.handler.fanController
         self.controls = {
-            "x(t)": {
+            "r(t)": {
                 "state": self.handler.ui.btnFanPID_graph_x.isChecked(),
                 "color": "indianred",
             },
@@ -29,19 +29,19 @@ class FanPIDGraph(Graph):
                 "color": "darkorange",
             },
             "k_p": {
-                "state": self.handler.ui.btnFanPID_graph_k_p.isChecked(),
+                "state": False,
                 "color": "gold",
             },
             "k_i": {
-                "state": self.handler.ui.btnFanPID_graph_k_i.isChecked(),
+                "state": False,
                 "color": "olive",
             },
             "k_d": {
-                "state": self.handler.ui.btnFanPID_graph_k_d.isChecked(),
+                "state": False,
                 "color": "yellow",
             },
             "k_aw": {
-                "state": self.handler.ui.btnFanPID_graph_k_aw.isChecked(),
+                "state": False,
                 "color": "greenyellow",
             },
             "u(t)": {
@@ -106,8 +106,8 @@ class FanPIDGraph(Graph):
 
     @Slot(bool)
     def set_value(self, state):
-        self.controls['x(t)']["state"] = state
-        self.set_line_visibility('x(t)', state)
+        self.controls['r(t)']["state"] = state
+        self.set_line_visibility('r(t)', state)
 
     @Slot(bool)
     def set_e(self, state):

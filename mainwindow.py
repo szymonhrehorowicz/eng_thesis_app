@@ -25,6 +25,8 @@ from graphs.GraphsPage import GraphsPage
 from utilities import DEGREE_SIGN
 import rc_resources
 
+from time import time
+
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -153,10 +155,10 @@ class MainWindow(QMainWindow):
         self.ui.btnFanPID_graph_e.clicked.connect(self.fanPIDgraph.set_e)
         self.ui.btnFanPID_graph_int_e.clicked.connect(self.fanPIDgraph.set_int_e)
         self.ui.btnFanPID_graph_aw_int_e.clicked.connect(self.fanPIDgraph.set_aw_int_e)
-        self.ui.btnFanPID_graph_k_p.clicked.connect(self.fanPIDgraph.set_k_p)
-        self.ui.btnFanPID_graph_k_i.clicked.connect(self.fanPIDgraph.set_k_i)
-        self.ui.btnFanPID_graph_k_d.clicked.connect(self.fanPIDgraph.set_k_d)
-        self.ui.btnFanPID_graph_k_aw.clicked.connect(self.fanPIDgraph.set_k_aw)
+        # self.ui.btnFanPID_graph_k_p.clicked.connect(self.fanPIDgraph.set_k_p)
+        # self.ui.btnFanPID_graph_k_i.clicked.connect(self.fanPIDgraph.set_k_i)
+        # self.ui.btnFanPID_graph_k_d.clicked.connect(self.fanPIDgraph.set_k_d)
+        # self.ui.btnFanPID_graph_k_aw.clicked.connect(self.fanPIDgraph.set_k_aw)
         self.ui.btnFanPID_graph_u.clicked.connect(self.fanPIDgraph.set_u)
         self.ui.btnFanPID_graph_u_sat.clicked.connect(self.fanPIDgraph.set_u_sat)
         self.ui.btnFanPID_graph_u_p.clicked.connect(self.fanPIDgraph.set_u_p)
@@ -180,10 +182,10 @@ class MainWindow(QMainWindow):
         self.ui.btnHeaterPID_graph_e.clicked.connect(self.heaterPIDgraph.set_e)
         self.ui.btnHeaterPID_graph_int_e.clicked.connect(self.heaterPIDgraph.set_int_e)
         self.ui.btnHeaterPID_graph_aw_int_e.clicked.connect(self.heaterPIDgraph.set_aw_int_e)
-        self.ui.btnHeaterPID_graph_k_p.clicked.connect(self.heaterPIDgraph.set_k_p)
-        self.ui.btnHeaterPID_graph_k_i.clicked.connect(self.heaterPIDgraph.set_k_i)
-        self.ui.btnHeaterPID_graph_k_d.clicked.connect(self.heaterPIDgraph.set_k_d)
-        self.ui.btnHeaterPID_graph_k_aw.clicked.connect(self.heaterPIDgraph.set_k_aw)
+        # self.ui.btnHeaterPID_graph_k_p.clicked.connect(self.heaterPIDgraph.set_k_p)
+        # self.ui.btnHeaterPID_graph_k_i.clicked.connect(self.heaterPIDgraph.set_k_i)
+        # self.ui.btnHeaterPID_graph_k_d.clicked.connect(self.heaterPIDgraph.set_k_d)
+        # self.ui.btnHeaterPID_graph_k_aw.clicked.connect(self.heaterPIDgraph.set_k_aw)
         self.ui.btnHeaterPID_graph_u.clicked.connect(self.heaterPIDgraph.set_u)
         self.ui.btnHeaterPID_graph_u_sat.clicked.connect(self.heaterPIDgraph.set_u_sat)
         self.ui.btnHeaterPID_graph_u_p.clicked.connect(self.heaterPIDgraph.set_u_p)
@@ -311,6 +313,7 @@ class MainWindow(QMainWindow):
         self.timer1s.start()
 
     def tim_200ms_IRS(self):
+        start = time()
         current_main_window = self.ui.container.currentIndex()
         if current_main_window == INDICES["controls"]:
             current_window = self.ui.stackGraphs.currentIndex()
@@ -324,6 +327,7 @@ class MainWindow(QMainWindow):
                 self.fanPIDgraph.update_graph()
         elif current_main_window == INDICES["graphs"]:
             self.graphsPage.update()
+        print("TIME : ", time() - start)
     
     def tim_1s_IRS(self):
         if self.isSerialConnected:
