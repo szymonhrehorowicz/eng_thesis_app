@@ -15,7 +15,6 @@ class HeaterGraphY(Graph):
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
-        self.controller = self.handler.heaterController
         self.controls = {
             "r(t)": {
                 "state": True,
@@ -34,10 +33,10 @@ class HeaterGraphY(Graph):
     @Slot()
     def update_graph(self):
         self.plot([
-            self.controller.pid_set_value,
-            self.controller.pid_temp_left,
-            self.controller.pid_temp_right,
-        ], self.controller.pid_time)
+            self.handler.heaterController.pid_set_value,
+            self.handler.heaterController.pid_temp_left,
+            self.handler.heaterController.pid_temp_right,
+        ], self.handler.heaterController.time)
     
     @Slot()
     def on_draw(self, event):
@@ -60,7 +59,6 @@ class HeaterGraphE(Graph):
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
-        self.controller = self.handler.heaterController
         self.controls = {
             "e(t)": {
                 "state": True,
@@ -71,8 +69,8 @@ class HeaterGraphE(Graph):
     @Slot()
     def update_graph(self):
         self.plot([
-            self.controller.pid_error,
-        ], self.controller.pid_time)
+            self.handler.heaterController.pid_error,
+        ], self.handler.heaterController.time)
     
     @Slot()
     def on_draw(self, event):
@@ -95,7 +93,6 @@ class HeaterGraphU(Graph):
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
-        self.controller = self.handler.heaterController
         self.controls = {
             "u_sat(t)": {
                 "state": True,
@@ -122,12 +119,12 @@ class HeaterGraphU(Graph):
     @Slot()
     def update_graph(self):
         self.plot([
-            self.controller.pid_u_saturated,
-            self.controller.pid_u,
-            self.controller.pid_u_p,
-            self.controller.pid_u_i,
-            self.controller.pid_u_d,
-        ], self.controller.pid_time)
+            self.handler.heaterController.pid_u_saturated,
+            self.handler.heaterController.pid_u,
+            self.handler.heaterController.pid_u_p,
+            self.handler.heaterController.pid_u_i,
+            self.handler.heaterController.pid_u_d,
+        ], self.handler.heaterController.time)
     
     @Slot()
     def on_draw(self, event):
@@ -150,7 +147,6 @@ class FanGraphY(Graph):
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
-        self.controller = self.handler.fanController
         self.controls = {
             "r(t)": {
                 "state": True,
@@ -165,9 +161,9 @@ class FanGraphY(Graph):
     @Slot()
     def update_graph(self):
         self.plot([
-            self.controller.pid_set_value,
-            self.controller.pid_speed,
-        ], self.controller.pid_time)
+            self.handler.fanController.pid_set_value,
+            self.handler.fanController.pid_speed,
+        ], self.handler.fanController.time)
 
     @Slot()
     def on_draw(self, event):
@@ -190,7 +186,6 @@ class FanGraphE(Graph):
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
-        self.controller = self.handler.fanController
         self.controls = {
             "e(t)": {
                 "state": True,
@@ -201,8 +196,8 @@ class FanGraphE(Graph):
     @Slot()
     def update_graph(self):
         self.plot([
-            self.controller.pid_error,
-        ], self.controller.pid_time)
+            self.handler.fanController.pid_error,
+        ], self.handler.fanController.time)
 
     @Slot()
     def on_draw(self, event):
@@ -225,7 +220,6 @@ class FanGraphU(Graph):
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
-        self.controller = self.handler.fanController
         self.controls = {
             "u_sat(t)": {
                 "state": True,
@@ -252,12 +246,12 @@ class FanGraphU(Graph):
     @Slot()
     def update_graph(self):
         self.plot([
-            self.controller.pid_u_saturated,
-            self.controller.pid_u,
-            self.controller.pid_u_p,
-            self.controller.pid_u_i,
-            self.controller.pid_u_d,
-        ], self.controller.pid_time)
+            self.handler.fanController.pid_u_saturated,
+            self.handler.fanController.pid_u,
+            self.handler.fanController.pid_u_p,
+            self.handler.fanController.pid_u_i,
+            self.handler.fanController.pid_u_d,
+        ], self.handler.fanController.time)
 
     @Slot()
     def on_draw(self, event):
@@ -295,6 +289,14 @@ class GraphsPage:
             self.fan_graph_y.update_graph()
             self.fan_graph_e.update_graph()
             self.fan_graph_u.update_graph()
+    
+    def update_all(self):
+        self.heater_graph_y.update_graph()
+        self.heater_graph_e.update_graph()
+        self.heater_graph_u.update_graph()
+        self.fan_graph_y.update_graph()
+        self.fan_graph_e.update_graph()
+        self.fan_graph_u.update_graph()
 
     @Slot()
     def open_heater(self):

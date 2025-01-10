@@ -302,17 +302,22 @@ class MainWindow(QMainWindow):
             self.ui.heaterEquation.addWidget(self.heaterPIDequationwebView)
 
         # Timers
-        self.timer200ms = QTimer()
-        self.timer200ms.setInterval(200)
-        self.timer200ms.timeout.connect(self.tim_200ms_IRS)
-        self.timer200ms.start()
+        self.timer100ms = QTimer()
+        self.timer100ms.setInterval(100)
+        self.timer100ms.timeout.connect(self.tim_100ms_IRS)
+        self.timer100ms.start()
+        
+        self.timer400ms = QTimer()
+        self.timer400ms.setInterval(400)
+        self.timer400ms.timeout.connect(self.tim_400ms_IRS)
+        self.timer400ms.start()
 
         self.timer1s = QTimer()
         self.timer1s.setInterval(1000)
         self.timer1s.timeout.connect(self.tim_1s_IRS)
         self.timer1s.start()
 
-    def tim_200ms_IRS(self):
+    def tim_100ms_IRS(self):
         start = time()
         current_main_window = self.ui.container.currentIndex()
         if current_main_window == INDICES["controls"]:
@@ -328,7 +333,13 @@ class MainWindow(QMainWindow):
         elif current_main_window == INDICES["graphs"]:
             self.graphsPage.update()
         print("TIME : ", time() - start)
-    
+
+    def tim_400ms_IRS(self):
+        start = time()
+        if self.ui.container.currentIndex() == INDICES["graphs"]:
+            self.graphsPage.update()
+        print("TIME : ", time() - start)
+
     def tim_1s_IRS(self):
         if self.isSerialConnected:
             self.serial.send_ack()

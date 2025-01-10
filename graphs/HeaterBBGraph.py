@@ -57,7 +57,7 @@ class HeaterBBGraph(Graph):
             self.controller.bb_temp_left,
             self.controller.bb_temp_right,
             self.controller.bb_mode
-        ], self.controller.bb_time)
+        ], self.controller.time)
 
     @Slot(bool)
     def set_value(self, state):

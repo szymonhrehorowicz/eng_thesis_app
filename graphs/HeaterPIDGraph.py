@@ -107,7 +107,7 @@ class HeaterPIDGraph(Graph):
             self.controller.pid_temp_left,
             self.controller.pid_temp_right,
             self.controller.pid_mode,
-        ], self.controller.pid_time)
+        ], self.controller.time)
 
     @Slot(bool)
     def set_value(self, state):

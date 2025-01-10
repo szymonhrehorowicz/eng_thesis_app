@@ -102,7 +102,7 @@ class FanPIDGraph(Graph):
             self.controller.pid_u_min,
             self.controller.pid_speed,
             self.controller.pid_mode,
-        ], self.controller.pid_time)
+        ], self.controller.time)
 
     @Slot(bool)
     def set_value(self, state):

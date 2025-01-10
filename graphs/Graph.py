@@ -73,7 +73,6 @@ class Graph:
 
     def plot(self, signals: list, t:list):
         lines = self.ax.get_lines()
-        
         for idx, signal in enumerate(signals):
             lines[idx].set_xdata(t)
             lines[idx].set_ydata(signal)

@@ -52,7 +52,7 @@ class FanBBGraph(Graph):
             self.controller.bb_u_min,
             self.controller.bb_speed,
             self.controller.bb_mode
-        ], self.controller.bb_time)
+        ], self.controller.time)
 
     @Slot(bool)
     def set_value(self, state):

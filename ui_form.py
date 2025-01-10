@@ -2588,10 +2588,10 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.container.setCurrentIndex(4)
-        self.stackControllerDesc.setCurrentIndex(0)
-        self.stackControllerSelect.setCurrentIndex(1)
-        self.stackController.setCurrentIndex(1)
+        self.container.setCurrentIndex(0)
+        self.stackControllerDesc.setCurrentIndex(1)
+        self.stackControllerSelect.setCurrentIndex(0)
+        self.stackController.setCurrentIndex(0)
         self.stackGraphs.setCurrentIndex(1)
 
 

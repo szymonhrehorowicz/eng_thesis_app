@@ -186,20 +186,24 @@ class MainMenuHandler:
 
     @Slot()
     def clear_fan_bb_graph(self):
-        self.handler.fanController.clear_bb()
+        self.handler.fanController.clear()
         self.handler.fanBBgraph.update_graph()
+        self.handler.graphsPage.update_all()
 
     @Slot()
     def clear_fan_pid_graph(self):
-        self.handler.fanController.clear_pid()
+        self.handler.fanController.clear()
         self.handler.fanPIDgraph.update_graph()
+        self.handler.graphsPage.update_all()
 
     @Slot()
     def clear_heater_bb_graph(self):
-        self.handler.heaterController.clear_bb()
+        self.handler.heaterController.clear()
         self.handler.heaterBBgraph.update_graph()
+        self.handler.graphsPage.update_all()
 
     @Slot()
     def clear_heater_pid_graph(self):
-        self.handler.heaterController.clear_pid()
+        self.handler.heaterController.clear()
         self.handler.heaterPIDgraph.update_graph()
+        self.handler.graphsPage.update_all()

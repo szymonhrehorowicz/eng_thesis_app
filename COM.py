@@ -247,8 +247,8 @@ class COM:
             "PID_U_D": data[39],
             "PID_MAX": data[40],
             "PID_MIN": data[41],
-            "PID_TEMP_LEFT": data[43],
-            "PID_TEMP_RIGHT": data[44],
+            "PID_TEMP_LEFT": data[44],
+            "PID_TEMP_RIGHT": data[43],
             "PID_MODE": data[46],
             # TIMESTAMP
             "TIMESTAMP": data[47],
@@ -284,8 +284,8 @@ class COM:
             "PID_U_P": data[15],
             "PID_U_I": data[16],
             "PID_U_D": data[17],
-            "PID_TEMP_LEFT": data[19],
-            "PID_TEMP_RIGHT": data[20],
+            "PID_TEMP_LEFT": data[20],
+            "PID_TEMP_RIGHT": data[21],
             "PID_MODE": data[22],
             # TIMESTAMP
             "TIMESTAMP": data[23],
