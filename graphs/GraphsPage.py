@@ -11,22 +11,22 @@ class HeaterGraphY(Graph):
         super(HeaterGraphY, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
-        self.init_plot()
+        self.init_plot(False, True)
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
         self.controller = self.handler.heaterController
         self.controls = {
             "x(t)": {
-                "state": self.handler.ui.btnGraphsPageHeater_x.isChecked(),
+                "state": True,
                 "color": 'indianred',
             },
             "y_1(t)": {
-                "state": self.handler.ui.btnGraphsPageHeater_y_1.isChecked(),
+                "state": True,
                 "color": 'hotpink',
             },
             "y_2(t)": {
-                "state": self.handler.ui.btnGraphsPageHeater_y_2.isChecked(),
+                "state": True,
                 "color": 'crimson',
             },
         }
@@ -56,7 +56,7 @@ class HeaterGraphE(Graph):
         super(HeaterGraphE, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
-        self.init_plot()
+        self.init_plot(False, True)
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
@@ -98,23 +98,23 @@ class HeaterGraphU(Graph):
         self.controller = self.handler.heaterController
         self.controls = {
             "u_sat(t)": {
-                "state": self.handler.ui.btnGraphsPageHeater_u_sat.isChecked(),
+                "state": True,
                 "color": "aquamarine",
             },
             "u(t)": {
-                "state": self.handler.ui.btnGraphsPageHeater_u.isChecked(),
+                "state": True,
                 "color": "lime",
             },
             "u_p(t)": {
-                "state": self.handler.ui.btnGraphsPageHeater_u_p.isChecked(),
+                "state": True,
                 "color": "darkcyan",
             },
             "u_i(t)": {
-                "state": self.handler.ui.btnGraphsPageHeater_u_i.isChecked(),
+                "state": True,
                 "color": "royalblue",
             },
             "u_d(t)": {
-                "state": self.handler.ui.btnGraphsPageHeater_u_d.isChecked(),
+                "state": True,
                 "color": "navy",
             },
         }
@@ -146,18 +146,18 @@ class FanGraphY(Graph):
         super(FanGraphY, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
-        self.init_plot()
+        self.init_plot(False, True)
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
         self.controller = self.handler.fanController
         self.controls = {
             "x(t)": {
-                "state": self.handler.ui.btnGraphsPageFan_x.isChecked(),
+                "state": True,
                 "color": 'indianred',
             },
             "y(t)": {
-                "state": self.handler.ui.btnGraphsPageFan_y.isChecked(),
+                "state": True,
                 "color": 'hotpink',
             },
         }
@@ -186,7 +186,7 @@ class FanGraphE(Graph):
         super(FanGraphE, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
-        self.init_plot()
+        self.init_plot(False, True)
         self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
@@ -228,23 +228,23 @@ class FanGraphU(Graph):
         self.controller = self.handler.fanController
         self.controls = {
             "u_sat(t)": {
-                "state": self.handler.ui.btnGraphsPageFan_u_sat.isChecked(),
+                "state": True,
                 "color": "aquamarine",
             },
             "u(t)": {
-                "state": self.handler.ui.btnGraphsPageFan_u.isChecked(),
+                "state": True,
                 "color": "lime",
             },
             "u_p(t)": {
-                "state": self.handler.ui.btnGraphsPageFan_u_p.isChecked(),
+                "state": True,
                 "color": "darkcyan",
             },
             "u_i(t)": {
-                "state": self.handler.ui.btnGraphsPageFan_u_i.isChecked(),
+                "state": True,
                 "color": "royalblue",
             },
             "u_d(t)": {
-                "state": self.handler.ui.btnGraphsPageFan_u_d.isChecked(),
+                "state": True,
                 "color": "navy",
             },
         }
@@ -274,7 +274,6 @@ class FanGraphU(Graph):
 class GraphsPage:
     def __init__(self, handler):
         self.handler = handler
-        self.areGraphsRunning = True
         self.heater_graph_y = HeaterGraphY(self.handler, self.handler.ui.layGraphsPageHeater_y, f"{DEGREE_SIGN}C")
         self.heater_graph_e = HeaterGraphE(self.handler, self.handler.ui.layGraphsPageHeater_e, f"{DEGREE_SIGN}C")
         self.heater_graph_u = HeaterGraphU(self.handler, self.handler.ui.layGraphsPageHeater_u, "")
@@ -288,21 +287,14 @@ class GraphsPage:
         self.zoom_pending = 0
 
     def update(self):
-        if self.areGraphsRunning:
-            if self.handler.ui.btnGraphsPageHeater.isChecked():
-                self.heater_graph_y.update_graph()
-                self.heater_graph_e.update_graph()
-                self.heater_graph_u.update_graph()
-            else:
-                self.fan_graph_y.update_graph()
-                self.fan_graph_e.update_graph()
-                self.fan_graph_u.update_graph()
-    
-    @Slot()
-    def stop(self, state):
-        self.handler.ui.btnGraphsPageStop.setIcon(self.playIcon if state else self.pauseIcon)
-        self.areGraphsRunning = not state
-        self.zoom_pending = 0
+        if self.handler.ui.btnGraphsPageHeater.isChecked():
+            self.heater_graph_y.update_graph()
+            self.heater_graph_e.update_graph()
+            self.heater_graph_u.update_graph()
+        else:
+            self.fan_graph_y.update_graph()
+            self.fan_graph_e.update_graph()
+            self.fan_graph_u.update_graph()
 
     @Slot()
     def open_heater(self):
@@ -311,6 +303,18 @@ class GraphsPage:
         self.handler.isHeaterGraphsGraph = True
         self.handler.isFanGraphsGraph_running = False
         self.handler.ui.stackGraphsPage.setCurrentIndex(INDICES["graphs_heater"])
+        self.handler.ui.btnGraphsPage_y_1.setVisible(True)
+        self.handler.ui.btnGraphsPage_y_2.setVisible(True)
+        self.handler.ui.btnGraphsPage_y.setVisible(False)
+
+        self.handler.ui.btnGraphsPage_x.setChecked(self.heater_graph_y.controls['x(t)']["state"])
+        self.handler.ui.btnGraphsPage_y_1.setChecked(self.heater_graph_y.controls['y_1(t)']["state"])
+        self.handler.ui.btnGraphsPage_y_2.setChecked(self.heater_graph_y.controls['y_2(t)']["state"])
+        self.handler.ui.btnGraphsPage_u_sat.setChecked(self.heater_graph_u.controls['u_sat(t)']["state"])
+        self.handler.ui.btnGraphsPage_u.setChecked(self.heater_graph_u.controls['u(t)']["state"])
+        self.handler.ui.btnGraphsPage_u_p.setChecked(self.heater_graph_u.controls['u_p(t)']["state"])
+        self.handler.ui.btnGraphsPage_u_i.setChecked(self.heater_graph_u.controls['u_i(t)']["state"])
+        self.handler.ui.btnGraphsPage_u_d.setChecked(self.heater_graph_u.controls['u_d(t)']["state"])
 
     @Slot()
     def open_fan(self):
@@ -319,80 +323,85 @@ class GraphsPage:
         self.handler.isHeaterGraphsGraph = False
         self.handler.isFanGraphsGraph_running = True
         self.handler.ui.stackGraphsPage.setCurrentIndex(INDICES["graphs_fan"])
+        self.handler.ui.btnGraphsPage_y_1.setVisible(False)
+        self.handler.ui.btnGraphsPage_y_2.setVisible(False)
+        self.handler.ui.btnGraphsPage_y.setVisible(True)
+
+        self.handler.ui.btnGraphsPage_x.setChecked(self.fan_graph_y.controls['x(t)']["state"])
+        self.handler.ui.btnGraphsPage_y.setChecked(self.fan_graph_y.controls['y(t)']["state"])
+        self.handler.ui.btnGraphsPage_u_sat.setChecked(self.fan_graph_u.controls['u_sat(t)']["state"])
+        self.handler.ui.btnGraphsPage_u.setChecked(self.fan_graph_u.controls['u(t)']["state"])
+        self.handler.ui.btnGraphsPage_u_p.setChecked(self.fan_graph_u.controls['u_p(t)']["state"])
+        self.handler.ui.btnGraphsPage_u_i.setChecked(self.fan_graph_u.controls['u_i(t)']["state"])
+        self.handler.ui.btnGraphsPage_u_d.setChecked(self.fan_graph_u.controls['u_d(t)']["state"])
 
     # Heater
     @Slot(bool)
-    def set_heater_x(self, state):
-        self.heater_graph_y.controls['x(t)']["state"] = state
-        self.heater_graph_y.set_line_visibility('x(t)', state)
+    def set_x(self, state):
+        if self.handler.ui.btnGraphsPageHeater.isChecked():
+            self.heater_graph_y.controls['x(t)']["state"] = state
+            self.heater_graph_y.set_line_visibility('x(t)', state)
+        else:
+            self.fan_graph_y.controls['x(t)']["state"] = state
+            self.fan_graph_y.set_line_visibility('x(t)', state)
+    
+    @Slot(bool)
+    def set_y(self, state):
+        self.fan_graph_y.controls['y(t)']["state"] = state
+        self.fan_graph_y.set_line_visibility('y(t)', state)
 
     @Slot(bool)
-    def set_heater_y_1(self, state):
+    def set_y_1(self, state):
         self.heater_graph_y.controls['y_1(t)']["state"] = state
         self.heater_graph_y.set_line_visibility('y_1(t)', state)
         
     @Slot(bool)
-    def set_heater_y_2(self, state):
+    def set_y_2(self, state):
         self.heater_graph_y.controls['y_2(t)']["state"] = state
         self.heater_graph_y.set_line_visibility('y_2(t)', state)
         
     @Slot(bool)
-    def set_heater_u_sat(self, state):
-        self.heater_graph_u.controls['u_sat(t)']["state"] = state
-        self.heater_graph_u.set_line_visibility('u_sat(t)', state)
+    def set_u_sat(self, state):
+        if self.handler.ui.btnGraphsPageHeater.isChecked():
+            self.heater_graph_u.controls['u_sat(t)']["state"] = state
+            self.heater_graph_u.set_line_visibility('u_sat(t)', state)
+        else:
+            self.fan_graph_u.controls['u_sat(t)']["state"] = state
+            self.fan_graph_u.set_line_visibility('u_sat(t)', state)
 
     @Slot(bool)
-    def set_heater_u(self, state):
-        self.heater_graph_u.controls['u(t)']["state"] = state
-        self.heater_graph_u.set_line_visibility('u(t)', state)
+    def set_u(self, state):
+        if self.handler.ui.btnGraphsPageHeater.isChecked():
+            self.heater_graph_u.controls['u(t)']["state"] = state
+            self.heater_graph_u.set_line_visibility('u(t)', state)
+        else:
+            self.fan_graph_u.controls['u(t)']["state"] = state
+            self.fan_graph_u.set_line_visibility('u(t)', state)
 
     @Slot(bool)
-    def set_heater_u_p(self, state):
-        self.heater_graph_u.controls['u_p(t)']["state"] = state
-        self.heater_graph_u.set_line_visibility('u_p(t)', state)
+    def set_u_p(self, state):
+        if self.handler.ui.btnGraphsPageHeater.isChecked():
+            self.heater_graph_u.controls['u_p(t)']["state"] = state
+            self.heater_graph_u.set_line_visibility('u_p(t)', state)
+        else:
+            self.fan_graph_u.controls['u_p(t)']["state"] = state
+            self.fan_graph_u.set_line_visibility('u_p(t)', state)
 
     @Slot(bool)
-    def set_heater_u_i(self, state):
-        self.heater_graph_u.controls['u_i(t)']["state"] = state
-        self.heater_graph_u.set_line_visibility('u_i(t)', state)
+    def set_u_i(self, state):
+        if self.handler.ui.btnGraphsPageHeater.isChecked():
+            self.heater_graph_u.controls['u_i(t)']["state"] = state
+            self.heater_graph_u.set_line_visibility('u_i(t)', state)
+        else:
+            self.fan_graph_u.controls['u_i(t)']["state"] = state
+            self.fan_graph_u.set_line_visibility('u_i(t)', state)
 
     @Slot(bool)
-    def set_heater_u_d(self, state):
-        self.heater_graph_u.controls['u_d(t)']["state"] = state
-        self.heater_graph_u.set_line_visibility('u_d(t)', state)
+    def set_u_d(self, state):
+        if self.handler.ui.btnGraphsPageHeater.isChecked():
+            self.heater_graph_u.controls['u_d(t)']["state"] = state
+            self.heater_graph_u.set_line_visibility('u_d(t)', state)
+        else:
+            self.fan_graph_u.controls['u_d(t)']["state"] = state
+            self.fan_graph_u.set_line_visibility('u_d(t)', state)
 
-    # Fan
-    @Slot(bool)
-    def set_fan_x(self, state):
-        self.fan_graph_y.controls['x(t)']["state"] = state
-        self.fan_graph_y.set_line_visibility('x(t)', state)
-
-    @Slot(bool)
-    def set_fan_y(self, state):
-        self.fan_graph_y.controls['y(t)']["state"] = state
-        self.fan_graph_y.set_line_visibility('y(t)', state)
-        
-    @Slot(bool)
-    def set_fan_u_sat(self, state):
-        self.fan_graph_u.controls['u_sat(t)']["state"] = state
-        self.fan_graph_u.set_line_visibility('u_sat(t)', state)
-
-    @Slot(bool)
-    def set_fan_u(self, state):
-        self.fan_graph_u.controls['u(t)']["state"] = state
-        self.fan_graph_u.set_line_visibility('u(t)', state)
-
-    @Slot(bool)
-    def set_fan_u_p(self, state):
-        self.fan_graph_u.controls['u_p(t)']["state"] = state
-        self.fan_graph_u.set_line_visibility('u_p(t)', state)
-
-    @Slot(bool)
-    def set_fan_u_i(self, state):
-        self.fan_graph_u.controls['u_i(t)']["state"] = state
-        self.fan_graph_u.set_line_visibility('u_i(t)', state)
-
-    @Slot(bool)
-    def set_fan_u_d(self, state):
-        self.fan_graph_u.controls['u_d(t)']["state"] = state
-        self.fan_graph_u.set_line_visibility('u_d(t)', state)

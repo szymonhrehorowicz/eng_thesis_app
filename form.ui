@@ -39,6 +39,12 @@
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QFrame" name="menubar">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -79,7 +85,7 @@
        <item>
         <widget class="QPushButton" name="btnHeaterControls">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -384,7 +390,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="pageHeaterControllerSelect">
            <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -678,7 +684,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="pageHeaterControllerConfigBB">
            <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -2199,7 +2205,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="pageHeaterBBGraph">
            <property name="sizePolicy">
@@ -2210,7 +2216,7 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_9">
             <item>
-             <layout class="QVBoxLayout" name="layHeaterBBGraph"/>
+             <layout class="QHBoxLayout" name="layHeaterBBGraph"/>
             </item>
             <item>
              <widget class="QFrame" name="frame_29">
@@ -2224,10 +2230,23 @@
                <enum>QFrame::NoFrame</enum>
               </property>
               <layout class="QGridLayout" name="gridLayout_4">
-               <item row="0" column="2">
-                <widget class="QPushButton" name="btnHeaterBB_graph_y_2">
+               <item row="0" column="11">
+                <spacer name="horizontalSpacer_22">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="1">
+                <widget class="QPushButton" name="btnHeaterBB_graph_y_1">
                  <property name="text">
-                  <string>y_2(t)</string>
+                  <string>y_1(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2237,10 +2256,23 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="7">
-                <widget class="QPushButton" name="btnHeaterBB_graph_u_min">
+               <item row="0" column="4">
+                <widget class="QPushButton" name="btnHeaterBB_graph_x_max">
                  <property name="text">
-                  <string>u_min</string>
+                  <string>x_max</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="6">
+                <widget class="QPushButton" name="btnHeaterBB_graph_u_max">
+                 <property name="text">
+                  <string>u_max</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2263,23 +2295,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="11">
-                <spacer name="horizontalSpacer_22">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="0" column="4">
-                <widget class="QPushButton" name="btnHeaterBB_graph_x_max">
+               <item row="0" column="7">
+                <widget class="QPushButton" name="btnHeaterBB_graph_u_min">
                  <property name="text">
-                  <string>x_max</string>
+                  <string>u_min</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2289,33 +2308,16 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
-                <widget class="QPushButton" name="btnHeaterBB_graph_y_1">
+               <item row="0" column="2">
+                <widget class="QPushButton" name="btnHeaterBB_graph_y_2">
                  <property name="text">
-                  <string>y_1(t)</string>
+                  <string>y_2(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
                  </property>
                  <property name="checked">
                   <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="13">
-                <widget class="QPushButton" name="btnHeaterBB_graph_Clear">
-                 <property name="toolTip">
-                  <string>Wyczyść wykres</string>
-                 </property>
-                 <property name="statusTip">
-                  <string>Wyczyść wykres</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="icon">
-                  <iconset resource="resources.qrc">
-                   <normaloff>:/assets/assets/broom.ico</normaloff>:/assets/assets/broom.ico</iconset>
                  </property>
                 </widget>
                </item>
@@ -2329,19 +2331,6 @@
                  </property>
                  <property name="checked">
                   <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="6">
-                <widget class="QPushButton" name="btnHeaterBB_graph_u_max">
-                 <property name="text">
-                  <string>u_max</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
                  </property>
                 </widget>
                </item>
@@ -2378,6 +2367,23 @@
                  </property>
                 </widget>
                </item>
+               <item row="0" column="13">
+                <widget class="QPushButton" name="btnHeaterBB_graph_Clear">
+                 <property name="toolTip">
+                  <string>Wyczyść wykres</string>
+                 </property>
+                 <property name="statusTip">
+                  <string>Wyczyść wykres</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="resources.qrc">
+                   <normaloff>:/assets/assets/broom.ico</normaloff>:/assets/assets/broom.ico</iconset>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </widget>
             </item>
@@ -2392,7 +2398,7 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_11">
             <item>
-             <layout class="QVBoxLayout" name="layHeaterPIDGraph"/>
+             <layout class="QHBoxLayout" name="layHeaterPIDGraph"/>
             </item>
             <item>
              <widget class="QFrame" name="frame_30">
@@ -2704,7 +2710,7 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
             <item>
-             <layout class="QVBoxLayout" name="layFanBBGraph"/>
+             <layout class="QHBoxLayout" name="layFanBBGraph"/>
             </item>
             <item>
              <widget class="QFrame" name="frame_27">
@@ -2873,7 +2879,7 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_8">
             <item>
-             <layout class="QVBoxLayout" name="layFanPIDGraph"/>
+             <layout class="QHBoxLayout" name="layFanPIDGraph"/>
             </item>
             <item>
              <widget class="QFrame" name="frame_28">
@@ -4139,27 +4145,6 @@
             </widget>
            </item>
            <item>
-            <widget class="Line" name="line_8">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="btnGraphsPageStop">
-             <property name="text">
-              <string/>
-             </property>
-             <property name="icon">
-              <iconset resource="resources.qrc">
-               <normaloff>:/assets/assets/pause.ico</normaloff>:/assets/assets/pause.ico</iconset>
-             </property>
-             <property name="checkable">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
             <spacer name="horizontalSpacer_28">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -4172,6 +4157,140 @@
              </property>
             </spacer>
            </item>
+           <item>
+            <widget class="QPushButton" name="btnGraphsPage_x">
+             <property name="text">
+              <string>x(t)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnGraphsPage_y_1">
+             <property name="text">
+              <string>y_1(t)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnGraphsPage_y_2">
+             <property name="text">
+              <string>y_2(t)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnGraphsPage_y">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="text">
+              <string>y(t)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Line" name="line_9">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnGraphsPage_u_p">
+             <property name="text">
+              <string>u_p(t)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnGraphsPage_u_i">
+             <property name="text">
+              <string>u_i(t)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnGraphsPage_u_d">
+             <property name="text">
+              <string>u_d(t)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Line" name="line_10">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnGraphsPage_u">
+             <property name="text">
+              <string>u(t)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnGraphsPage_u_sat">
+             <property name="text">
+              <string>u_sat(t)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
@@ -4179,12 +4298,33 @@
          <widget class="QStackedWidget" name="stackGraphsPage">
           <widget class="QWidget" name="pageGraphsPageHeater">
            <layout class="QVBoxLayout" name="verticalLayout_26">
+            <property name="spacing">
+             <number>0</number>
+            </property>
             <item>
              <widget class="QFrame" name="frame_44">
               <property name="frameShape">
                <enum>QFrame::NoFrame</enum>
               </property>
+              <property name="lineWidth">
+               <number>0</number>
+              </property>
               <layout class="QHBoxLayout" name="horizontalLayout_37">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QFrame" name="frame_45">
                  <property name="sizePolicy">
@@ -4197,69 +4337,20 @@
                   <enum>QFrame::NoFrame</enum>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_23">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
                   <item>
-                   <layout class="QVBoxLayout" name="layGraphsPageHeater_y"/>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item>
-                <widget class="QFrame" name="frame_46">
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_17">
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageHeater_x">
-                    <property name="text">
-                     <string>x(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageHeater_y_1">
-                    <property name="text">
-                     <string>y_1(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageHeater_y_2">
-                    <property name="text">
-                     <string>y_2(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="verticalSpacer_6">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>40</height>
-                     </size>
-                    </property>
-                   </spacer>
+                   <layout class="QHBoxLayout" name="layGraphsPageHeater_y"/>
                   </item>
                  </layout>
                 </widget>
@@ -4272,7 +4363,25 @@
               <property name="frameShape">
                <enum>QFrame::NoFrame</enum>
               </property>
+              <property name="lineWidth">
+               <number>0</number>
+              </property>
               <layout class="QHBoxLayout" name="horizontalLayout_35">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QFrame" name="frame_49">
                  <property name="sizePolicy">
@@ -4285,8 +4394,20 @@
                   <enum>QFrame::NoFrame</enum>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_25">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
                   <item>
-                   <layout class="QVBoxLayout" name="layGraphsPageHeater_e"/>
+                   <layout class="QHBoxLayout" name="layGraphsPageHeater_e"/>
                   </item>
                  </layout>
                 </widget>
@@ -4299,7 +4420,25 @@
               <property name="frameShape">
                <enum>QFrame::NoFrame</enum>
               </property>
+              <property name="lineWidth">
+               <number>0</number>
+              </property>
               <layout class="QHBoxLayout" name="horizontalLayout_36">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QFrame" name="frame_47">
                  <property name="sizePolicy">
@@ -4312,95 +4451,20 @@
                   <enum>QFrame::NoFrame</enum>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_24">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
                   <item>
-                   <layout class="QVBoxLayout" name="layGraphsPageHeater_u"/>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item>
-                <widget class="QFrame" name="frame_48">
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_18">
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageHeater_u_p">
-                    <property name="text">
-                     <string>u_p(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageHeater_u">
-                    <property name="text">
-                     <string>u(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageHeater_u_d">
-                    <property name="text">
-                     <string>u_d(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageHeater_u_i">
-                    <property name="text">
-                     <string>u_i(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageHeater_u_sat">
-                    <property name="text">
-                     <string>u_sat(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="verticalSpacer_8">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>40</height>
-                     </size>
-                    </property>
-                   </spacer>
+                   <layout class="QHBoxLayout" name="layGraphsPageHeater_u"/>
                   </item>
                  </layout>
                 </widget>
@@ -4412,15 +4476,36 @@
           </widget>
           <widget class="QWidget" name="pageGraphsPageFan">
            <layout class="QVBoxLayout" name="verticalLayout_22">
+            <property name="spacing">
+             <number>0</number>
+            </property>
             <item>
              <widget class="QFrame" name="frame_50">
               <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
+               <enum>QFrame::NoFrame</enum>
               </property>
               <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="lineWidth">
+               <number>0</number>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_39">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QFrame" name="frame_55">
                  <property name="sizePolicy">
@@ -4430,65 +4515,26 @@
                   </sizepolicy>
                  </property>
                  <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
+                  <enum>QFrame::NoFrame</enum>
                  </property>
                  <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
+                  <enum>QFrame::Plain</enum>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_27">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
                   <item>
-                   <layout class="QVBoxLayout" name="layGraphsPageFan_y"/>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item>
-                <widget class="QFrame" name="frame_56">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_31">
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageFan_x">
-                    <property name="text">
-                     <string>x(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageFan_y">
-                    <property name="text">
-                     <string>y(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="verticalSpacer_9">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>149</height>
-                     </size>
-                    </property>
-                   </spacer>
+                   <layout class="QHBoxLayout" name="layGraphsPageFan_y"/>
                   </item>
                  </layout>
                 </widget>
@@ -4499,12 +4545,30 @@
             <item>
              <widget class="QFrame" name="frame_51">
               <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
+               <enum>QFrame::NoFrame</enum>
               </property>
               <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="lineWidth">
+               <number>0</number>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_40">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QFrame" name="frame_54">
                  <property name="sizePolicy">
@@ -4514,14 +4578,26 @@
                   </sizepolicy>
                  </property>
                  <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
+                  <enum>QFrame::NoFrame</enum>
                  </property>
                  <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
+                  <enum>QFrame::Plain</enum>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_28">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
                   <item>
-                   <layout class="QVBoxLayout" name="layGraphsPageFan_e"/>
+                   <layout class="QHBoxLayout" name="layGraphsPageFan_e"/>
                   </item>
                  </layout>
                 </widget>
@@ -4538,12 +4614,30 @@
                </sizepolicy>
               </property>
               <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
+               <enum>QFrame::NoFrame</enum>
               </property>
               <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="lineWidth">
+               <number>0</number>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_41">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QFrame" name="frame_53">
                  <property name="sizePolicy">
@@ -4553,104 +4647,26 @@
                   </sizepolicy>
                  </property>
                  <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
+                  <enum>QFrame::NoFrame</enum>
                  </property>
                  <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
+                  <enum>QFrame::Plain</enum>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_29">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
                   <item>
-                   <layout class="QVBoxLayout" name="layGraphsPageFan_u"/>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-               <item>
-                <widget class="QFrame" name="frame_58">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_30">
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageFan_u_sat">
-                    <property name="text">
-                     <string>u_sat(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageFan_u">
-                    <property name="text">
-                     <string>u(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageFan_u_p">
-                    <property name="text">
-                     <string>u_p(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageFan_u_i">
-                    <property name="text">
-                     <string>u_i(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="btnGraphsPageFan_u_d">
-                    <property name="text">
-                     <string>u_d(t)</string>
-                    </property>
-                    <property name="checkable">
-                     <bool>true</bool>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="verticalSpacer_7">
-                    <property name="orientation">
-                     <enum>Qt::Vertical</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>20</width>
-                      <height>59</height>
-                     </size>
-                    </property>
-                   </spacer>
+                   <layout class="QHBoxLayout" name="layGraphsPageFan_u"/>
                   </item>
                  </layout>
                 </widget>

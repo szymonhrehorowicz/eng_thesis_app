@@ -43,6 +43,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.menubar = QFrame(self.centralwidget)
         self.menubar.setObjectName(u"menubar")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.menubar.sizePolicy().hasHeightForWidth())
+        self.menubar.setSizePolicy(sizePolicy)
         self.menubar.setFrameShape(QFrame.NoFrame)
         self.horizontalLayout = QHBoxLayout(self.menubar)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -66,11 +71,11 @@ class Ui_MainWindow(object):
 
         self.btnHeaterControls = QPushButton(self.menubar)
         self.btnHeaterControls.setObjectName(u"btnHeaterControls")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnHeaterControls.sizePolicy().hasHeightForWidth())
-        self.btnHeaterControls.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.btnHeaterControls.sizePolicy().hasHeightForWidth())
+        self.btnHeaterControls.setSizePolicy(sizePolicy1)
         self.btnHeaterControls.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         icon2 = QIcon()
         icon2.addFile(u":/assets/assets/heater.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -136,22 +141,22 @@ class Ui_MainWindow(object):
 
         self.container = QStackedWidget(self.centralwidget)
         self.container.setObjectName(u"container")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.container.sizePolicy().hasHeightForWidth())
-        self.container.setSizePolicy(sizePolicy1)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Expanding)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.container.sizePolicy().hasHeightForWidth())
+        self.container.setSizePolicy(sizePolicy2)
         self.Controls = QWidget()
         self.Controls.setObjectName(u"Controls")
         self.verticalLayout = QVBoxLayout(self.Controls)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.stackControllerDesc = QStackedWidget(self.Controls)
         self.stackControllerDesc.setObjectName(u"stackControllerDesc")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Maximum)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.stackControllerDesc.sizePolicy().hasHeightForWidth())
-        self.stackControllerDesc.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Maximum)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.stackControllerDesc.sizePolicy().hasHeightForWidth())
+        self.stackControllerDesc.setSizePolicy(sizePolicy3)
         font = QFont()
         font.setPointSize(12)
         self.stackControllerDesc.setFont(font)
@@ -228,8 +233,8 @@ class Ui_MainWindow(object):
 
         self.stackControllerSelect = QStackedWidget(self.Controls)
         self.stackControllerSelect.setObjectName(u"stackControllerSelect")
-        sizePolicy2.setHeightForWidth(self.stackControllerSelect.sizePolicy().hasHeightForWidth())
-        self.stackControllerSelect.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.stackControllerSelect.sizePolicy().hasHeightForWidth())
+        self.stackControllerSelect.setSizePolicy(sizePolicy3)
         self.pageHeaterControllerSelect = QWidget()
         self.pageHeaterControllerSelect.setObjectName(u"pageHeaterControllerSelect")
         self.horizontalLayout_3 = QHBoxLayout(self.pageHeaterControllerSelect)
@@ -376,11 +381,8 @@ class Ui_MainWindow(object):
 
         self.stackController = StackedWidget(self.Controls)
         self.stackController.setObjectName(u"stackController")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.stackController.sizePolicy().hasHeightForWidth())
-        self.stackController.setSizePolicy(sizePolicy3)
+        sizePolicy.setHeightForWidth(self.stackController.sizePolicy().hasHeightForWidth())
+        self.stackController.setSizePolicy(sizePolicy)
         self.pageHeaterControllerConfigBB = QWidget()
         self.pageHeaterControllerConfigBB.setObjectName(u"pageHeaterControllerConfigBB")
         self.horizontalLayout_2 = QHBoxLayout(self.pageHeaterControllerConfigBB)
@@ -1259,7 +1261,7 @@ class Ui_MainWindow(object):
         self.pageHeaterBBGraph.setSizePolicy(sizePolicy6)
         self.verticalLayout_9 = QVBoxLayout(self.pageHeaterBBGraph)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.layHeaterBBGraph = QVBoxLayout()
+        self.layHeaterBBGraph = QHBoxLayout()
         self.layHeaterBBGraph.setObjectName(u"layHeaterBBGraph")
 
         self.verticalLayout_9.addLayout(self.layHeaterBBGraph)
@@ -1271,37 +1273,9 @@ class Ui_MainWindow(object):
         self.frame_29.setFrameShape(QFrame.NoFrame)
         self.gridLayout_4 = QGridLayout(self.frame_29)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.btnHeaterBB_graph_y_2 = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_y_2.setObjectName(u"btnHeaterBB_graph_y_2")
-        self.btnHeaterBB_graph_y_2.setCheckable(True)
-        self.btnHeaterBB_graph_y_2.setChecked(True)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_y_2, 0, 2, 1, 1)
-
-        self.btnHeaterBB_graph_u_min = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_u_min.setObjectName(u"btnHeaterBB_graph_u_min")
-        self.btnHeaterBB_graph_u_min.setCheckable(True)
-        self.btnHeaterBB_graph_u_min.setChecked(False)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_u_min, 0, 7, 1, 1)
-
-        self.btnHeaterBB_graph_x_min = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_x_min.setObjectName(u"btnHeaterBB_graph_x_min")
-        self.btnHeaterBB_graph_x_min.setCheckable(True)
-        self.btnHeaterBB_graph_x_min.setChecked(False)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_min, 0, 5, 1, 1)
-
         self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.gridLayout_4.addItem(self.horizontalSpacer_22, 0, 11, 1, 1)
-
-        self.btnHeaterBB_graph_x_max = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_x_max.setObjectName(u"btnHeaterBB_graph_x_max")
-        self.btnHeaterBB_graph_x_max.setCheckable(True)
-        self.btnHeaterBB_graph_x_max.setChecked(False)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_max, 0, 4, 1, 1)
 
         self.btnHeaterBB_graph_y_1 = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_y_1.setObjectName(u"btnHeaterBB_graph_y_1")
@@ -1310,20 +1284,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_y_1, 0, 1, 1, 1)
 
-        self.btnHeaterBB_graph_Clear = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_Clear.setObjectName(u"btnHeaterBB_graph_Clear")
-        icon8 = QIcon()
-        icon8.addFile(u":/assets/assets/broom.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnHeaterBB_graph_Clear.setIcon(icon8)
+        self.btnHeaterBB_graph_x_max = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_x_max.setObjectName(u"btnHeaterBB_graph_x_max")
+        self.btnHeaterBB_graph_x_max.setCheckable(True)
+        self.btnHeaterBB_graph_x_max.setChecked(False)
 
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Clear, 0, 13, 1, 1)
-
-        self.btnHeaterBB_graph_x = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_x.setObjectName(u"btnHeaterBB_graph_x")
-        self.btnHeaterBB_graph_x.setCheckable(True)
-        self.btnHeaterBB_graph_x.setChecked(True)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x, 0, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_max, 0, 4, 1, 1)
 
         self.btnHeaterBB_graph_u_max = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_u_max.setObjectName(u"btnHeaterBB_graph_u_max")
@@ -1332,11 +1298,39 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_u_max, 0, 6, 1, 1)
 
+        self.btnHeaterBB_graph_x_min = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_x_min.setObjectName(u"btnHeaterBB_graph_x_min")
+        self.btnHeaterBB_graph_x_min.setCheckable(True)
+        self.btnHeaterBB_graph_x_min.setChecked(False)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_min, 0, 5, 1, 1)
+
+        self.btnHeaterBB_graph_u_min = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_u_min.setObjectName(u"btnHeaterBB_graph_u_min")
+        self.btnHeaterBB_graph_u_min.setCheckable(True)
+        self.btnHeaterBB_graph_u_min.setChecked(False)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_u_min, 0, 7, 1, 1)
+
+        self.btnHeaterBB_graph_y_2 = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_y_2.setObjectName(u"btnHeaterBB_graph_y_2")
+        self.btnHeaterBB_graph_y_2.setCheckable(True)
+        self.btnHeaterBB_graph_y_2.setChecked(True)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_y_2, 0, 2, 1, 1)
+
+        self.btnHeaterBB_graph_x = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_x.setObjectName(u"btnHeaterBB_graph_x")
+        self.btnHeaterBB_graph_x.setCheckable(True)
+        self.btnHeaterBB_graph_x.setChecked(True)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x, 0, 0, 1, 1)
+
         self.btnHeaterBB_graph_Stop = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_Stop.setObjectName(u"btnHeaterBB_graph_Stop")
-        icon9 = QIcon()
-        icon9.addFile(u":/assets/assets/pause.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnHeaterBB_graph_Stop.setIcon(icon9)
+        icon8 = QIcon()
+        icon8.addFile(u":/assets/assets/pause.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnHeaterBB_graph_Stop.setIcon(icon8)
         self.btnHeaterBB_graph_Stop.setCheckable(True)
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Stop, 0, 12, 1, 1)
@@ -1348,6 +1342,14 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_mode, 0, 8, 1, 1)
 
+        self.btnHeaterBB_graph_Clear = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_Clear.setObjectName(u"btnHeaterBB_graph_Clear")
+        icon9 = QIcon()
+        icon9.addFile(u":/assets/assets/broom.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnHeaterBB_graph_Clear.setIcon(icon9)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Clear, 0, 13, 1, 1)
+
 
         self.verticalLayout_9.addWidget(self.frame_29)
 
@@ -1358,15 +1360,15 @@ class Ui_MainWindow(object):
         self.pageHeaterPIDGraph.setSizePolicy(sizePolicy6)
         self.verticalLayout_11 = QVBoxLayout(self.pageHeaterPIDGraph)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.layHeaterPIDGraph = QVBoxLayout()
+        self.layHeaterPIDGraph = QHBoxLayout()
         self.layHeaterPIDGraph.setObjectName(u"layHeaterPIDGraph")
 
         self.verticalLayout_11.addLayout(self.layHeaterPIDGraph)
 
         self.frame_30 = QFrame(self.pageHeaterPIDGraph)
         self.frame_30.setObjectName(u"frame_30")
-        sizePolicy2.setHeightForWidth(self.frame_30.sizePolicy().hasHeightForWidth())
-        self.frame_30.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.frame_30.sizePolicy().hasHeightForWidth())
+        self.frame_30.setSizePolicy(sizePolicy3)
         self.frame_30.setFrameShape(QFrame.NoFrame)
         self.gridLayout_2 = QGridLayout(self.frame_30)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
@@ -1446,7 +1448,7 @@ class Ui_MainWindow(object):
 
         self.btnHeaterPID_graph_Clear = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_Clear.setObjectName(u"btnHeaterPID_graph_Clear")
-        self.btnHeaterPID_graph_Clear.setIcon(icon8)
+        self.btnHeaterPID_graph_Clear.setIcon(icon9)
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_Clear, 0, 25, 1, 1)
 
@@ -1494,7 +1496,7 @@ class Ui_MainWindow(object):
 
         self.btnHeaterPID_graph_Stop = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_Stop.setObjectName(u"btnHeaterPID_graph_Stop")
-        self.btnHeaterPID_graph_Stop.setIcon(icon9)
+        self.btnHeaterPID_graph_Stop.setIcon(icon8)
         self.btnHeaterPID_graph_Stop.setCheckable(True)
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_Stop, 0, 24, 1, 1)
@@ -1523,15 +1525,15 @@ class Ui_MainWindow(object):
         self.pageFanBBGraph.setSizePolicy(sizePolicy6)
         self.verticalLayout_4 = QVBoxLayout(self.pageFanBBGraph)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.layFanBBGraph = QVBoxLayout()
+        self.layFanBBGraph = QHBoxLayout()
         self.layFanBBGraph.setObjectName(u"layFanBBGraph")
 
         self.verticalLayout_4.addLayout(self.layFanBBGraph)
 
         self.frame_27 = QFrame(self.pageFanBBGraph)
         self.frame_27.setObjectName(u"frame_27")
-        sizePolicy2.setHeightForWidth(self.frame_27.sizePolicy().hasHeightForWidth())
-        self.frame_27.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.frame_27.sizePolicy().hasHeightForWidth())
+        self.frame_27.setSizePolicy(sizePolicy3)
         self.frame_27.setFrameShape(QFrame.NoFrame)
         self.gridLayout_3 = QGridLayout(self.frame_27)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
@@ -1558,7 +1560,7 @@ class Ui_MainWindow(object):
 
         self.btnFanBB_graph_Clear = QPushButton(self.frame_27)
         self.btnFanBB_graph_Clear.setObjectName(u"btnFanBB_graph_Clear")
-        self.btnFanBB_graph_Clear.setIcon(icon8)
+        self.btnFanBB_graph_Clear.setIcon(icon9)
 
         self.gridLayout_3.addWidget(self.btnFanBB_graph_Clear, 0, 10, 1, 1)
 
@@ -1589,7 +1591,7 @@ class Ui_MainWindow(object):
 
         self.btnFanBB_graph_Stop = QPushButton(self.frame_27)
         self.btnFanBB_graph_Stop.setObjectName(u"btnFanBB_graph_Stop")
-        self.btnFanBB_graph_Stop.setIcon(icon9)
+        self.btnFanBB_graph_Stop.setIcon(icon8)
         self.btnFanBB_graph_Stop.setCheckable(True)
 
         self.gridLayout_3.addWidget(self.btnFanBB_graph_Stop, 0, 9, 1, 1)
@@ -1611,21 +1613,21 @@ class Ui_MainWindow(object):
         self.pageFanPIDGraph.setSizePolicy(sizePolicy6)
         self.verticalLayout_8 = QVBoxLayout(self.pageFanPIDGraph)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.layFanPIDGraph = QVBoxLayout()
+        self.layFanPIDGraph = QHBoxLayout()
         self.layFanPIDGraph.setObjectName(u"layFanPIDGraph")
 
         self.verticalLayout_8.addLayout(self.layFanPIDGraph)
 
         self.frame_28 = QFrame(self.pageFanPIDGraph)
         self.frame_28.setObjectName(u"frame_28")
-        sizePolicy2.setHeightForWidth(self.frame_28.sizePolicy().hasHeightForWidth())
-        self.frame_28.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.frame_28.sizePolicy().hasHeightForWidth())
+        self.frame_28.setSizePolicy(sizePolicy3)
         self.frame_28.setFrameShape(QFrame.NoFrame)
         self.gridLayout = QGridLayout(self.frame_28)
         self.gridLayout.setObjectName(u"gridLayout")
         self.btnFanPID_graph_Stop = QPushButton(self.frame_28)
         self.btnFanPID_graph_Stop.setObjectName(u"btnFanPID_graph_Stop")
-        self.btnFanPID_graph_Stop.setIcon(icon9)
+        self.btnFanPID_graph_Stop.setIcon(icon8)
         self.btnFanPID_graph_Stop.setCheckable(True)
 
         self.gridLayout.addWidget(self.btnFanPID_graph_Stop, 0, 26, 1, 1)
@@ -1692,7 +1694,7 @@ class Ui_MainWindow(object):
 
         self.btnFanPID_graph_Clear = QPushButton(self.frame_28)
         self.btnFanPID_graph_Clear.setObjectName(u"btnFanPID_graph_Clear")
-        self.btnFanPID_graph_Clear.setIcon(icon8)
+        self.btnFanPID_graph_Clear.setIcon(icon9)
 
         self.gridLayout.addWidget(self.btnFanPID_graph_Clear, 0, 27, 1, 1)
 
@@ -2210,8 +2212,8 @@ class Ui_MainWindow(object):
 
         self.frame_32 = QFrame(self.Export)
         self.frame_32.setObjectName(u"frame_32")
-        sizePolicy1.setHeightForWidth(self.frame_32.sizePolicy().hasHeightForWidth())
-        self.frame_32.setSizePolicy(sizePolicy1)
+        sizePolicy2.setHeightForWidth(self.frame_32.sizePolicy().hasHeightForWidth())
+        self.frame_32.setSizePolicy(sizePolicy2)
         self.frame_32.setFrameShape(QFrame.NoFrame)
         self.gridLayout_5 = QGridLayout(self.frame_32)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
@@ -2359,23 +2361,87 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_38.addWidget(self.btnGraphsPageFan)
 
-        self.line_8 = QFrame(self.frame_41)
-        self.line_8.setObjectName(u"line_8")
-        self.line_8.setFrameShape(QFrame.Shape.VLine)
-        self.line_8.setFrameShadow(QFrame.Shadow.Sunken)
-
-        self.horizontalLayout_38.addWidget(self.line_8)
-
-        self.btnGraphsPageStop = QPushButton(self.frame_41)
-        self.btnGraphsPageStop.setObjectName(u"btnGraphsPageStop")
-        self.btnGraphsPageStop.setIcon(icon9)
-        self.btnGraphsPageStop.setCheckable(True)
-
-        self.horizontalLayout_38.addWidget(self.btnGraphsPageStop)
-
         self.horizontalSpacer_28 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_38.addItem(self.horizontalSpacer_28)
+
+        self.btnGraphsPage_x = QPushButton(self.frame_41)
+        self.btnGraphsPage_x.setObjectName(u"btnGraphsPage_x")
+        self.btnGraphsPage_x.setCheckable(True)
+        self.btnGraphsPage_x.setChecked(True)
+
+        self.horizontalLayout_38.addWidget(self.btnGraphsPage_x)
+
+        self.btnGraphsPage_y_1 = QPushButton(self.frame_41)
+        self.btnGraphsPage_y_1.setObjectName(u"btnGraphsPage_y_1")
+        self.btnGraphsPage_y_1.setCheckable(True)
+        self.btnGraphsPage_y_1.setChecked(True)
+
+        self.horizontalLayout_38.addWidget(self.btnGraphsPage_y_1)
+
+        self.btnGraphsPage_y_2 = QPushButton(self.frame_41)
+        self.btnGraphsPage_y_2.setObjectName(u"btnGraphsPage_y_2")
+        self.btnGraphsPage_y_2.setCheckable(True)
+        self.btnGraphsPage_y_2.setChecked(True)
+
+        self.horizontalLayout_38.addWidget(self.btnGraphsPage_y_2)
+
+        self.btnGraphsPage_y = QPushButton(self.frame_41)
+        self.btnGraphsPage_y.setObjectName(u"btnGraphsPage_y")
+        self.btnGraphsPage_y.setEnabled(True)
+        self.btnGraphsPage_y.setCheckable(True)
+        self.btnGraphsPage_y.setChecked(True)
+
+        self.horizontalLayout_38.addWidget(self.btnGraphsPage_y)
+
+        self.line_9 = QFrame(self.frame_41)
+        self.line_9.setObjectName(u"line_9")
+        self.line_9.setFrameShape(QFrame.Shape.VLine)
+        self.line_9.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.horizontalLayout_38.addWidget(self.line_9)
+
+        self.btnGraphsPage_u_p = QPushButton(self.frame_41)
+        self.btnGraphsPage_u_p.setObjectName(u"btnGraphsPage_u_p")
+        self.btnGraphsPage_u_p.setCheckable(True)
+        self.btnGraphsPage_u_p.setChecked(True)
+
+        self.horizontalLayout_38.addWidget(self.btnGraphsPage_u_p)
+
+        self.btnGraphsPage_u_i = QPushButton(self.frame_41)
+        self.btnGraphsPage_u_i.setObjectName(u"btnGraphsPage_u_i")
+        self.btnGraphsPage_u_i.setCheckable(True)
+        self.btnGraphsPage_u_i.setChecked(True)
+
+        self.horizontalLayout_38.addWidget(self.btnGraphsPage_u_i)
+
+        self.btnGraphsPage_u_d = QPushButton(self.frame_41)
+        self.btnGraphsPage_u_d.setObjectName(u"btnGraphsPage_u_d")
+        self.btnGraphsPage_u_d.setCheckable(True)
+        self.btnGraphsPage_u_d.setChecked(True)
+
+        self.horizontalLayout_38.addWidget(self.btnGraphsPage_u_d)
+
+        self.line_10 = QFrame(self.frame_41)
+        self.line_10.setObjectName(u"line_10")
+        self.line_10.setFrameShape(QFrame.Shape.VLine)
+        self.line_10.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.horizontalLayout_38.addWidget(self.line_10)
+
+        self.btnGraphsPage_u = QPushButton(self.frame_41)
+        self.btnGraphsPage_u.setObjectName(u"btnGraphsPage_u")
+        self.btnGraphsPage_u.setCheckable(True)
+        self.btnGraphsPage_u.setChecked(True)
+
+        self.horizontalLayout_38.addWidget(self.btnGraphsPage_u)
+
+        self.btnGraphsPage_u_sat = QPushButton(self.frame_41)
+        self.btnGraphsPage_u_sat.setObjectName(u"btnGraphsPage_u_sat")
+        self.btnGraphsPage_u_sat.setCheckable(True)
+        self.btnGraphsPage_u_sat.setChecked(True)
+
+        self.horizontalLayout_38.addWidget(self.btnGraphsPage_u_sat)
 
 
         self.verticalLayout_16.addWidget(self.frame_41)
@@ -2385,12 +2451,16 @@ class Ui_MainWindow(object):
         self.pageGraphsPageHeater = QWidget()
         self.pageGraphsPageHeater.setObjectName(u"pageGraphsPageHeater")
         self.verticalLayout_26 = QVBoxLayout(self.pageGraphsPageHeater)
+        self.verticalLayout_26.setSpacing(0)
         self.verticalLayout_26.setObjectName(u"verticalLayout_26")
         self.frame_44 = QFrame(self.pageGraphsPageHeater)
         self.frame_44.setObjectName(u"frame_44")
         self.frame_44.setFrameShape(QFrame.NoFrame)
+        self.frame_44.setLineWidth(0)
         self.horizontalLayout_37 = QHBoxLayout(self.frame_44)
+        self.horizontalLayout_37.setSpacing(0)
         self.horizontalLayout_37.setObjectName(u"horizontalLayout_37")
+        self.horizontalLayout_37.setContentsMargins(0, 0, 0, 0)
         self.frame_45 = QFrame(self.frame_44)
         self.frame_45.setObjectName(u"frame_45")
         sizePolicy6.setHeightForWidth(self.frame_45.sizePolicy().hasHeightForWidth())
@@ -2398,7 +2468,8 @@ class Ui_MainWindow(object):
         self.frame_45.setFrameShape(QFrame.NoFrame)
         self.verticalLayout_23 = QVBoxLayout(self.frame_45)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
-        self.layGraphsPageHeater_y = QVBoxLayout()
+        self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.layGraphsPageHeater_y = QHBoxLayout()
         self.layGraphsPageHeater_y.setObjectName(u"layGraphsPageHeater_y")
 
         self.verticalLayout_23.addLayout(self.layGraphsPageHeater_y)
@@ -2406,47 +2477,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_37.addWidget(self.frame_45)
 
-        self.frame_46 = QFrame(self.frame_44)
-        self.frame_46.setObjectName(u"frame_46")
-        self.frame_46.setFrameShape(QFrame.NoFrame)
-        self.verticalLayout_17 = QVBoxLayout(self.frame_46)
-        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
-        self.btnGraphsPageHeater_x = QPushButton(self.frame_46)
-        self.btnGraphsPageHeater_x.setObjectName(u"btnGraphsPageHeater_x")
-        self.btnGraphsPageHeater_x.setCheckable(True)
-        self.btnGraphsPageHeater_x.setChecked(True)
-
-        self.verticalLayout_17.addWidget(self.btnGraphsPageHeater_x)
-
-        self.btnGraphsPageHeater_y_1 = QPushButton(self.frame_46)
-        self.btnGraphsPageHeater_y_1.setObjectName(u"btnGraphsPageHeater_y_1")
-        self.btnGraphsPageHeater_y_1.setCheckable(True)
-        self.btnGraphsPageHeater_y_1.setChecked(True)
-
-        self.verticalLayout_17.addWidget(self.btnGraphsPageHeater_y_1)
-
-        self.btnGraphsPageHeater_y_2 = QPushButton(self.frame_46)
-        self.btnGraphsPageHeater_y_2.setObjectName(u"btnGraphsPageHeater_y_2")
-        self.btnGraphsPageHeater_y_2.setCheckable(True)
-        self.btnGraphsPageHeater_y_2.setChecked(True)
-
-        self.verticalLayout_17.addWidget(self.btnGraphsPageHeater_y_2)
-
-        self.verticalSpacer_6 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout_17.addItem(self.verticalSpacer_6)
-
-
-        self.horizontalLayout_37.addWidget(self.frame_46)
-
 
         self.verticalLayout_26.addWidget(self.frame_44)
 
         self.frame_43 = QFrame(self.pageGraphsPageHeater)
         self.frame_43.setObjectName(u"frame_43")
         self.frame_43.setFrameShape(QFrame.NoFrame)
+        self.frame_43.setLineWidth(0)
         self.horizontalLayout_35 = QHBoxLayout(self.frame_43)
+        self.horizontalLayout_35.setSpacing(0)
         self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
+        self.horizontalLayout_35.setContentsMargins(0, 0, 0, 0)
         self.frame_49 = QFrame(self.frame_43)
         self.frame_49.setObjectName(u"frame_49")
         sizePolicy6.setHeightForWidth(self.frame_49.sizePolicy().hasHeightForWidth())
@@ -2454,7 +2495,8 @@ class Ui_MainWindow(object):
         self.frame_49.setFrameShape(QFrame.NoFrame)
         self.verticalLayout_25 = QVBoxLayout(self.frame_49)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
-        self.layGraphsPageHeater_e = QVBoxLayout()
+        self.verticalLayout_25.setContentsMargins(0, 0, 0, 0)
+        self.layGraphsPageHeater_e = QHBoxLayout()
         self.layGraphsPageHeater_e.setObjectName(u"layGraphsPageHeater_e")
 
         self.verticalLayout_25.addLayout(self.layGraphsPageHeater_e)
@@ -2468,8 +2510,11 @@ class Ui_MainWindow(object):
         self.frame_42 = QFrame(self.pageGraphsPageHeater)
         self.frame_42.setObjectName(u"frame_42")
         self.frame_42.setFrameShape(QFrame.NoFrame)
+        self.frame_42.setLineWidth(0)
         self.horizontalLayout_36 = QHBoxLayout(self.frame_42)
+        self.horizontalLayout_36.setSpacing(0)
         self.horizontalLayout_36.setObjectName(u"horizontalLayout_36")
+        self.horizontalLayout_36.setContentsMargins(0, 0, 0, 0)
         self.frame_47 = QFrame(self.frame_42)
         self.frame_47.setObjectName(u"frame_47")
         sizePolicy6.setHeightForWidth(self.frame_47.sizePolicy().hasHeightForWidth())
@@ -2477,60 +2522,14 @@ class Ui_MainWindow(object):
         self.frame_47.setFrameShape(QFrame.NoFrame)
         self.verticalLayout_24 = QVBoxLayout(self.frame_47)
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
-        self.layGraphsPageHeater_u = QVBoxLayout()
+        self.verticalLayout_24.setContentsMargins(0, 0, 0, 0)
+        self.layGraphsPageHeater_u = QHBoxLayout()
         self.layGraphsPageHeater_u.setObjectName(u"layGraphsPageHeater_u")
 
         self.verticalLayout_24.addLayout(self.layGraphsPageHeater_u)
 
 
         self.horizontalLayout_36.addWidget(self.frame_47)
-
-        self.frame_48 = QFrame(self.frame_42)
-        self.frame_48.setObjectName(u"frame_48")
-        self.frame_48.setFrameShape(QFrame.NoFrame)
-        self.verticalLayout_18 = QVBoxLayout(self.frame_48)
-        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.btnGraphsPageHeater_u_p = QPushButton(self.frame_48)
-        self.btnGraphsPageHeater_u_p.setObjectName(u"btnGraphsPageHeater_u_p")
-        self.btnGraphsPageHeater_u_p.setCheckable(True)
-        self.btnGraphsPageHeater_u_p.setChecked(True)
-
-        self.verticalLayout_18.addWidget(self.btnGraphsPageHeater_u_p)
-
-        self.btnGraphsPageHeater_u = QPushButton(self.frame_48)
-        self.btnGraphsPageHeater_u.setObjectName(u"btnGraphsPageHeater_u")
-        self.btnGraphsPageHeater_u.setCheckable(True)
-        self.btnGraphsPageHeater_u.setChecked(True)
-
-        self.verticalLayout_18.addWidget(self.btnGraphsPageHeater_u)
-
-        self.btnGraphsPageHeater_u_d = QPushButton(self.frame_48)
-        self.btnGraphsPageHeater_u_d.setObjectName(u"btnGraphsPageHeater_u_d")
-        self.btnGraphsPageHeater_u_d.setCheckable(True)
-        self.btnGraphsPageHeater_u_d.setChecked(True)
-
-        self.verticalLayout_18.addWidget(self.btnGraphsPageHeater_u_d)
-
-        self.btnGraphsPageHeater_u_i = QPushButton(self.frame_48)
-        self.btnGraphsPageHeater_u_i.setObjectName(u"btnGraphsPageHeater_u_i")
-        self.btnGraphsPageHeater_u_i.setCheckable(True)
-        self.btnGraphsPageHeater_u_i.setChecked(True)
-
-        self.verticalLayout_18.addWidget(self.btnGraphsPageHeater_u_i)
-
-        self.btnGraphsPageHeater_u_sat = QPushButton(self.frame_48)
-        self.btnGraphsPageHeater_u_sat.setObjectName(u"btnGraphsPageHeater_u_sat")
-        self.btnGraphsPageHeater_u_sat.setCheckable(True)
-        self.btnGraphsPageHeater_u_sat.setChecked(True)
-
-        self.verticalLayout_18.addWidget(self.btnGraphsPageHeater_u_sat)
-
-        self.verticalSpacer_8 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout_18.addItem(self.verticalSpacer_8)
-
-
-        self.horizontalLayout_36.addWidget(self.frame_48)
 
 
         self.verticalLayout_26.addWidget(self.frame_42)
@@ -2539,22 +2538,27 @@ class Ui_MainWindow(object):
         self.pageGraphsPageFan = QWidget()
         self.pageGraphsPageFan.setObjectName(u"pageGraphsPageFan")
         self.verticalLayout_22 = QVBoxLayout(self.pageGraphsPageFan)
+        self.verticalLayout_22.setSpacing(0)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.frame_50 = QFrame(self.pageGraphsPageFan)
         self.frame_50.setObjectName(u"frame_50")
-        self.frame_50.setFrameShape(QFrame.StyledPanel)
-        self.frame_50.setFrameShadow(QFrame.Raised)
+        self.frame_50.setFrameShape(QFrame.NoFrame)
+        self.frame_50.setFrameShadow(QFrame.Plain)
+        self.frame_50.setLineWidth(0)
         self.horizontalLayout_39 = QHBoxLayout(self.frame_50)
+        self.horizontalLayout_39.setSpacing(0)
         self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
+        self.horizontalLayout_39.setContentsMargins(0, 0, 0, 0)
         self.frame_55 = QFrame(self.frame_50)
         self.frame_55.setObjectName(u"frame_55")
         sizePolicy6.setHeightForWidth(self.frame_55.sizePolicy().hasHeightForWidth())
         self.frame_55.setSizePolicy(sizePolicy6)
-        self.frame_55.setFrameShape(QFrame.StyledPanel)
-        self.frame_55.setFrameShadow(QFrame.Raised)
+        self.frame_55.setFrameShape(QFrame.NoFrame)
+        self.frame_55.setFrameShadow(QFrame.Plain)
         self.verticalLayout_27 = QVBoxLayout(self.frame_55)
         self.verticalLayout_27.setObjectName(u"verticalLayout_27")
-        self.layGraphsPageFan_y = QVBoxLayout()
+        self.verticalLayout_27.setContentsMargins(0, 0, 0, 0)
+        self.layGraphsPageFan_y = QHBoxLayout()
         self.layGraphsPageFan_y.setObjectName(u"layGraphsPageFan_y")
 
         self.verticalLayout_27.addLayout(self.layGraphsPageFan_y)
@@ -2562,51 +2566,28 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_39.addWidget(self.frame_55)
 
-        self.frame_56 = QFrame(self.frame_50)
-        self.frame_56.setObjectName(u"frame_56")
-        self.frame_56.setFrameShape(QFrame.StyledPanel)
-        self.frame_56.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_31 = QVBoxLayout(self.frame_56)
-        self.verticalLayout_31.setObjectName(u"verticalLayout_31")
-        self.btnGraphsPageFan_x = QPushButton(self.frame_56)
-        self.btnGraphsPageFan_x.setObjectName(u"btnGraphsPageFan_x")
-        self.btnGraphsPageFan_x.setCheckable(True)
-        self.btnGraphsPageFan_x.setChecked(True)
-
-        self.verticalLayout_31.addWidget(self.btnGraphsPageFan_x)
-
-        self.btnGraphsPageFan_y = QPushButton(self.frame_56)
-        self.btnGraphsPageFan_y.setObjectName(u"btnGraphsPageFan_y")
-        self.btnGraphsPageFan_y.setCheckable(True)
-        self.btnGraphsPageFan_y.setChecked(True)
-
-        self.verticalLayout_31.addWidget(self.btnGraphsPageFan_y)
-
-        self.verticalSpacer_9 = QSpacerItem(20, 149, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout_31.addItem(self.verticalSpacer_9)
-
-
-        self.horizontalLayout_39.addWidget(self.frame_56)
-
 
         self.verticalLayout_22.addWidget(self.frame_50)
 
         self.frame_51 = QFrame(self.pageGraphsPageFan)
         self.frame_51.setObjectName(u"frame_51")
-        self.frame_51.setFrameShape(QFrame.StyledPanel)
-        self.frame_51.setFrameShadow(QFrame.Raised)
+        self.frame_51.setFrameShape(QFrame.NoFrame)
+        self.frame_51.setFrameShadow(QFrame.Plain)
+        self.frame_51.setLineWidth(0)
         self.horizontalLayout_40 = QHBoxLayout(self.frame_51)
+        self.horizontalLayout_40.setSpacing(0)
         self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
+        self.horizontalLayout_40.setContentsMargins(0, 0, 0, 0)
         self.frame_54 = QFrame(self.frame_51)
         self.frame_54.setObjectName(u"frame_54")
         sizePolicy6.setHeightForWidth(self.frame_54.sizePolicy().hasHeightForWidth())
         self.frame_54.setSizePolicy(sizePolicy6)
-        self.frame_54.setFrameShape(QFrame.StyledPanel)
-        self.frame_54.setFrameShadow(QFrame.Raised)
+        self.frame_54.setFrameShape(QFrame.NoFrame)
+        self.frame_54.setFrameShadow(QFrame.Plain)
         self.verticalLayout_28 = QVBoxLayout(self.frame_54)
         self.verticalLayout_28.setObjectName(u"verticalLayout_28")
-        self.layGraphsPageFan_e = QVBoxLayout()
+        self.verticalLayout_28.setContentsMargins(0, 0, 0, 0)
+        self.layGraphsPageFan_e = QHBoxLayout()
         self.layGraphsPageFan_e.setObjectName(u"layGraphsPageFan_e")
 
         self.verticalLayout_28.addLayout(self.layGraphsPageFan_e)
@@ -2621,73 +2602,29 @@ class Ui_MainWindow(object):
         self.frame_52.setObjectName(u"frame_52")
         sizePolicy5.setHeightForWidth(self.frame_52.sizePolicy().hasHeightForWidth())
         self.frame_52.setSizePolicy(sizePolicy5)
-        self.frame_52.setFrameShape(QFrame.StyledPanel)
-        self.frame_52.setFrameShadow(QFrame.Raised)
+        self.frame_52.setFrameShape(QFrame.NoFrame)
+        self.frame_52.setFrameShadow(QFrame.Plain)
+        self.frame_52.setLineWidth(0)
         self.horizontalLayout_41 = QHBoxLayout(self.frame_52)
+        self.horizontalLayout_41.setSpacing(0)
         self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
+        self.horizontalLayout_41.setContentsMargins(0, 0, 0, 0)
         self.frame_53 = QFrame(self.frame_52)
         self.frame_53.setObjectName(u"frame_53")
         sizePolicy6.setHeightForWidth(self.frame_53.sizePolicy().hasHeightForWidth())
         self.frame_53.setSizePolicy(sizePolicy6)
-        self.frame_53.setFrameShape(QFrame.StyledPanel)
-        self.frame_53.setFrameShadow(QFrame.Raised)
+        self.frame_53.setFrameShape(QFrame.NoFrame)
+        self.frame_53.setFrameShadow(QFrame.Plain)
         self.verticalLayout_29 = QVBoxLayout(self.frame_53)
         self.verticalLayout_29.setObjectName(u"verticalLayout_29")
-        self.layGraphsPageFan_u = QVBoxLayout()
+        self.verticalLayout_29.setContentsMargins(0, 0, 0, 0)
+        self.layGraphsPageFan_u = QHBoxLayout()
         self.layGraphsPageFan_u.setObjectName(u"layGraphsPageFan_u")
 
         self.verticalLayout_29.addLayout(self.layGraphsPageFan_u)
 
 
         self.horizontalLayout_41.addWidget(self.frame_53)
-
-        self.frame_58 = QFrame(self.frame_52)
-        self.frame_58.setObjectName(u"frame_58")
-        self.frame_58.setFrameShape(QFrame.StyledPanel)
-        self.frame_58.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_30 = QVBoxLayout(self.frame_58)
-        self.verticalLayout_30.setObjectName(u"verticalLayout_30")
-        self.btnGraphsPageFan_u_sat = QPushButton(self.frame_58)
-        self.btnGraphsPageFan_u_sat.setObjectName(u"btnGraphsPageFan_u_sat")
-        self.btnGraphsPageFan_u_sat.setCheckable(True)
-        self.btnGraphsPageFan_u_sat.setChecked(True)
-
-        self.verticalLayout_30.addWidget(self.btnGraphsPageFan_u_sat)
-
-        self.btnGraphsPageFan_u = QPushButton(self.frame_58)
-        self.btnGraphsPageFan_u.setObjectName(u"btnGraphsPageFan_u")
-        self.btnGraphsPageFan_u.setCheckable(True)
-        self.btnGraphsPageFan_u.setChecked(True)
-
-        self.verticalLayout_30.addWidget(self.btnGraphsPageFan_u)
-
-        self.btnGraphsPageFan_u_p = QPushButton(self.frame_58)
-        self.btnGraphsPageFan_u_p.setObjectName(u"btnGraphsPageFan_u_p")
-        self.btnGraphsPageFan_u_p.setCheckable(True)
-        self.btnGraphsPageFan_u_p.setChecked(True)
-
-        self.verticalLayout_30.addWidget(self.btnGraphsPageFan_u_p)
-
-        self.btnGraphsPageFan_u_i = QPushButton(self.frame_58)
-        self.btnGraphsPageFan_u_i.setObjectName(u"btnGraphsPageFan_u_i")
-        self.btnGraphsPageFan_u_i.setCheckable(True)
-        self.btnGraphsPageFan_u_i.setChecked(True)
-
-        self.verticalLayout_30.addWidget(self.btnGraphsPageFan_u_i)
-
-        self.btnGraphsPageFan_u_d = QPushButton(self.frame_58)
-        self.btnGraphsPageFan_u_d.setObjectName(u"btnGraphsPageFan_u_d")
-        self.btnGraphsPageFan_u_d.setCheckable(True)
-        self.btnGraphsPageFan_u_d.setChecked(True)
-
-        self.verticalLayout_30.addWidget(self.btnGraphsPageFan_u_d)
-
-        self.verticalSpacer_7 = QSpacerItem(20, 59, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.verticalLayout_30.addItem(self.verticalSpacer_7)
-
-
-        self.horizontalLayout_41.addWidget(self.frame_58)
 
 
         self.verticalLayout_22.addWidget(self.frame_52)
@@ -2709,9 +2646,9 @@ class Ui_MainWindow(object):
 
         self.container.setCurrentIndex(0)
         self.stackControllerDesc.setCurrentIndex(1)
-        self.stackControllerSelect.setCurrentIndex(0)
-        self.stackController.setCurrentIndex(0)
-        self.stackGraphs.setCurrentIndex(1)
+        self.stackControllerSelect.setCurrentIndex(1)
+        self.stackController.setCurrentIndex(2)
+        self.stackGraphs.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -3026,20 +2963,13 @@ class Ui_MainWindow(object):
         self.label_52.setText(QCoreApplication.translate("MainWindow", u"RPM", None))
         self.label_50.setText(QCoreApplication.translate("MainWindow", u"Omega", None))
         self.label_53.setText(QCoreApplication.translate("MainWindow", u"rad/s", None))
-        self.btnHeaterBB_graph_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
-        self.btnHeaterBB_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
-        self.btnHeaterBB_graph_x_min.setText(QCoreApplication.translate("MainWindow", u"x_min", None))
-        self.btnHeaterBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"x_max", None))
         self.btnHeaterBB_graph_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
-#if QT_CONFIG(tooltip)
-        self.btnHeaterBB_graph_Clear.setToolTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.btnHeaterBB_graph_Clear.setStatusTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
-#endif // QT_CONFIG(statustip)
-        self.btnHeaterBB_graph_Clear.setText("")
-        self.btnHeaterBB_graph_x.setText(QCoreApplication.translate("MainWindow", u"x(t)", None))
+        self.btnHeaterBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"x_max", None))
         self.btnHeaterBB_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
+        self.btnHeaterBB_graph_x_min.setText(QCoreApplication.translate("MainWindow", u"x_min", None))
+        self.btnHeaterBB_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
+        self.btnHeaterBB_graph_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
+        self.btnHeaterBB_graph_x.setText(QCoreApplication.translate("MainWindow", u"x(t)", None))
 #if QT_CONFIG(tooltip)
         self.btnHeaterBB_graph_Stop.setToolTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
 #endif // QT_CONFIG(tooltip)
@@ -3048,6 +2978,13 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(statustip)
         self.btnHeaterBB_graph_Stop.setText("")
         self.btnHeaterBB_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
+#if QT_CONFIG(tooltip)
+        self.btnHeaterBB_graph_Clear.setToolTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        self.btnHeaterBB_graph_Clear.setStatusTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
+#endif // QT_CONFIG(statustip)
+        self.btnHeaterBB_graph_Clear.setText("")
         self.btnHeaterPID_graph_u_sat.setText(QCoreApplication.translate("MainWindow", u"u_sat(t)", None))
         self.btnHeaterPID_graph_u_i.setText(QCoreApplication.translate("MainWindow", u"u_i(t)", None))
         self.btnHeaterPID_graph_k_d.setText(QCoreApplication.translate("MainWindow", u"k_d", None))
@@ -3201,21 +3138,14 @@ class Ui_MainWindow(object):
         self.btnImportAction.setText(QCoreApplication.translate("MainWindow", u"Pobierz nastawy", None))
         self.btnGraphsPageHeater.setText(QCoreApplication.translate("MainWindow", u"Wykresy grzalki", None))
         self.btnGraphsPageFan.setText(QCoreApplication.translate("MainWindow", u"Wykresy wentylatora", None))
-        self.btnGraphsPageStop.setText("")
-        self.btnGraphsPageHeater_x.setText(QCoreApplication.translate("MainWindow", u"x(t)", None))
-        self.btnGraphsPageHeater_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
-        self.btnGraphsPageHeater_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
-        self.btnGraphsPageHeater_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
-        self.btnGraphsPageHeater_u.setText(QCoreApplication.translate("MainWindow", u"u(t)", None))
-        self.btnGraphsPageHeater_u_d.setText(QCoreApplication.translate("MainWindow", u"u_d(t)", None))
-        self.btnGraphsPageHeater_u_i.setText(QCoreApplication.translate("MainWindow", u"u_i(t)", None))
-        self.btnGraphsPageHeater_u_sat.setText(QCoreApplication.translate("MainWindow", u"u_sat(t)", None))
-        self.btnGraphsPageFan_x.setText(QCoreApplication.translate("MainWindow", u"x(t)", None))
-        self.btnGraphsPageFan_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
-        self.btnGraphsPageFan_u_sat.setText(QCoreApplication.translate("MainWindow", u"u_sat(t)", None))
-        self.btnGraphsPageFan_u.setText(QCoreApplication.translate("MainWindow", u"u(t)", None))
-        self.btnGraphsPageFan_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
-        self.btnGraphsPageFan_u_i.setText(QCoreApplication.translate("MainWindow", u"u_i(t)", None))
-        self.btnGraphsPageFan_u_d.setText(QCoreApplication.translate("MainWindow", u"u_d(t)", None))
+        self.btnGraphsPage_x.setText(QCoreApplication.translate("MainWindow", u"x(t)", None))
+        self.btnGraphsPage_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
+        self.btnGraphsPage_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
+        self.btnGraphsPage_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
+        self.btnGraphsPage_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
+        self.btnGraphsPage_u_i.setText(QCoreApplication.translate("MainWindow", u"u_i(t)", None))
+        self.btnGraphsPage_u_d.setText(QCoreApplication.translate("MainWindow", u"u_d(t)", None))
+        self.btnGraphsPage_u.setText(QCoreApplication.translate("MainWindow", u"u(t)", None))
+        self.btnGraphsPage_u_sat.setText(QCoreApplication.translate("MainWindow", u"u_sat(t)", None))
     # retranslateUi
 
