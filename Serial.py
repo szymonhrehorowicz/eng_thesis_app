@@ -160,29 +160,29 @@ class Serial:
                 #      u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32 | max: u16 | min: u16    
                 all_data.append(int2(get_uint16(data)))
                 data = data[2:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
                 all_data.append(int2(get_uint16(data)))
                 data = data[2:]
                 all_data.append(int2(get_uint16(data)))
                 data = data[2:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
                 all_data.append(int2(get_uint16(data)))
                 data = data[2:]
@@ -208,29 +208,29 @@ class Serial:
                 #      u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32 | max: u16 | min: u16    
                 all_data.append(int2(get_uint16(data)))
                 data = data[2:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
                 all_data.append(int2(get_uint16(data)))
                 data = data[2:]
                 all_data.append(int2(get_uint16(data)))
                 data = data[2:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
                 all_data.append(int2(get_uint16(data)))
                 data = data[2:]
@@ -245,21 +245,21 @@ class Serial:
                 fast_data.append(int2(get_uint8(data[0])))
                 data = data[1:]
                 # PID      : error: f32 | int_sum: f32 | aw_int_sum: f32 | u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32   
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
                 fast_data.append(int2(get_uint16(data)))
                 data = data[2:]
                 fast_data.append(int2(get_uint16(data)))
                 data = data[2:]
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
                 """
                     HEATER
@@ -268,34 +268,34 @@ class Serial:
                 fast_data.append(int2(get_uint8(data[0])))
                 data = data[1:]
                 # PID      : error: f32 | int_sum: f32 | aw_int_sum: f32 | u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32   
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
                 fast_data.append(int2(get_uint16(data)))
                 data = data[2:]
                 fast_data.append(int2(get_uint16(data)))
                 data = data[2:]
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                fast_data.append(get_float(int2(get_uint32(data))))
+                all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
 
             """
                 speed: u16 | temp_top: u16 | temp_bottom: u16
             """
             # Get speed
-            speed = int2(get_uint16(data))
-            data = data[2:]
+            speed = bytes_to_float(data[:4])
+            data = data[4:]
             # Get temperatures
-            temp_top = int2(get_uint16(data))
-            data = data[2:]
-            temp_bottom = int2(get_uint16(data))
-            data = data[2:]
+            temp_top = bytes_to_float(data[:4])
+            data = data[4:]
+            temp_bottom = bytes_to_float(data[:4])
+            data = data[4:]
 
             if isAllData:
                 all_data.append(speed)

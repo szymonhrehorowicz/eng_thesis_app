@@ -308,8 +308,8 @@ class MainWindow(QMainWindow):
         self.timer100ms.start()
         
         self.timer400ms = QTimer()
-        self.timer400ms.setInterval(400)
-        self.timer400ms.timeout.connect(self.tim_400ms_IRS)
+        self.timer400ms.setInterval(200)
+        self.timer400ms.timeout.connect(self.tim_200ms_IRS)
         self.timer400ms.start()
 
         self.timer1s = QTimer()
@@ -334,7 +334,7 @@ class MainWindow(QMainWindow):
             self.graphsPage.update()
         print("TIME : ", time() - start)
 
-    def tim_400ms_IRS(self):
+    def tim_200ms_IRS(self):
         start = time()
         if self.ui.container.currentIndex() == INDICES["graphs"]:
             self.graphsPage.update()
