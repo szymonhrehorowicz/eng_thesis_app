@@ -56,3 +56,12 @@ def int2(uint):
 
 def get_float(num):
     return struct.unpack('f', struct.pack('I', num))[0]
+
+def bytes_to_float(byte_array, is_big_endian=False):
+    if len(byte_array) != 4:
+        raise ValueError("Byte array must be exactly 4 bytes long.")
+    
+    if is_big_endian:
+        byte_array = byte_array[::-1]
+
+    return struct.unpack('f', byte_array)[0]

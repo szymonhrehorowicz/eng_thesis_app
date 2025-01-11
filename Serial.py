@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtCore import QIODeviceBase, Slot, QByteArray
 from PySide6.QtSerialPort import QSerialPort, QSerialPortInfo
-from utilities import error_dialog, get_uint8, get_uint16, get_uint32, get_float, int2
+from utilities import bytes_to_float, error_dialog, get_uint8, get_uint16, get_uint32, get_float, int2
 
 BLANK_STRING = "N/A"
 DEBUG = True
@@ -116,6 +116,10 @@ class Serial:
             self.ui.btnHeaterControls.setEnabled(True)
             self.ui.btnFanControls.setEnabled(True)
 
+            if(not (self.handler.isFanBB_graph_running and self.handler.isFanPID_graph_running  and
+               self.handler.isHeaterBB_graph_running and self.handler.isHeaterPID_graph_running)):
+                return
+                
             """
             Byte 0 : 
             0: ALL/FAST | 1: FAN OFF/ON | 2: COIL OFF/ON | 3: TEMP_REF_TOP/TEMP_REF_BOTTOM | 
