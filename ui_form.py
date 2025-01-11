@@ -94,28 +94,28 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.btnFanControls)
 
-        self.btnDataExport = QPushButton(self.menubar)
-        self.btnDataExport.setObjectName(u"btnDataExport")
-        self.btnDataExport.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon4 = QIcon()
-        icon4.addFile(u":/assets/assets/export.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnDataExport.setIcon(icon4)
-        self.btnDataExport.setCheckable(True)
-
-        self.horizontalLayout.addWidget(self.btnDataExport)
-
         self.btnGraphs = QPushButton(self.menubar)
         self.btnGraphs.setObjectName(u"btnGraphs")
-        icon5 = QIcon()
-        icon5.addFile(u":/assets/assets/graph.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnGraphs.setIcon(icon5)
+        icon4 = QIcon()
+        icon4.addFile(u":/assets/assets/graph.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnGraphs.setIcon(icon4)
         self.btnGraphs.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnGraphs)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
+
+        self.btnDataExport = QPushButton(self.menubar)
+        self.btnDataExport.setObjectName(u"btnDataExport")
+        self.btnDataExport.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        icon5 = QIcon()
+        icon5.addFile(u":/assets/assets/export.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnDataExport.setIcon(icon5)
+        self.btnDataExport.setCheckable(True)
+
+        self.horizontalLayout.addWidget(self.btnDataExport)
 
         self.btnImport = QPushButton(self.menubar)
         self.btnImport.setObjectName(u"btnImport")
@@ -2168,7 +2168,7 @@ class Ui_MainWindow(object):
         self.btnExportAction = QPushButton(self.frame_32)
         self.btnExportAction.setObjectName(u"btnExportAction")
         self.btnExportAction.setMaximumSize(QSize(150, 16777215))
-        self.btnExportAction.setIcon(icon4)
+        self.btnExportAction.setIcon(icon5)
 
         self.gridLayout_5.addWidget(self.btnExportAction, 0, 0, 1, 1)
 
@@ -2621,6 +2621,7 @@ class Ui_MainWindow(object):
         self.btnFanControls.setStatusTip(QCoreApplication.translate("MainWindow", u"Wybierz regulator wentylatora i zmie\u0144 jego parametry", None))
 #endif // QT_CONFIG(statustip)
         self.btnFanControls.setText(QCoreApplication.translate("MainWindow", u"Wentylator", None))
+        self.btnGraphs.setText(QCoreApplication.translate("MainWindow", u"Wykresy", None))
 #if QT_CONFIG(tooltip)
         self.btnDataExport.setToolTip(QCoreApplication.translate("MainWindow", u"Eksportuj dane do pliku .xlsx", None))
 #endif // QT_CONFIG(tooltip)
@@ -2628,7 +2629,6 @@ class Ui_MainWindow(object):
         self.btnDataExport.setStatusTip(QCoreApplication.translate("MainWindow", u"Eksportuj dane do pliku .xlsx", None))
 #endif // QT_CONFIG(statustip)
         self.btnDataExport.setText(QCoreApplication.translate("MainWindow", u"Eksport danych", None))
-        self.btnGraphs.setText(QCoreApplication.translate("MainWindow", u"Wykresy", None))
         self.btnImport.setText(QCoreApplication.translate("MainWindow", u"Importuj nastawy", None))
 #if QT_CONFIG(tooltip)
         self.btnHelp.setToolTip(QCoreApplication.translate("MainWindow", u"Dowiedz si\u0119 jak korzysta\u0107 z programu", None))
