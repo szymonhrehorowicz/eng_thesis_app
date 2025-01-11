@@ -281,16 +281,6 @@ class GraphsPage:
         self.zoom_pending = 0
 
     def update(self):
-        if self.handler.ui.btnGraphsPageHeater.isChecked():
-            self.heater_graph_y.update_graph()
-            self.heater_graph_e.update_graph()
-            self.heater_graph_u.update_graph()
-        else:
-            self.fan_graph_y.update_graph()
-            self.fan_graph_e.update_graph()
-            self.fan_graph_u.update_graph()
-    
-    def update_all(self):
         self.heater_graph_y.update_graph()
         self.heater_graph_e.update_graph()
         self.heater_graph_u.update_graph()

@@ -20,6 +20,7 @@ class Serial:
         self.settings = Settings()
         self._serial.errorOccurred.connect(self.handle_error)
         self._serial.readyRead.connect(self.read_data)
+        self.first_msg = True
 
     """
     PUBLIC
@@ -55,9 +56,14 @@ class Serial:
 
         self.ui.btnHeaterControls.setEnabled(False)
         self.ui.btnFanControls.setEnabled(False)
+        self.ui.btnGraphs.setEnabled(False)
+        self.ui.btn_graph_Stop.setEnabled(False)
+        self.ui.btn_graph_Clear.setEnabled(False)
         self.ui.btnHeaterStart.setChecked(False)
         self.ui.btnFanStart.setChecked(False)
         self.handler.mainMenuHandler.open_help()
+
+        self.first_msg = True
 
         if self._serial.isOpen():
             self._serial.close()
@@ -115,9 +121,12 @@ class Serial:
             self.ui.btnConnect.setStatusTip("Rozłącz się z urządzeniem")
             self.ui.btnHeaterControls.setEnabled(True)
             self.ui.btnFanControls.setEnabled(True)
+            self.ui.btn_graph_Stop.setEnabled(True)
+            if self.first_msg:
+                self.ui.btn_graph_Clear.setEnabled(True)
+                self.first_msg = False
 
-            if(not (self.handler.isFanBB_graph_running and self.handler.isFanPID_graph_running  and
-               self.handler.isHeaterBB_graph_running and self.handler.isHeaterPID_graph_running)):
+            if(not self.handler.areGraphsRunning):
                 return
                 
             """

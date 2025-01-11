@@ -63,8 +63,11 @@ class COM:
     def set_fan_config(self, isOn: bool):
         if isOn:
             self.handler.ui.btnFanStart.setText("STOP")
+            self.handler.ui.btn_graph_Clear.setEnabled(False)
         else:
             self.handler.ui.btnFanStart.setText("START")
+            if not self.handler.ui.btnHeaterStart.isChecked():
+                self.handler.ui.btn_graph_Clear.setEnabled(True)
         msg = ""
         msg += str(MSG_TYPE["FAN_CONF_MSG"])
         msg += str(CONTROL_MSG["SET_FAN_CONFIG"])
@@ -126,8 +129,11 @@ class COM:
     def set_heater_config(self, isOn: bool):
         if isOn:
             self.handler.ui.btnHeaterStart.setText("STOP")
+            self.handler.ui.btn_graph_Clear.setEnabled(False)
         else:
             self.handler.ui.btnHeaterStart.setText("START")
+            if not self.handler.ui.btnFanStart.isChecked():
+                self.handler.ui.btn_graph_Clear.setEnabled(True)
         msg = ""
         msg += str(MSG_TYPE["COIL_CONF_MSG"])
         msg += str(CONTROL_MSG["SET_HEATER_CONFIG"])

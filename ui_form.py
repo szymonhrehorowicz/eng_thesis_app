@@ -94,6 +94,13 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.btnFanControls)
 
+        self.line_8 = QFrame(self.menubar)
+        self.line_8.setObjectName(u"line_8")
+        self.line_8.setFrameShape(QFrame.Shape.VLine)
+        self.line_8.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.horizontalLayout.addWidget(self.line_8)
+
         self.btnGraphs = QPushButton(self.menubar)
         self.btnGraphs.setObjectName(u"btnGraphs")
         icon4 = QIcon()
@@ -103,6 +110,24 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.btnGraphs)
 
+        self.btn_graph_Stop = QPushButton(self.menubar)
+        self.btn_graph_Stop.setObjectName(u"btn_graph_Stop")
+        icon5 = QIcon()
+        icon5.addFile(u":/assets/assets/pause.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_graph_Stop.setIcon(icon5)
+        self.btn_graph_Stop.setCheckable(True)
+
+        self.horizontalLayout.addWidget(self.btn_graph_Stop)
+
+        self.btn_graph_Clear = QPushButton(self.menubar)
+        self.btn_graph_Clear.setObjectName(u"btn_graph_Clear")
+        icon6 = QIcon()
+        icon6.addFile(u":/assets/assets/broom.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_graph_Clear.setIcon(icon6)
+        self.btn_graph_Clear.setFlat(False)
+
+        self.horizontalLayout.addWidget(self.btn_graph_Clear)
+
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
@@ -110,18 +135,18 @@ class Ui_MainWindow(object):
         self.btnDataExport = QPushButton(self.menubar)
         self.btnDataExport.setObjectName(u"btnDataExport")
         self.btnDataExport.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        icon5 = QIcon()
-        icon5.addFile(u":/assets/assets/export.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnDataExport.setIcon(icon5)
+        icon7 = QIcon()
+        icon7.addFile(u":/assets/assets/export.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnDataExport.setIcon(icon7)
         self.btnDataExport.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnDataExport)
 
         self.btnImport = QPushButton(self.menubar)
         self.btnImport.setObjectName(u"btnImport")
-        icon6 = QIcon()
-        icon6.addFile(u":/assets/assets/import.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnImport.setIcon(icon6)
+        icon8 = QIcon()
+        icon8.addFile(u":/assets/assets/import.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnImport.setIcon(icon8)
         self.btnImport.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnImport)
@@ -129,9 +154,9 @@ class Ui_MainWindow(object):
         self.btnHelp = QPushButton(self.menubar)
         self.btnHelp.setObjectName(u"btnHelp")
         self.btnHelp.setCursor(QCursor(Qt.CursorShape.WhatsThisCursor))
-        icon7 = QIcon()
-        icon7.addFile(u":/assets/assets/help.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnHelp.setIcon(icon7)
+        icon9 = QIcon()
+        icon9.addFile(u":/assets/assets/help.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnHelp.setIcon(icon9)
         self.btnHelp.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.btnHelp)
@@ -1273,10 +1298,6 @@ class Ui_MainWindow(object):
         self.frame_29.setFrameShape(QFrame.NoFrame)
         self.gridLayout_4 = QGridLayout(self.frame_29)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout_4.addItem(self.horizontalSpacer_22, 0, 11, 1, 1)
-
         self.btnHeaterBB_graph_y_1 = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_y_1.setObjectName(u"btnHeaterBB_graph_y_1")
         self.btnHeaterBB_graph_y_1.setCheckable(True)
@@ -1284,12 +1305,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_y_1, 0, 1, 1, 1)
 
-        self.btnHeaterBB_graph_x_max = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_x_max.setObjectName(u"btnHeaterBB_graph_x_max")
-        self.btnHeaterBB_graph_x_max.setCheckable(True)
-        self.btnHeaterBB_graph_x_max.setChecked(False)
+        self.btnHeaterBB_graph_u_min = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_u_min.setObjectName(u"btnHeaterBB_graph_u_min")
+        self.btnHeaterBB_graph_u_min.setCheckable(True)
+        self.btnHeaterBB_graph_u_min.setChecked(False)
 
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_max, 0, 4, 1, 1)
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_u_min, 0, 7, 1, 1)
 
         self.btnHeaterBB_graph_u_max = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_u_max.setObjectName(u"btnHeaterBB_graph_u_max")
@@ -1297,20 +1318,6 @@ class Ui_MainWindow(object):
         self.btnHeaterBB_graph_u_max.setChecked(False)
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_u_max, 0, 6, 1, 1)
-
-        self.btnHeaterBB_graph_x_min = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_x_min.setObjectName(u"btnHeaterBB_graph_x_min")
-        self.btnHeaterBB_graph_x_min.setCheckable(True)
-        self.btnHeaterBB_graph_x_min.setChecked(False)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_min, 0, 5, 1, 1)
-
-        self.btnHeaterBB_graph_u_min = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_u_min.setObjectName(u"btnHeaterBB_graph_u_min")
-        self.btnHeaterBB_graph_u_min.setCheckable(True)
-        self.btnHeaterBB_graph_u_min.setChecked(False)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_u_min, 0, 7, 1, 1)
 
         self.btnHeaterBB_graph_y_2 = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_y_2.setObjectName(u"btnHeaterBB_graph_y_2")
@@ -1326,14 +1333,16 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x, 0, 0, 1, 1)
 
-        self.btnHeaterBB_graph_Stop = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_Stop.setObjectName(u"btnHeaterBB_graph_Stop")
-        icon8 = QIcon()
-        icon8.addFile(u":/assets/assets/pause.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnHeaterBB_graph_Stop.setIcon(icon8)
-        self.btnHeaterBB_graph_Stop.setCheckable(True)
+        self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Stop, 0, 12, 1, 1)
+        self.gridLayout_4.addItem(self.horizontalSpacer_22, 0, 11, 1, 1)
+
+        self.btnHeaterBB_graph_x_max = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_x_max.setObjectName(u"btnHeaterBB_graph_x_max")
+        self.btnHeaterBB_graph_x_max.setCheckable(True)
+        self.btnHeaterBB_graph_x_max.setChecked(False)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_max, 0, 4, 1, 1)
 
         self.btnHeaterBB_graph_mode = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_mode.setObjectName(u"btnHeaterBB_graph_mode")
@@ -1342,13 +1351,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_mode, 0, 8, 1, 1)
 
-        self.btnHeaterBB_graph_Clear = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_Clear.setObjectName(u"btnHeaterBB_graph_Clear")
-        icon9 = QIcon()
-        icon9.addFile(u":/assets/assets/broom.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btnHeaterBB_graph_Clear.setIcon(icon9)
+        self.btnHeaterBB_graph_x_min = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_x_min.setObjectName(u"btnHeaterBB_graph_x_min")
+        self.btnHeaterBB_graph_x_min.setCheckable(True)
+        self.btnHeaterBB_graph_x_min.setChecked(False)
 
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_Clear, 0, 13, 1, 1)
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_min, 0, 5, 1, 1)
 
 
         self.verticalLayout_9.addWidget(self.frame_29)
@@ -1418,12 +1426,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_u_p, 0, 11, 1, 1)
 
-        self.btnHeaterPID_graph_Clear = QPushButton(self.frame_30)
-        self.btnHeaterPID_graph_Clear.setObjectName(u"btnHeaterPID_graph_Clear")
-        self.btnHeaterPID_graph_Clear.setIcon(icon9)
-
-        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_Clear, 0, 21, 1, 1)
-
         self.btnHeaterPID_graph_y_2 = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_y_2.setObjectName(u"btnHeaterPID_graph_y_2")
         self.btnHeaterPID_graph_y_2.setCheckable(True)
@@ -1451,13 +1453,6 @@ class Ui_MainWindow(object):
         self.btnHeaterPID_graph_x.setChecked(True)
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_x, 0, 0, 1, 1)
-
-        self.btnHeaterPID_graph_Stop = QPushButton(self.frame_30)
-        self.btnHeaterPID_graph_Stop.setObjectName(u"btnHeaterPID_graph_Stop")
-        self.btnHeaterPID_graph_Stop.setIcon(icon8)
-        self.btnHeaterPID_graph_Stop.setCheckable(True)
-
-        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_Stop, 0, 20, 1, 1)
 
         self.btnHeaterPID_graph_u_max = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_u_max.setObjectName(u"btnHeaterPID_graph_u_max")
@@ -1509,6 +1504,10 @@ class Ui_MainWindow(object):
         self.frame_27.setFrameShape(QFrame.NoFrame)
         self.gridLayout_3 = QGridLayout(self.frame_27)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.horizontalSpacer_25 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_3.addItem(self.horizontalSpacer_25, 0, 8, 1, 1)
+
         self.btnFanBB_graph_u_max = QPushButton(self.frame_27)
         self.btnFanBB_graph_u_max.setObjectName(u"btnFanBB_graph_u_max")
         self.btnFanBB_graph_u_max.setCheckable(True)
@@ -1523,22 +1522,26 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.btnFanBB_graph_mode, 0, 7, 1, 1)
 
+        self.btnFanBB_graph_x_max = QPushButton(self.frame_27)
+        self.btnFanBB_graph_x_max.setObjectName(u"btnFanBB_graph_x_max")
+        self.btnFanBB_graph_x_max.setCheckable(True)
+        self.btnFanBB_graph_x_max.setChecked(False)
+
+        self.gridLayout_3.addWidget(self.btnFanBB_graph_x_max, 0, 2, 1, 1)
+
+        self.btnFanBB_graph_y = QPushButton(self.frame_27)
+        self.btnFanBB_graph_y.setObjectName(u"btnFanBB_graph_y")
+        self.btnFanBB_graph_y.setCheckable(True)
+        self.btnFanBB_graph_y.setChecked(True)
+
+        self.gridLayout_3.addWidget(self.btnFanBB_graph_y, 0, 1, 1, 1)
+
         self.btnFanBB_graph_u_min = QPushButton(self.frame_27)
         self.btnFanBB_graph_u_min.setObjectName(u"btnFanBB_graph_u_min")
         self.btnFanBB_graph_u_min.setCheckable(True)
         self.btnFanBB_graph_u_min.setChecked(False)
 
         self.gridLayout_3.addWidget(self.btnFanBB_graph_u_min, 0, 5, 1, 1)
-
-        self.btnFanBB_graph_Clear = QPushButton(self.frame_27)
-        self.btnFanBB_graph_Clear.setObjectName(u"btnFanBB_graph_Clear")
-        self.btnFanBB_graph_Clear.setIcon(icon9)
-
-        self.gridLayout_3.addWidget(self.btnFanBB_graph_Clear, 0, 10, 1, 1)
-
-        self.horizontalSpacer_25 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout_3.addItem(self.horizontalSpacer_25, 0, 8, 1, 1)
 
         self.btnFanBB_graph_x = QPushButton(self.frame_27)
         self.btnFanBB_graph_x.setObjectName(u"btnFanBB_graph_x")
@@ -1553,27 +1556,6 @@ class Ui_MainWindow(object):
         self.btnFanBB_graph_x_min.setChecked(False)
 
         self.gridLayout_3.addWidget(self.btnFanBB_graph_x_min, 0, 3, 1, 1)
-
-        self.btnFanBB_graph_x_max = QPushButton(self.frame_27)
-        self.btnFanBB_graph_x_max.setObjectName(u"btnFanBB_graph_x_max")
-        self.btnFanBB_graph_x_max.setCheckable(True)
-        self.btnFanBB_graph_x_max.setChecked(False)
-
-        self.gridLayout_3.addWidget(self.btnFanBB_graph_x_max, 0, 2, 1, 1)
-
-        self.btnFanBB_graph_Stop = QPushButton(self.frame_27)
-        self.btnFanBB_graph_Stop.setObjectName(u"btnFanBB_graph_Stop")
-        self.btnFanBB_graph_Stop.setIcon(icon8)
-        self.btnFanBB_graph_Stop.setCheckable(True)
-
-        self.gridLayout_3.addWidget(self.btnFanBB_graph_Stop, 0, 9, 1, 1)
-
-        self.btnFanBB_graph_y = QPushButton(self.frame_27)
-        self.btnFanBB_graph_y.setObjectName(u"btnFanBB_graph_y")
-        self.btnFanBB_graph_y.setCheckable(True)
-        self.btnFanBB_graph_y.setChecked(True)
-
-        self.gridLayout_3.addWidget(self.btnFanBB_graph_y, 0, 1, 1, 1)
 
 
         self.verticalLayout_4.addWidget(self.frame_27)
@@ -1597,6 +1579,20 @@ class Ui_MainWindow(object):
         self.frame_28.setFrameShape(QFrame.NoFrame)
         self.gridLayout = QGridLayout(self.frame_28)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.btnFanPID_graph_u = QPushButton(self.frame_28)
+        self.btnFanPID_graph_u.setObjectName(u"btnFanPID_graph_u")
+        self.btnFanPID_graph_u.setCheckable(True)
+        self.btnFanPID_graph_u.setChecked(False)
+
+        self.gridLayout.addWidget(self.btnFanPID_graph_u, 0, 7, 1, 1)
+
+        self.btnFanPID_graph_u_sat = QPushButton(self.frame_28)
+        self.btnFanPID_graph_u_sat.setObjectName(u"btnFanPID_graph_u_sat")
+        self.btnFanPID_graph_u_sat.setCheckable(True)
+        self.btnFanPID_graph_u_sat.setChecked(False)
+
+        self.gridLayout.addWidget(self.btnFanPID_graph_u_sat, 0, 8, 1, 1)
+
         self.btnFanPID_graph_aw_int_e = QPushButton(self.frame_28)
         self.btnFanPID_graph_aw_int_e.setObjectName(u"btnFanPID_graph_aw_int_e")
         self.btnFanPID_graph_aw_int_e.setCheckable(True)
@@ -1618,40 +1614,19 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btnFanPID_graph_int_e, 0, 4, 1, 1)
 
-        self.btnFanPID_graph_u_d = QPushButton(self.frame_28)
-        self.btnFanPID_graph_u_d.setObjectName(u"btnFanPID_graph_u_d")
-        self.btnFanPID_graph_u_d.setCheckable(True)
-        self.btnFanPID_graph_u_d.setChecked(False)
+        self.btnFanPID_graph_u_p = QPushButton(self.frame_28)
+        self.btnFanPID_graph_u_p.setObjectName(u"btnFanPID_graph_u_p")
+        self.btnFanPID_graph_u_p.setCheckable(True)
+        self.btnFanPID_graph_u_p.setChecked(False)
 
-        self.gridLayout.addWidget(self.btnFanPID_graph_u_d, 0, 11, 1, 1)
+        self.gridLayout.addWidget(self.btnFanPID_graph_u_p, 0, 9, 1, 1)
 
-        self.btnFanPID_graph_u_i = QPushButton(self.frame_28)
-        self.btnFanPID_graph_u_i.setObjectName(u"btnFanPID_graph_u_i")
-        self.btnFanPID_graph_u_i.setCheckable(True)
-        self.btnFanPID_graph_u_i.setChecked(False)
+        self.btnFanPID_graph_u_max = QPushButton(self.frame_28)
+        self.btnFanPID_graph_u_max.setObjectName(u"btnFanPID_graph_u_max")
+        self.btnFanPID_graph_u_max.setCheckable(True)
+        self.btnFanPID_graph_u_max.setChecked(False)
 
-        self.gridLayout.addWidget(self.btnFanPID_graph_u_i, 0, 10, 1, 1)
-
-        self.btnFanPID_graph_e = QPushButton(self.frame_28)
-        self.btnFanPID_graph_e.setObjectName(u"btnFanPID_graph_e")
-        self.btnFanPID_graph_e.setCheckable(True)
-        self.btnFanPID_graph_e.setChecked(False)
-
-        self.gridLayout.addWidget(self.btnFanPID_graph_e, 0, 2, 1, 1)
-
-        self.btnFanPID_graph_x = QPushButton(self.frame_28)
-        self.btnFanPID_graph_x.setObjectName(u"btnFanPID_graph_x")
-        self.btnFanPID_graph_x.setCheckable(True)
-        self.btnFanPID_graph_x.setChecked(True)
-
-        self.gridLayout.addWidget(self.btnFanPID_graph_x, 0, 0, 1, 1)
-
-        self.btnFanPID_graph_y = QPushButton(self.frame_28)
-        self.btnFanPID_graph_y.setObjectName(u"btnFanPID_graph_y")
-        self.btnFanPID_graph_y.setCheckable(True)
-        self.btnFanPID_graph_y.setChecked(True)
-
-        self.gridLayout.addWidget(self.btnFanPID_graph_y, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.btnFanPID_graph_u_max, 0, 12, 1, 1)
 
         self.horizontalSpacer_27 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -1664,46 +1639,40 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btnFanPID_graph_mode, 0, 14, 1, 1)
 
-        self.btnFanPID_graph_Clear = QPushButton(self.frame_28)
-        self.btnFanPID_graph_Clear.setObjectName(u"btnFanPID_graph_Clear")
-        self.btnFanPID_graph_Clear.setIcon(icon9)
+        self.btnFanPID_graph_u_d = QPushButton(self.frame_28)
+        self.btnFanPID_graph_u_d.setObjectName(u"btnFanPID_graph_u_d")
+        self.btnFanPID_graph_u_d.setCheckable(True)
+        self.btnFanPID_graph_u_d.setChecked(False)
 
-        self.gridLayout.addWidget(self.btnFanPID_graph_Clear, 0, 23, 1, 1)
+        self.gridLayout.addWidget(self.btnFanPID_graph_u_d, 0, 11, 1, 1)
 
-        self.btnFanPID_graph_Stop = QPushButton(self.frame_28)
-        self.btnFanPID_graph_Stop.setObjectName(u"btnFanPID_graph_Stop")
-        self.btnFanPID_graph_Stop.setIcon(icon8)
-        self.btnFanPID_graph_Stop.setCheckable(True)
+        self.btnFanPID_graph_e = QPushButton(self.frame_28)
+        self.btnFanPID_graph_e.setObjectName(u"btnFanPID_graph_e")
+        self.btnFanPID_graph_e.setCheckable(True)
+        self.btnFanPID_graph_e.setChecked(False)
 
-        self.gridLayout.addWidget(self.btnFanPID_graph_Stop, 0, 22, 1, 1)
+        self.gridLayout.addWidget(self.btnFanPID_graph_e, 0, 2, 1, 1)
 
-        self.btnFanPID_graph_u = QPushButton(self.frame_28)
-        self.btnFanPID_graph_u.setObjectName(u"btnFanPID_graph_u")
-        self.btnFanPID_graph_u.setCheckable(True)
-        self.btnFanPID_graph_u.setChecked(False)
+        self.btnFanPID_graph_y = QPushButton(self.frame_28)
+        self.btnFanPID_graph_y.setObjectName(u"btnFanPID_graph_y")
+        self.btnFanPID_graph_y.setCheckable(True)
+        self.btnFanPID_graph_y.setChecked(True)
 
-        self.gridLayout.addWidget(self.btnFanPID_graph_u, 0, 7, 1, 1)
+        self.gridLayout.addWidget(self.btnFanPID_graph_y, 0, 1, 1, 1)
 
-        self.btnFanPID_graph_u_max = QPushButton(self.frame_28)
-        self.btnFanPID_graph_u_max.setObjectName(u"btnFanPID_graph_u_max")
-        self.btnFanPID_graph_u_max.setCheckable(True)
-        self.btnFanPID_graph_u_max.setChecked(False)
+        self.btnFanPID_graph_u_i = QPushButton(self.frame_28)
+        self.btnFanPID_graph_u_i.setObjectName(u"btnFanPID_graph_u_i")
+        self.btnFanPID_graph_u_i.setCheckable(True)
+        self.btnFanPID_graph_u_i.setChecked(False)
 
-        self.gridLayout.addWidget(self.btnFanPID_graph_u_max, 0, 12, 1, 1)
+        self.gridLayout.addWidget(self.btnFanPID_graph_u_i, 0, 10, 1, 1)
 
-        self.btnFanPID_graph_u_p = QPushButton(self.frame_28)
-        self.btnFanPID_graph_u_p.setObjectName(u"btnFanPID_graph_u_p")
-        self.btnFanPID_graph_u_p.setCheckable(True)
-        self.btnFanPID_graph_u_p.setChecked(False)
+        self.btnFanPID_graph_x = QPushButton(self.frame_28)
+        self.btnFanPID_graph_x.setObjectName(u"btnFanPID_graph_x")
+        self.btnFanPID_graph_x.setCheckable(True)
+        self.btnFanPID_graph_x.setChecked(True)
 
-        self.gridLayout.addWidget(self.btnFanPID_graph_u_p, 0, 9, 1, 1)
-
-        self.btnFanPID_graph_u_sat = QPushButton(self.frame_28)
-        self.btnFanPID_graph_u_sat.setObjectName(u"btnFanPID_graph_u_sat")
-        self.btnFanPID_graph_u_sat.setCheckable(True)
-        self.btnFanPID_graph_u_sat.setChecked(False)
-
-        self.gridLayout.addWidget(self.btnFanPID_graph_u_sat, 0, 8, 1, 1)
+        self.gridLayout.addWidget(self.btnFanPID_graph_x, 0, 0, 1, 1)
 
 
         self.verticalLayout_8.addWidget(self.frame_28)
@@ -2168,7 +2137,7 @@ class Ui_MainWindow(object):
         self.btnExportAction = QPushButton(self.frame_32)
         self.btnExportAction.setObjectName(u"btnExportAction")
         self.btnExportAction.setMaximumSize(QSize(150, 16777215))
-        self.btnExportAction.setIcon(icon5)
+        self.btnExportAction.setIcon(icon7)
 
         self.gridLayout_5.addWidget(self.btnExportAction, 0, 0, 1, 1)
 
@@ -2229,7 +2198,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
         self.btnImportLoad = QPushButton(self.frame_40)
         self.btnImportLoad.setObjectName(u"btnImportLoad")
-        self.btnImportLoad.setIcon(icon6)
+        self.btnImportLoad.setIcon(icon8)
 
         self.horizontalLayout_34.addWidget(self.btnImportLoad)
 
@@ -2588,11 +2557,11 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.container.setCurrentIndex(0)
+        self.container.setCurrentIndex(4)
         self.stackControllerDesc.setCurrentIndex(1)
         self.stackControllerSelect.setCurrentIndex(0)
-        self.stackController.setCurrentIndex(0)
-        self.stackGraphs.setCurrentIndex(1)
+        self.stackController.setCurrentIndex(2)
+        self.stackGraphs.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -2622,6 +2591,20 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(statustip)
         self.btnFanControls.setText(QCoreApplication.translate("MainWindow", u"Wentylator", None))
         self.btnGraphs.setText(QCoreApplication.translate("MainWindow", u"Wykresy", None))
+#if QT_CONFIG(tooltip)
+        self.btn_graph_Stop.setToolTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        self.btn_graph_Stop.setStatusTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
+#endif // QT_CONFIG(statustip)
+        self.btn_graph_Stop.setText("")
+#if QT_CONFIG(tooltip)
+        self.btn_graph_Clear.setToolTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        self.btn_graph_Clear.setStatusTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
+#endif // QT_CONFIG(statustip)
+        self.btn_graph_Clear.setText("")
 #if QT_CONFIG(tooltip)
         self.btnDataExport.setToolTip(QCoreApplication.translate("MainWindow", u"Eksportuj dane do pliku .xlsx", None))
 #endif // QT_CONFIG(tooltip)
@@ -2908,103 +2891,47 @@ class Ui_MainWindow(object):
         self.label_50.setText(QCoreApplication.translate("MainWindow", u"Omega", None))
         self.label_53.setText(QCoreApplication.translate("MainWindow", u"rad/s", None))
         self.btnHeaterBB_graph_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
-        self.btnHeaterBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"r_max", None))
-        self.btnHeaterBB_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
-        self.btnHeaterBB_graph_x_min.setText(QCoreApplication.translate("MainWindow", u"r_min", None))
         self.btnHeaterBB_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
+        self.btnHeaterBB_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
         self.btnHeaterBB_graph_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
         self.btnHeaterBB_graph_x.setText(QCoreApplication.translate("MainWindow", u"r(t)", None))
-#if QT_CONFIG(tooltip)
-        self.btnHeaterBB_graph_Stop.setToolTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.btnHeaterBB_graph_Stop.setStatusTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
-#endif // QT_CONFIG(statustip)
-        self.btnHeaterBB_graph_Stop.setText("")
+        self.btnHeaterBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"r_max", None))
         self.btnHeaterBB_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
-#if QT_CONFIG(tooltip)
-        self.btnHeaterBB_graph_Clear.setToolTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.btnHeaterBB_graph_Clear.setStatusTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
-#endif // QT_CONFIG(statustip)
-        self.btnHeaterBB_graph_Clear.setText("")
+        self.btnHeaterBB_graph_x_min.setText(QCoreApplication.translate("MainWindow", u"r_min", None))
         self.btnHeaterPID_graph_u.setText(QCoreApplication.translate("MainWindow", u"u(t)", None))
         self.btnHeaterPID_graph_u_d.setText(QCoreApplication.translate("MainWindow", u"u_d(t)", None))
         self.btnHeaterPID_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
         self.btnHeaterPID_graph_e.setText(QCoreApplication.translate("MainWindow", u"e(t)", None))
         self.btnHeaterPID_graph_int_e.setText(QCoreApplication.translate("MainWindow", u"int_e(t)", None))
         self.btnHeaterPID_graph_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
-#if QT_CONFIG(tooltip)
-        self.btnHeaterPID_graph_Clear.setToolTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.btnHeaterPID_graph_Clear.setStatusTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
-#endif // QT_CONFIG(statustip)
-        self.btnHeaterPID_graph_Clear.setText("")
         self.btnHeaterPID_graph_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
         self.btnHeaterPID_graph_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
         self.btnHeaterPID_graph_u_sat.setText(QCoreApplication.translate("MainWindow", u"u_sat(t)", None))
         self.btnHeaterPID_graph_x.setText(QCoreApplication.translate("MainWindow", u"r(t)", None))
-#if QT_CONFIG(tooltip)
-        self.btnHeaterPID_graph_Stop.setToolTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.btnHeaterPID_graph_Stop.setStatusTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
-#endif // QT_CONFIG(statustip)
-        self.btnHeaterPID_graph_Stop.setText("")
         self.btnHeaterPID_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
         self.btnHeaterPID_graph_u_i.setText(QCoreApplication.translate("MainWindow", u"u_i(t)", None))
         self.btnHeaterPID_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
         self.btnHeaterPID_graph_aw_int_e.setText(QCoreApplication.translate("MainWindow", u"aw_int_e(t)", None))
         self.btnFanBB_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
         self.btnFanBB_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
+        self.btnFanBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"r_max", None))
+        self.btnFanBB_graph_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
         self.btnFanBB_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
-#if QT_CONFIG(tooltip)
-        self.btnFanBB_graph_Clear.setToolTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.btnFanBB_graph_Clear.setStatusTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
-#endif // QT_CONFIG(statustip)
-        self.btnFanBB_graph_Clear.setText("")
         self.btnFanBB_graph_x.setText(QCoreApplication.translate("MainWindow", u"r(t)", None))
         self.btnFanBB_graph_x_min.setText(QCoreApplication.translate("MainWindow", u"r_min", None))
-        self.btnFanBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"r_max", None))
-#if QT_CONFIG(tooltip)
-        self.btnFanBB_graph_Stop.setToolTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.btnFanBB_graph_Stop.setStatusTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
-#endif // QT_CONFIG(statustip)
-        self.btnFanBB_graph_Stop.setText("")
-        self.btnFanBB_graph_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
+        self.btnFanPID_graph_u.setText(QCoreApplication.translate("MainWindow", u"u(t)", None))
+        self.btnFanPID_graph_u_sat.setText(QCoreApplication.translate("MainWindow", u"u_sat(t)", None))
         self.btnFanPID_graph_aw_int_e.setText(QCoreApplication.translate("MainWindow", u"aw_int_e(t)", None))
         self.btnFanPID_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
         self.btnFanPID_graph_int_e.setText(QCoreApplication.translate("MainWindow", u"int_e(t)", None))
-        self.btnFanPID_graph_u_d.setText(QCoreApplication.translate("MainWindow", u"u_d(t)", None))
-        self.btnFanPID_graph_u_i.setText(QCoreApplication.translate("MainWindow", u"u_i(t)", None))
-        self.btnFanPID_graph_e.setText(QCoreApplication.translate("MainWindow", u"e(t)", None))
-        self.btnFanPID_graph_x.setText(QCoreApplication.translate("MainWindow", u"r(t)", None))
-        self.btnFanPID_graph_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
-        self.btnFanPID_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
-#if QT_CONFIG(tooltip)
-        self.btnFanPID_graph_Clear.setToolTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.btnFanPID_graph_Clear.setStatusTip(QCoreApplication.translate("MainWindow", u"Wyczy\u015b\u0107 wykres", None))
-#endif // QT_CONFIG(statustip)
-        self.btnFanPID_graph_Clear.setText("")
-#if QT_CONFIG(tooltip)
-        self.btnFanPID_graph_Stop.setToolTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.btnFanPID_graph_Stop.setStatusTip(QCoreApplication.translate("MainWindow", u"Zatrzymaj wykres", None))
-#endif // QT_CONFIG(statustip)
-        self.btnFanPID_graph_Stop.setText("")
-        self.btnFanPID_graph_u.setText(QCoreApplication.translate("MainWindow", u"u(t)", None))
-        self.btnFanPID_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
         self.btnFanPID_graph_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
-        self.btnFanPID_graph_u_sat.setText(QCoreApplication.translate("MainWindow", u"u_sat(t)", None))
+        self.btnFanPID_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
+        self.btnFanPID_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
+        self.btnFanPID_graph_u_d.setText(QCoreApplication.translate("MainWindow", u"u_d(t)", None))
+        self.btnFanPID_graph_e.setText(QCoreApplication.translate("MainWindow", u"e(t)", None))
+        self.btnFanPID_graph_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
+        self.btnFanPID_graph_u_i.setText(QCoreApplication.translate("MainWindow", u"u_i(t)", None))
+        self.btnFanPID_graph_x.setText(QCoreApplication.translate("MainWindow", u"r(t)", None))
         self.label_36.setText(QCoreApplication.translate("MainWindow", u"Grza\u0142ka", None))
         self.chxExHeaterBB.setText(QCoreApplication.translate("MainWindow", u"Regulator dwupo\u0142o\u017ceniowy", None))
         self.chxExHeaterBB_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
