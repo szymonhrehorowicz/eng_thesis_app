@@ -34,6 +34,14 @@ class MainWindow(QMainWindow):
         self.heaterPIDequationwebView = QWebEngineView()
         self.fanPIDequation = MathEquation(self.fanPIDequationwebView)
         self.heaterPIDequation = MathEquation(self.heaterPIDequationwebView)
+        self.ui.frHeaterTi.hide()
+        self.ui.frHeaterTd.hide()
+        self.ui.frHeaterKi.show()
+        self.ui.frHeaterKd.show()
+        self.ui.frFanTi.hide()
+        self.ui.frFanTd.hide()
+        self.ui.frFanKi.show()
+        self.ui.frFanKd.show()
         self.mainMenuHandler = MainMenuHandler(self)
         # Controllers
         self.fanBBcontroller = BB()
@@ -66,6 +74,10 @@ class MainWindow(QMainWindow):
 
         # Connect button
         self.ui.btnConnect.clicked.connect(self.serial.slot_btnConnect)
+
+        # Equation buttons
+        self.ui.btnEquationTypeFan.clicked.connect(self.fanControlsHandler.change_equation_type)
+        self.ui.btnEquationTypeHeater.clicked.connect(self.heaterControlsHandler.change_equation_type)
         
         # Main menu buttons
         self.ui.btnHeaterControls.clicked.connect(self.mainMenuHandler.open_heater)

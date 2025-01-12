@@ -8,7 +8,24 @@ class FanControlsHandler:
         self.PID = pid
         self.BB = bb
 
-    def _update_equation(self):
+    def _update_equation(self) -> None:
+        self.equation.update(self.PID.Kp, self.PID.Ki, self.PID.Kd, self.PID.Ti, self.PID.Td)
+
+    @Slot()
+    def change_equation_type(self):
+        self.equation.set_equation_type()
+        if self.equation.eq_type == "parallel":
+            self.ui.btnEquationTypeFan.setText("równoległa")
+            self.ui.frFanTi.hide()
+            self.ui.frFanTd.hide()
+            self.ui.frFanKi.show()
+            self.ui.frFanKd.show()
+        else:
+            self.ui.btnEquationTypeFan.setText("akademicka")
+            self.ui.frFanTi.show()
+            self.ui.frFanTd.show()
+            self.ui.frFanKi.hide()
+            self.ui.frFanKd.hide()
         self.equation.update(self.PID.Kp, self.PID.Ki, self.PID.Kd, self.PID.Ti, self.PID.Td)
 
     # BB

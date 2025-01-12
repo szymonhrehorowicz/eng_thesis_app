@@ -13,6 +13,23 @@ class HeaterControlsHandler:
     
     def _update_equation(self):
         self.equation.update(self.PID.Kp, self.PID.Ki, self.PID.Kd, self.PID.Ti, self.PID.Td)
+    
+    @Slot()
+    def change_equation_type(self):
+        self.equation.set_equation_type()
+        if self.equation.eq_type == "parallel":
+            self.ui.btnEquationTypeHeater.setText("równoległa")
+            self.ui.frHeaterTi.hide()
+            self.ui.frHeaterTd.hide()
+            self.ui.frHeaterKi.show()
+            self.ui.frHeaterKd.show()
+        else:
+            self.ui.btnEquationTypeHeater.setText("akademicka")
+            self.ui.frHeaterTi.show()
+            self.ui.frHeaterTd.show()
+            self.ui.frHeaterKi.hide()
+            self.ui.frHeaterKd.hide()
+        self.equation.update(self.PID.Kp, self.PID.Ki, self.PID.Kd, self.PID.Ti, self.PID.Td)
 
     # BB
     @Slot()
