@@ -16,10 +16,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDoubleSpinBox,
-    QFrame, QGridLayout, QHBoxLayout, QLabel,
-    QLayout, QMainWindow, QPushButton, QSizePolicy,
-    QSlider, QSpacerItem, QSpinBox, QStackedWidget,
-    QStatusBar, QVBoxLayout, QWidget)
+    QFrame, QGridLayout, QHBoxLayout, QLCDNumber,
+    QLabel, QLayout, QMainWindow, QPushButton,
+    QSizePolicy, QSlider, QSpacerItem, QSpinBox,
+    QStackedWidget, QStatusBar, QVBoxLayout, QWidget)
 
 from StackedWidget import StackedWidget
 import rc_resources
@@ -1411,57 +1411,18 @@ class Ui_MainWindow(object):
 
         self.frame_29 = QFrame(self.pageHeaterBBGraph)
         self.frame_29.setObjectName(u"frame_29")
-        sizePolicy5.setHeightForWidth(self.frame_29.sizePolicy().hasHeightForWidth())
-        self.frame_29.setSizePolicy(sizePolicy5)
+        sizePolicy3.setHeightForWidth(self.frame_29.sizePolicy().hasHeightForWidth())
+        self.frame_29.setSizePolicy(sizePolicy3)
         self.frame_29.setFrameShape(QFrame.NoFrame)
         self.gridLayout_4 = QGridLayout(self.frame_29)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.btnHeaterBB_graph_y_1 = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_y_1.setObjectName(u"btnHeaterBB_graph_y_1")
-        self.btnHeaterBB_graph_y_1.setCheckable(True)
-        self.btnHeaterBB_graph_y_1.setChecked(True)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_y_1, 0, 1, 1, 1)
-
-        self.btnHeaterBB_graph_u_min = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_u_min.setObjectName(u"btnHeaterBB_graph_u_min")
-        self.btnHeaterBB_graph_u_min.setCheckable(True)
-        self.btnHeaterBB_graph_u_min.setChecked(False)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_u_min, 0, 7, 1, 1)
-
         self.btnHeaterBB_graph_u_max = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_u_max.setObjectName(u"btnHeaterBB_graph_u_max")
         self.btnHeaterBB_graph_u_max.setCheckable(True)
         self.btnHeaterBB_graph_u_max.setChecked(False)
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_u_max, 0, 6, 1, 1)
-
-        self.btnHeaterBB_graph_y_2 = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_y_2.setObjectName(u"btnHeaterBB_graph_y_2")
-        self.btnHeaterBB_graph_y_2.setCheckable(True)
-        self.btnHeaterBB_graph_y_2.setChecked(True)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_y_2, 0, 2, 1, 1)
-
-        self.btnHeaterBB_graph_x = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_x.setObjectName(u"btnHeaterBB_graph_x")
-        self.btnHeaterBB_graph_x.setCheckable(True)
-        self.btnHeaterBB_graph_x.setChecked(True)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x, 0, 0, 1, 1)
-
-        self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout_4.addItem(self.horizontalSpacer_22, 0, 11, 1, 1)
-
-        self.btnHeaterBB_graph_x_max = QPushButton(self.frame_29)
-        self.btnHeaterBB_graph_x_max.setObjectName(u"btnHeaterBB_graph_x_max")
-        self.btnHeaterBB_graph_x_max.setCheckable(True)
-        self.btnHeaterBB_graph_x_max.setChecked(False)
-
-        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_max, 0, 4, 1, 1)
 
         self.btnHeaterBB_graph_mode = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_mode.setObjectName(u"btnHeaterBB_graph_mode")
@@ -1470,12 +1431,107 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_mode, 0, 8, 1, 1)
 
+        self.lcdHeaterBB_x = QLCDNumber(self.frame_29)
+        self.lcdHeaterBB_x.setObjectName(u"lcdHeaterBB_x")
+        self.lcdHeaterBB_x.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterBB_x.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_4.addWidget(self.lcdHeaterBB_x, 1, 0, 1, 1)
+
+        self.btnHeaterBB_graph_y_2 = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_y_2.setObjectName(u"btnHeaterBB_graph_y_2")
+        self.btnHeaterBB_graph_y_2.setCheckable(True)
+        self.btnHeaterBB_graph_y_2.setChecked(True)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_y_2, 0, 2, 1, 1)
+
+        self.btnHeaterBB_graph_u_min = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_u_min.setObjectName(u"btnHeaterBB_graph_u_min")
+        self.btnHeaterBB_graph_u_min.setCheckable(True)
+        self.btnHeaterBB_graph_u_min.setChecked(False)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_u_min, 0, 7, 1, 1)
+
+        self.lcdHeaterBB_y_2 = QLCDNumber(self.frame_29)
+        self.lcdHeaterBB_y_2.setObjectName(u"lcdHeaterBB_y_2")
+        self.lcdHeaterBB_y_2.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterBB_y_2.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_4.addWidget(self.lcdHeaterBB_y_2, 1, 2, 1, 1)
+
         self.btnHeaterBB_graph_x_min = QPushButton(self.frame_29)
         self.btnHeaterBB_graph_x_min.setObjectName(u"btnHeaterBB_graph_x_min")
         self.btnHeaterBB_graph_x_min.setCheckable(True)
         self.btnHeaterBB_graph_x_min.setChecked(False)
 
         self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_min, 0, 5, 1, 1)
+
+        self.lcdHeaterBB_y_1 = QLCDNumber(self.frame_29)
+        self.lcdHeaterBB_y_1.setObjectName(u"lcdHeaterBB_y_1")
+        self.lcdHeaterBB_y_1.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterBB_y_1.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_4.addWidget(self.lcdHeaterBB_y_1, 1, 1, 1, 1)
+
+        self.btnHeaterBB_graph_x_max = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_x_max.setObjectName(u"btnHeaterBB_graph_x_max")
+        self.btnHeaterBB_graph_x_max.setCheckable(True)
+        self.btnHeaterBB_graph_x_max.setChecked(False)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x_max, 0, 4, 1, 1)
+
+        self.btnHeaterBB_graph_x = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_x.setObjectName(u"btnHeaterBB_graph_x")
+        self.btnHeaterBB_graph_x.setCheckable(True)
+        self.btnHeaterBB_graph_x.setChecked(True)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_x, 0, 0, 1, 1)
+
+        self.btnHeaterBB_graph_y_1 = QPushButton(self.frame_29)
+        self.btnHeaterBB_graph_y_1.setObjectName(u"btnHeaterBB_graph_y_1")
+        self.btnHeaterBB_graph_y_1.setCheckable(True)
+        self.btnHeaterBB_graph_y_1.setChecked(True)
+
+        self.gridLayout_4.addWidget(self.btnHeaterBB_graph_y_1, 0, 1, 1, 1)
+
+        self.horizontalSpacer_22 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_4.addItem(self.horizontalSpacer_22, 0, 11, 1, 1)
+
+        self.lcdHeaterBB_x_max = QLCDNumber(self.frame_29)
+        self.lcdHeaterBB_x_max.setObjectName(u"lcdHeaterBB_x_max")
+        self.lcdHeaterBB_x_max.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterBB_x_max.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_4.addWidget(self.lcdHeaterBB_x_max, 1, 4, 1, 1)
+
+        self.lcdHeaterBB_x_min = QLCDNumber(self.frame_29)
+        self.lcdHeaterBB_x_min.setObjectName(u"lcdHeaterBB_x_min")
+        self.lcdHeaterBB_x_min.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterBB_x_min.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_4.addWidget(self.lcdHeaterBB_x_min, 1, 5, 1, 1)
+
+        self.lcdHeaterBB_u_max = QLCDNumber(self.frame_29)
+        self.lcdHeaterBB_u_max.setObjectName(u"lcdHeaterBB_u_max")
+        self.lcdHeaterBB_u_max.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterBB_u_max.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_4.addWidget(self.lcdHeaterBB_u_max, 1, 6, 1, 1)
+
+        self.lcdHeaterBB_u_min = QLCDNumber(self.frame_29)
+        self.lcdHeaterBB_u_min.setObjectName(u"lcdHeaterBB_u_min")
+        self.lcdHeaterBB_u_min.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterBB_u_min.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_4.addWidget(self.lcdHeaterBB_u_min, 1, 7, 1, 1)
+
+        self.lcdHeaterBB_mode = QLCDNumber(self.frame_29)
+        self.lcdHeaterBB_mode.setObjectName(u"lcdHeaterBB_mode")
+        self.lcdHeaterBB_mode.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterBB_mode.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_4.addWidget(self.lcdHeaterBB_mode, 1, 8, 1, 1)
 
 
         self.verticalLayout_9.addWidget(self.frame_29)
@@ -1502,66 +1558,6 @@ class Ui_MainWindow(object):
         self.gridLayout_2 = QGridLayout(self.frame_30)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.btnHeaterPID_graph_u = QPushButton(self.frame_30)
-        self.btnHeaterPID_graph_u.setObjectName(u"btnHeaterPID_graph_u")
-        self.btnHeaterPID_graph_u.setCheckable(True)
-        self.btnHeaterPID_graph_u.setChecked(False)
-
-        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_u, 0, 7, 1, 1)
-
-        self.btnHeaterPID_graph_u_d = QPushButton(self.frame_30)
-        self.btnHeaterPID_graph_u_d.setObjectName(u"btnHeaterPID_graph_u_d")
-        self.btnHeaterPID_graph_u_d.setCheckable(True)
-        self.btnHeaterPID_graph_u_d.setChecked(False)
-
-        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_u_d, 0, 17, 1, 1)
-
-        self.horizontalSpacer_26 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout_2.addItem(self.horizontalSpacer_26, 0, 19, 1, 1)
-
-        self.btnHeaterPID_graph_mode = QPushButton(self.frame_30)
-        self.btnHeaterPID_graph_mode.setObjectName(u"btnHeaterPID_graph_mode")
-        self.btnHeaterPID_graph_mode.setCheckable(True)
-        self.btnHeaterPID_graph_mode.setChecked(False)
-
-        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_mode, 0, 18, 1, 1)
-
-        self.btnHeaterPID_graph_e = QPushButton(self.frame_30)
-        self.btnHeaterPID_graph_e.setObjectName(u"btnHeaterPID_graph_e")
-        self.btnHeaterPID_graph_e.setCheckable(True)
-        self.btnHeaterPID_graph_e.setChecked(False)
-
-        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_e, 0, 4, 1, 1)
-
-        self.btnHeaterPID_graph_int_e = QPushButton(self.frame_30)
-        self.btnHeaterPID_graph_int_e.setObjectName(u"btnHeaterPID_graph_int_e")
-        self.btnHeaterPID_graph_int_e.setCheckable(True)
-        self.btnHeaterPID_graph_int_e.setChecked(False)
-
-        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_int_e, 0, 5, 1, 1)
-
-        self.btnHeaterPID_graph_u_p = QPushButton(self.frame_30)
-        self.btnHeaterPID_graph_u_p.setObjectName(u"btnHeaterPID_graph_u_p")
-        self.btnHeaterPID_graph_u_p.setCheckable(True)
-        self.btnHeaterPID_graph_u_p.setChecked(False)
-
-        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_u_p, 0, 11, 1, 1)
-
-        self.btnHeaterPID_graph_y_2 = QPushButton(self.frame_30)
-        self.btnHeaterPID_graph_y_2.setObjectName(u"btnHeaterPID_graph_y_2")
-        self.btnHeaterPID_graph_y_2.setCheckable(True)
-        self.btnHeaterPID_graph_y_2.setChecked(True)
-
-        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_y_2, 0, 3, 1, 1)
-
-        self.btnHeaterPID_graph_y_1 = QPushButton(self.frame_30)
-        self.btnHeaterPID_graph_y_1.setObjectName(u"btnHeaterPID_graph_y_1")
-        self.btnHeaterPID_graph_y_1.setCheckable(True)
-        self.btnHeaterPID_graph_y_1.setChecked(True)
-
-        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_y_1, 0, 2, 1, 1)
-
         self.btnHeaterPID_graph_u_sat = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_u_sat.setObjectName(u"btnHeaterPID_graph_u_sat")
         self.btnHeaterPID_graph_u_sat.setCheckable(True)
@@ -1576,12 +1572,47 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_x, 0, 0, 1, 1)
 
+        self.btnHeaterPID_graph_mode = QPushButton(self.frame_30)
+        self.btnHeaterPID_graph_mode.setObjectName(u"btnHeaterPID_graph_mode")
+        self.btnHeaterPID_graph_mode.setCheckable(True)
+        self.btnHeaterPID_graph_mode.setChecked(False)
+
+        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_mode, 0, 18, 1, 1)
+
+        self.btnHeaterPID_graph_aw_int_e = QPushButton(self.frame_30)
+        self.btnHeaterPID_graph_aw_int_e.setObjectName(u"btnHeaterPID_graph_aw_int_e")
+        self.btnHeaterPID_graph_aw_int_e.setCheckable(True)
+        self.btnHeaterPID_graph_aw_int_e.setChecked(False)
+
+        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_aw_int_e, 0, 6, 1, 1)
+
+        self.btnHeaterPID_graph_u = QPushButton(self.frame_30)
+        self.btnHeaterPID_graph_u.setObjectName(u"btnHeaterPID_graph_u")
+        self.btnHeaterPID_graph_u.setCheckable(True)
+        self.btnHeaterPID_graph_u.setChecked(False)
+
+        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_u, 0, 7, 1, 1)
+
+        self.btnHeaterPID_graph_y_1 = QPushButton(self.frame_30)
+        self.btnHeaterPID_graph_y_1.setObjectName(u"btnHeaterPID_graph_y_1")
+        self.btnHeaterPID_graph_y_1.setCheckable(True)
+        self.btnHeaterPID_graph_y_1.setChecked(True)
+
+        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_y_1, 0, 2, 1, 1)
+
         self.btnHeaterPID_graph_u_max = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_u_max.setObjectName(u"btnHeaterPID_graph_u_max")
         self.btnHeaterPID_graph_u_max.setCheckable(True)
         self.btnHeaterPID_graph_u_max.setChecked(False)
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_u_max, 0, 9, 1, 1)
+
+        self.btnHeaterPID_graph_int_e = QPushButton(self.frame_30)
+        self.btnHeaterPID_graph_int_e.setObjectName(u"btnHeaterPID_graph_int_e")
+        self.btnHeaterPID_graph_int_e.setCheckable(True)
+        self.btnHeaterPID_graph_int_e.setChecked(False)
+
+        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_int_e, 0, 5, 1, 1)
 
         self.btnHeaterPID_graph_u_i = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_u_i.setObjectName(u"btnHeaterPID_graph_u_i")
@@ -1590,6 +1621,20 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_u_i, 0, 12, 1, 1)
 
+        self.btnHeaterPID_graph_y_2 = QPushButton(self.frame_30)
+        self.btnHeaterPID_graph_y_2.setObjectName(u"btnHeaterPID_graph_y_2")
+        self.btnHeaterPID_graph_y_2.setCheckable(True)
+        self.btnHeaterPID_graph_y_2.setChecked(True)
+
+        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_y_2, 0, 3, 1, 1)
+
+        self.btnHeaterPID_graph_u_p = QPushButton(self.frame_30)
+        self.btnHeaterPID_graph_u_p.setObjectName(u"btnHeaterPID_graph_u_p")
+        self.btnHeaterPID_graph_u_p.setCheckable(True)
+        self.btnHeaterPID_graph_u_p.setChecked(False)
+
+        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_u_p, 0, 11, 1, 1)
+
         self.btnHeaterPID_graph_u_min = QPushButton(self.frame_30)
         self.btnHeaterPID_graph_u_min.setObjectName(u"btnHeaterPID_graph_u_min")
         self.btnHeaterPID_graph_u_min.setCheckable(True)
@@ -1597,12 +1642,121 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.btnHeaterPID_graph_u_min, 0, 10, 1, 1)
 
-        self.btnHeaterPID_graph_aw_int_e = QPushButton(self.frame_30)
-        self.btnHeaterPID_graph_aw_int_e.setObjectName(u"btnHeaterPID_graph_aw_int_e")
-        self.btnHeaterPID_graph_aw_int_e.setCheckable(True)
-        self.btnHeaterPID_graph_aw_int_e.setChecked(False)
+        self.horizontalSpacer_26 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_aw_int_e, 0, 6, 1, 1)
+        self.gridLayout_2.addItem(self.horizontalSpacer_26, 0, 19, 1, 1)
+
+        self.btnHeaterPID_graph_u_d = QPushButton(self.frame_30)
+        self.btnHeaterPID_graph_u_d.setObjectName(u"btnHeaterPID_graph_u_d")
+        self.btnHeaterPID_graph_u_d.setCheckable(True)
+        self.btnHeaterPID_graph_u_d.setChecked(False)
+
+        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_u_d, 0, 17, 1, 1)
+
+        self.btnHeaterPID_graph_e = QPushButton(self.frame_30)
+        self.btnHeaterPID_graph_e.setObjectName(u"btnHeaterPID_graph_e")
+        self.btnHeaterPID_graph_e.setCheckable(True)
+        self.btnHeaterPID_graph_e.setChecked(False)
+
+        self.gridLayout_2.addWidget(self.btnHeaterPID_graph_e, 0, 4, 1, 1)
+
+        self.lcdHeaterPID_x = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_x.setObjectName(u"lcdHeaterPID_x")
+        self.lcdHeaterPID_x.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_x.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_x, 1, 0, 1, 1)
+
+        self.lcdHeaterPID_y_1 = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_y_1.setObjectName(u"lcdHeaterPID_y_1")
+        self.lcdHeaterPID_y_1.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_y_1.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_y_1, 1, 2, 1, 1)
+
+        self.lcdHeaterPID_y_2 = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_y_2.setObjectName(u"lcdHeaterPID_y_2")
+        self.lcdHeaterPID_y_2.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_y_2.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_y_2, 1, 3, 1, 1)
+
+        self.lcdHeaterPID_e = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_e.setObjectName(u"lcdHeaterPID_e")
+        self.lcdHeaterPID_e.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_e.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_e, 1, 4, 1, 1)
+
+        self.lcdHeaterPID_int_e = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_int_e.setObjectName(u"lcdHeaterPID_int_e")
+        self.lcdHeaterPID_int_e.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_int_e.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_int_e, 1, 5, 1, 1)
+
+        self.lcdHeaterPID_aw_int_e = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_aw_int_e.setObjectName(u"lcdHeaterPID_aw_int_e")
+        self.lcdHeaterPID_aw_int_e.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_aw_int_e.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_aw_int_e, 1, 6, 1, 1)
+
+        self.lcdHeaterPID_u = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_u.setObjectName(u"lcdHeaterPID_u")
+        self.lcdHeaterPID_u.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_u.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_u, 1, 7, 1, 1)
+
+        self.lcdHeaterPID_u_sat = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_u_sat.setObjectName(u"lcdHeaterPID_u_sat")
+        self.lcdHeaterPID_u_sat.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_u_sat.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_u_sat, 1, 8, 1, 1)
+
+        self.lcdHeaterPID_u_max = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_u_max.setObjectName(u"lcdHeaterPID_u_max")
+        self.lcdHeaterPID_u_max.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_u_max.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_u_max, 1, 9, 1, 1)
+
+        self.lcdHeaterPID_u_min = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_u_min.setObjectName(u"lcdHeaterPID_u_min")
+        self.lcdHeaterPID_u_min.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_u_min.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_u_min, 1, 10, 1, 1)
+
+        self.lcdHeaterPID_u_p = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_u_p.setObjectName(u"lcdHeaterPID_u_p")
+        self.lcdHeaterPID_u_p.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_u_p.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_u_p, 1, 11, 1, 1)
+
+        self.lcdHeaterPID_u_i = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_u_i.setObjectName(u"lcdHeaterPID_u_i")
+        self.lcdHeaterPID_u_i.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_u_i.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_u_i, 1, 12, 1, 1)
+
+        self.lcdHeaterPID_u_d = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_u_d.setObjectName(u"lcdHeaterPID_u_d")
+        self.lcdHeaterPID_u_d.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_u_d.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_u_d, 1, 17, 1, 1)
+
+        self.lcdHeaterPID_mode = QLCDNumber(self.frame_30)
+        self.lcdHeaterPID_mode.setObjectName(u"lcdHeaterPID_mode")
+        self.lcdHeaterPID_mode.setFrameShadow(QFrame.Plain)
+        self.lcdHeaterPID_mode.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_2.addWidget(self.lcdHeaterPID_mode, 1, 18, 1, 1)
 
 
         self.verticalLayout_11.addWidget(self.frame_30)
@@ -1629,6 +1783,34 @@ class Ui_MainWindow(object):
         self.gridLayout_3 = QGridLayout(self.frame_27)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.btnFanBB_graph_mode = QPushButton(self.frame_27)
+        self.btnFanBB_graph_mode.setObjectName(u"btnFanBB_graph_mode")
+        self.btnFanBB_graph_mode.setCheckable(True)
+        self.btnFanBB_graph_mode.setChecked(False)
+
+        self.gridLayout_3.addWidget(self.btnFanBB_graph_mode, 0, 7, 1, 1)
+
+        self.btnFanBB_graph_x_min = QPushButton(self.frame_27)
+        self.btnFanBB_graph_x_min.setObjectName(u"btnFanBB_graph_x_min")
+        self.btnFanBB_graph_x_min.setCheckable(True)
+        self.btnFanBB_graph_x_min.setChecked(False)
+
+        self.gridLayout_3.addWidget(self.btnFanBB_graph_x_min, 0, 3, 1, 1)
+
+        self.btnFanBB_graph_y = QPushButton(self.frame_27)
+        self.btnFanBB_graph_y.setObjectName(u"btnFanBB_graph_y")
+        self.btnFanBB_graph_y.setCheckable(True)
+        self.btnFanBB_graph_y.setChecked(True)
+
+        self.gridLayout_3.addWidget(self.btnFanBB_graph_y, 0, 1, 1, 1)
+
+        self.btnFanBB_graph_x_max = QPushButton(self.frame_27)
+        self.btnFanBB_graph_x_max.setObjectName(u"btnFanBB_graph_x_max")
+        self.btnFanBB_graph_x_max.setCheckable(True)
+        self.btnFanBB_graph_x_max.setChecked(False)
+
+        self.gridLayout_3.addWidget(self.btnFanBB_graph_x_max, 0, 2, 1, 1)
+
         self.horizontalSpacer_25 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.gridLayout_3.addItem(self.horizontalSpacer_25, 0, 8, 1, 1)
@@ -1640,26 +1822,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.btnFanBB_graph_u_max, 0, 4, 1, 1)
 
-        self.btnFanBB_graph_mode = QPushButton(self.frame_27)
-        self.btnFanBB_graph_mode.setObjectName(u"btnFanBB_graph_mode")
-        self.btnFanBB_graph_mode.setCheckable(True)
-        self.btnFanBB_graph_mode.setChecked(False)
+        self.btnFanBB_graph_x = QPushButton(self.frame_27)
+        self.btnFanBB_graph_x.setObjectName(u"btnFanBB_graph_x")
+        self.btnFanBB_graph_x.setCheckable(True)
+        self.btnFanBB_graph_x.setChecked(True)
 
-        self.gridLayout_3.addWidget(self.btnFanBB_graph_mode, 0, 7, 1, 1)
-
-        self.btnFanBB_graph_x_max = QPushButton(self.frame_27)
-        self.btnFanBB_graph_x_max.setObjectName(u"btnFanBB_graph_x_max")
-        self.btnFanBB_graph_x_max.setCheckable(True)
-        self.btnFanBB_graph_x_max.setChecked(False)
-
-        self.gridLayout_3.addWidget(self.btnFanBB_graph_x_max, 0, 2, 1, 1)
-
-        self.btnFanBB_graph_y = QPushButton(self.frame_27)
-        self.btnFanBB_graph_y.setObjectName(u"btnFanBB_graph_y")
-        self.btnFanBB_graph_y.setCheckable(True)
-        self.btnFanBB_graph_y.setChecked(True)
-
-        self.gridLayout_3.addWidget(self.btnFanBB_graph_y, 0, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.btnFanBB_graph_x, 0, 0, 1, 1)
 
         self.btnFanBB_graph_u_min = QPushButton(self.frame_27)
         self.btnFanBB_graph_u_min.setObjectName(u"btnFanBB_graph_u_min")
@@ -1668,19 +1836,54 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.btnFanBB_graph_u_min, 0, 5, 1, 1)
 
-        self.btnFanBB_graph_x = QPushButton(self.frame_27)
-        self.btnFanBB_graph_x.setObjectName(u"btnFanBB_graph_x")
-        self.btnFanBB_graph_x.setCheckable(True)
-        self.btnFanBB_graph_x.setChecked(True)
+        self.lcdFanBB_x = QLCDNumber(self.frame_27)
+        self.lcdFanBB_x.setObjectName(u"lcdFanBB_x")
+        self.lcdFanBB_x.setFrameShadow(QFrame.Plain)
+        self.lcdFanBB_x.setSegmentStyle(QLCDNumber.Flat)
 
-        self.gridLayout_3.addWidget(self.btnFanBB_graph_x, 0, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.lcdFanBB_x, 1, 0, 1, 1)
 
-        self.btnFanBB_graph_x_min = QPushButton(self.frame_27)
-        self.btnFanBB_graph_x_min.setObjectName(u"btnFanBB_graph_x_min")
-        self.btnFanBB_graph_x_min.setCheckable(True)
-        self.btnFanBB_graph_x_min.setChecked(False)
+        self.lcdFanBB_y = QLCDNumber(self.frame_27)
+        self.lcdFanBB_y.setObjectName(u"lcdFanBB_y")
+        self.lcdFanBB_y.setFrameShadow(QFrame.Plain)
+        self.lcdFanBB_y.setSegmentStyle(QLCDNumber.Flat)
 
-        self.gridLayout_3.addWidget(self.btnFanBB_graph_x_min, 0, 3, 1, 1)
+        self.gridLayout_3.addWidget(self.lcdFanBB_y, 1, 1, 1, 1)
+
+        self.lcdFanBB_x_max = QLCDNumber(self.frame_27)
+        self.lcdFanBB_x_max.setObjectName(u"lcdFanBB_x_max")
+        self.lcdFanBB_x_max.setFrameShadow(QFrame.Plain)
+        self.lcdFanBB_x_max.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_3.addWidget(self.lcdFanBB_x_max, 1, 2, 1, 1)
+
+        self.lcdFanBB_x_min = QLCDNumber(self.frame_27)
+        self.lcdFanBB_x_min.setObjectName(u"lcdFanBB_x_min")
+        self.lcdFanBB_x_min.setFrameShadow(QFrame.Plain)
+        self.lcdFanBB_x_min.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_3.addWidget(self.lcdFanBB_x_min, 1, 3, 1, 1)
+
+        self.lcdFanBB_u_max = QLCDNumber(self.frame_27)
+        self.lcdFanBB_u_max.setObjectName(u"lcdFanBB_u_max")
+        self.lcdFanBB_u_max.setFrameShadow(QFrame.Plain)
+        self.lcdFanBB_u_max.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_3.addWidget(self.lcdFanBB_u_max, 1, 4, 1, 1)
+
+        self.lcdFanBB_u_min = QLCDNumber(self.frame_27)
+        self.lcdFanBB_u_min.setObjectName(u"lcdFanBB_u_min")
+        self.lcdFanBB_u_min.setFrameShadow(QFrame.Plain)
+        self.lcdFanBB_u_min.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_3.addWidget(self.lcdFanBB_u_min, 1, 5, 1, 1)
+
+        self.lcdFanBB_mode = QLCDNumber(self.frame_27)
+        self.lcdFanBB_mode.setObjectName(u"lcdFanBB_mode")
+        self.lcdFanBB_mode.setFrameShadow(QFrame.Plain)
+        self.lcdFanBB_mode.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout_3.addWidget(self.lcdFanBB_mode, 1, 7, 1, 1)
 
 
         self.verticalLayout_4.addWidget(self.frame_27)
@@ -1707,12 +1910,12 @@ class Ui_MainWindow(object):
         self.gridLayout = QGridLayout(self.frame_28)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.btnFanPID_graph_u = QPushButton(self.frame_28)
-        self.btnFanPID_graph_u.setObjectName(u"btnFanPID_graph_u")
-        self.btnFanPID_graph_u.setCheckable(True)
-        self.btnFanPID_graph_u.setChecked(False)
+        self.lcdFanPID_int_e = QLCDNumber(self.frame_28)
+        self.lcdFanPID_int_e.setObjectName(u"lcdFanPID_int_e")
+        self.lcdFanPID_int_e.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_int_e.setSegmentStyle(QLCDNumber.Flat)
 
-        self.gridLayout.addWidget(self.btnFanPID_graph_u, 0, 7, 1, 1)
+        self.gridLayout.addWidget(self.lcdFanPID_int_e, 1, 4, 1, 1)
 
         self.btnFanPID_graph_u_sat = QPushButton(self.frame_28)
         self.btnFanPID_graph_u_sat.setObjectName(u"btnFanPID_graph_u_sat")
@@ -1728,37 +1931,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btnFanPID_graph_aw_int_e, 0, 5, 1, 1)
 
-        self.btnFanPID_graph_u_min = QPushButton(self.frame_28)
-        self.btnFanPID_graph_u_min.setObjectName(u"btnFanPID_graph_u_min")
-        self.btnFanPID_graph_u_min.setCheckable(True)
-        self.btnFanPID_graph_u_min.setChecked(False)
+        self.btnFanPID_graph_y = QPushButton(self.frame_28)
+        self.btnFanPID_graph_y.setObjectName(u"btnFanPID_graph_y")
+        self.btnFanPID_graph_y.setCheckable(True)
+        self.btnFanPID_graph_y.setChecked(True)
 
-        self.gridLayout.addWidget(self.btnFanPID_graph_u_min, 0, 13, 1, 1)
-
-        self.btnFanPID_graph_int_e = QPushButton(self.frame_28)
-        self.btnFanPID_graph_int_e.setObjectName(u"btnFanPID_graph_int_e")
-        self.btnFanPID_graph_int_e.setCheckable(True)
-        self.btnFanPID_graph_int_e.setChecked(False)
-
-        self.gridLayout.addWidget(self.btnFanPID_graph_int_e, 0, 4, 1, 1)
-
-        self.btnFanPID_graph_u_p = QPushButton(self.frame_28)
-        self.btnFanPID_graph_u_p.setObjectName(u"btnFanPID_graph_u_p")
-        self.btnFanPID_graph_u_p.setCheckable(True)
-        self.btnFanPID_graph_u_p.setChecked(False)
-
-        self.gridLayout.addWidget(self.btnFanPID_graph_u_p, 0, 9, 1, 1)
-
-        self.btnFanPID_graph_u_max = QPushButton(self.frame_28)
-        self.btnFanPID_graph_u_max.setObjectName(u"btnFanPID_graph_u_max")
-        self.btnFanPID_graph_u_max.setCheckable(True)
-        self.btnFanPID_graph_u_max.setChecked(False)
-
-        self.gridLayout.addWidget(self.btnFanPID_graph_u_max, 0, 12, 1, 1)
-
-        self.horizontalSpacer_27 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout.addItem(self.horizontalSpacer_27, 0, 21, 1, 1)
+        self.gridLayout.addWidget(self.btnFanPID_graph_y, 0, 1, 1, 1)
 
         self.btnFanPID_graph_mode = QPushButton(self.frame_28)
         self.btnFanPID_graph_mode.setObjectName(u"btnFanPID_graph_mode")
@@ -1767,12 +1945,26 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btnFanPID_graph_mode, 0, 14, 1, 1)
 
-        self.btnFanPID_graph_u_d = QPushButton(self.frame_28)
-        self.btnFanPID_graph_u_d.setObjectName(u"btnFanPID_graph_u_d")
-        self.btnFanPID_graph_u_d.setCheckable(True)
-        self.btnFanPID_graph_u_d.setChecked(False)
+        self.btnFanPID_graph_u_max = QPushButton(self.frame_28)
+        self.btnFanPID_graph_u_max.setObjectName(u"btnFanPID_graph_u_max")
+        self.btnFanPID_graph_u_max.setCheckable(True)
+        self.btnFanPID_graph_u_max.setChecked(False)
 
-        self.gridLayout.addWidget(self.btnFanPID_graph_u_d, 0, 11, 1, 1)
+        self.gridLayout.addWidget(self.btnFanPID_graph_u_max, 0, 12, 1, 1)
+
+        self.lcdFanPID_x = QLCDNumber(self.frame_28)
+        self.lcdFanPID_x.setObjectName(u"lcdFanPID_x")
+        self.lcdFanPID_x.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_x.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_x, 1, 0, 1, 1)
+
+        self.lcdFanPID_aw_int_e = QLCDNumber(self.frame_28)
+        self.lcdFanPID_aw_int_e.setObjectName(u"lcdFanPID_aw_int_e")
+        self.lcdFanPID_aw_int_e.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_aw_int_e.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_aw_int_e, 1, 5, 1, 1)
 
         self.btnFanPID_graph_e = QPushButton(self.frame_28)
         self.btnFanPID_graph_e.setObjectName(u"btnFanPID_graph_e")
@@ -1781,13 +1973,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btnFanPID_graph_e, 0, 2, 1, 1)
 
-        self.btnFanPID_graph_y = QPushButton(self.frame_28)
-        self.btnFanPID_graph_y.setObjectName(u"btnFanPID_graph_y")
-        self.btnFanPID_graph_y.setCheckable(True)
-        self.btnFanPID_graph_y.setChecked(True)
-
-        self.gridLayout.addWidget(self.btnFanPID_graph_y, 0, 1, 1, 1)
-
         self.btnFanPID_graph_u_i = QPushButton(self.frame_28)
         self.btnFanPID_graph_u_i.setObjectName(u"btnFanPID_graph_u_i")
         self.btnFanPID_graph_u_i.setCheckable(True)
@@ -1795,12 +1980,121 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.btnFanPID_graph_u_i, 0, 10, 1, 1)
 
+        self.btnFanPID_graph_int_e = QPushButton(self.frame_28)
+        self.btnFanPID_graph_int_e.setObjectName(u"btnFanPID_graph_int_e")
+        self.btnFanPID_graph_int_e.setCheckable(True)
+        self.btnFanPID_graph_int_e.setChecked(False)
+
+        self.gridLayout.addWidget(self.btnFanPID_graph_int_e, 0, 4, 1, 1)
+
+        self.horizontalSpacer_27 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout.addItem(self.horizontalSpacer_27, 0, 21, 1, 1)
+
+        self.btnFanPID_graph_u_d = QPushButton(self.frame_28)
+        self.btnFanPID_graph_u_d.setObjectName(u"btnFanPID_graph_u_d")
+        self.btnFanPID_graph_u_d.setCheckable(True)
+        self.btnFanPID_graph_u_d.setChecked(False)
+
+        self.gridLayout.addWidget(self.btnFanPID_graph_u_d, 0, 11, 1, 1)
+
+        self.lcdFanPID_y = QLCDNumber(self.frame_28)
+        self.lcdFanPID_y.setObjectName(u"lcdFanPID_y")
+        self.lcdFanPID_y.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_y.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_y, 1, 1, 1, 1)
+
         self.btnFanPID_graph_x = QPushButton(self.frame_28)
         self.btnFanPID_graph_x.setObjectName(u"btnFanPID_graph_x")
         self.btnFanPID_graph_x.setCheckable(True)
         self.btnFanPID_graph_x.setChecked(True)
 
         self.gridLayout.addWidget(self.btnFanPID_graph_x, 0, 0, 1, 1)
+
+        self.btnFanPID_graph_u_min = QPushButton(self.frame_28)
+        self.btnFanPID_graph_u_min.setObjectName(u"btnFanPID_graph_u_min")
+        self.btnFanPID_graph_u_min.setCheckable(True)
+        self.btnFanPID_graph_u_min.setChecked(False)
+
+        self.gridLayout.addWidget(self.btnFanPID_graph_u_min, 0, 13, 1, 1)
+
+        self.btnFanPID_graph_u_p = QPushButton(self.frame_28)
+        self.btnFanPID_graph_u_p.setObjectName(u"btnFanPID_graph_u_p")
+        self.btnFanPID_graph_u_p.setCheckable(True)
+        self.btnFanPID_graph_u_p.setChecked(False)
+
+        self.gridLayout.addWidget(self.btnFanPID_graph_u_p, 0, 9, 1, 1)
+
+        self.lcdFanPID_e = QLCDNumber(self.frame_28)
+        self.lcdFanPID_e.setObjectName(u"lcdFanPID_e")
+        self.lcdFanPID_e.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_e.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_e, 1, 2, 1, 1)
+
+        self.btnFanPID_graph_u = QPushButton(self.frame_28)
+        self.btnFanPID_graph_u.setObjectName(u"btnFanPID_graph_u")
+        self.btnFanPID_graph_u.setCheckable(True)
+        self.btnFanPID_graph_u.setChecked(False)
+
+        self.gridLayout.addWidget(self.btnFanPID_graph_u, 0, 7, 1, 1)
+
+        self.lcdFanPID_u = QLCDNumber(self.frame_28)
+        self.lcdFanPID_u.setObjectName(u"lcdFanPID_u")
+        self.lcdFanPID_u.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_u.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_u, 1, 7, 1, 1)
+
+        self.lcdFanPID_u_sat = QLCDNumber(self.frame_28)
+        self.lcdFanPID_u_sat.setObjectName(u"lcdFanPID_u_sat")
+        self.lcdFanPID_u_sat.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_u_sat.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_u_sat, 1, 8, 1, 1)
+
+        self.lcdFanPID_u_p = QLCDNumber(self.frame_28)
+        self.lcdFanPID_u_p.setObjectName(u"lcdFanPID_u_p")
+        self.lcdFanPID_u_p.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_u_p.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_u_p, 1, 9, 1, 1)
+
+        self.lcdFanPID_u_i = QLCDNumber(self.frame_28)
+        self.lcdFanPID_u_i.setObjectName(u"lcdFanPID_u_i")
+        self.lcdFanPID_u_i.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_u_i.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_u_i, 1, 10, 1, 1)
+
+        self.lcdFanPID_u_d = QLCDNumber(self.frame_28)
+        self.lcdFanPID_u_d.setObjectName(u"lcdFanPID_u_d")
+        self.lcdFanPID_u_d.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_u_d.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_u_d, 1, 11, 1, 1)
+
+        self.lcdFanPID_u_max = QLCDNumber(self.frame_28)
+        self.lcdFanPID_u_max.setObjectName(u"lcdFanPID_u_max")
+        self.lcdFanPID_u_max.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_u_max.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_u_max, 1, 12, 1, 1)
+
+        self.lcdFanPID_u_min = QLCDNumber(self.frame_28)
+        self.lcdFanPID_u_min.setObjectName(u"lcdFanPID_u_min")
+        self.lcdFanPID_u_min.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_u_min.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_u_min, 1, 13, 1, 1)
+
+        self.lcdFanPID_mode = QLCDNumber(self.frame_28)
+        self.lcdFanPID_mode.setObjectName(u"lcdFanPID_mode")
+        self.lcdFanPID_mode.setFrameShadow(QFrame.Plain)
+        self.lcdFanPID_mode.setSegmentStyle(QLCDNumber.Flat)
+
+        self.gridLayout.addWidget(self.lcdFanPID_mode, 1, 14, 1, 1)
 
 
         self.verticalLayout_8.addWidget(self.frame_28)
@@ -2687,7 +2981,7 @@ class Ui_MainWindow(object):
 
         self.container.setCurrentIndex(0)
         self.stackControllerDesc.setCurrentIndex(1)
-        self.stackControllerSelect.setCurrentIndex(0)
+        self.stackControllerSelect.setCurrentIndex(1)
         self.stackController.setCurrentIndex(1)
         self.stackGraphs.setCurrentIndex(2)
 
@@ -3022,48 +3316,48 @@ class Ui_MainWindow(object):
         self.label_52.setText(QCoreApplication.translate("MainWindow", u"RPM", None))
         self.label_50.setText(QCoreApplication.translate("MainWindow", u"Omega", None))
         self.label_53.setText(QCoreApplication.translate("MainWindow", u"rad/s", None))
-        self.btnHeaterBB_graph_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
-        self.btnHeaterBB_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
         self.btnHeaterBB_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
-        self.btnHeaterBB_graph_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
-        self.btnHeaterBB_graph_x.setText(QCoreApplication.translate("MainWindow", u"r(t)", None))
-        self.btnHeaterBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"r_max", None))
         self.btnHeaterBB_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
+        self.btnHeaterBB_graph_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
+        self.btnHeaterBB_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
         self.btnHeaterBB_graph_x_min.setText(QCoreApplication.translate("MainWindow", u"r_min", None))
-        self.btnHeaterPID_graph_u.setText(QCoreApplication.translate("MainWindow", u"u(t)", None))
-        self.btnHeaterPID_graph_u_d.setText(QCoreApplication.translate("MainWindow", u"u_d(t)", None))
-        self.btnHeaterPID_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
-        self.btnHeaterPID_graph_e.setText(QCoreApplication.translate("MainWindow", u"e(t)", None))
-        self.btnHeaterPID_graph_int_e.setText(QCoreApplication.translate("MainWindow", u"int_e(t)", None))
-        self.btnHeaterPID_graph_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
-        self.btnHeaterPID_graph_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
-        self.btnHeaterPID_graph_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
+        self.btnHeaterBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"r_max", None))
+        self.btnHeaterBB_graph_x.setText(QCoreApplication.translate("MainWindow", u"r(t)", None))
+        self.btnHeaterBB_graph_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
         self.btnHeaterPID_graph_u_sat.setText(QCoreApplication.translate("MainWindow", u"u_sat(t)", None))
         self.btnHeaterPID_graph_x.setText(QCoreApplication.translate("MainWindow", u"r(t)", None))
-        self.btnHeaterPID_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
-        self.btnHeaterPID_graph_u_i.setText(QCoreApplication.translate("MainWindow", u"u_i(t)", None))
-        self.btnHeaterPID_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
+        self.btnHeaterPID_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
         self.btnHeaterPID_graph_aw_int_e.setText(QCoreApplication.translate("MainWindow", u"aw_int_e(t)", None))
-        self.btnFanBB_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
+        self.btnHeaterPID_graph_u.setText(QCoreApplication.translate("MainWindow", u"u(t)", None))
+        self.btnHeaterPID_graph_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
+        self.btnHeaterPID_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
+        self.btnHeaterPID_graph_int_e.setText(QCoreApplication.translate("MainWindow", u"int_e(t)", None))
+        self.btnHeaterPID_graph_u_i.setText(QCoreApplication.translate("MainWindow", u"u_i(t)", None))
+        self.btnHeaterPID_graph_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
+        self.btnHeaterPID_graph_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
+        self.btnHeaterPID_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
+        self.btnHeaterPID_graph_u_d.setText(QCoreApplication.translate("MainWindow", u"u_d(t)", None))
+        self.btnHeaterPID_graph_e.setText(QCoreApplication.translate("MainWindow", u"e(t)", None))
         self.btnFanBB_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
-        self.btnFanBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"r_max", None))
-        self.btnFanBB_graph_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
-        self.btnFanBB_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
-        self.btnFanBB_graph_x.setText(QCoreApplication.translate("MainWindow", u"r(t)", None))
         self.btnFanBB_graph_x_min.setText(QCoreApplication.translate("MainWindow", u"r_min", None))
-        self.btnFanPID_graph_u.setText(QCoreApplication.translate("MainWindow", u"u(t)", None))
+        self.btnFanBB_graph_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
+        self.btnFanBB_graph_x_max.setText(QCoreApplication.translate("MainWindow", u"r_max", None))
+        self.btnFanBB_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
+        self.btnFanBB_graph_x.setText(QCoreApplication.translate("MainWindow", u"r(t)", None))
+        self.btnFanBB_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
         self.btnFanPID_graph_u_sat.setText(QCoreApplication.translate("MainWindow", u"u_sat(t)", None))
         self.btnFanPID_graph_aw_int_e.setText(QCoreApplication.translate("MainWindow", u"aw_int_e(t)", None))
-        self.btnFanPID_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
-        self.btnFanPID_graph_int_e.setText(QCoreApplication.translate("MainWindow", u"int_e(t)", None))
-        self.btnFanPID_graph_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
-        self.btnFanPID_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
-        self.btnFanPID_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
-        self.btnFanPID_graph_u_d.setText(QCoreApplication.translate("MainWindow", u"u_d(t)", None))
-        self.btnFanPID_graph_e.setText(QCoreApplication.translate("MainWindow", u"e(t)", None))
         self.btnFanPID_graph_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
+        self.btnFanPID_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
+        self.btnFanPID_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
+        self.btnFanPID_graph_e.setText(QCoreApplication.translate("MainWindow", u"e(t)", None))
         self.btnFanPID_graph_u_i.setText(QCoreApplication.translate("MainWindow", u"u_i(t)", None))
+        self.btnFanPID_graph_int_e.setText(QCoreApplication.translate("MainWindow", u"int_e(t)", None))
+        self.btnFanPID_graph_u_d.setText(QCoreApplication.translate("MainWindow", u"u_d(t)", None))
         self.btnFanPID_graph_x.setText(QCoreApplication.translate("MainWindow", u"r(t)", None))
+        self.btnFanPID_graph_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
+        self.btnFanPID_graph_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
+        self.btnFanPID_graph_u.setText(QCoreApplication.translate("MainWindow", u"u(t)", None))
         self.label_36.setText(QCoreApplication.translate("MainWindow", u"Grza\u0142ka", None))
         self.chxExHeaterBB.setText(QCoreApplication.translate("MainWindow", u"Regulator dwupo\u0142o\u017ceniowy", None))
         self.chxExHeaterBB_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))

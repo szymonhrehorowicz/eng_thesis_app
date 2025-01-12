@@ -485,7 +485,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="pageHeaterControllerSelect">
            <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -2799,7 +2799,7 @@
             <item>
              <widget class="QFrame" name="frame_29">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -2820,88 +2820,10 @@
                <property name="bottomMargin">
                 <number>0</number>
                </property>
-               <item row="0" column="1">
-                <widget class="QPushButton" name="btnHeaterBB_graph_y_1">
-                 <property name="text">
-                  <string>y_1(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="7">
-                <widget class="QPushButton" name="btnHeaterBB_graph_u_min">
-                 <property name="text">
-                  <string>u_min</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
                <item row="0" column="6">
                 <widget class="QPushButton" name="btnHeaterBB_graph_u_max">
                  <property name="text">
                   <string>u_max</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="btnHeaterBB_graph_y_2">
-                 <property name="text">
-                  <string>y_2(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QPushButton" name="btnHeaterBB_graph_x">
-                 <property name="text">
-                  <string>r(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="11">
-                <spacer name="horizontalSpacer_22">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="0" column="4">
-                <widget class="QPushButton" name="btnHeaterBB_graph_x_max">
-                 <property name="text">
-                  <string>r_max</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -2924,6 +2846,52 @@
                  </property>
                 </widget>
                </item>
+               <item row="1" column="0">
+                <widget class="QLCDNumber" name="lcdHeaterBB_x">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="btnHeaterBB_graph_y_2">
+                 <property name="text">
+                  <string>y_2(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="7">
+                <widget class="QPushButton" name="btnHeaterBB_graph_u_min">
+                 <property name="text">
+                  <string>u_min</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLCDNumber" name="lcdHeaterBB_y_2">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="5">
                 <widget class="QPushButton" name="btnHeaterBB_graph_x_min">
                  <property name="text">
@@ -2934,6 +2902,118 @@
                  </property>
                  <property name="checked">
                   <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLCDNumber" name="lcdHeaterBB_y_1">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <widget class="QPushButton" name="btnHeaterBB_graph_x_max">
+                 <property name="text">
+                  <string>r_max</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="btnHeaterBB_graph_x">
+                 <property name="text">
+                  <string>r(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QPushButton" name="btnHeaterBB_graph_y_1">
+                 <property name="text">
+                  <string>y_1(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="11">
+                <spacer name="horizontalSpacer_22">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="4">
+                <widget class="QLCDNumber" name="lcdHeaterBB_x_max">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="5">
+                <widget class="QLCDNumber" name="lcdHeaterBB_x_min">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="6">
+                <widget class="QLCDNumber" name="lcdHeaterBB_u_max">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="7">
+                <widget class="QLCDNumber" name="lcdHeaterBB_u_min">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="8">
+                <widget class="QLCDNumber" name="lcdHeaterBB_mode">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
                  </property>
                 </widget>
                </item>
@@ -2993,123 +3073,6 @@
                <property name="bottomMargin">
                 <number>0</number>
                </property>
-               <item row="0" column="7">
-                <widget class="QPushButton" name="btnHeaterPID_graph_u">
-                 <property name="text">
-                  <string>u(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="17">
-                <widget class="QPushButton" name="btnHeaterPID_graph_u_d">
-                 <property name="text">
-                  <string>u_d(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="19">
-                <spacer name="horizontalSpacer_26">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="0" column="18">
-                <widget class="QPushButton" name="btnHeaterPID_graph_mode">
-                 <property name="text">
-                  <string>stan</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="4">
-                <widget class="QPushButton" name="btnHeaterPID_graph_e">
-                 <property name="text">
-                  <string>e(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="5">
-                <widget class="QPushButton" name="btnHeaterPID_graph_int_e">
-                 <property name="text">
-                  <string>int_e(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="11">
-                <widget class="QPushButton" name="btnHeaterPID_graph_u_p">
-                 <property name="text">
-                  <string>u_p(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <widget class="QPushButton" name="btnHeaterPID_graph_y_2">
-                 <property name="text">
-                  <string>y_2(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="btnHeaterPID_graph_y_1">
-                 <property name="text">
-                  <string>y_1(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
                <item row="0" column="8">
                 <widget class="QPushButton" name="btnHeaterPID_graph_u_sat">
                  <property name="text">
@@ -3136,10 +3099,75 @@
                  </property>
                 </widget>
                </item>
+               <item row="0" column="18">
+                <widget class="QPushButton" name="btnHeaterPID_graph_mode">
+                 <property name="text">
+                  <string>stan</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="6">
+                <widget class="QPushButton" name="btnHeaterPID_graph_aw_int_e">
+                 <property name="text">
+                  <string>aw_int_e(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="7">
+                <widget class="QPushButton" name="btnHeaterPID_graph_u">
+                 <property name="text">
+                  <string>u(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="btnHeaterPID_graph_y_1">
+                 <property name="text">
+                  <string>y_1(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="9">
                 <widget class="QPushButton" name="btnHeaterPID_graph_u_max">
                  <property name="text">
                   <string>u_max</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="5">
+                <widget class="QPushButton" name="btnHeaterPID_graph_int_e">
+                 <property name="text">
+                  <string>int_e(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -3162,6 +3190,32 @@
                  </property>
                 </widget>
                </item>
+               <item row="0" column="3">
+                <widget class="QPushButton" name="btnHeaterPID_graph_y_2">
+                 <property name="text">
+                  <string>y_2(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="11">
+                <widget class="QPushButton" name="btnHeaterPID_graph_u_p">
+                 <property name="text">
+                  <string>u_p(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="10">
                 <widget class="QPushButton" name="btnHeaterPID_graph_u_min">
                  <property name="text">
@@ -3175,16 +3229,182 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="6">
-                <widget class="QPushButton" name="btnHeaterPID_graph_aw_int_e">
+               <item row="0" column="19">
+                <spacer name="horizontalSpacer_26">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="17">
+                <widget class="QPushButton" name="btnHeaterPID_graph_u_d">
                  <property name="text">
-                  <string>aw_int_e(t)</string>
+                  <string>u_d(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
                  </property>
                  <property name="checked">
                   <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <widget class="QPushButton" name="btnHeaterPID_graph_e">
+                 <property name="text">
+                  <string>e(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLCDNumber" name="lcdHeaterPID_x">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLCDNumber" name="lcdHeaterPID_y_1">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="3">
+                <widget class="QLCDNumber" name="lcdHeaterPID_y_2">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="4">
+                <widget class="QLCDNumber" name="lcdHeaterPID_e">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="5">
+                <widget class="QLCDNumber" name="lcdHeaterPID_int_e">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="6">
+                <widget class="QLCDNumber" name="lcdHeaterPID_aw_int_e">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="7">
+                <widget class="QLCDNumber" name="lcdHeaterPID_u">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="8">
+                <widget class="QLCDNumber" name="lcdHeaterPID_u_sat">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="9">
+                <widget class="QLCDNumber" name="lcdHeaterPID_u_max">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="10">
+                <widget class="QLCDNumber" name="lcdHeaterPID_u_min">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="11">
+                <widget class="QLCDNumber" name="lcdHeaterPID_u_p">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="12">
+                <widget class="QLCDNumber" name="lcdHeaterPID_u_i">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="17">
+                <widget class="QLCDNumber" name="lcdHeaterPID_u_d">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="18">
+                <widget class="QLCDNumber" name="lcdHeaterPID_mode">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
                  </property>
                 </widget>
                </item>
@@ -3244,6 +3464,58 @@
                <property name="bottomMargin">
                 <number>0</number>
                </property>
+               <item row="0" column="7">
+                <widget class="QPushButton" name="btnFanBB_graph_mode">
+                 <property name="text">
+                  <string>stan</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QPushButton" name="btnFanBB_graph_x_min">
+                 <property name="text">
+                  <string>r_min</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QPushButton" name="btnFanBB_graph_y">
+                 <property name="text">
+                  <string>y(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="btnFanBB_graph_x_max">
+                 <property name="text">
+                  <string>r_max</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="8">
                 <spacer name="horizontalSpacer_25">
                  <property name="orientation">
@@ -3270,36 +3542,10 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="7">
-                <widget class="QPushButton" name="btnFanBB_graph_mode">
+               <item row="0" column="0">
+                <widget class="QPushButton" name="btnFanBB_graph_x">
                  <property name="text">
-                  <string>stan</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QPushButton" name="btnFanBB_graph_x_max">
-                 <property name="text">
-                  <string>r_max</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QPushButton" name="btnFanBB_graph_y">
-                 <property name="text">
-                  <string>y(t)</string>
+                  <string>r(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -3322,29 +3568,73 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="0">
-                <widget class="QPushButton" name="btnFanBB_graph_x">
-                 <property name="text">
-                  <string>r(t)</string>
+               <item row="1" column="0">
+                <widget class="QLCDNumber" name="lcdFanBB_x">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
                  </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="3">
-                <widget class="QPushButton" name="btnFanBB_graph_x_min">
-                 <property name="text">
-                  <string>r_min</string>
+               <item row="1" column="1">
+                <widget class="QLCDNumber" name="lcdFanBB_y">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
                  </property>
-                 <property name="checkable">
-                  <bool>true</bool>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
                  </property>
-                 <property name="checked">
-                  <bool>false</bool>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLCDNumber" name="lcdFanBB_x_max">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="3">
+                <widget class="QLCDNumber" name="lcdFanBB_x_min">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="4">
+                <widget class="QLCDNumber" name="lcdFanBB_u_max">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="5">
+                <widget class="QLCDNumber" name="lcdFanBB_u_min">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="7">
+                <widget class="QLCDNumber" name="lcdFanBB_mode">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
                  </property>
                 </widget>
                </item>
@@ -3404,16 +3694,13 @@
                <property name="bottomMargin">
                 <number>0</number>
                </property>
-               <item row="0" column="7">
-                <widget class="QPushButton" name="btnFanPID_graph_u">
-                 <property name="text">
-                  <string>u(t)</string>
+               <item row="1" column="4">
+                <widget class="QLCDNumber" name="lcdFanPID_int_e">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
                  </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
                  </property>
                 </widget>
                </item>
@@ -3443,36 +3730,23 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="13">
-                <widget class="QPushButton" name="btnFanPID_graph_u_min">
+               <item row="0" column="1">
+                <widget class="QPushButton" name="btnFanPID_graph_y">
                  <property name="text">
-                  <string>u_min</string>
+                  <string>y(t)</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
                  </property>
                  <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="4">
-                <widget class="QPushButton" name="btnFanPID_graph_int_e">
-                 <property name="text">
-                  <string>int_e(t)</string>
-                 </property>
-                 <property name="checkable">
                   <bool>true</bool>
                  </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
                 </widget>
                </item>
-               <item row="0" column="9">
-                <widget class="QPushButton" name="btnFanPID_graph_u_p">
+               <item row="0" column="14">
+                <widget class="QPushButton" name="btnFanPID_graph_mode">
                  <property name="text">
-                  <string>u_p(t)</string>
+                  <string>stan</string>
                  </property>
                  <property name="checkable">
                   <bool>true</bool>
@@ -3495,42 +3769,23 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="21">
-                <spacer name="horizontalSpacer_27">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
+               <item row="1" column="0">
+                <widget class="QLCDNumber" name="lcdFanPID_x">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
                  </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="0" column="14">
-                <widget class="QPushButton" name="btnFanPID_graph_mode">
-                 <property name="text">
-                  <string>stan</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="11">
-                <widget class="QPushButton" name="btnFanPID_graph_u_d">
-                 <property name="text">
-                  <string>u_d(t)</string>
+               <item row="1" column="5">
+                <widget class="QLCDNumber" name="lcdFanPID_aw_int_e">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
                  </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
                  </property>
                 </widget>
                </item>
@@ -3547,19 +3802,6 @@
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1">
-                <widget class="QPushButton" name="btnFanPID_graph_y">
-                 <property name="text">
-                  <string>y(t)</string>
-                 </property>
-                 <property name="checkable">
-                  <bool>true</bool>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
                <item row="0" column="10">
                 <widget class="QPushButton" name="btnFanPID_graph_u_i">
                  <property name="text">
@@ -3573,6 +3815,55 @@
                  </property>
                 </widget>
                </item>
+               <item row="0" column="4">
+                <widget class="QPushButton" name="btnFanPID_graph_int_e">
+                 <property name="text">
+                  <string>int_e(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="21">
+                <spacer name="horizontalSpacer_27">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="11">
+                <widget class="QPushButton" name="btnFanPID_graph_u_d">
+                 <property name="text">
+                  <string>u_d(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLCDNumber" name="lcdFanPID_y">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="0">
                 <widget class="QPushButton" name="btnFanPID_graph_x">
                  <property name="text">
@@ -3583,6 +3874,135 @@
                  </property>
                  <property name="checked">
                   <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="13">
+                <widget class="QPushButton" name="btnFanPID_graph_u_min">
+                 <property name="text">
+                  <string>u_min</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="9">
+                <widget class="QPushButton" name="btnFanPID_graph_u_p">
+                 <property name="text">
+                  <string>u_p(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLCDNumber" name="lcdFanPID_e">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="7">
+                <widget class="QPushButton" name="btnFanPID_graph_u">
+                 <property name="text">
+                  <string>u(t)</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="7">
+                <widget class="QLCDNumber" name="lcdFanPID_u">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="8">
+                <widget class="QLCDNumber" name="lcdFanPID_u_sat">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="9">
+                <widget class="QLCDNumber" name="lcdFanPID_u_p">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="10">
+                <widget class="QLCDNumber" name="lcdFanPID_u_i">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="11">
+                <widget class="QLCDNumber" name="lcdFanPID_u_d">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="12">
+                <widget class="QLCDNumber" name="lcdFanPID_u_max">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="13">
+                <widget class="QLCDNumber" name="lcdFanPID_u_min">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="14">
+                <widget class="QLCDNumber" name="lcdFanPID_mode">
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <property name="segmentStyle">
+                  <enum>QLCDNumber::Flat</enum>
                  </property>
                 </widget>
                </item>

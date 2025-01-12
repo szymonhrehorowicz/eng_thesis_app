@@ -64,10 +64,19 @@ class COM:
         if isOn:
             self.handler.ui.btnFanStart.setText("STOP")
             self.handler.ui.btn_graph_Clear.setEnabled(False)
+            # reset graphs size
+            self.handler.graphsPage.home()
+            self.handler.fanBBgraph.home()
+            self.handler.fanPIDgraph.home()
+            self.handler.heaterBBgraph.home()
+            self.handler.heaterPIDgraph.home()
         else:
             self.handler.ui.btnFanStart.setText("START")
             if not self.handler.ui.btnHeaterStart.isChecked():
                 self.handler.ui.btn_graph_Clear.setEnabled(True)
+            # if graphs stopped, unstop them
+            if self.handler.ui.btn_graph_Stop.isChecked():
+                self.handler.ui.btn_graph_Stop.click()
         msg = ""
         msg += str(MSG_TYPE["FAN_CONF_MSG"])
         msg += str(CONTROL_MSG["SET_FAN_CONFIG"])
@@ -140,6 +149,9 @@ class COM:
             self.handler.ui.btnHeaterStart.setText("START")
             if not self.handler.ui.btnFanStart.isChecked():
                 self.handler.ui.btn_graph_Clear.setEnabled(True)
+            # if graphs stopped, unstop them
+            if self.handler.ui.btn_graph_Stop.isChecked():
+                self.handler.ui.btn_graph_Stop.click()
         msg = ""
         msg += str(MSG_TYPE["COIL_CONF_MSG"])
         msg += str(CONTROL_MSG["SET_HEATER_CONFIG"])
@@ -265,6 +277,54 @@ class COM:
             # TIMESTAMP
             "TIMESTAMP": data[47],
         })
+        # LCD DISPLAYS
+        ## BB
+        self.handler.ui.lcdFanBB_y.display(data[42])
+        self.handler.ui.lcdFanBB_x.display(data[1])
+        self.handler.ui.lcdFanBB_x_max.display(data[2])
+        self.handler.ui.lcdFanBB_x_min.display(data[3])
+        self.handler.ui.lcdFanBB_u_max.display(data[4])
+        self.handler.ui.lcdFanBB_u_min.display(data[5])
+        self.handler.ui.lcdFanBB_mode.display(data[0])
+        
+        self.handler.ui.lcdHeaterBB_y_1.display(data[44])
+        self.handler.ui.lcdHeaterBB_y_2.display(data[43])
+        self.handler.ui.lcdHeaterBB_x.display(data[22])
+        self.handler.ui.lcdHeaterBB_x_max.display(data[23])
+        self.handler.ui.lcdHeaterBB_x_min.display(data[24])
+        self.handler.ui.lcdHeaterBB_u_max.display(data[25])
+        self.handler.ui.lcdHeaterBB_u_min.display(data[26])
+        self.handler.ui.lcdHeaterBB_mode.display(data[21])
+        ## PID
+        self.handler.ui.lcdFanPID_y.display(data[42])
+        self.handler.ui.lcdFanPID_x.display(data[6])
+        self.handler.ui.lcdFanPID_e.display(data[7])
+        self.handler.ui.lcdFanPID_int_e.display(data[8])
+        self.handler.ui.lcdFanPID_aw_int_e.display(data[9])
+        self.handler.ui.lcdFanPID_u.display(data[14])
+        self.handler.ui.lcdFanPID_u_sat.display(data[15])
+        self.handler.ui.lcdFanPID_u_p.display(data[16])
+        self.handler.ui.lcdFanPID_u_i.display(data[17])
+        self.handler.ui.lcdFanPID_u_d.display(data[18])
+        self.handler.ui.lcdFanPID_u_max.display(data[19])
+        self.handler.ui.lcdFanPID_u_min.display(data[20])
+        self.handler.ui.lcdFanPID_mode.display(data[45])
+
+        self.handler.ui.lcdHeaterPID_y_1.display(data[44])
+        self.handler.ui.lcdHeaterPID_y_2.display(data[43])
+        self.handler.ui.lcdHeaterPID_x.display(data[27])
+        self.handler.ui.lcdHeaterPID_e.display(data[28])
+        self.handler.ui.lcdHeaterPID_int_e.display(data[29])
+        self.handler.ui.lcdHeaterPID_aw_int_e.display(data[30])
+        self.handler.ui.lcdHeaterPID_u.display(data[35])
+        self.handler.ui.lcdHeaterPID_u_sat.display(data[36])
+        self.handler.ui.lcdHeaterPID_u_p.display(data[37])
+        self.handler.ui.lcdHeaterPID_u_i.display(data[38])
+        self.handler.ui.lcdHeaterPID_u_d.display(data[39])
+        self.handler.ui.lcdHeaterPID_u_max.display(data[40])
+        self.handler.ui.lcdHeaterPID_u_min.display(data[41])
+        self.handler.ui.lcdHeaterPID_mode.display(data[46])
+
 
     def handle_fast_data(self, data):
         self.handler.fanController.update_fast({
