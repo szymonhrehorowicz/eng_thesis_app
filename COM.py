@@ -130,6 +130,12 @@ class COM:
         if isOn:
             self.handler.ui.btnHeaterStart.setText("STOP")
             self.handler.ui.btn_graph_Clear.setEnabled(False)
+            # reset graphs size
+            self.handler.graphsPage.home()
+            self.handler.fanBBgraph.home()
+            self.handler.fanPIDgraph.home()
+            self.handler.heaterBBgraph.home()
+            self.handler.heaterPIDgraph.home()
         else:
             self.handler.ui.btnHeaterStart.setText("START")
             if not self.handler.ui.btnFanStart.isChecked():

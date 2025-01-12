@@ -287,6 +287,14 @@ class GraphsPage:
         self.fan_graph_y.update_graph()
         self.fan_graph_e.update_graph()
         self.fan_graph_u.update_graph()
+    
+    def home(self):
+        self.heater_graph_y.home()
+        self.heater_graph_e.home()
+        self.heater_graph_u.home()
+        self.fan_graph_y.home()
+        self.fan_graph_e.home()
+        self.fan_graph_u.home()
 
     @Slot()
     def open_heater(self):

@@ -91,6 +91,9 @@ class Graph:
         self.ax.autoscale_view()
         self.canvas.draw()
 
+    def home(self):
+        self.toolbar.home()
+
     @Slot()
     def update_graph(self, type):
         pass

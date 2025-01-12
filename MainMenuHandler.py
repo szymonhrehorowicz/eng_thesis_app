@@ -173,6 +173,9 @@ class MainMenuHandler:
     def stop_graphs(self, state):
         self.handler.ui.btn_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
         self.handler.areGraphsRunning = not state
+        if not state:
+            self.handler.fanController.was_stopped = True
+            self.handler.heaterController.was_stopped = True
 
         if state:
             # unlock graphs page
@@ -194,6 +197,12 @@ class MainMenuHandler:
                     self.open_import()
                 elif self.previous_page == INDICES["help"]:
                     self.open_help()
+            # reset graphs size
+            self.handler.graphsPage.home()
+            self.handler.fanBBgraph.home()
+            self.handler.fanPIDgraph.home()
+            self.handler.heaterBBgraph.home()
+            self.handler.heaterPIDgraph.home()
 
     @Slot()
     def clear_graphs(self):
