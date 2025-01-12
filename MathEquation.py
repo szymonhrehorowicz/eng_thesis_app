@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 import re
 from bs4 import BeautifulSoup as bs
-from PySide6.QtCore import QFile, QIODevice
+from PySide6.QtCore import QFile, QIODevice, Slot
 import rc_resources
 
 class MathEquation:
@@ -11,6 +11,7 @@ class MathEquation:
         self.handler = handler
         self._load_template()
         self.handler.setHtml(self.template.prettify())
+        self.eq_type = "parallel"
 
     def _load_template(self):
         # Open the file from Qt's resource system
@@ -31,20 +32,38 @@ class MathEquation:
         Kd = '%.2f'%Kd
         Ti = '%.2f'%Ti
         Td = '%.2f'%Td
-        equation = self.template.find("mathjax", {"id": "math"})
-        equation.string = r"$$u(t) = K_pe(t) + K_i\int_{0}^{t}e(\tau) d\tau + K_d\frac{de(t)}{dt} \Leftrightarrow u(t) = K_p(e(t) + \frac{1}{T_i}\int_{0}^{t}e(\tau) d\tau + T_d\frac{de(t)}{dt})$$"
-        equation.string = re.sub(r"K_p", "" if Kp == "0.00" else Kp, equation.string)
-        if Ki != "0.00":
-            equation.string = re.sub(r"K_i", "" if Ki == "0.00" else Ki, equation.string)
+        if self.eq_type == "parallel":
+            equation = self.template.find("mathjax", {"id": "parallel"})
+            not_equation = self.template.find("mathjax", {"id": "academic"})
+            equation["style"] = "font-size:2.3em; display: block;"
+            not_equation["style"] = "font-size:2.3em; display: none;"
+
+            equation.string = r"$$u(t) = K_pe(t) + K_i\int_{0}^{t}e(\tau) d\tau + K_d\frac{de(t)}{dt}$$"
+            equation.string = re.sub(r"K_p", "" if Kp == "0.00" else Kp, equation.string)
+            if Ki != "0.00":
+                equation.string = re.sub(r"K_i", "" if Ki == "0.00" else Ki, equation.string)
+            else:
+                equation.string = equation.string.replace(r"+ K_i\int_{0}^{t}e(\tau) d\tau", " ")
+            if Kd != "0.00":
+                equation.string = re.sub(r"K_d", "" if Kd == "0.00" else Kd, equation.string)
+            else:
+                equation.string = equation.string.replace(r"+ K_d\frac{de(t)}{dt}", "")
         else:
-            equation.string = equation.string.replace(r"+ K_i\int_{0}^{t}e(\tau) d\tau", " ")
-            equation.string = equation.string.replace(r"+ \frac{1}{T_i}\int_{0}^{t}e(\tau) d\tau", " ")
-        if Kd != "0.00":
-            equation.string = re.sub(r"K_d", "" if Kd == "0.00" else Kd, equation.string)
-        else:
-            equation.string = equation.string.replace(r"+ K_d\frac{de(t)}{dt}", "")
-            equation.string = equation.string.replace(r"+ T_d\frac{de(t)}{dt}", "")
-        equation.string = re.sub(r"T_i", Ti, equation.string)
-        equation.string = re.sub(r"T_d", Td, equation.string)
+            equation = self.template.find("mathjax", {"id": "academic"})
+            not_equation = self.template.find("mathjax", {"id": "parallel"})
+            equation["style"] = "font-size:2.3em; display: block;"
+            not_equation["style"] = "font-size:2.3em; display: none;"
+
+            equation.string = r"$$u(t) = K_p(e(t) + \frac{1}{T_i}\int_{0}^{t}e(\tau) d\tau + T_d\frac{de(t)}{dt})$$"
+            equation.string = re.sub(r"K_p", "" if Kp == "0.00" else Kp, equation.string)
+            if Ki == "0.00":
+                equation.string = equation.string.replace(r"+ \frac{1}{T_i}\int_{0}^{t}e(\tau) d\tau", " ")
+            if Kd == "0.00":
+                equation.string = equation.string.replace(r"+ T_d\frac{de(t)}{dt}", "")
+            equation.string = re.sub(r"T_i", Ti, equation.string)
+            equation.string = re.sub(r"T_d", Td, equation.string)
+
         self.handler.setHtml(self.template.prettify())
 
+    def set_equation_type(self):
+        self.eq_type = "parallel" if self.eq_type == "academic" else "academic"

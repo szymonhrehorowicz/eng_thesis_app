@@ -26,6 +26,7 @@ class MainMenuHandler:
         self.pauseIcon = QIcon()
         self.playIcon.addFile(u":/assets/assets/play.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pauseIcon.addFile(u":/assets/assets/pause.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.previous_page = INDICES["help"]
 
     # MAIN MENU
     @Slot()
@@ -100,6 +101,9 @@ class MainMenuHandler:
     
     @Slot()
     def open_graphs(self):
+        current_idx = self.handler.ui.container.currentIndex()
+        if current_idx != INDICES["graphs"]:
+            self.previous_page = current_idx
         self.handler.ui.btnHeaterControls.setChecked(False)
         self.handler.ui.btnFanControls.setChecked(False)
         self.handler.ui.btnDataExport.setChecked(False)
@@ -107,6 +111,7 @@ class MainMenuHandler:
         self.handler.ui.btnImport.setChecked(False)
         self.handler.ui.btnGraphs.setChecked(True)
         self.handler.ui.container.setCurrentIndex(INDICES["graphs"])
+        self.handler.graphsPage.update()
 
     # HEATER
     @Slot()
@@ -165,45 +170,40 @@ class MainMenuHandler:
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["fan_pid"])
 
     @Slot(bool)
-    def stop_fan_bb_graph(self, state):
-        self.handler.ui.btnFanBB_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
-        self.handler.isFanBB_graph_running = not state
+    def stop_graphs(self, state):
+        self.handler.ui.btn_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
+        self.handler.areGraphsRunning = not state
 
-    @Slot(bool)
-    def stop_fan_pid_graph(self, state):
-        self.handler.ui.btnFanPID_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
-        self.handler.isFanPID_graph_running = not state
-
-    @Slot(bool)
-    def stop_heater_bb_graph(self, state):
-        self.handler.ui.btnHeaterBB_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
-        self.handler.isHeaterBB_graph_running = not state
-
-    @Slot(bool)
-    def stop_heater_pid_graph(self, state):
-        self.handler.ui.btnHeaterPID_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
-        self.handler.isHeaterPID_graph_running = not state
+        if state:
+            # unlock graphs page
+            self.handler.ui.btnGraphs.setEnabled(True)
+        else:
+            # lock graphs page
+            self.handler.ui.btnGraphs.setEnabled(False)
+            # move user to previouos page
+            print(self.handler.ui.container.currentIndex())
+            if self.handler.ui.container.currentIndex() == INDICES["graphs"]:
+                if self.previous_page == INDICES["controls"]:
+                    if self.handler.ui.stackControllerDesc.currentIndex() == INDICES["heater"]:
+                        self.open_heater()
+                    else:
+                        self.open_fan()
+                elif self.previous_page == INDICES["export"]:
+                    self.open_export()
+                elif self.previous_page == INDICES["import"]:
+                    self.open_import()
+                elif self.previous_page == INDICES["help"]:
+                    self.open_help()
 
     @Slot()
-    def clear_fan_bb_graph(self):
+    def clear_graphs(self):
         self.handler.fanController.clear()
+        self.handler.heaterController.clear()
+
         self.handler.fanBBgraph.update_graph()
-        self.handler.graphsPage.update_all()
-
-    @Slot()
-    def clear_fan_pid_graph(self):
-        self.handler.fanController.clear()
         self.handler.fanPIDgraph.update_graph()
-        self.handler.graphsPage.update_all()
 
-    @Slot()
-    def clear_heater_bb_graph(self):
-        self.handler.heaterController.clear()
         self.handler.heaterBBgraph.update_graph()
-        self.handler.graphsPage.update_all()
-
-    @Slot()
-    def clear_heater_pid_graph(self):
-        self.handler.heaterController.clear()
         self.handler.heaterPIDgraph.update_graph()
-        self.handler.graphsPage.update_all()
+
+        self.handler.graphsPage.update()

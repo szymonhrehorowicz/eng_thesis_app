@@ -25,8 +25,6 @@ from graphs.GraphsPage import GraphsPage
 from utilities import DEGREE_SIGN
 import rc_resources
 
-from time import time
-
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -36,6 +34,14 @@ class MainWindow(QMainWindow):
         self.heaterPIDequationwebView = QWebEngineView()
         self.fanPIDequation = MathEquation(self.fanPIDequationwebView)
         self.heaterPIDequation = MathEquation(self.heaterPIDequationwebView)
+        self.ui.frHeaterTi.hide()
+        self.ui.frHeaterTd.hide()
+        self.ui.frHeaterKi.show()
+        self.ui.frHeaterKd.show()
+        self.ui.frFanTi.hide()
+        self.ui.frFanTd.hide()
+        self.ui.frFanKi.show()
+        self.ui.frFanKd.show()
         self.mainMenuHandler = MainMenuHandler(self)
         # Controllers
         self.fanBBcontroller = BB()
@@ -56,6 +62,7 @@ class MainWindow(QMainWindow):
         self.fanPIDgraph = FanPIDGraph(self, self.ui.layFanPIDGraph, 'RPM')
         self.heaterBBgraph = HeaterBBGraph(self, self.ui.layHeaterBBGraph, f'{DEGREE_SIGN}C')
         self.heaterPIDgraph = HeaterPIDGraph(self, self.ui.layHeaterPIDGraph, f'{DEGREE_SIGN}C')
+        self.areGraphsRunning = True
         # Export
         self.export = Export(self)
         self.importer = Import(self)
@@ -67,6 +74,10 @@ class MainWindow(QMainWindow):
 
         # Connect button
         self.ui.btnConnect.clicked.connect(self.serial.slot_btnConnect)
+
+        # Equation buttons
+        self.ui.btnEquationTypeFan.clicked.connect(self.fanControlsHandler.change_equation_type)
+        self.ui.btnEquationTypeHeater.clicked.connect(self.heaterControlsHandler.change_equation_type)
         
         # Main menu buttons
         self.ui.btnHeaterControls.clicked.connect(self.mainMenuHandler.open_heater)
@@ -75,6 +86,7 @@ class MainWindow(QMainWindow):
         self.ui.btnHelp.clicked.connect(self.mainMenuHandler.open_help)
         self.ui.btnImport.clicked.connect(self.mainMenuHandler.open_import)
         self.ui.btnGraphs.clicked.connect(self.mainMenuHandler.open_graphs)
+        self.ui.btnGraphs.setEnabled(False)
         # Heater controller select buttons
         self.ui.btnHeaterControllerSetBB.clicked.connect(self.mainMenuHandler.set_heater_bb)
         self.ui.btnHeaterControllerSetPID.clicked.connect(self.mainMenuHandler.set_heater_pid)
@@ -202,18 +214,10 @@ class MainWindow(QMainWindow):
         self.ui.btnFanStart.clicked.connect(self.COM.set_fan_config)
 
         # Graph controls
-        self.isFanBB_graph_running = True
-        self.ui.btnFanBB_graph_Stop.clicked.connect(self.mainMenuHandler.stop_fan_bb_graph)
-        self.ui.btnFanBB_graph_Clear.clicked.connect(self.mainMenuHandler.clear_fan_bb_graph)
-        self.isFanPID_graph_running = True
-        self.ui.btnFanPID_graph_Stop.clicked.connect(self.mainMenuHandler.stop_fan_pid_graph)
-        self.ui.btnFanPID_graph_Clear.clicked.connect(self.mainMenuHandler.clear_fan_pid_graph)
-        self.isHeaterBB_graph_running = True
-        self.ui.btnHeaterBB_graph_Stop.clicked.connect(self.mainMenuHandler.stop_heater_bb_graph)
-        self.ui.btnHeaterBB_graph_Clear.clicked.connect(self.mainMenuHandler.clear_heater_bb_graph)
-        self.isHeaterPID_graph_running = True
-        self.ui.btnHeaterPID_graph_Stop.clicked.connect(self.mainMenuHandler.stop_heater_pid_graph)
-        self.ui.btnHeaterPID_graph_Clear.clicked.connect(self.mainMenuHandler.clear_heater_pid_graph)
+        self.ui.btn_graph_Stop.clicked.connect(self.mainMenuHandler.stop_graphs)
+        self.ui.btn_graph_Clear.clicked.connect(self.mainMenuHandler.clear_graphs)
+        self.ui.btn_graph_Stop.setEnabled(False)
+        self.ui.btn_graph_Clear.setEnabled(False)
 
         # Export controls
             # Excport button
@@ -306,11 +310,6 @@ class MainWindow(QMainWindow):
         self.timer100ms.setInterval(100)
         self.timer100ms.timeout.connect(self.tim_100ms_IRS)
         self.timer100ms.start()
-        
-        self.timer400ms = QTimer()
-        self.timer400ms.setInterval(200)
-        self.timer400ms.timeout.connect(self.tim_200ms_IRS)
-        self.timer400ms.start()
 
         self.timer1s = QTimer()
         self.timer1s.setInterval(1000)
@@ -318,27 +317,17 @@ class MainWindow(QMainWindow):
         self.timer1s.start()
 
     def tim_100ms_IRS(self):
-        start = time()
         current_main_window = self.ui.container.currentIndex()
         if current_main_window == INDICES["controls"]:
             current_window = self.ui.stackGraphs.currentIndex()
-            if (current_window == INDICES["heater_bb"]) and self.isHeaterBB_graph_running:
+            if (current_window == INDICES["heater_bb"]) and self.areGraphsRunning:
                 self.heaterBBgraph.update_graph()
-            elif (current_window == INDICES["heater_pid"]) and self.isHeaterPID_graph_running:
+            elif (current_window == INDICES["heater_pid"]) and self.areGraphsRunning:
                 self.heaterPIDgraph.update_graph()
-            elif (current_window == INDICES["fan_bb"]) and self.isFanBB_graph_running:
+            elif (current_window == INDICES["fan_bb"]) and self.areGraphsRunning:
                 self.fanBBgraph.update_graph()
-            elif (current_window == INDICES["fan_pid"]) and self.isFanPID_graph_running:
+            elif (current_window == INDICES["fan_pid"]) and self.areGraphsRunning:
                 self.fanPIDgraph.update_graph()
-        elif current_main_window == INDICES["graphs"]:
-            self.graphsPage.update()
-        print("TIME : ", time() - start)
-
-    def tim_200ms_IRS(self):
-        start = time()
-        if self.ui.container.currentIndex() == INDICES["graphs"]:
-            self.graphsPage.update()
-        print("TIME : ", time() - start)
 
     def tim_1s_IRS(self):
         if self.isSerialConnected:
