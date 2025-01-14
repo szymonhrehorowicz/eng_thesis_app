@@ -5,6 +5,13 @@ from PySide6.QtCore import QFile, QIODevice, Slot
 import rc_resources
 
 class MathEquation:
+    integral = r"\int_{0}^{t}e(\tau) d\tau"
+    integral_ti_start = r"\frac{1}{"
+    integral_ti_stop = r"}\int_{0}^{t}e(\tau) d\tau"
+    derivative = r"\frac{de(t)}{dt}"
+    beginning = r"$$u(t) = "
+    ending = r"$$"
+
     def __init__(self, handler):
         self.template_dir = ":/assets/"
         self.template_name = "template"
@@ -38,30 +45,51 @@ class MathEquation:
             equation["style"] = "font-size:2.3em; display: block;"
             not_equation["style"] = "font-size:2.3em; display: none;"
 
-            equation.string = r"$$u(t) = K_pe(t) + K_i\int_{0}^{t}e(\tau) d\tau + K_d\frac{de(t)}{dt}$$"
-            equation.string = re.sub(r"K_p", "" if Kp == "0.00" else Kp, equation.string)
-            if Ki != "0.00":
-                equation.string = re.sub(r"K_i", "" if Ki == "0.00" else Ki, equation.string)
-            else:
-                equation.string = equation.string.replace(r"+ K_i\int_{0}^{t}e(\tau) d\tau", " ")
-            if Kd != "0.00":
-                equation.string = re.sub(r"K_d", "" if Kd == "0.00" else Kd, equation.string)
-            else:
-                equation.string = equation.string.replace(r"+ K_d\frac{de(t)}{dt}", "")
+            equation.string = self.beginning
+            equation.string += "" if Kp == "0.00" else ("e(t)" if Kp == "1.00" else Kp + "e(t)")
+            equation.string += "" if Ki == "0.00" else ((self.integral if 
+                                                         equation.string == self.beginning else
+                                                           " + " + self.integral) if 
+                                                           Ki == "1.00" else 
+                                                           (Ki + self.integral if 
+                                                            equation.string == self.beginning else 
+                                                            " + " + Ki + self.integral))
+            equation.string += "" if Kd == "0.00" else ((self.derivative if 
+                                                         equation.string == self.beginning else
+                                                           " + " + self.derivative) if 
+                                                           Kd == "1.00" else 
+                                                           (Kd + self.derivative if 
+                                                            equation.string == self.beginning else 
+                                                            " + " + Kd + self.derivative))
+            if equation.string == self.beginning:
+                equation.string += "0"
+            equation.string += self.ending
         else:
             equation = self.template.find("mathjax", {"id": "academic"})
             not_equation = self.template.find("mathjax", {"id": "parallel"})
             equation["style"] = "font-size:2.3em; display: block;"
             not_equation["style"] = "font-size:2.3em; display: none;"
 
-            equation.string = r"$$u(t) = K_p(e(t) + \frac{1}{T_i}\int_{0}^{t}e(\tau) d\tau + T_d\frac{de(t)}{dt})$$"
-            equation.string = re.sub(r"K_p", "" if Kp == "0.00" else Kp, equation.string)
-            if Ki == "0.00":
-                equation.string = equation.string.replace(r"+ \frac{1}{T_i}\int_{0}^{t}e(\tau) d\tau", " ")
-            if Kd == "0.00":
-                equation.string = equation.string.replace(r"+ T_d\frac{de(t)}{dt}", "")
-            equation.string = re.sub(r"T_i", Ti, equation.string)
-            equation.string = re.sub(r"T_d", Td, equation.string)
+            equation.string = self.beginning
+            if Kp != "0.00":   
+                equation.string += "(e(t)" if Kp == "1.00" else Kp + "(e(t)"
+
+                num_of_insides = 0
+                
+                if Ki != "0.00":
+                    equation.string += " + " + self.integral_ti_stop[1:] if Ti == "1.00" else " + " + self.integral_ti_start + Ti + self.integral_ti_stop
+                    num_of_insides += 1
+                if Kd != "0.00":
+                    equation.string += " + " + self.derivative if Td == "1.00" else " + " + Td + self.derivative
+                    num_of_insides += 1
+                if num_of_insides > 0:
+                    equation.string += ")"
+                else:
+                    equation.string = self.beginning
+                    equation.string += "e(t)" if Kp == "1.00" else Kp + "e(t)"
+            if equation.string == self.beginning:
+                equation.string += "0"
+            equation.string += self.ending
 
         self.handler.setHtml(self.template.prettify())
 

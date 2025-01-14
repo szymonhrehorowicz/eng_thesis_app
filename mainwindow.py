@@ -62,7 +62,7 @@ class MainWindow(QMainWindow):
         self.fanPIDgraph = FanPIDGraph(self, self.ui.layFanPIDGraph, 'RPM')
         self.heaterBBgraph = HeaterBBGraph(self, self.ui.layHeaterBBGraph, f'{DEGREE_SIGN}C')
         self.heaterPIDgraph = HeaterPIDGraph(self, self.ui.layHeaterPIDGraph, f'{DEGREE_SIGN}C')
-        self.areGraphsRunning = True
+        self.areGraphsRunning = False
         # Export
         self.export = Export(self)
         self.importer = Import(self)
@@ -97,21 +97,20 @@ class MainWindow(QMainWindow):
         # Fan controller select buttons
         self.ui.btnFanControllerSetBB.clicked.connect(self.mainMenuHandler.set_fan_bb)
         self.ui.btnFanControllerSetPID.clicked.connect(self.mainMenuHandler.set_fan_pid)
+
+        self.ui.inHeaterSetValue.editingFinished.connect(self.heaterControlsHandler.set_value)
+        self.ui.inHeaterSetValue.setButtonSymbols(QAbstractSpinBox.NoButtons)
         #Heater BB inputs
-        self.ui.inHeaterBBSetValue.editingFinished.connect(self.heaterControlsHandler.bb_setValue)
         self.ui.inHeaterBBHysteresis.editingFinished.connect(self.heaterControlsHandler.bb_setHysteresis)
         self.ui.inHeaterBBPower.valueChanged.connect(self.heaterControlsHandler.bb_setPower)
-        self.ui.inHeaterBBSetValue.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inHeaterBBHysteresis.setButtonSymbols(QAbstractSpinBox.NoButtons)
         # Heater PID inputs
-        self.ui.inHeaterPIDSetValue.editingFinished.connect(self.heaterControlsHandler.pid_setValue)
         self.ui.inHeaterPID_Kp.editingFinished.connect(self.heaterControlsHandler.pid_setKp)
         self.ui.inHeaterPID_Ki.editingFinished.connect(self.heaterControlsHandler.pid_setKi)
         self.ui.inHeaterPID_Kd.editingFinished.connect(self.heaterControlsHandler.pid_setKd)
         self.ui.inHeaterPID_Kaw.editingFinished.connect(self.heaterControlsHandler.pid_setKaw)
         self.ui.inHeaterPID_Ti.editingFinished.connect(self.heaterControlsHandler.pid_setTi)
         self.ui.inHeaterPID_Td.editingFinished.connect(self.heaterControlsHandler.pid_setTd)
-        self.ui.inHeaterPIDSetValue.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inHeaterPID_Kp.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inHeaterPID_Ki.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inHeaterPID_Kd.setButtonSymbols(QAbstractSpinBox.NoButtons)
@@ -126,20 +125,18 @@ class MainWindow(QMainWindow):
         self.ui.frHeaterRefAmplitude.setVisible(False)
         self.ui.frHeaterRefOmega.setVisible(False)
 
+        self.ui.inFanSetValue.editingFinished.connect(self.fanControlsHandler.set_value)
+        self.ui.inFanSetValue.setButtonSymbols(QAbstractSpinBox.NoButtons)
         # Fan BB inputs
-        self.ui.inFanBBSetValue.editingFinished.connect(self.fanControlsHandler.bb_setValue)
         self.ui.inFanBBHysteresis.editingFinished.connect(self.fanControlsHandler.bb_setHysteresis)
-        self.ui.inFanBBSetValue.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inFanBBHysteresis.setButtonSymbols(QAbstractSpinBox.NoButtons)
         # Fan PID inputs
-        self.ui.inFanPIDSetValue.editingFinished.connect(self.fanControlsHandler.pid_setValue)
         self.ui.inFanPID_Kp.editingFinished.connect(self.fanControlsHandler.pid_setKp)
         self.ui.inFanPID_Ki.editingFinished.connect(self.fanControlsHandler.pid_setKi)
         self.ui.inFanPID_Kd.editingFinished.connect(self.fanControlsHandler.pid_setKd)
         self.ui.inFanPID_Kaw.editingFinished.connect(self.fanControlsHandler.pid_setKaw)
         self.ui.inFanPID_Ti.editingFinished.connect(self.fanControlsHandler.pid_setTi)
         self.ui.inFanPID_Td.editingFinished.connect(self.fanControlsHandler.pid_setTd)
-        self.ui.inFanPIDSetValue.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inFanPID_Kp.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inFanPID_Ki.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.ui.inFanPID_Kd.setButtonSymbols(QAbstractSpinBox.NoButtons)
@@ -217,6 +214,7 @@ class MainWindow(QMainWindow):
         self.ui.btn_graph_Stop.clicked.connect(self.mainMenuHandler.stop_graphs)
         self.ui.btn_graph_Clear.clicked.connect(self.mainMenuHandler.clear_graphs)
         self.ui.btn_graph_Stop.setEnabled(False)
+        self.ui.btn_graph_Stop.setIcon(self.mainMenuHandler.playIcon)
         self.ui.btn_graph_Clear.setEnabled(False)
 
         # Export controls
@@ -315,6 +313,12 @@ class MainWindow(QMainWindow):
         self.timer1s.setInterval(1000)
         self.timer1s.timeout.connect(self.tim_1s_IRS)
         self.timer1s.start()
+
+        self.fanBBgraph.update_graph()
+        self.fanPIDgraph.update_graph()
+        self.heaterBBgraph.update_graph()
+        self.heaterPIDgraph.update_graph()
+        self.graphsPage.update()
 
     def tim_100ms_IRS(self):
         current_main_window = self.ui.container.currentIndex()

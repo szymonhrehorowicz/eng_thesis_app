@@ -28,10 +28,18 @@ class FanControlsHandler:
             self.ui.frFanKd.hide()
         self.equation.update(self.PID.Kp, self.PID.Ki, self.PID.Kd, self.PID.Ti, self.PID.Td)
 
+    @Slot()
+    def set_value(self):
+        self.PID.set_value = self.ui.inFanSetValue.value()
+        self.BB.set_value = self.ui.inFanSetValue.value()
+        self._update_equation()
+
     # BB
     @Slot()
     def bb_setValue(self):
         self.BB.set_value = self.ui.inFanBBSetValue.value()
+        self.PID.set_value = self.ui.inFanBBSetValue.value()
+        self.ui.inFanPIDSetValue.setValue(self.PID.set_value)
 
     @Slot()
     def bb_setHysteresis(self):
@@ -40,7 +48,9 @@ class FanControlsHandler:
     # PID
     @Slot()
     def pid_setValue(self):
-        self.PID.set_value = self.ui.inFanPIDSetValue.value()
+        self.BB.set_value = self.ui.inFanBBSetValue.value()
+        self.PID.set_value = self.ui.inFanBBSetValue.value()
+        self.ui.inFanBBSetValue.setValue(self.PID.set_value)
         self._update_equation()
 
     @Slot()

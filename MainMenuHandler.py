@@ -112,6 +112,7 @@ class MainMenuHandler:
         self.handler.ui.btnGraphs.setChecked(True)
         self.handler.ui.container.setCurrentIndex(INDICES["graphs"])
         self.handler.graphsPage.update()
+        self.handler.graphsPage.home()
 
     # HEATER
     @Slot()
@@ -171,6 +172,8 @@ class MainMenuHandler:
 
     @Slot(bool)
     def stop_graphs(self, state):
+        self.handler.graphsPage.zoom_pending = 0
+
         self.handler.ui.btn_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
         self.handler.areGraphsRunning = not state
         if not state:

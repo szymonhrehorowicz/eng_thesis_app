@@ -116,6 +116,7 @@ class Ui_MainWindow(object):
         icon5.addFile(u":/assets/assets/pause.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_graph_Stop.setIcon(icon5)
         self.btn_graph_Stop.setCheckable(True)
+        self.btn_graph_Stop.setChecked(True)
 
         self.horizontalLayout.addWidget(self.btn_graph_Stop)
 
@@ -269,7 +270,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3 = QHBoxLayout(self.pageHeaterControllerSelect)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.frame_9 = QFrame(self.pageHeaterControllerSelect)
+        self.frame_4 = QFrame(self.pageHeaterControllerSelect)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_18 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.frame_5 = QFrame(self.frame_4)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_56 = QHBoxLayout(self.frame_5)
+        self.horizontalLayout_56.setObjectName(u"horizontalLayout_56")
+        self.horizontalLayout_56.setContentsMargins(0, 0, 0, 0)
+        self.frame_9 = QFrame(self.frame_5)
         self.frame_9.setObjectName(u"frame_9")
         self.frame_9.setFrameShape(QFrame.NoFrame)
         self.horizontalLayout_14 = QHBoxLayout(self.frame_9)
@@ -294,16 +309,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.addWidget(self.btnHeaterControllerSetPID)
 
 
-        self.horizontalLayout_3.addWidget(self.frame_9)
+        self.horizontalLayout_56.addWidget(self.frame_9)
 
-        self.line_11 = QFrame(self.pageHeaterControllerSelect)
+        self.line_11 = QFrame(self.frame_5)
         self.line_11.setObjectName(u"line_11")
         self.line_11.setFrameShape(QFrame.Shape.VLine)
         self.line_11.setFrameShadow(QFrame.Shadow.Sunken)
 
-        self.horizontalLayout_3.addWidget(self.line_11)
+        self.horizontalLayout_56.addWidget(self.line_11)
 
-        self.frame_10 = QFrame(self.pageHeaterControllerSelect)
+        self.frame_10 = QFrame(self.frame_5)
         self.frame_10.setObjectName(u"frame_10")
         self.frame_10.setFrameShape(QFrame.NoFrame)
         self.horizontalLayout_15 = QHBoxLayout(self.frame_10)
@@ -328,9 +343,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.addWidget(self.btnHeaterControllerSetLowPower)
 
 
-        self.horizontalLayout_3.addWidget(self.frame_10)
+        self.horizontalLayout_56.addWidget(self.frame_10)
 
-        self.frame_11 = QFrame(self.pageHeaterControllerSelect)
+        self.frame_11 = QFrame(self.frame_5)
         self.frame_11.setObjectName(u"frame_11")
         self.frame_11.setFrameShape(QFrame.NoFrame)
         self.horizontalLayout_16 = QHBoxLayout(self.frame_11)
@@ -362,22 +377,19 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16.addWidget(self.btnHeaterControllerSetRightCoil)
 
 
-        self.horizontalLayout_3.addWidget(self.frame_11)
+        self.horizontalLayout_56.addWidget(self.frame_11)
 
-        self.line_13 = QFrame(self.pageHeaterControllerSelect)
-        self.line_13.setObjectName(u"line_13")
-        self.line_13.setFrameShape(QFrame.Shape.VLine)
-        self.line_13.setFrameShadow(QFrame.Shadow.Sunken)
-
-        self.horizontalLayout_3.addWidget(self.line_13)
-
-        self.frame_64 = QFrame(self.pageHeaterControllerSelect)
+        self.frame_64 = QFrame(self.frame_5)
         self.frame_64.setObjectName(u"frame_64")
         self.frame_64.setFrameShape(QFrame.StyledPanel)
         self.frame_64.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_54 = QHBoxLayout(self.frame_64)
         self.horizontalLayout_54.setObjectName(u"horizontalLayout_54")
         self.horizontalLayout_54.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_54.addItem(self.horizontalSpacer_2)
+
         self.label_61 = QLabel(self.frame_64)
         self.label_61.setObjectName(u"label_61")
 
@@ -389,11 +401,169 @@ class Ui_MainWindow(object):
         self.horizontalLayout_54.addWidget(self.chxFanCooling)
 
 
-        self.horizontalLayout_3.addWidget(self.frame_64)
+        self.horizontalLayout_56.addWidget(self.frame_64)
 
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_2)
+        self.verticalLayout_18.addWidget(self.frame_5)
+
+        self.frame_62 = QFrame(self.frame_4)
+        self.frame_62.setObjectName(u"frame_62")
+        self.frame_62.setFrameShape(QFrame.StyledPanel)
+        self.frame_62.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_49 = QHBoxLayout(self.frame_62)
+        self.horizontalLayout_49.setObjectName(u"horizontalLayout_49")
+        self.horizontalLayout_49.setContentsMargins(0, 0, 0, 0)
+        self.frHeaterSetValue = QFrame(self.frame_62)
+        self.frHeaterSetValue.setObjectName(u"frHeaterSetValue")
+        self.frHeaterSetValue.setFrameShape(QFrame.NoFrame)
+        self.horizontalLayout_9 = QHBoxLayout(self.frHeaterSetValue)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.label_10 = QLabel(self.frHeaterSetValue)
+        self.label_10.setObjectName(u"label_10")
+
+        self.horizontalLayout_9.addWidget(self.label_10)
+
+        self.inHeaterSetValue = QSpinBox(self.frHeaterSetValue)
+        self.inHeaterSetValue.setObjectName(u"inHeaterSetValue")
+        self.inHeaterSetValue.setMinimumSize(QSize(80, 0))
+        self.inHeaterSetValue.setFrame(True)
+        self.inHeaterSetValue.setKeyboardTracking(True)
+        self.inHeaterSetValue.setMaximum(100)
+
+        self.horizontalLayout_9.addWidget(self.inHeaterSetValue)
+
+        self.label_11 = QLabel(self.frHeaterSetValue)
+        self.label_11.setObjectName(u"label_11")
+
+        self.horizontalLayout_9.addWidget(self.label_11)
+
+
+        self.horizontalLayout_49.addWidget(self.frHeaterSetValue)
+
+        self.frame_63 = QFrame(self.frame_62)
+        self.frame_63.setObjectName(u"frame_63")
+        self.frame_63.setFrameShape(QFrame.StyledPanel)
+        self.frame_63.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_50 = QHBoxLayout(self.frame_63)
+        self.horizontalLayout_50.setObjectName(u"horizontalLayout_50")
+        self.horizontalLayout_50.setContentsMargins(0, 0, 0, 0)
+        self.label_54 = QLabel(self.frame_63)
+        self.label_54.setObjectName(u"label_54")
+
+        self.horizontalLayout_50.addWidget(self.label_54)
+
+        self.btnHeaterRefStep = QPushButton(self.frame_63)
+        self.btnHeaterRefStep.setObjectName(u"btnHeaterRefStep")
+        self.btnHeaterRefStep.setCheckable(True)
+        self.btnHeaterRefStep.setChecked(True)
+
+        self.horizontalLayout_50.addWidget(self.btnHeaterRefStep)
+
+        self.btnHeaterRefRamp = QPushButton(self.frame_63)
+        self.btnHeaterRefRamp.setObjectName(u"btnHeaterRefRamp")
+        self.btnHeaterRefRamp.setCheckable(True)
+
+        self.horizontalLayout_50.addWidget(self.btnHeaterRefRamp)
+
+        self.btnHeaterRefSinewave = QPushButton(self.frame_63)
+        self.btnHeaterRefSinewave.setObjectName(u"btnHeaterRefSinewave")
+        self.btnHeaterRefSinewave.setCheckable(True)
+
+        self.horizontalLayout_50.addWidget(self.btnHeaterRefSinewave)
+
+
+        self.horizontalLayout_49.addWidget(self.frame_63)
+
+        self.frHeaterRefSlope = QFrame(self.frame_62)
+        self.frHeaterRefSlope.setObjectName(u"frHeaterRefSlope")
+        self.frHeaterRefSlope.setFrameShape(QFrame.StyledPanel)
+        self.frHeaterRefSlope.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_51 = QHBoxLayout(self.frHeaterRefSlope)
+        self.horizontalLayout_51.setObjectName(u"horizontalLayout_51")
+        self.horizontalLayout_51.setContentsMargins(0, 0, 0, 0)
+        self.label_55 = QLabel(self.frHeaterRefSlope)
+        self.label_55.setObjectName(u"label_55")
+
+        self.horizontalLayout_51.addWidget(self.label_55)
+
+        self.inHeaterRefSlope = QSpinBox(self.frHeaterRefSlope)
+        self.inHeaterRefSlope.setObjectName(u"inHeaterRefSlope")
+        self.inHeaterRefSlope.setMinimumSize(QSize(80, 0))
+        self.inHeaterRefSlope.setMaximum(9999)
+
+        self.horizontalLayout_51.addWidget(self.inHeaterRefSlope)
+
+        self.label_56 = QLabel(self.frHeaterRefSlope)
+        self.label_56.setObjectName(u"label_56")
+
+        self.horizontalLayout_51.addWidget(self.label_56)
+
+
+        self.horizontalLayout_49.addWidget(self.frHeaterRefSlope)
+
+        self.frHeaterRefAmplitude = QFrame(self.frame_62)
+        self.frHeaterRefAmplitude.setObjectName(u"frHeaterRefAmplitude")
+        self.frHeaterRefAmplitude.setFrameShape(QFrame.StyledPanel)
+        self.frHeaterRefAmplitude.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_52 = QHBoxLayout(self.frHeaterRefAmplitude)
+        self.horizontalLayout_52.setObjectName(u"horizontalLayout_52")
+        self.horizontalLayout_52.setContentsMargins(0, 0, 0, 0)
+        self.label_57 = QLabel(self.frHeaterRefAmplitude)
+        self.label_57.setObjectName(u"label_57")
+
+        self.horizontalLayout_52.addWidget(self.label_57)
+
+        self.inHeaterRefAmplitude = QSpinBox(self.frHeaterRefAmplitude)
+        self.inHeaterRefAmplitude.setObjectName(u"inHeaterRefAmplitude")
+        self.inHeaterRefAmplitude.setMinimumSize(QSize(80, 0))
+        self.inHeaterRefAmplitude.setMaximum(9999)
+
+        self.horizontalLayout_52.addWidget(self.inHeaterRefAmplitude)
+
+        self.label_58 = QLabel(self.frHeaterRefAmplitude)
+        self.label_58.setObjectName(u"label_58")
+
+        self.horizontalLayout_52.addWidget(self.label_58)
+
+
+        self.horizontalLayout_49.addWidget(self.frHeaterRefAmplitude)
+
+        self.frHeaterRefOmega = QFrame(self.frame_62)
+        self.frHeaterRefOmega.setObjectName(u"frHeaterRefOmega")
+        self.frHeaterRefOmega.setFrameShape(QFrame.StyledPanel)
+        self.frHeaterRefOmega.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_53 = QHBoxLayout(self.frHeaterRefOmega)
+        self.horizontalLayout_53.setObjectName(u"horizontalLayout_53")
+        self.horizontalLayout_53.setContentsMargins(0, 0, 0, 0)
+        self.label_59 = QLabel(self.frHeaterRefOmega)
+        self.label_59.setObjectName(u"label_59")
+
+        self.horizontalLayout_53.addWidget(self.label_59)
+
+        self.inHeaterRefOmega = QDoubleSpinBox(self.frHeaterRefOmega)
+        self.inHeaterRefOmega.setObjectName(u"inHeaterRefOmega")
+        self.inHeaterRefOmega.setMinimumSize(QSize(80, 0))
+
+        self.horizontalLayout_53.addWidget(self.inHeaterRefOmega)
+
+        self.label_60 = QLabel(self.frHeaterRefOmega)
+        self.label_60.setObjectName(u"label_60")
+
+        self.horizontalLayout_53.addWidget(self.label_60)
+
+
+        self.horizontalLayout_49.addWidget(self.frHeaterRefOmega)
+
+        self.horizontalSpacer_21 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_49.addItem(self.horizontalSpacer_21)
+
+
+        self.verticalLayout_18.addWidget(self.frame_62)
+
+
+        self.horizontalLayout_3.addWidget(self.frame_4)
 
         self.stackControllerSelect.addWidget(self.pageHeaterControllerSelect)
         self.pageFanControllerSelect = QWidget()
@@ -401,27 +571,201 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7 = QHBoxLayout(self.pageFanControllerSelect)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.label_9 = QLabel(self.pageFanControllerSelect)
+        self.frame = QFrame(self.pageFanControllerSelect)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_19 = QVBoxLayout(self.frame)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.verticalLayout_19.setContentsMargins(0, 0, 0, 0)
+        self.frame_6 = QFrame(self.frame)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_6)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.label_9 = QLabel(self.frame_6)
         self.label_9.setObjectName(u"label_9")
 
-        self.horizontalLayout_7.addWidget(self.label_9)
+        self.horizontalLayout_4.addWidget(self.label_9)
 
-        self.btnFanControllerSetBB = QPushButton(self.pageFanControllerSelect)
+        self.btnFanControllerSetBB = QPushButton(self.frame_6)
         self.btnFanControllerSetBB.setObjectName(u"btnFanControllerSetBB")
         self.btnFanControllerSetBB.setCheckable(True)
         self.btnFanControllerSetBB.setChecked(True)
 
-        self.horizontalLayout_7.addWidget(self.btnFanControllerSetBB)
+        self.horizontalLayout_4.addWidget(self.btnFanControllerSetBB)
 
-        self.btnFanControllerSetPID = QPushButton(self.pageFanControllerSelect)
+        self.btnFanControllerSetPID = QPushButton(self.frame_6)
         self.btnFanControllerSetPID.setObjectName(u"btnFanControllerSetPID")
         self.btnFanControllerSetPID.setCheckable(True)
 
-        self.horizontalLayout_7.addWidget(self.btnFanControllerSetPID)
+        self.horizontalLayout_4.addWidget(self.btnFanControllerSetPID)
 
         self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_7.addItem(self.horizontalSpacer_4)
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_4)
+
+
+        self.verticalLayout_19.addWidget(self.frame_6)
+
+        self.frame_60 = QFrame(self.frame)
+        self.frame_60.setObjectName(u"frame_60")
+        self.frame_60.setFrameShape(QFrame.StyledPanel)
+        self.frame_60.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_48 = QHBoxLayout(self.frame_60)
+        self.horizontalLayout_48.setObjectName(u"horizontalLayout_48")
+        self.horizontalLayout_48.setContentsMargins(0, 0, 0, 0)
+        self.frFanSetValue = QFrame(self.frame_60)
+        self.frFanSetValue.setObjectName(u"frFanSetValue")
+        self.frFanSetValue.setFrameShape(QFrame.NoFrame)
+        self.horizontalLayout_23 = QHBoxLayout(self.frFanSetValue)
+        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
+        self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.label_26 = QLabel(self.frFanSetValue)
+        self.label_26.setObjectName(u"label_26")
+
+        self.horizontalLayout_23.addWidget(self.label_26)
+
+        self.inFanSetValue = QSpinBox(self.frFanSetValue)
+        self.inFanSetValue.setObjectName(u"inFanSetValue")
+        self.inFanSetValue.setMinimumSize(QSize(80, 0))
+        self.inFanSetValue.setMaximum(6000)
+
+        self.horizontalLayout_23.addWidget(self.inFanSetValue)
+
+        self.label_27 = QLabel(self.frFanSetValue)
+        self.label_27.setObjectName(u"label_27")
+
+        self.horizontalLayout_23.addWidget(self.label_27)
+
+
+        self.horizontalLayout_48.addWidget(self.frFanSetValue)
+
+        self.frame_61 = QFrame(self.frame_60)
+        self.frame_61.setObjectName(u"frame_61")
+        self.frame_61.setFrameShape(QFrame.StyledPanel)
+        self.frame_61.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_44 = QHBoxLayout(self.frame_61)
+        self.horizontalLayout_44.setObjectName(u"horizontalLayout_44")
+        self.horizontalLayout_44.setContentsMargins(0, 0, 0, 0)
+        self.label_19 = QLabel(self.frame_61)
+        self.label_19.setObjectName(u"label_19")
+
+        self.horizontalLayout_44.addWidget(self.label_19)
+
+        self.btnFanRefStep = QPushButton(self.frame_61)
+        self.btnFanRefStep.setObjectName(u"btnFanRefStep")
+        self.btnFanRefStep.setCheckable(True)
+        self.btnFanRefStep.setChecked(True)
+
+        self.horizontalLayout_44.addWidget(self.btnFanRefStep)
+
+        self.btnFanRefRamp = QPushButton(self.frame_61)
+        self.btnFanRefRamp.setObjectName(u"btnFanRefRamp")
+        self.btnFanRefRamp.setCheckable(True)
+
+        self.horizontalLayout_44.addWidget(self.btnFanRefRamp)
+
+        self.btnFanRefSinewave = QPushButton(self.frame_61)
+        self.btnFanRefSinewave.setObjectName(u"btnFanRefSinewave")
+        self.btnFanRefSinewave.setCheckable(True)
+
+        self.horizontalLayout_44.addWidget(self.btnFanRefSinewave)
+
+
+        self.horizontalLayout_48.addWidget(self.frame_61)
+
+        self.frFanRefSlope = QFrame(self.frame_60)
+        self.frFanRefSlope.setObjectName(u"frFanRefSlope")
+        self.frFanRefSlope.setFrameShape(QFrame.StyledPanel)
+        self.frFanRefSlope.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_45 = QHBoxLayout(self.frFanRefSlope)
+        self.horizontalLayout_45.setObjectName(u"horizontalLayout_45")
+        self.horizontalLayout_45.setContentsMargins(0, 0, 0, 0)
+        self.label_35 = QLabel(self.frFanRefSlope)
+        self.label_35.setObjectName(u"label_35")
+
+        self.horizontalLayout_45.addWidget(self.label_35)
+
+        self.inFanRefSlope = QSpinBox(self.frFanRefSlope)
+        self.inFanRefSlope.setObjectName(u"inFanRefSlope")
+        self.inFanRefSlope.setMinimumSize(QSize(80, 0))
+        self.inFanRefSlope.setMaximum(9999)
+
+        self.horizontalLayout_45.addWidget(self.inFanRefSlope)
+
+        self.label_51 = QLabel(self.frFanRefSlope)
+        self.label_51.setObjectName(u"label_51")
+
+        self.horizontalLayout_45.addWidget(self.label_51)
+
+
+        self.horizontalLayout_48.addWidget(self.frFanRefSlope)
+
+        self.frFanRefAmplitude = QFrame(self.frame_60)
+        self.frFanRefAmplitude.setObjectName(u"frFanRefAmplitude")
+        self.frFanRefAmplitude.setFrameShape(QFrame.StyledPanel)
+        self.frFanRefAmplitude.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_46 = QHBoxLayout(self.frFanRefAmplitude)
+        self.horizontalLayout_46.setObjectName(u"horizontalLayout_46")
+        self.horizontalLayout_46.setContentsMargins(0, 0, 0, 0)
+        self.label_49 = QLabel(self.frFanRefAmplitude)
+        self.label_49.setObjectName(u"label_49")
+
+        self.horizontalLayout_46.addWidget(self.label_49)
+
+        self.inFanRefAmplitude = QSpinBox(self.frFanRefAmplitude)
+        self.inFanRefAmplitude.setObjectName(u"inFanRefAmplitude")
+        self.inFanRefAmplitude.setMinimumSize(QSize(80, 0))
+        self.inFanRefAmplitude.setMaximum(9999)
+
+        self.horizontalLayout_46.addWidget(self.inFanRefAmplitude)
+
+        self.label_52 = QLabel(self.frFanRefAmplitude)
+        self.label_52.setObjectName(u"label_52")
+
+        self.horizontalLayout_46.addWidget(self.label_52)
+
+
+        self.horizontalLayout_48.addWidget(self.frFanRefAmplitude)
+
+        self.frFanRefOmega = QFrame(self.frame_60)
+        self.frFanRefOmega.setObjectName(u"frFanRefOmega")
+        self.frFanRefOmega.setFrameShape(QFrame.StyledPanel)
+        self.frFanRefOmega.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_47 = QHBoxLayout(self.frFanRefOmega)
+        self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
+        self.horizontalLayout_47.setContentsMargins(0, 0, 0, 0)
+        self.label_50 = QLabel(self.frFanRefOmega)
+        self.label_50.setObjectName(u"label_50")
+
+        self.horizontalLayout_47.addWidget(self.label_50)
+
+        self.inFanRefOmega = QDoubleSpinBox(self.frFanRefOmega)
+        self.inFanRefOmega.setObjectName(u"inFanRefOmega")
+        self.inFanRefOmega.setMinimumSize(QSize(80, 0))
+
+        self.horizontalLayout_47.addWidget(self.inFanRefOmega)
+
+        self.label_53 = QLabel(self.frFanRefOmega)
+        self.label_53.setObjectName(u"label_53")
+
+        self.horizontalLayout_47.addWidget(self.label_53)
+
+
+        self.horizontalLayout_48.addWidget(self.frFanRefOmega)
+
+        self.horizontalSpacer_12 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_48.addItem(self.horizontalSpacer_12)
+
+
+        self.verticalLayout_19.addWidget(self.frame_60)
+
+
+        self.horizontalLayout_7.addWidget(self.frame)
 
         self.stackControllerSelect.addWidget(self.pageFanControllerSelect)
 
@@ -437,32 +781,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setSizeConstraint(QLayout.SetDefaultConstraint)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.frame = QFrame(self.pageHeaterControllerConfigBB)
-        self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.NoFrame)
-        self.horizontalLayout_4 = QHBoxLayout(self.frame)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.label = QLabel(self.frame)
-        self.label.setObjectName(u"label")
-
-        self.horizontalLayout_4.addWidget(self.label)
-
-        self.inHeaterBBSetValue = QSpinBox(self.frame)
-        self.inHeaterBBSetValue.setObjectName(u"inHeaterBBSetValue")
-        self.inHeaterBBSetValue.setMinimumSize(QSize(100, 0))
-        self.inHeaterBBSetValue.setMaximum(100)
-
-        self.horizontalLayout_4.addWidget(self.inHeaterBBSetValue)
-
-        self.label_2 = QLabel(self.frame)
-        self.label_2.setObjectName(u"label_2")
-
-        self.horizontalLayout_4.addWidget(self.label_2)
-
-
-        self.horizontalLayout_2.addWidget(self.frame)
-
         self.frame_2 = QFrame(self.pageHeaterControllerConfigBB)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setFrameShape(QFrame.NoFrame)
@@ -507,6 +825,7 @@ class Ui_MainWindow(object):
         sizePolicy4.setVerticalStretch(0)
         sizePolicy4.setHeightForWidth(self.inHeaterBBPower.sizePolicy().hasHeightForWidth())
         self.inHeaterBBPower.setSizePolicy(sizePolicy4)
+        self.inHeaterBBPower.setMinimumSize(QSize(150, 0))
         self.inHeaterBBPower.setMaximumSize(QSize(200, 16777215))
         self.inHeaterBBPower.setMaximum(100)
         self.inHeaterBBPower.setSingleStep(1)
@@ -546,47 +865,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_30 = QHBoxLayout(self.frame_22)
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
         self.horizontalLayout_30.setContentsMargins(0, 0, 0, 0)
-        self.frHeaterSetValue = QFrame(self.frame_22)
-        self.frHeaterSetValue.setObjectName(u"frHeaterSetValue")
-        self.frHeaterSetValue.setFrameShape(QFrame.NoFrame)
-        self.horizontalLayout_9 = QHBoxLayout(self.frHeaterSetValue)
-        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.label_10 = QLabel(self.frHeaterSetValue)
-        self.label_10.setObjectName(u"label_10")
-
-        self.horizontalLayout_9.addWidget(self.label_10)
-
-        self.inHeaterPIDSetValue = QSpinBox(self.frHeaterSetValue)
-        self.inHeaterPIDSetValue.setObjectName(u"inHeaterPIDSetValue")
-        self.inHeaterPIDSetValue.setMinimumSize(QSize(80, 0))
-        self.inHeaterPIDSetValue.setFrame(True)
-        self.inHeaterPIDSetValue.setKeyboardTracking(True)
-        self.inHeaterPIDSetValue.setMaximum(100)
-
-        self.horizontalLayout_9.addWidget(self.inHeaterPIDSetValue)
-
-        self.label_11 = QLabel(self.frHeaterSetValue)
-        self.label_11.setObjectName(u"label_11")
-
-        self.horizontalLayout_9.addWidget(self.label_11)
-
-
-        self.horizontalLayout_30.addWidget(self.frHeaterSetValue)
-
         self.frHeaterKp = QFrame(self.frame_22)
         self.frHeaterKp.setObjectName(u"frHeaterKp")
         self.frHeaterKp.setFrameShape(QFrame.NoFrame)
         self.horizontalLayout_10 = QHBoxLayout(self.frHeaterKp)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.line_20 = QFrame(self.frHeaterKp)
-        self.line_20.setObjectName(u"line_20")
-        self.line_20.setFrameShape(QFrame.Shape.VLine)
-        self.line_20.setFrameShadow(QFrame.Shadow.Sunken)
-
-        self.horizontalLayout_10.addWidget(self.line_20)
-
         self.label_12 = QLabel(self.frHeaterKp)
         self.label_12.setObjectName(u"label_12")
 
@@ -760,7 +1044,8 @@ class Ui_MainWindow(object):
         self.inHeaterPID_Kaw = QDoubleSpinBox(self.frHeaterRest)
         self.inHeaterPID_Kaw.setObjectName(u"inHeaterPID_Kaw")
         self.inHeaterPID_Kaw.setMinimumSize(QSize(80, 0))
-        self.inHeaterPID_Kaw.setMaximum(1.000000000000000)
+        self.inHeaterPID_Kaw.setToolTipDuration(0)
+        self.inHeaterPID_Kaw.setMaximum(999.990000000000009)
 
         self.horizontalLayout_13.addWidget(self.inHeaterPID_Kaw)
 
@@ -783,134 +1068,6 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_5.addWidget(self.frame_22)
-
-        self.frame_62 = QFrame(self.pageHeaterControllerConfigPID)
-        self.frame_62.setObjectName(u"frame_62")
-        self.frame_62.setFrameShape(QFrame.StyledPanel)
-        self.frame_62.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_49 = QHBoxLayout(self.frame_62)
-        self.horizontalLayout_49.setObjectName(u"horizontalLayout_49")
-        self.horizontalLayout_49.setContentsMargins(0, 0, 0, 0)
-        self.frame_63 = QFrame(self.frame_62)
-        self.frame_63.setObjectName(u"frame_63")
-        self.frame_63.setFrameShape(QFrame.StyledPanel)
-        self.frame_63.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_50 = QHBoxLayout(self.frame_63)
-        self.horizontalLayout_50.setObjectName(u"horizontalLayout_50")
-        self.horizontalLayout_50.setContentsMargins(0, 0, 0, 0)
-        self.label_54 = QLabel(self.frame_63)
-        self.label_54.setObjectName(u"label_54")
-
-        self.horizontalLayout_50.addWidget(self.label_54)
-
-        self.btnHeaterRefStep = QPushButton(self.frame_63)
-        self.btnHeaterRefStep.setObjectName(u"btnHeaterRefStep")
-        self.btnHeaterRefStep.setCheckable(True)
-        self.btnHeaterRefStep.setChecked(True)
-
-        self.horizontalLayout_50.addWidget(self.btnHeaterRefStep)
-
-        self.btnHeaterRefRamp = QPushButton(self.frame_63)
-        self.btnHeaterRefRamp.setObjectName(u"btnHeaterRefRamp")
-        self.btnHeaterRefRamp.setCheckable(True)
-
-        self.horizontalLayout_50.addWidget(self.btnHeaterRefRamp)
-
-        self.btnHeaterRefSinewave = QPushButton(self.frame_63)
-        self.btnHeaterRefSinewave.setObjectName(u"btnHeaterRefSinewave")
-        self.btnHeaterRefSinewave.setCheckable(True)
-
-        self.horizontalLayout_50.addWidget(self.btnHeaterRefSinewave)
-
-
-        self.horizontalLayout_49.addWidget(self.frame_63)
-
-        self.frHeaterRefSlope = QFrame(self.frame_62)
-        self.frHeaterRefSlope.setObjectName(u"frHeaterRefSlope")
-        self.frHeaterRefSlope.setFrameShape(QFrame.StyledPanel)
-        self.frHeaterRefSlope.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_51 = QHBoxLayout(self.frHeaterRefSlope)
-        self.horizontalLayout_51.setObjectName(u"horizontalLayout_51")
-        self.horizontalLayout_51.setContentsMargins(0, 0, 0, 0)
-        self.label_55 = QLabel(self.frHeaterRefSlope)
-        self.label_55.setObjectName(u"label_55")
-
-        self.horizontalLayout_51.addWidget(self.label_55)
-
-        self.inHeaterRefSlope = QSpinBox(self.frHeaterRefSlope)
-        self.inHeaterRefSlope.setObjectName(u"inHeaterRefSlope")
-        self.inHeaterRefSlope.setMinimumSize(QSize(80, 0))
-        self.inHeaterRefSlope.setMaximum(9999)
-
-        self.horizontalLayout_51.addWidget(self.inHeaterRefSlope)
-
-        self.label_56 = QLabel(self.frHeaterRefSlope)
-        self.label_56.setObjectName(u"label_56")
-
-        self.horizontalLayout_51.addWidget(self.label_56)
-
-
-        self.horizontalLayout_49.addWidget(self.frHeaterRefSlope)
-
-        self.frHeaterRefAmplitude = QFrame(self.frame_62)
-        self.frHeaterRefAmplitude.setObjectName(u"frHeaterRefAmplitude")
-        self.frHeaterRefAmplitude.setFrameShape(QFrame.StyledPanel)
-        self.frHeaterRefAmplitude.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_52 = QHBoxLayout(self.frHeaterRefAmplitude)
-        self.horizontalLayout_52.setObjectName(u"horizontalLayout_52")
-        self.horizontalLayout_52.setContentsMargins(0, 0, 0, 0)
-        self.label_57 = QLabel(self.frHeaterRefAmplitude)
-        self.label_57.setObjectName(u"label_57")
-
-        self.horizontalLayout_52.addWidget(self.label_57)
-
-        self.inHeaterRefAmplitude = QSpinBox(self.frHeaterRefAmplitude)
-        self.inHeaterRefAmplitude.setObjectName(u"inHeaterRefAmplitude")
-        self.inHeaterRefAmplitude.setMinimumSize(QSize(80, 0))
-        self.inHeaterRefAmplitude.setMaximum(9999)
-
-        self.horizontalLayout_52.addWidget(self.inHeaterRefAmplitude)
-
-        self.label_58 = QLabel(self.frHeaterRefAmplitude)
-        self.label_58.setObjectName(u"label_58")
-
-        self.horizontalLayout_52.addWidget(self.label_58)
-
-
-        self.horizontalLayout_49.addWidget(self.frHeaterRefAmplitude)
-
-        self.frHeaterRefOmega = QFrame(self.frame_62)
-        self.frHeaterRefOmega.setObjectName(u"frHeaterRefOmega")
-        self.frHeaterRefOmega.setFrameShape(QFrame.StyledPanel)
-        self.frHeaterRefOmega.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_53 = QHBoxLayout(self.frHeaterRefOmega)
-        self.horizontalLayout_53.setObjectName(u"horizontalLayout_53")
-        self.horizontalLayout_53.setContentsMargins(0, 0, 0, 0)
-        self.label_59 = QLabel(self.frHeaterRefOmega)
-        self.label_59.setObjectName(u"label_59")
-
-        self.horizontalLayout_53.addWidget(self.label_59)
-
-        self.inHeaterRefOmega = QDoubleSpinBox(self.frHeaterRefOmega)
-        self.inHeaterRefOmega.setObjectName(u"inHeaterRefOmega")
-        self.inHeaterRefOmega.setMinimumSize(QSize(80, 0))
-
-        self.horizontalLayout_53.addWidget(self.inHeaterRefOmega)
-
-        self.label_60 = QLabel(self.frHeaterRefOmega)
-        self.label_60.setObjectName(u"label_60")
-
-        self.horizontalLayout_53.addWidget(self.label_60)
-
-
-        self.horizontalLayout_49.addWidget(self.frHeaterRefOmega)
-
-        self.horizontalSpacer_21 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_49.addItem(self.horizontalSpacer_21)
-
-
-        self.verticalLayout_5.addWidget(self.frame_62)
 
         self.frame_25 = QFrame(self.pageHeaterControllerConfigPID)
         self.frame_25.setObjectName(u"frame_25")
@@ -938,32 +1095,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_19 = QHBoxLayout(self.pageFanControllerConfigBB)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
         self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
-        self.frame_12 = QFrame(self.pageFanControllerConfigBB)
-        self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setFrameShape(QFrame.NoFrame)
-        self.horizontalLayout_20 = QHBoxLayout(self.frame_12)
-        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
-        self.horizontalLayout_20.setContentsMargins(0, 0, 0, 0)
-        self.label_22 = QLabel(self.frame_12)
-        self.label_22.setObjectName(u"label_22")
-
-        self.horizontalLayout_20.addWidget(self.label_22)
-
-        self.inFanBBSetValue = QSpinBox(self.frame_12)
-        self.inFanBBSetValue.setObjectName(u"inFanBBSetValue")
-        self.inFanBBSetValue.setMinimumSize(QSize(100, 0))
-        self.inFanBBSetValue.setMaximum(6000)
-
-        self.horizontalLayout_20.addWidget(self.inFanBBSetValue)
-
-        self.label_23 = QLabel(self.frame_12)
-        self.label_23.setObjectName(u"label_23")
-
-        self.horizontalLayout_20.addWidget(self.label_23)
-
-
-        self.horizontalLayout_19.addWidget(self.frame_12)
-
         self.frame_13 = QFrame(self.pageFanControllerConfigBB)
         self.frame_13.setObjectName(u"frame_13")
         self.frame_13.setFrameShape(QFrame.NoFrame)
@@ -1006,45 +1137,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_22 = QHBoxLayout(self.frame_20)
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
         self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
-        self.frFanSetValue = QFrame(self.frame_20)
-        self.frFanSetValue.setObjectName(u"frFanSetValue")
-        self.frFanSetValue.setFrameShape(QFrame.NoFrame)
-        self.horizontalLayout_23 = QHBoxLayout(self.frFanSetValue)
-        self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
-        self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
-        self.label_26 = QLabel(self.frFanSetValue)
-        self.label_26.setObjectName(u"label_26")
-
-        self.horizontalLayout_23.addWidget(self.label_26)
-
-        self.inFanPIDSetValue = QSpinBox(self.frFanSetValue)
-        self.inFanPIDSetValue.setObjectName(u"inFanPIDSetValue")
-        self.inFanPIDSetValue.setMinimumSize(QSize(80, 0))
-        self.inFanPIDSetValue.setMaximum(6000)
-
-        self.horizontalLayout_23.addWidget(self.inFanPIDSetValue)
-
-        self.label_27 = QLabel(self.frFanSetValue)
-        self.label_27.setObjectName(u"label_27")
-
-        self.horizontalLayout_23.addWidget(self.label_27)
-
-
-        self.horizontalLayout_22.addWidget(self.frFanSetValue)
-
         self.frFanKp = QFrame(self.frame_20)
         self.frFanKp.setObjectName(u"frFanKp")
         self.frFanKp.setFrameShape(QFrame.NoFrame)
         self.horizontalLayout_24 = QHBoxLayout(self.frFanKp)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
         self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
-        self.line_14 = QFrame(self.frFanKp)
-        self.line_14.setObjectName(u"line_14")
-        self.line_14.setFrameShape(QFrame.Shape.VLine)
-        self.line_14.setFrameShadow(QFrame.Shadow.Sunken)
-
-        self.horizontalLayout_24.addWidget(self.line_14)
-
         self.label_28 = QLabel(self.frFanKp)
         self.label_28.setObjectName(u"label_28")
 
@@ -1218,7 +1316,7 @@ class Ui_MainWindow(object):
         self.inFanPID_Kaw = QDoubleSpinBox(self.frFanRest)
         self.inFanPID_Kaw.setObjectName(u"inFanPID_Kaw")
         self.inFanPID_Kaw.setMinimumSize(QSize(80, 0))
-        self.inFanPID_Kaw.setMaximum(1.000000000000000)
+        self.inFanPID_Kaw.setMaximum(999.990000000000009)
 
         self.horizontalLayout_27.addWidget(self.inFanPID_Kaw)
 
@@ -1241,134 +1339,6 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_3.addWidget(self.frame_20)
-
-        self.frame_60 = QFrame(self.pageFanControllerConfigPID)
-        self.frame_60.setObjectName(u"frame_60")
-        self.frame_60.setFrameShape(QFrame.StyledPanel)
-        self.frame_60.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_48 = QHBoxLayout(self.frame_60)
-        self.horizontalLayout_48.setObjectName(u"horizontalLayout_48")
-        self.horizontalLayout_48.setContentsMargins(0, 0, 0, 0)
-        self.frame_61 = QFrame(self.frame_60)
-        self.frame_61.setObjectName(u"frame_61")
-        self.frame_61.setFrameShape(QFrame.StyledPanel)
-        self.frame_61.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_44 = QHBoxLayout(self.frame_61)
-        self.horizontalLayout_44.setObjectName(u"horizontalLayout_44")
-        self.horizontalLayout_44.setContentsMargins(0, 0, 0, 0)
-        self.label_19 = QLabel(self.frame_61)
-        self.label_19.setObjectName(u"label_19")
-
-        self.horizontalLayout_44.addWidget(self.label_19)
-
-        self.btnFanRefStep = QPushButton(self.frame_61)
-        self.btnFanRefStep.setObjectName(u"btnFanRefStep")
-        self.btnFanRefStep.setCheckable(True)
-        self.btnFanRefStep.setChecked(True)
-
-        self.horizontalLayout_44.addWidget(self.btnFanRefStep)
-
-        self.btnFanRefRamp = QPushButton(self.frame_61)
-        self.btnFanRefRamp.setObjectName(u"btnFanRefRamp")
-        self.btnFanRefRamp.setCheckable(True)
-
-        self.horizontalLayout_44.addWidget(self.btnFanRefRamp)
-
-        self.btnFanRefSinewave = QPushButton(self.frame_61)
-        self.btnFanRefSinewave.setObjectName(u"btnFanRefSinewave")
-        self.btnFanRefSinewave.setCheckable(True)
-
-        self.horizontalLayout_44.addWidget(self.btnFanRefSinewave)
-
-
-        self.horizontalLayout_48.addWidget(self.frame_61)
-
-        self.frFanRefSlope = QFrame(self.frame_60)
-        self.frFanRefSlope.setObjectName(u"frFanRefSlope")
-        self.frFanRefSlope.setFrameShape(QFrame.StyledPanel)
-        self.frFanRefSlope.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_45 = QHBoxLayout(self.frFanRefSlope)
-        self.horizontalLayout_45.setObjectName(u"horizontalLayout_45")
-        self.horizontalLayout_45.setContentsMargins(0, 0, 0, 0)
-        self.label_35 = QLabel(self.frFanRefSlope)
-        self.label_35.setObjectName(u"label_35")
-
-        self.horizontalLayout_45.addWidget(self.label_35)
-
-        self.inFanRefSlope = QSpinBox(self.frFanRefSlope)
-        self.inFanRefSlope.setObjectName(u"inFanRefSlope")
-        self.inFanRefSlope.setMinimumSize(QSize(80, 0))
-        self.inFanRefSlope.setMaximum(9999)
-
-        self.horizontalLayout_45.addWidget(self.inFanRefSlope)
-
-        self.label_51 = QLabel(self.frFanRefSlope)
-        self.label_51.setObjectName(u"label_51")
-
-        self.horizontalLayout_45.addWidget(self.label_51)
-
-
-        self.horizontalLayout_48.addWidget(self.frFanRefSlope)
-
-        self.frFanRefAmplitude = QFrame(self.frame_60)
-        self.frFanRefAmplitude.setObjectName(u"frFanRefAmplitude")
-        self.frFanRefAmplitude.setFrameShape(QFrame.StyledPanel)
-        self.frFanRefAmplitude.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_46 = QHBoxLayout(self.frFanRefAmplitude)
-        self.horizontalLayout_46.setObjectName(u"horizontalLayout_46")
-        self.horizontalLayout_46.setContentsMargins(0, 0, 0, 0)
-        self.label_49 = QLabel(self.frFanRefAmplitude)
-        self.label_49.setObjectName(u"label_49")
-
-        self.horizontalLayout_46.addWidget(self.label_49)
-
-        self.inFanRefAmplitude = QSpinBox(self.frFanRefAmplitude)
-        self.inFanRefAmplitude.setObjectName(u"inFanRefAmplitude")
-        self.inFanRefAmplitude.setMinimumSize(QSize(80, 0))
-        self.inFanRefAmplitude.setMaximum(9999)
-
-        self.horizontalLayout_46.addWidget(self.inFanRefAmplitude)
-
-        self.label_52 = QLabel(self.frFanRefAmplitude)
-        self.label_52.setObjectName(u"label_52")
-
-        self.horizontalLayout_46.addWidget(self.label_52)
-
-
-        self.horizontalLayout_48.addWidget(self.frFanRefAmplitude)
-
-        self.frFanRefOmega = QFrame(self.frame_60)
-        self.frFanRefOmega.setObjectName(u"frFanRefOmega")
-        self.frFanRefOmega.setFrameShape(QFrame.StyledPanel)
-        self.frFanRefOmega.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_47 = QHBoxLayout(self.frFanRefOmega)
-        self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
-        self.horizontalLayout_47.setContentsMargins(0, 0, 0, 0)
-        self.label_50 = QLabel(self.frFanRefOmega)
-        self.label_50.setObjectName(u"label_50")
-
-        self.horizontalLayout_47.addWidget(self.label_50)
-
-        self.inFanRefOmega = QDoubleSpinBox(self.frFanRefOmega)
-        self.inFanRefOmega.setObjectName(u"inFanRefOmega")
-        self.inFanRefOmega.setMinimumSize(QSize(80, 0))
-
-        self.horizontalLayout_47.addWidget(self.inFanRefOmega)
-
-        self.label_53 = QLabel(self.frFanRefOmega)
-        self.label_53.setObjectName(u"label_53")
-
-        self.horizontalLayout_47.addWidget(self.label_53)
-
-
-        self.horizontalLayout_48.addWidget(self.frFanRefOmega)
-
-        self.horizontalSpacer_12 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_48.addItem(self.horizontalSpacer_12)
-
-
-        self.verticalLayout_3.addWidget(self.frame_60)
 
         self.frame_26 = QFrame(self.pageFanControllerConfigPID)
         self.frame_26.setObjectName(u"frame_26")
@@ -2982,7 +2952,7 @@ class Ui_MainWindow(object):
         self.container.setCurrentIndex(0)
         self.stackControllerDesc.setCurrentIndex(1)
         self.stackControllerSelect.setCurrentIndex(1)
-        self.stackController.setCurrentIndex(1)
+        self.stackController.setCurrentIndex(3)
         self.stackGraphs.setCurrentIndex(2)
 
 
@@ -3105,6 +3075,24 @@ class Ui_MainWindow(object):
         self.btnHeaterControllerSetRightCoil.setText(QCoreApplication.translate("MainWindow", u"y2", None))
         self.label_61.setText(QCoreApplication.translate("MainWindow", u"Ch\u0142odzenie wentylatorem", None))
         self.chxFanCooling.setText("")
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Warto\u015b\u0107 zadana	</p></body></html>", None))
+#if QT_CONFIG(tooltip)
+        self.inHeaterSetValue.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        self.inHeaterSetValue.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
+#endif // QT_CONFIG(statustip)
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>\u00b0C</p></body></html>", None))
+        self.label_54.setText(QCoreApplication.translate("MainWindow", u"Forma sygna\u0142u", None))
+        self.btnHeaterRefStep.setText(QCoreApplication.translate("MainWindow", u"Skok", None))
+        self.btnHeaterRefRamp.setText(QCoreApplication.translate("MainWindow", u"Rampa", None))
+        self.btnHeaterRefSinewave.setText(QCoreApplication.translate("MainWindow", u"Sinusoida", None))
+        self.label_55.setText(QCoreApplication.translate("MainWindow", u"Nachylenie", None))
+        self.label_56.setText(QCoreApplication.translate("MainWindow", u"\u00b0C/s", None))
+        self.label_57.setText(QCoreApplication.translate("MainWindow", u"Amplituda", None))
+        self.label_58.setText(QCoreApplication.translate("MainWindow", u"\u00b0C", None))
+        self.label_59.setText(QCoreApplication.translate("MainWindow", u"Omega", None))
+        self.label_60.setText(QCoreApplication.translate("MainWindow", u"rad/s", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Wyb\u00f3r regulatora	</p></body></html>", None))
 #if QT_CONFIG(tooltip)
         self.btnFanControllerSetBB.setToolTip(QCoreApplication.translate("MainWindow", u"Wybierz dwupo\u0142o\u017ceniowy regulator do sterowania wentylatorem", None))
@@ -3120,14 +3108,27 @@ class Ui_MainWindow(object):
         self.btnFanControllerSetPID.setStatusTip(QCoreApplication.translate("MainWindow", u"Wybierz regulator PID do sterowania wentylatorem", None))
 #endif // QT_CONFIG(statustip)
         self.btnFanControllerSetPID.setText(QCoreApplication.translate("MainWindow", u"PID", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Warto\u015b\u0107 zadana	</p></body></html>", None))
+        self.label_26.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Warto\u015b\u0107 zadana	</p></body></html>", None))
 #if QT_CONFIG(tooltip)
-        self.inHeaterBBSetValue.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
+        self.inFanSetValue.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 6000", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(statustip)
-        self.inHeaterBBSetValue.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
+        self.inFanSetValue.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 6000", None))
 #endif // QT_CONFIG(statustip)
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>\u00b0C</p></body></html>", None))
+#if QT_CONFIG(whatsthis)
+        self.inFanSetValue.setWhatsThis("")
+#endif // QT_CONFIG(whatsthis)
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"RPM", None))
+        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Forma sygna\u0142u", None))
+        self.btnFanRefStep.setText(QCoreApplication.translate("MainWindow", u"Skok", None))
+        self.btnFanRefRamp.setText(QCoreApplication.translate("MainWindow", u"Rampa", None))
+        self.btnFanRefSinewave.setText(QCoreApplication.translate("MainWindow", u"Sinusoida", None))
+        self.label_35.setText(QCoreApplication.translate("MainWindow", u"Nachylenie", None))
+        self.label_51.setText(QCoreApplication.translate("MainWindow", u"RPM/s", None))
+        self.label_49.setText(QCoreApplication.translate("MainWindow", u"Amplituda", None))
+        self.label_52.setText(QCoreApplication.translate("MainWindow", u"RPM", None))
+        self.label_50.setText(QCoreApplication.translate("MainWindow", u"Omega", None))
+        self.label_53.setText(QCoreApplication.translate("MainWindow", u"rad/s", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Histereza	</p></body></html>", None))
 #if QT_CONFIG(tooltip)
         self.inHeaterBBHysteresis.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
@@ -3145,14 +3146,6 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(statustip)
         self.lblPower.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"W", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Warto\u015b\u0107 zadana	</p></body></html>", None))
-#if QT_CONFIG(tooltip)
-        self.inHeaterPIDSetValue.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.inHeaterPIDSetValue.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
-#endif // QT_CONFIG(statustip)
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>\u00b0C</p></body></html>", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">K</span><span style=\" font-weight:700; vertical-align:sub;\">p</span></p></body></html>", None))
 #if QT_CONFIG(tooltip)
         self.inHeaterPID_Kp.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0.00 | Max: 99.99", None))
@@ -3204,37 +3197,16 @@ class Ui_MainWindow(object):
         self.label_45.setText(QCoreApplication.translate("MainWindow", u"s", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">K</span><span style=\" font-weight:700; vertical-align:sub;\">aw</span></p></body></html>", None))
 #if QT_CONFIG(tooltip)
-        self.inHeaterPID_Kaw.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0.00 | Max: 1.00", None))
+        self.inHeaterPID_Kaw.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0.00 | Max: 999.99", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(statustip)
-        self.inHeaterPID_Kaw.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0.00 | Max: 1.00", None))
+        self.inHeaterPID_Kaw.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0.00 | Max: 999.99", None))
 #endif // QT_CONFIG(statustip)
 #if QT_CONFIG(whatsthis)
         self.inHeaterPID_Kaw.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
         self.label_62.setText(QCoreApplication.translate("MainWindow", u"Forma r\u00f3wnania ", None))
         self.btnEquationTypeHeater.setText(QCoreApplication.translate("MainWindow", u"r\u00f3wnoleg\u0142a", None))
-        self.label_54.setText(QCoreApplication.translate("MainWindow", u"Sygna\u0142 zadany", None))
-        self.btnHeaterRefStep.setText(QCoreApplication.translate("MainWindow", u"Skok", None))
-        self.btnHeaterRefRamp.setText(QCoreApplication.translate("MainWindow", u"Rampa", None))
-        self.btnHeaterRefSinewave.setText(QCoreApplication.translate("MainWindow", u"Sinusoida", None))
-        self.label_55.setText(QCoreApplication.translate("MainWindow", u"Nachylenie", None))
-        self.label_56.setText(QCoreApplication.translate("MainWindow", u"\u00b0C/s", None))
-        self.label_57.setText(QCoreApplication.translate("MainWindow", u"Amplituda", None))
-        self.label_58.setText(QCoreApplication.translate("MainWindow", u"\u00b0C", None))
-        self.label_59.setText(QCoreApplication.translate("MainWindow", u"Omega", None))
-        self.label_60.setText(QCoreApplication.translate("MainWindow", u"rad/s", None))
-        self.label_22.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Warto\u015b\u0107 zadana	</p></body></html>", None))
-#if QT_CONFIG(tooltip)
-        self.inFanBBSetValue.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 6000", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.inFanBBSetValue.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 6000", None))
-#endif // QT_CONFIG(statustip)
-#if QT_CONFIG(whatsthis)
-        self.inFanBBSetValue.setWhatsThis("")
-#endif // QT_CONFIG(whatsthis)
-        self.label_23.setText(QCoreApplication.translate("MainWindow", u"RPM", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Histereza	</p></body></html>", None))
 #if QT_CONFIG(tooltip)
         self.inFanBBHysteresis.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
@@ -3246,17 +3218,6 @@ class Ui_MainWindow(object):
         self.inFanBBHysteresis.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"RPM", None))
-        self.label_26.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Warto\u015b\u0107 zadana	</p></body></html>", None))
-#if QT_CONFIG(tooltip)
-        self.inFanPIDSetValue.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 6000", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        self.inFanPIDSetValue.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 6000", None))
-#endif // QT_CONFIG(statustip)
-#if QT_CONFIG(whatsthis)
-        self.inFanPIDSetValue.setWhatsThis("")
-#endif // QT_CONFIG(whatsthis)
-        self.label_27.setText(QCoreApplication.translate("MainWindow", u"RPM", None))
         self.label_28.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">K</span><span style=\" font-weight:700; vertical-align:sub;\">p</span></p></body></html>", None))
 #if QT_CONFIG(tooltip)
         self.inFanPID_Kp.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0.0 | Max: 999.99", None))
@@ -3299,23 +3260,13 @@ class Ui_MainWindow(object):
         self.label_41.setText(QCoreApplication.translate("MainWindow", u"s", None))
         self.label_34.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-weight:700;\">K</span><span style=\" font-weight:700; vertical-align:sub;\">aw</span></p></body></html>", None))
 #if QT_CONFIG(tooltip)
-        self.inFanPID_Kaw.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0.0 | Max: 1.0", None))
+        self.inFanPID_Kaw.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0.0 | Max: 999.99", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(statustip)
-        self.inFanPID_Kaw.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0.0 | Max: 1.0", None))
+        self.inFanPID_Kaw.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0.0 | Max: 999.99", None))
 #endif // QT_CONFIG(statustip)
         self.label_63.setText(QCoreApplication.translate("MainWindow", u"Forma r\u00f3wnania ", None))
         self.btnEquationTypeFan.setText(QCoreApplication.translate("MainWindow", u"r\u00f3wnoleg\u0142a", None))
-        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Sygna\u0142 zadany", None))
-        self.btnFanRefStep.setText(QCoreApplication.translate("MainWindow", u"Skok", None))
-        self.btnFanRefRamp.setText(QCoreApplication.translate("MainWindow", u"Rampa", None))
-        self.btnFanRefSinewave.setText(QCoreApplication.translate("MainWindow", u"Sinusoida", None))
-        self.label_35.setText(QCoreApplication.translate("MainWindow", u"Nachylenie", None))
-        self.label_51.setText(QCoreApplication.translate("MainWindow", u"RPM/s", None))
-        self.label_49.setText(QCoreApplication.translate("MainWindow", u"Amplituda", None))
-        self.label_52.setText(QCoreApplication.translate("MainWindow", u"RPM", None))
-        self.label_50.setText(QCoreApplication.translate("MainWindow", u"Omega", None))
-        self.label_53.setText(QCoreApplication.translate("MainWindow", u"rad/s", None))
         self.btnHeaterBB_graph_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
         self.btnHeaterBB_graph_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
         self.btnHeaterBB_graph_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))

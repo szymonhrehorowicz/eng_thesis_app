@@ -78,7 +78,7 @@ class FanController:
                 self.time_shift = time_difference - self.time[-1]
             self.time.append(time_difference - self.time_shift)
         # BB
-        self.bb_set_value.append(data["BB_SET_VALUE"])
+        self.bb_set_value.append(data["SET_VALUE"])
         self.bb_threshold_top.append(data["BB_THRESHOLD_TOP"])
         self.bb_threshold_bottom.append(data["BB_THRESHOLD_BOTTOM"])
         self.bb_u_max.append(data["BB_U_MAX"])
@@ -86,8 +86,8 @@ class FanController:
         self.bb_speed.append(data["PID_SPEED"])
         self.bb_mode.append(data["BB_CMD"])
         # PID
-        self.pid_set_value.append(data["PID_SET_VALUE"])
-        self.pid_error.append(data["PID_ERROR"])
+        self.pid_set_value.append(data["SET_VALUE"])
+        self.pid_error.append(data["ERROR"])
         self.pid_int_error.append(data["PID_INT_ERROR"])
         self.pid_aw_int_error.append(data["PID_AW_INT_ERROR"])
         self.pid_kp.append(data["PID_KP"])

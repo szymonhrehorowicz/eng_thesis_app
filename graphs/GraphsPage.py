@@ -270,10 +270,10 @@ class GraphsPage:
         self.handler = handler
         self.heater_graph_y = HeaterGraphY(self.handler, self.handler.ui.layGraphsPageHeater_y, f"{DEGREE_SIGN}C")
         self.heater_graph_e = HeaterGraphE(self.handler, self.handler.ui.layGraphsPageHeater_e, f"{DEGREE_SIGN}C")
-        self.heater_graph_u = HeaterGraphU(self.handler, self.handler.ui.layGraphsPageHeater_u, "")
+        self.heater_graph_u = HeaterGraphU(self.handler, self.handler.ui.layGraphsPageHeater_u, "V")
         self.fan_graph_y = FanGraphY(self.handler, self.handler.ui.layGraphsPageFan_y, "RPM")
         self.fan_graph_e = FanGraphE(self.handler, self.handler.ui.layGraphsPageFan_e, "RPM")
-        self.fan_graph_u = FanGraphU(self.handler, self.handler.ui.layGraphsPageFan_u, "")
+        self.fan_graph_u = FanGraphU(self.handler, self.handler.ui.layGraphsPageFan_u, "V")
         self.playIcon = QIcon()
         self.pauseIcon = QIcon()
         self.playIcon.addFile(u":/assets/assets/play.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -295,6 +295,12 @@ class GraphsPage:
         self.fan_graph_y.home()
         self.fan_graph_e.home()
         self.fan_graph_u.home()
+        self.heater_graph_y.refresh()
+        self.heater_graph_e.refresh()
+        self.heater_graph_u.refresh()
+        self.fan_graph_y.refresh()
+        self.fan_graph_e.refresh()
+        self.fan_graph_u.refresh()
 
     @Slot()
     def open_heater(self):

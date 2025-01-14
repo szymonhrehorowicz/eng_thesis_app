@@ -6,10 +6,6 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.colors import CSS4_COLORS
 
-# Test
-import numpy as np
-from scipy.interpolate import make_interp_spline
-
 from PySide6.QtCore import Qt
 
 class VerticalToolbar(NavigationToolbar):

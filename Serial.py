@@ -124,11 +124,7 @@ class Serial:
             self.ui.btn_graph_Stop.setEnabled(True)
             if self.first_msg:
                 self.ui.btn_graph_Clear.setEnabled(True)
-                self.first_msg = False
-
-            if(not self.handler.areGraphsRunning):
-                return
-                
+                self.first_msg = False 
             """
             Byte 0 : 
             0: ALL/FAST | 1: FAN OFF/ON | 2: COIL OFF/ON | 3: TEMP_REF_TOP/TEMP_REF_BOTTOM | 
@@ -152,98 +148,100 @@ class Serial:
                 """
                     FAN
                 """
-                # Bang-Bang: cmd: u8 | set_value: u16 | threshold_top: u16 | threshold_bottom: u16 | u_max: u16 | u_min: u16
+                # Common: reference_value: f32 | error: f32
+                set_val_fan = bytes_to_float(data[:4])
+                all_data.append(set_val_fan)
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+
+                # Bang-Bang: cmd: u8 | threshold_top: u16 | threshold_bottom: u16 | u_max: u16 | u_min: u16
                 all_data.append(int2(get_uint8(data[0])))
                 data = data[1:]
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(bytes_to_float(data[:4]) + set_val_fan)
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]) + set_val_fan)
+                data = data[4:]
+                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)))
-                data = data[2:]
-                all_data.append(int2(get_uint16(data)))
-                data = data[2:]
-                all_data.append(int2(get_uint16(data)))
-                data = data[2:]
-                # PID: set_value: u16 | error: f32 | int_sum: f32 | aw_int_sum: f32 | Kp: f32 | Ki: f32 | Kd: f32 | Kaw: f32 |
+                # PID: int_sum: f32 | aw_int_sum: f32 | Kp: f32 | Ki: f32 | Kd: f32 | Kaw: f32 |
                 #      u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32 | max: u16 | min: u16    
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
                 data = data[2:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(bytes_to_float(data[:4]) / 160 * 12.0)
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]) / 160 * 12.0)
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]) / 160 * 12.0)
+                data = data[4:]
+                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
                 data = data[2:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(int2(get_uint16(data)))
-                data = data[2:]
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
                 data = data[2:]
                 """
                     HEATER
                 """
-                # Bang-Bang: cmd: u8 | set_value: u16 | threshold_top: u16 | threshold_bottom: u16 | u_max: u16 | u_min: u16
+                # Common: reference_value: f32 | error: f32
+                set_heater_val = bytes_to_float(data[:4])
+                all_data.append(set_heater_val)
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+
+                # Bang-Bang: cmd: u8 | threshold_top: u16 | threshold_bottom: u16 | u_max: u16 | u_min: u16
                 all_data.append(int2(get_uint8(data[0])))
                 data = data[1:]
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(bytes_to_float(data[:4]) + set_heater_val)
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]) + set_heater_val)
+                data = data[4:]
+                all_data.append(int2(get_uint16(data)) / 1000 * 12)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(int2(get_uint16(data)) / 1000 * 12)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)))
-                data = data[2:]
-                all_data.append(int2(get_uint16(data)))
-                data = data[2:]
-                all_data.append(int2(get_uint16(data)))
-                data = data[2:]
-                # PID: set_value: u16 | error: f32 | int_sum: f32 | aw_int_sum: f32 | Kp: f32 | Ki: f32 | Kd: f32 | Kaw: f32 |
+                # PID: int_sum: f32 | aw_int_sum: f32 | Kp: f32 | Ki: f32 | Kd: f32 | Kaw: f32 |
                 #      u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32 | max: u16 | min: u16    
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]))
+                data = data[4:]
+                all_data.append(int2(get_uint16(data)) / 1000 * 12)
                 data = data[2:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(int2(get_uint16(data)) / 1000 * 12)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(bytes_to_float(data[:4]) / 1000 * 12)
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]) / 1000 * 12)
+                data = data[4:]
+                all_data.append(bytes_to_float(data[:4]) / 1000 * 12)
+                data = data[4:]
+                all_data.append(int2(get_uint16(data)) / 1000 * 12)
                 data = data[2:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
-                data = data[4:]
-                all_data.append(int2(get_uint16(data)))
-                data = data[2:]
-                all_data.append(int2(get_uint16(data)))
+                all_data.append(int2(get_uint16(data)) / 1000 * 12)
                 data = data[2:]
             else:
                 # [FAST]
@@ -308,8 +306,8 @@ class Serial:
 
             if isAllData:
                 all_data.append(speed)
-                all_data.append(temp_top)
                 all_data.append(temp_bottom)
+                all_data.append(temp_top)
                 all_data.append(isFanOn)
                 all_data.append(isHeaterOn)
                 all_data.append(timestamp)

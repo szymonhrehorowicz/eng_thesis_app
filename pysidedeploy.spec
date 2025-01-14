@@ -40,7 +40,7 @@ qml_files =
 excluded_qml_plugins = 
 
 # qt modules used. comma separated
-modules = Gui,Widgets,SerialPort,WebEngineWidgets,Core
+modules = WebEngineWidgets,Gui,SerialPort,Core,Widgets
 
 # qt plugins used by the application
 plugins = platformthemes,platforminputcontexts,iconengines,accessiblebridge,generic,imageformats,xcbglintegrations,platforms/darwin,egldeviceintegrations,platforms,styles
@@ -94,5 +94,5 @@ local_libs =
 
 # architecture of deployed platform
 # possible values = ["aarch64", "armv7a", "i686", "x86_64"]
-arch = 
+arch = "x86_64"
 
