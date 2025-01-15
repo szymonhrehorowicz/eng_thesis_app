@@ -11,6 +11,8 @@ class FanController:
         self.bb_set_value = []
         self.bb_threshold_top = []
         self.bb_threshold_bottom = []
+        self.bb_error = []
+        self.bb_u = []
         self.bb_u_max = []
         self.bb_u_min = []
         self.bb_speed = []
@@ -81,6 +83,8 @@ class FanController:
         self.bb_set_value.append(data["SET_VALUE"])
         self.bb_threshold_top.append(data["BB_THRESHOLD_TOP"])
         self.bb_threshold_bottom.append(data["BB_THRESHOLD_BOTTOM"])
+        self.bb_error.append(data["ERROR"])
+        self.bb_u.append(data["PID_U"])
         self.bb_u_max.append(data["BB_U_MAX"])
         self.bb_u_min.append(data["BB_U_MIN"])
         self.bb_speed.append(data["PID_SPEED"])
@@ -119,6 +123,8 @@ class FanController:
         self.bb_set_value.append(self.bb_set_value[-1])
         self.bb_threshold_top.append(self.bb_threshold_top[-1])
         self.bb_threshold_bottom.append(self.bb_threshold_bottom[-1])
+        self.bb_error.append(data["ERROR"])
+        self.bb_u.append(data["PID_U"])
         self.bb_u_max.append(self.bb_u_max[-1])
         self.bb_u_min.append(self.bb_u_min[-1])
         self.bb_speed.append(data["PID_SPEED"])
@@ -150,6 +156,8 @@ class FanController:
         self.bb_set_value = []
         self.bb_threshold_top = []
         self.bb_threshold_bottom = []
+        self.bb_error = []
+        self.bb_u = []
         self.bb_u_max = []
         self.bb_u_min = []
         self.bb_speed = []

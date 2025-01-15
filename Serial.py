@@ -162,15 +162,15 @@ class Serial:
                 data = data[4:]
                 all_data.append(bytes_to_float(data[:4]) + set_val_fan)
                 data = data[4:]
-                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
+                all_data.append(int2(get_uint16(data)) / (1680 - 1) * 12.0)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
+                all_data.append(int2(get_uint16(data)) / (1680 - 1) * 12.0)
                 data = data[2:]
                 # PID: int_sum: f32 | aw_int_sum: f32 | Kp: f32 | Ki: f32 | Kd: f32 | Kaw: f32 |
                 #      u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32 | max: u16 | min: u16    
                 all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
+                all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0)
                 data = data[4:]
                 all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
@@ -180,19 +180,19 @@ class Serial:
                 data = data[4:]
                 all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
+                all_data.append(int2(get_uint16(data)) / (1680 - 1) * 12.0)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
+                all_data.append(int2(get_uint16(data)) / (1680 - 1) * 12.0)
                 data = data[2:]
-                all_data.append(bytes_to_float(data[:4]) / 160 * 12.0)
+                all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0)
                 data = data[4:]
-                all_data.append(bytes_to_float(data[:4]) / 160 * 12.0)
+                all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0)
                 data = data[4:]
-                all_data.append(bytes_to_float(data[:4]) / 160 * 12.0)
+                all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0)
                 data = data[4:]
-                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
+                all_data.append(int2(get_uint16(data)) / (1680 - 1) * 12.0)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)) / 160 * 12.0)
+                all_data.append(int2(get_uint16(data)) / (1680 - 1) * 12.0)
                 data = data[2:]
                 """
                     HEATER
@@ -211,15 +211,15 @@ class Serial:
                 data = data[4:]
                 all_data.append(bytes_to_float(data[:4]) + set_heater_val)
                 data = data[4:]
-                all_data.append(int2(get_uint16(data)) / 1000 * 12)
+                all_data.append(int2(get_uint16(data)) / (1000 - 1) * 12)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)) / 1000 * 12)
+                all_data.append(int2(get_uint16(data)) / (1000 - 1) * 12)
                 data = data[2:]
                 # PID: int_sum: f32 | aw_int_sum: f32 | Kp: f32 | Ki: f32 | Kd: f32 | Kaw: f32 |
                 #      u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32 | max: u16 | min: u16    
                 all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(bytes_to_float(data[:4]))
+                all_data.append(bytes_to_float(data[:4]) / (1000 - 1) * 12)
                 data = data[4:]
                 all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
@@ -229,19 +229,19 @@ class Serial:
                 data = data[4:]
                 all_data.append(bytes_to_float(data[:4]))
                 data = data[4:]
-                all_data.append(int2(get_uint16(data)) / 1000 * 12)
+                all_data.append(int2(get_uint16(data)) / (1000 - 1) * 12)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)) / 1000 * 12)
+                all_data.append(int2(get_uint16(data)) / (1000 - 1) * 12)
                 data = data[2:]
-                all_data.append(bytes_to_float(data[:4]) / 1000 * 12)
+                all_data.append(bytes_to_float(data[:4]) / (1000 - 1) * 12)
                 data = data[4:]
-                all_data.append(bytes_to_float(data[:4]) / 1000 * 12)
+                all_data.append(bytes_to_float(data[:4]) / (1000 - 1) * 12)
                 data = data[4:]
-                all_data.append(bytes_to_float(data[:4]) / 1000 * 12)
+                all_data.append(bytes_to_float(data[:4]) / (1000 - 1) * 12)
                 data = data[4:]
-                all_data.append(int2(get_uint16(data)) / 1000 * 12)
+                all_data.append(int2(get_uint16(data)) / (1000 - 1) * 12)
                 data = data[2:]
-                all_data.append(int2(get_uint16(data)) / 1000 * 12)
+                all_data.append(int2(get_uint16(data)) / (1000 - 1) * 12)
                 data = data[2:]
             else:
                 # [FAST]

@@ -3,7 +3,7 @@ from graphs.Graph import Graph
 from PySide6.QtCore import Slot
 
 class FanBBGraph(Graph):
-    def __init__(self, handler, layout, label):
+    def __init__(self, handler, layout, label = " "):
         super(FanBBGraph, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
@@ -23,6 +23,14 @@ class FanBBGraph(Graph):
             "r_min": {
                 "state": self.handler.ui.btnFanBB_graph_x_min.isChecked(),
                 "color": 'peachpuff',
+            },
+            "e(t)": {
+                "state": self.handler.ui.btnFanBB_graph_e.isChecked(),
+                "color": "darkcyan",
+            },
+            "u(t)": {
+                "state": self.handler.ui.btnFanBB_graph_u.isChecked(),
+                "color": "royalblue"
             },
             "u_max": {
                 "state": self.handler.ui.btnFanBB_graph_u_max.isChecked(),
@@ -48,6 +56,8 @@ class FanBBGraph(Graph):
             self.controller.bb_set_value,
             self.controller.bb_threshold_top,
             self.controller.bb_threshold_bottom,
+            self.controller.bb_error,
+            self.controller.bb_u,
             self.controller.bb_u_max,
             self.controller.bb_u_min,
             self.controller.bb_speed,
@@ -88,4 +98,14 @@ class FanBBGraph(Graph):
     def set_mode(self, state):
         self.controls['stan']["state"] = state
         self.set_line_visibility('stan', state)
+
+    @Slot(bool)
+    def set_e(self, state):
+        self.controls['e(t)']["state"] = state
+        self.set_line_visibility('e(t)', state)
+
+    @Slot(bool)
+    def set_u(self, state):
+        self.controls['u(t)']["state"] = state
+        self.set_line_visibility('u(t)', state)
     

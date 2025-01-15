@@ -14,5 +14,6 @@
         <file>assets/import.ico</file>
         <file>assets/graph.ico</file>
         <file alias="template">assets/template.html</file>
+        <file>assets/bb.png</file>
     </qresource>
 </RCC>

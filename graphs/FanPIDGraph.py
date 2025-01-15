@@ -3,7 +3,7 @@ from graphs.Graph import Graph
 from PySide6.QtCore import Slot
 
 class FanPIDGraph(Graph):
-    def __init__(self, handler, layout, label):
+    def __init__(self, handler, layout, label = " "):
         super(FanPIDGraph, self).__init__(handler, layout, label, use_toolbar=True)
         self.init_controls()
         self.keys = list(self.controls.keys())

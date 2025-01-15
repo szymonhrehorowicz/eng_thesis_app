@@ -74,14 +74,13 @@ class COM:
             self.handler.ui.btnFanStart.setText("START")
             if not self.handler.ui.btnHeaterStart.isChecked():
                 self.handler.ui.btn_graph_Clear.setEnabled(True)
-            # if graphs stopped, unstop them
-            # if self.handler.ui.btn_graph_Stop.isChecked():
-            #     self.handler.ui.btn_graph_Stop.click()
         msg = ""
         msg += str(MSG_TYPE["FAN_CONF_MSG"])
         msg += str(CONTROL_MSG["SET_FAN_CONFIG"])
         # Controller type: 0-PID | 1-BANG BANG
-        msg += "0" if self.handler.ui.btnFanControllerSetPID.isChecked() else "1"
+        isPID = self.handler.ui.btnFanControllerSetPID.isChecked()
+        isBB = self.handler.ui.btnFanControllerSetBB.isChecked()
+        msg += "0" if isPID else ("1" if isBB else "2")
         # BB set value: 0000 - 6000
         msg += str(self.handler.ui.inFanSetValue.value()).zfill(4)
         # BB hysteresis: 0000 - 6000
@@ -149,14 +148,13 @@ class COM:
             self.handler.ui.btnHeaterStart.setText("START")
             if not self.handler.ui.btnFanStart.isChecked():
                 self.handler.ui.btn_graph_Clear.setEnabled(True)
-            # if graphs stopped, unstop them
-            # if self.handler.ui.btn_graph_Stop.isChecked():
-            #     self.handler.ui.btn_graph_Stop.click()
         msg = ""
         msg += str(MSG_TYPE["COIL_CONF_MSG"])
         msg += str(CONTROL_MSG["SET_HEATER_CONFIG"])
         # Controller type: 0-PID | 1-BANG BANG
-        msg += "0" if self.handler.ui.btnHeaterControllerSetPID.isChecked() else "1"
+        isPID = self.handler.ui.btnHeaterControllerSetPID.isChecked()
+        isBB = self.handler.ui.btnHeaterControllerSetBB.isChecked()
+        msg += "0" if isPID else ("1" if isBB else "2")
         # BB set value: 0000 - 6000
         msg += str(self.handler.ui.inHeaterSetValue.value()).zfill(4)
         # BB hysteresis: 0000 - 6000
@@ -227,6 +225,8 @@ class COM:
         self.handler.ui.lcdFanBB_u_max.display(data[5])
         self.handler.ui.lcdFanBB_u_min.display(data[6])
         self.handler.ui.lcdFanBB_mode.display(data[2])
+        self.handler.ui.lcdFanBB_e.display(data[1])
+        self.handler.ui.lcdFanBB_u.display(data[13])
         
         self.handler.ui.lcdHeaterBB_y_1.display(data[41])
         self.handler.ui.lcdHeaterBB_y_2.display(data[42])
@@ -236,6 +236,8 @@ class COM:
         self.handler.ui.lcdHeaterBB_u_max.display(data[25])
         self.handler.ui.lcdHeaterBB_u_min.display(data[26])
         self.handler.ui.lcdHeaterBB_mode.display(data[22])
+        self.handler.ui.lcdHeaterBB_e.display(data[21])
+        self.handler.ui.lcdHeaterBB_u.display(data[33])
         ## PID
         self.handler.ui.lcdFanPID_y.display(data[40])
         self.handler.ui.lcdFanPID_x.display(data[0])
