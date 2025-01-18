@@ -10,6 +10,9 @@ class MathEquation:
     integral_ti_stop = r"}\int_{0}^{t}e(\tau) d\tau"
     derivative = r"\frac{de(t)}{dt}"
     beginning = r"$$u(t) = "
+    beginning_academic = r"$$\frac{U(s)}{E(s)} = "
+    integral_academic_start = r"\frac{1}{"
+    integral_academic_stop = r"s}"
     ending = r"$$"
 
     def __init__(self, handler):
@@ -70,24 +73,24 @@ class MathEquation:
             equation["style"] = "font-size:2.3em; display: block;"
             not_equation["style"] = "font-size:2.3em; display: none;"
 
-            equation.string = self.beginning
+            equation.string = self.beginning_academic
             if Kp != "0.00":   
-                equation.string += "(e(t)" if Kp == "1.00" else Kp + "(e(t)"
+                equation.string += "(1" if Kp == "1.00" else Kp + "(1"
 
                 num_of_insides = 0
                 
                 if Ki != "0.00":
-                    equation.string += " + " + self.integral_ti_stop[1:] if Ti == "1.00" else " + " + self.integral_ti_start + Ti + self.integral_ti_stop
+                    equation.string += " + " + self.integral_academic_start + self.integral_academic_stop if Ti == "1.00" else " + " + self.integral_academic_start + Ti + self.integral_academic_stop
                     num_of_insides += 1
                 if Kd != "0.00":
-                    equation.string += " + " + self.derivative if Td == "1.00" else " + " + Td + self.derivative
+                    equation.string += " + s" if Td == "1.00" else " + " + Td + "s"
                     num_of_insides += 1
                 if num_of_insides > 0:
                     equation.string += ")"
                 else:
-                    equation.string = self.beginning
-                    equation.string += "e(t)" if Kp == "1.00" else Kp + "e(t)"
-            if equation.string == self.beginning:
+                    equation.string = self.beginning_academic
+                    equation.string += "1" if Kp == "1.00" else Kp
+            if equation.string == self.beginning_academic:
                 equation.string += "0"
             equation.string += self.ending
 

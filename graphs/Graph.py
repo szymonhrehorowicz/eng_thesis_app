@@ -102,7 +102,10 @@ class Graph:
                 helper += 1
         self.ax.legend(handles, labels, loc="lower left")
         self.ax.relim(visible_only=True)
-        self.ax.autoscale_view()
+        data = self.ax.get_lines()[0].get_xdata()
+        if data:
+            self.ax.set_xlim(xmin=min(data), xmax=max(data))
+        self.ax.autoscale_view(tight=True)
         self.canvas.draw()
 
     def home(self):
