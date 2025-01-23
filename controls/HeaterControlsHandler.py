@@ -31,11 +31,13 @@ class HeaterControlsHandler:
             self.ui.frHeaterKd.hide()
         self.equation.update(self.PID.Kp, self.PID.Ki, self.PID.Kd, self.PID.Ti, self.PID.Td)
 
-    # BB
     @Slot()
-    def bb_setValue(self):
-        self.BB.set_value = self.ui.inHeaterBBSetValue.value()
+    def set_value(self):
+        self.PID.set_value = self.ui.inHeaterSetValue.value()
+        self.BB.set_value = self.ui.inHeaterSetValue.value()
+        self._update_equation()
 
+    # BB
     @Slot()
     def bb_setHysteresis(self):
         self.BB.hysteresis = self.ui.inHeaterBBHysteresis.value()
@@ -47,11 +49,6 @@ class HeaterControlsHandler:
         self.ui.lblPower.setText(power[:power.index('.') + 2])
 
     # PID
-    @Slot()
-    def pid_setValue(self):
-        self.PID.set_value = self.ui.inHeaterPIDSetValue.value()
-        self._update_equation()
-
     @Slot()
     def pid_setKp(self):
         self.PID.Kp = self.ui.inHeaterPID_Kp.value()

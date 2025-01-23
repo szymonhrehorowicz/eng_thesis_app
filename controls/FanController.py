@@ -3,12 +3,16 @@ import time
 
 class FanController:
     def __init__(self):
+        self.was_stopped = False
+        self.time_shift = 0
         # BB
         self.t0 = 0
         self.time = []
         self.bb_set_value = []
         self.bb_threshold_top = []
         self.bb_threshold_bottom = []
+        self.bb_error = []
+        self.bb_u = []
         self.bb_u_max = []
         self.bb_u_min = []
         self.bb_speed = []
@@ -70,18 +74,24 @@ class FanController:
             self.t0 = data["TIMESTAMP"]
             self.time.append(0)
         else:
-            self.time.append((data["TIMESTAMP"] - self.t0) / 1000)
+            time_difference = (data["TIMESTAMP"] - self.t0) / 1000
+            if self.was_stopped:
+                self.was_stopped = False
+                self.time_shift = time_difference - self.time[-1]
+            self.time.append(time_difference - self.time_shift)
         # BB
-        self.bb_set_value.append(data["BB_SET_VALUE"])
+        self.bb_set_value.append(data["SET_VALUE"])
         self.bb_threshold_top.append(data["BB_THRESHOLD_TOP"])
         self.bb_threshold_bottom.append(data["BB_THRESHOLD_BOTTOM"])
+        self.bb_error.append(data["ERROR"])
+        self.bb_u.append(data["PID_U"])
         self.bb_u_max.append(data["BB_U_MAX"])
         self.bb_u_min.append(data["BB_U_MIN"])
         self.bb_speed.append(data["PID_SPEED"])
         self.bb_mode.append(data["BB_CMD"])
         # PID
-        self.pid_set_value.append(data["PID_SET_VALUE"])
-        self.pid_error.append(data["PID_ERROR"])
+        self.pid_set_value.append(data["SET_VALUE"])
+        self.pid_error.append(data["ERROR"])
         self.pid_int_error.append(data["PID_INT_ERROR"])
         self.pid_aw_int_error.append(data["PID_AW_INT_ERROR"])
         self.pid_kp.append(data["PID_KP"])
@@ -104,11 +114,17 @@ class FanController:
             self.t0 = data["TIMESTAMP"]
             self.time.append(0)
         else:
-            self.time.append((data["TIMESTAMP"] - self.t0) / 1000)
+            time_difference = (data["TIMESTAMP"] - self.t0) / 1000
+            if self.was_stopped:
+                self.was_stopped = False
+                self.time_shift = time_difference - self.time[-1]
+            self.time.append(time_difference - self.time_shift)
         # BB
         self.bb_set_value.append(self.bb_set_value[-1])
         self.bb_threshold_top.append(self.bb_threshold_top[-1])
         self.bb_threshold_bottom.append(self.bb_threshold_bottom[-1])
+        self.bb_error.append(data["ERROR"])
+        self.bb_u.append(data["PID_U"])
         self.bb_u_max.append(self.bb_u_max[-1])
         self.bb_u_min.append(self.bb_u_min[-1])
         self.bb_speed.append(data["PID_SPEED"])
@@ -133,11 +149,15 @@ class FanController:
         self.pid_mode.append(data["PID_MODE"])
 
     def clear(self):
+        self.was_stopped = False
+        self.time_shift = 0
         self.t0 = 0
         self.time = []
         self.bb_set_value = []
         self.bb_threshold_top = []
         self.bb_threshold_bottom = []
+        self.bb_error = []
+        self.bb_u = []
         self.bb_u_max = []
         self.bb_u_min = []
         self.bb_speed = []

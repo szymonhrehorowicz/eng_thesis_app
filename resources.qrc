@@ -13,6 +13,7 @@
         <file>assets/heater.ico</file>
         <file>assets/import.ico</file>
         <file>assets/graph.ico</file>
+        <file>assets/bb.png</file>
         <file alias="template">assets/template.html</file>
     </qresource>
 </RCC>

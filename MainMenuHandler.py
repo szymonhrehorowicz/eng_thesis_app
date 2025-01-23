@@ -1,6 +1,8 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtCore import Slot, QSize
 from PySide6.QtGui import QIcon
+from utilities import info_dialog
+
 import rc_resources
 
 INDICES = {
@@ -38,16 +40,25 @@ class MainMenuHandler:
         self.handler.ui.btnImport.setChecked(False)
         self.handler.ui.btnGraphs.setChecked(False)
 
+        if self.handler.ui.btnHeaterControllerSetNone.isChecked():
+            self.handler.ui.stackController.setVisible(False)
+            self.handler.ui.frHeaterConfig.setVisible(False)
+        else:
+            self.handler.ui.stackController.setVisible(True)
+            self.handler.ui.frHeaterConfig.setVisible(True)
+
         self.handler.ui.container.setCurrentIndex(INDICES["controls"])
         self.handler.ui.stackControllerDesc.setCurrentIndex(INDICES["heater"])
         self.handler.ui.stackControllerSelect.setCurrentIndex(INDICES["heater"])
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["heater"])
-        if self.handler.ui.btnHeaterControllerSetBB.isChecked():
+        if self.handler.ui.btnHeaterControllerSetBB.isChecked() or self.handler.ui.btnHeaterControllerSetNone.isChecked():
             self.handler.ui.stackController.setCurrentIndex(INDICES["heater_bb"])
             self.handler.ui.stackGraphs.setCurrentIndex(INDICES["heater_bb"])
+            self.handler.heaterBBgraph.update_graph()
         else:
             self.handler.ui.stackController.setCurrentIndex(INDICES["heater_pid"])
             self.handler.ui.stackGraphs.setCurrentIndex(INDICES["heater_pid"])
+            self.handler.heaterPIDgraph.update_graph()
 
     @Slot()
     def open_fan(self):
@@ -58,16 +69,25 @@ class MainMenuHandler:
         self.handler.ui.btnImport.setChecked(False)
         self.handler.ui.btnGraphs.setChecked(False)
 
+        if self.handler.ui.btnFanControllerSetNone.isChecked():
+            self.handler.ui.stackController.setVisible(False)
+            self.handler.ui.frFanConfig.setVisible(False)
+        else:
+            self.handler.ui.stackController.setVisible(True)
+            self.handler.ui.frFanConfig.setVisible(True)
+
         self.handler.ui.container.setCurrentIndex(INDICES["controls"])
         self.handler.ui.stackControllerDesc.setCurrentIndex(INDICES["fan"])
         self.handler.ui.stackControllerSelect.setCurrentIndex(INDICES["fan"])
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["fan"])
-        if self.handler.ui.btnFanControllerSetBB.isChecked():
+        if self.handler.ui.btnFanControllerSetBB.isChecked() or self.handler.ui.btnFanControllerSetNone.isChecked():
             self.handler.ui.stackController.setCurrentIndex(INDICES["fan_bb"])
             self.handler.ui.stackGraphs.setCurrentIndex(INDICES["fan_bb"])
+            self.handler.fanBBgraph.update_graph()
         else:
             self.handler.ui.stackController.setCurrentIndex(INDICES["fan_pid"])
             self.handler.ui.stackGraphs.setCurrentIndex(INDICES["fan_pid"])
+            self.handler.fanPIDgraph.update_graph()
 
     @Slot()
     def open_export(self):
@@ -112,12 +132,16 @@ class MainMenuHandler:
         self.handler.ui.btnGraphs.setChecked(True)
         self.handler.ui.container.setCurrentIndex(INDICES["graphs"])
         self.handler.graphsPage.update()
+        self.handler.graphsPage.home()
 
     # HEATER
     @Slot()
     def set_heater_bb(self):
         self.handler.ui.btnHeaterControllerSetBB.setChecked(True)
         self.handler.ui.btnHeaterControllerSetPID.setChecked(False)
+        self.handler.ui.btnHeaterControllerSetNone.setChecked(False)
+        self.handler.ui.stackController.setVisible(True)
+        self.handler.ui.frHeaterConfig.setVisible(True)
         self.handler.ui.stackController.setCurrentIndex(INDICES["heater_bb"])
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["heater_bb"])
 
@@ -125,8 +149,20 @@ class MainMenuHandler:
     def set_heater_pid(self):
         self.handler.ui.btnHeaterControllerSetPID.setChecked(True)
         self.handler.ui.btnHeaterControllerSetBB.setChecked(False)
+        self.handler.ui.btnHeaterControllerSetNone.setChecked(False)
+        self.handler.ui.stackController.setVisible(True)
+        self.handler.ui.frHeaterConfig.setVisible(True)
         self.handler.ui.stackController.setCurrentIndex(INDICES["heater_pid"])
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["heater_pid"])
+    
+    @Slot()
+    def set_heater_none(self):
+        self.handler.ui.btnHeaterControllerSetBB.setChecked(False)
+        self.handler.ui.btnHeaterControllerSetPID.setChecked(False)
+        self.handler.ui.btnHeaterControllerSetNone.setChecked(True)
+        self.handler.ui.stackController.setVisible(False)
+        self.handler.ui.frHeaterConfig.setVisible(False)
+        self.handler.ui.stackGraphs.setCurrentIndex(INDICES["heater_bb"])
     
     @Slot()
     def set_heater_high_power(self):
@@ -159,6 +195,9 @@ class MainMenuHandler:
     def set_fan_bb(self):
         self.handler.ui.btnFanControllerSetBB.setChecked(True)
         self.handler.ui.btnFanControllerSetPID.setChecked(False)
+        self.handler.ui.btnFanControllerSetNone.setChecked(False)
+        self.handler.ui.stackController.setVisible(True)
+        self.handler.ui.frFanConfig.setVisible(True)
         self.handler.ui.stackController.setCurrentIndex(INDICES["fan_bb"])
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["fan_bb"])
 
@@ -166,13 +205,31 @@ class MainMenuHandler:
     def set_fan_pid(self):
         self.handler.ui.btnFanControllerSetPID.setChecked(True)
         self.handler.ui.btnFanControllerSetBB.setChecked(False)
+        self.handler.ui.btnFanControllerSetNone.setChecked(False)
+        self.handler.ui.stackController.setVisible(True)
+        self.handler.ui.frFanConfig.setVisible(True)
         self.handler.ui.stackController.setCurrentIndex(INDICES["fan_pid"])
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["fan_pid"])
 
+    @Slot()
+    def set_fan_none(self):
+        self.handler.ui.btnFanControllerSetBB.setChecked(False)
+        self.handler.ui.btnFanControllerSetPID.setChecked(False)
+        self.handler.ui.btnFanControllerSetNone.setChecked(True)
+        self.handler.ui.stackController.setVisible(False)
+        self.handler.ui.frFanConfig.setVisible(False)
+        self.handler.ui.stackController.setCurrentIndex(INDICES["fan_bb"])
+        self.handler.ui.stackGraphs.setCurrentIndex(INDICES["fan_bb"])
+
     @Slot(bool)
     def stop_graphs(self, state):
+        self.handler.graphsPage.zoom_pending = 0
+
         self.handler.ui.btn_graph_Stop.setIcon(self.playIcon if state else self.pauseIcon)
         self.handler.areGraphsRunning = not state
+        if not state:
+            self.handler.fanController.was_stopped = True
+            self.handler.heaterController.was_stopped = True
 
         if state:
             # unlock graphs page
@@ -194,6 +251,11 @@ class MainMenuHandler:
                     self.open_import()
                 elif self.previous_page == INDICES["help"]:
                     self.open_help()
+            # reset graphs size
+            self.handler.fanBBgraph.home()
+            self.handler.fanPIDgraph.home()
+            self.handler.heaterBBgraph.home()
+            self.handler.heaterPIDgraph.home()
 
     @Slot()
     def clear_graphs(self):
@@ -207,3 +269,7 @@ class MainMenuHandler:
         self.handler.heaterPIDgraph.update_graph()
 
         self.handler.graphsPage.update()
+
+    @Slot()
+    def bb_help(self):
+        info_dialog(self.handler, "Opis sygnałów regulatora dwupołożeniowego", u":/assets/assets/bb.png")

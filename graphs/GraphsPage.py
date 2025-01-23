@@ -7,12 +7,11 @@ from graphs.Graph import Graph
 import rc_resources
 
 class HeaterGraphY(Graph):
-    def __init__(self, handler, layout, label):
-        super(HeaterGraphY, self).__init__(handler, layout, label, use_toolbar=True)
+    def __init__(self, handler, layout, label, shared_x = None):
+        super(HeaterGraphY, self).__init__(handler, layout, label, use_toolbar=True, shared_x=shared_x, show_coords=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
         self.init_plot(False, True)
-        self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
         self.controls = {
@@ -37,26 +36,13 @@ class HeaterGraphY(Graph):
             self.handler.heaterController.pid_temp_left,
             self.handler.heaterController.pid_temp_right,
         ], self.handler.heaterController.time)
-    
-    @Slot()
-    def on_draw(self, event):
-        if self.handler.graphsPage.zoom_pending == 0:
-            xlim = self.ax.get_xlim()
-            if xlim != self.handler.graphsPage.heater_graph_e.ax.get_xlim():
-                self.handler.graphsPage.zoom_pending = 1
-                self.handler.graphsPage.heater_graph_e.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_e.refresh()
-                self.handler.graphsPage.heater_graph_u.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_u.refresh()
-                self.handler.graphsPage.zoom_pending = 0
 
 class HeaterGraphE(Graph):
-    def __init__(self, handler, layout, label):
-        super(HeaterGraphE, self).__init__(handler, layout, label, use_toolbar=True)
+    def __init__(self, handler, layout, label, shared_x = None):
+        super(HeaterGraphE, self).__init__(handler, layout, label, use_toolbar=True, shared_x=shared_x, show_coords=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
         self.init_plot(False, True)
-        self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
         self.controls = {
@@ -72,25 +58,12 @@ class HeaterGraphE(Graph):
             self.handler.heaterController.pid_error,
         ], self.handler.heaterController.time)
     
-    @Slot()
-    def on_draw(self, event):
-        if self.handler.graphsPage.zoom_pending == 0:
-            xlim = self.ax.get_xlim()
-            if xlim != self.handler.graphsPage.heater_graph_u.ax.get_xlim():
-                self.handler.graphsPage.zoom_pending = 1
-                self.handler.graphsPage.heater_graph_u.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_u.refresh()
-                self.handler.graphsPage.heater_graph_y.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_y.refresh()
-                self.handler.graphsPage.zoom_pending = 0
-    
 class HeaterGraphU(Graph):
-    def __init__(self, handler, layout, label):
-        super(HeaterGraphU, self).__init__(handler, layout, label, use_toolbar=True)
+    def __init__(self, handler, layout, label, shared_x = None):
+        super(HeaterGraphU, self).__init__(handler, layout, label, use_toolbar=True, shared_x=shared_x, show_coords=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
         self.init_plot()
-        self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
         self.controls = {
@@ -125,26 +98,13 @@ class HeaterGraphU(Graph):
             self.handler.heaterController.pid_u_i,
             self.handler.heaterController.pid_u_d,
         ], self.handler.heaterController.time)
-    
-    @Slot()
-    def on_draw(self, event):
-        if self.handler.graphsPage.zoom_pending == 0:
-            xlim = self.ax.get_xlim()
-            if xlim != self.handler.graphsPage.heater_graph_e.ax.get_xlim():
-                self.handler.graphsPage.zoom_pending = 1
-                self.handler.graphsPage.heater_graph_e.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_e.refresh()
-                self.handler.graphsPage.heater_graph_y.ax.set_xlim(xlim)
-                self.handler.graphsPage.heater_graph_y.refresh()
-                self.handler.graphsPage.zoom_pending = 0
 
 class FanGraphY(Graph):
-    def __init__(self, handler, layout, label):
-        super(FanGraphY, self).__init__(handler, layout, label, use_toolbar=True)
+    def __init__(self, handler, layout, label, shared_x = None):
+        super(FanGraphY, self).__init__(handler, layout, label, use_toolbar=True, shared_x=shared_x, show_coords=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
         self.init_plot(False, True)
-        self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
         self.controls = {
@@ -165,25 +125,12 @@ class FanGraphY(Graph):
             self.handler.fanController.pid_speed,
         ], self.handler.fanController.time)
 
-    @Slot()
-    def on_draw(self, event):
-        if self.handler.graphsPage.zoom_pending == 0:
-            xlim = self.ax.get_xlim()
-            if xlim != self.handler.graphsPage.fan_graph_e.ax.get_xlim():
-                self.handler.graphsPage.zoom_pending = 1
-                self.handler.graphsPage.fan_graph_e.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_e.refresh()
-                self.handler.graphsPage.fan_graph_u.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_u.refresh()
-                self.handler.graphsPage.zoom_pending = 0
-
 class FanGraphE(Graph):
-    def __init__(self, handler, layout, label):
-        super(FanGraphE, self).__init__(handler, layout, label, use_toolbar=True)
+    def __init__(self, handler, layout, label, shared_x = None):
+        super(FanGraphE, self).__init__(handler, layout, label, use_toolbar=True, shared_x=shared_x, show_coords=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
         self.init_plot(False, True)
-        self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
         self.controls = {
@@ -199,25 +146,12 @@ class FanGraphE(Graph):
             self.handler.fanController.pid_error,
         ], self.handler.fanController.time)
 
-    @Slot()
-    def on_draw(self, event):
-        if self.handler.graphsPage.zoom_pending == 0:
-            xlim = self.ax.get_xlim()
-            if xlim != self.handler.graphsPage.fan_graph_u.ax.get_xlim():
-                self.handler.graphsPage.zoom_pending = 1
-                self.handler.graphsPage.fan_graph_u.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_u.refresh()
-                self.handler.graphsPage.fan_graph_y.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_y.refresh()
-                self.handler.graphsPage.zoom_pending = 0
-
 class FanGraphU(Graph):
-    def __init__(self, handler, layout, label):
-        super(FanGraphU, self).__init__(handler, layout, label, use_toolbar=True)
+    def __init__(self, handler, layout, label, shared_x = None):
+        super(FanGraphU, self).__init__(handler, layout, label, use_toolbar=True, shared_x=shared_x, show_coords=True)
         self.init_controls()
         self.keys = list(self.controls.keys())
         self.init_plot()
-        self.canvas.mpl_connect('draw_event', self.on_draw)
 
     def init_controls(self):
         self.controls = {
@@ -253,27 +187,19 @@ class FanGraphU(Graph):
             self.handler.fanController.pid_u_d,
         ], self.handler.fanController.time)
 
-    @Slot()
-    def on_draw(self, event):
-        if self.handler.graphsPage.zoom_pending == 0:
-            xlim = self.ax.get_xlim()
-            if xlim != self.handler.graphsPage.fan_graph_e.ax.get_xlim():
-                self.handler.graphsPage.zoom_pending = 1
-                self.handler.graphsPage.fan_graph_e.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_e.refresh()
-                self.handler.graphsPage.fan_graph_y.ax.set_xlim(xlim)
-                self.handler.graphsPage.fan_graph_y.refresh()
-                self.handler.graphsPage.zoom_pending = 0
-
 class GraphsPage:
     def __init__(self, handler):
         self.handler = handler
         self.heater_graph_y = HeaterGraphY(self.handler, self.handler.ui.layGraphsPageHeater_y, f"{DEGREE_SIGN}C")
         self.heater_graph_e = HeaterGraphE(self.handler, self.handler.ui.layGraphsPageHeater_e, f"{DEGREE_SIGN}C")
-        self.heater_graph_u = HeaterGraphU(self.handler, self.handler.ui.layGraphsPageHeater_u, "")
+        self.heater_graph_u = HeaterGraphU(self.handler, self.handler.ui.layGraphsPageHeater_u, "V")
+        self.heater_graph_e.ax.sharex(self.heater_graph_y.ax)
+        self.heater_graph_u.ax.sharex(self.heater_graph_y.ax)
         self.fan_graph_y = FanGraphY(self.handler, self.handler.ui.layGraphsPageFan_y, "RPM")
         self.fan_graph_e = FanGraphE(self.handler, self.handler.ui.layGraphsPageFan_e, "RPM")
-        self.fan_graph_u = FanGraphU(self.handler, self.handler.ui.layGraphsPageFan_u, "")
+        self.fan_graph_u = FanGraphU(self.handler, self.handler.ui.layGraphsPageFan_u, "V")
+        self.fan_graph_e.ax.sharex(self.fan_graph_y.ax)
+        self.fan_graph_u.ax.sharex(self.fan_graph_y.ax)
         self.playIcon = QIcon()
         self.pauseIcon = QIcon()
         self.playIcon.addFile(u":/assets/assets/play.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -287,6 +213,14 @@ class GraphsPage:
         self.fan_graph_y.update_graph()
         self.fan_graph_e.update_graph()
         self.fan_graph_u.update_graph()
+    
+    def home(self):
+        self.heater_graph_y.home()
+        self.heater_graph_e.home()
+        self.heater_graph_u.home()
+        self.fan_graph_y.home()
+        self.fan_graph_e.home()
+        self.fan_graph_u.home()
 
     @Slot()
     def open_heater(self):

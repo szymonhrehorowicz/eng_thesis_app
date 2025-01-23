@@ -1,7 +1,7 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtWidgets import QDialog, QVBoxLayout, QLabel, QDialogButtonBox
-from PySide6.QtCore import QSize
-from PySide6.QtGui import QIcon
+from PySide6.QtCore import QSize, Qt
+from PySide6.QtGui import QIcon, QPixmap
 import struct
 import rc_resources
 
@@ -21,7 +21,7 @@ DEGREE_SIGN = u'\N{DEGREE SIGN}'
 if __name__ == "__main__":
     pass
 
-def dialog(handler, window_text, text, icon):
+def dialog(handler, window_text, text, icon, picture=None):
     dialog = QDialog(handler)
     alertIcon = QIcon()
     alertIcon.addFile(icon, QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -29,8 +29,15 @@ def dialog(handler, window_text, text, icon):
     dialog.setWindowTitle(window_text)
     buttonBox = QDialogButtonBox(QDialogButtonBox.Ok)
     buttonBox.accepted.connect(dialog.close)
-    message = QLabel(text)
+    message = QLabel()
     layout = QVBoxLayout()
+    if picture:
+        pixmap = QPixmap(picture)
+        pixmap = pixmap.scaled(700, 350, Qt.AspectRatioMode.KeepAspectRatio)
+        message.setPixmap(pixmap)
+        message.setAlignment(Qt.AlignCenter)
+    else:
+        message.setText(text)
     layout.addWidget(message)
     layout.addWidget(buttonBox)
     dialog.setLayout(layout)
@@ -41,6 +48,9 @@ def error_dialog(handler, text):
 
 def success_dialog(handler, text):
     dialog(handler, "Sukces", text, u":/assets/assets/success.ico")
+
+def info_dialog(handler, header, picture):
+    dialog(handler, header, "", u":/assets/assets/help.ico", picture)
 
 def get_uint8(data):
     return bin(data)[2:].zfill(8)

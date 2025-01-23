@@ -1,4 +1,5 @@
 # This Python file uses the following encoding: utf-8
+from gc import enable
 from PySide6.QtCore import Slot
 from PySide6.QtWidgets import QSizePolicy, QWidget, QVBoxLayout
 from matplotlib.backends.backend_qtagg import FigureCanvas
@@ -6,35 +7,39 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_qtagg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.colors import CSS4_COLORS
 
-# Test
-import numpy as np
-from scipy.interpolate import make_interp_spline
-
 from PySide6.QtCore import Qt
+from matplotlib.transforms import Bbox
 
 class VerticalToolbar(NavigationToolbar):
     def __init__(self, canvas, parent=None):
         super().__init__(canvas, parent)
-
-        # Get the default actions
         actions = self.actions()
-
-        # Remove the existing widgets (actions)
         for action in actions:
             self.removeAction(action)
-
-        # Create a new vertical layout
         self.setOrientation(Qt.Vertical)
-
-        # Add the actions back to the vertical layout
         for action in actions:
             self.addAction(action)
-
         self.setMaximumWidth(50)
         self.setMinimumWidth(50)
 
+    # def home(self, *args):
+    #     self._nav_stack.home()
+    #     self.set_history_buttons()
+
+    #     nav_info = self._nav_stack()
+    #     if nav_info is None:
+    #         return
+    #     items = list(nav_info.items())
+    #     for ax, (view, (pos_orig, pos_active)) in items:
+    #         ax._set_view(view)
+    #         ax._set_position(pos_orig, 'original')
+    #         ax._set_position(pos_active, 'active')
+    #         ax.relim(visible_only=True)
+    #         ax.autoscale_view()
+    #     self.canvas.draw_idle()
+
 class Graph:
-    def __init__(self, handler, layout, label, use_toolbar=True):
+    def __init__(self, handler, layout, label=" ", use_toolbar=True, shared_x=None, show_coords=False):
         # Handlers
         self.handler = handler
         self.layout = layout
@@ -48,10 +53,19 @@ class Graph:
             self.layout.addWidget(self.toolbar)
         self.layout.addWidget(self.canvas)
         # Get plot handler
-        self.ax = self.canvas.figure.add_subplot(111)
+        if shared_x:
+            self.ax = self.canvas.figure.add_subplot(111, sharex=shared_x)
+        else:
+            self.ax = self.canvas.figure.add_subplot(111)
         # Label
         label = ' ' if label == '' else label
         self.label = label
+
+        if show_coords:
+            self.coordinate_text = self.ax.text(0.01, 0.99, '', transform=self.ax.transAxes, 
+                                                fontsize=10, verticalalignment='top', 
+                                                horizontalalignment='left', color='black')
+            self.canvas.mpl_connect('motion_notify_event', self.on_move)
 
     def init_controls(self):
         pass
@@ -88,8 +102,14 @@ class Graph:
                 helper += 1
         self.ax.legend(handles, labels, loc="lower left")
         self.ax.relim(visible_only=True)
-        self.ax.autoscale_view()
+        data = self.ax.get_lines()[0].get_xdata()
+        if data:
+            self.ax.set_xlim(xmin=min(data), xmax=max(data))
+        self.ax.autoscale_view(tight=True)
         self.canvas.draw()
+
+    def home(self):
+        self.toolbar.home()
 
     @Slot()
     def update_graph(self, type):
@@ -98,4 +118,11 @@ class Graph:
     def set_line_visibility(self, key, state):
         self.ax.get_lines()[list(self.controls.keys()).index(key)].set_visible(state)
         self.refresh()
+
+    def on_move(self, event):
+        if event.inaxes:  # Check if the mouse is within the axes
+            x, y = event.xdata, event.ydata
+            # Update the coordinates text
+            self.coordinate_text.set_text(f"{y:.2f}{" " + self.label if self.label != " " else ""}, {x:.2f}s")
+            self.canvas.draw()  # Redraw the canvas to update the text
 
