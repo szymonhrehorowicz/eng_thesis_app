@@ -127,10 +127,11 @@ class COM:
         for _ in range(0, 6 - len(omega)):
             omega = '0' + omega
         msg += omega
+        # POWER: 000 - 100
+        msg += str(self.handler.ui.inFanPWM.value()).zfill(3)
 
         msg += '\n'
         self.handler.serial.write_data(QByteArray(msg))
-        print(msg)
 
     # HEATER SETTERS
     @Slot(bool)
@@ -204,16 +205,14 @@ class COM:
         for _ in range(0, 6 - len(omega)):
             omega = '0' + omega
         msg += omega
+        # POWER: 000 - 100
+        msg += str(self.handler.ui.inHeaterBBPower.value()).zfill(3)
         # 17/33R : 0 - COIL_B | 1 - COIL_A
         msg += '1' if self.handler.ui.btnHeaterControllerSetHighPower.isChecked() else '0'
         # LEFT/RIGHT: 
         msg += '1' if self.handler.ui.btnHeaterControllerSetLeftCoil.isChecked() else '0'
-        # POWER: 000 - 100
-        msg += str(self.handler.ui.inHeaterBBPower.value()).zfill(3)
-
         msg += '\n'
         self.handler.serial.write_data(QByteArray(msg))
-        print(msg)
 
     def handle_all_data(self, data):
         # LCD DISPLAYS

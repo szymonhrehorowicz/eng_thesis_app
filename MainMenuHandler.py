@@ -166,19 +166,13 @@ class MainMenuHandler:
     
     @Slot()
     def set_heater_high_power(self):
-        R17POWER = 9
         self.handler.ui.btnHeaterControllerSetHighPower.setChecked(True)
         self.handler.ui.btnHeaterControllerSetLowPower.setChecked(False)
-        power = str(self.handler.ui.inHeaterBBPower.value() / 100 * R17POWER)
-        self.handler.ui.lblPower.setText(power[:power.index('.') + 2])
 
     @Slot()
     def set_heater_low_power(self):
-        R33POWER = 4.5
         self.handler.ui.btnHeaterControllerSetHighPower.setChecked(False)
         self.handler.ui.btnHeaterControllerSetLowPower.setChecked(True)
-        power = str(self.handler.ui.inHeaterBBPower.value() / 100 * R33POWER)
-        self.handler.ui.lblPower.setText(power[:power.index('.') + 2])
 
     @Slot()
     def set_heater_right_coil(self):
@@ -200,6 +194,7 @@ class MainMenuHandler:
         self.handler.ui.frFanConfig.setVisible(True)
         self.handler.ui.stackController.setCurrentIndex(INDICES["fan_bb"])
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["fan_bb"])
+        self.handler.ui.frFanPWM.setVisible(False)
 
     @Slot()
     def set_fan_pid(self):
@@ -210,6 +205,7 @@ class MainMenuHandler:
         self.handler.ui.frFanConfig.setVisible(True)
         self.handler.ui.stackController.setCurrentIndex(INDICES["fan_pid"])
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["fan_pid"])
+        self.handler.ui.frFanPWM.setVisible(False)
 
     @Slot()
     def set_fan_none(self):
@@ -220,6 +216,7 @@ class MainMenuHandler:
         self.handler.ui.frFanConfig.setVisible(False)
         self.handler.ui.stackController.setCurrentIndex(INDICES["fan_bb"])
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["fan_bb"])
+        self.handler.ui.frFanPWM.setVisible(True)
 
     @Slot(bool)
     def stop_graphs(self, state):
@@ -238,7 +235,6 @@ class MainMenuHandler:
             # lock graphs page
             self.handler.ui.btnGraphs.setEnabled(False)
             # move user to previouos page
-            print(self.handler.ui.container.currentIndex())
             if self.handler.ui.container.currentIndex() == INDICES["graphs"]:
                 if self.previous_page == INDICES["controls"]:
                     if self.handler.ui.stackControllerDesc.currentIndex() == INDICES["heater"]:

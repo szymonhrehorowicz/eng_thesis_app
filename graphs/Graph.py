@@ -22,21 +22,16 @@ class VerticalToolbar(NavigationToolbar):
         self.setMaximumWidth(50)
         self.setMinimumWidth(50)
 
-    # def home(self, *args):
-    #     self._nav_stack.home()
-    #     self.set_history_buttons()
+        unwanted_buttons = ['Customize', 'qt4_editor_options', 'Subplots']
+        to_remove = []
+        for x in self.toolitems:
+            print(x[0])
+            if x[0] in unwanted_buttons:
+                to_remove.append(x)
+        for x in to_remove:
+            self.toolitems.remove(x)
+        
 
-    #     nav_info = self._nav_stack()
-    #     if nav_info is None:
-    #         return
-    #     items = list(nav_info.items())
-    #     for ax, (view, (pos_orig, pos_active)) in items:
-    #         ax._set_view(view)
-    #         ax._set_position(pos_orig, 'original')
-    #         ax._set_position(pos_active, 'active')
-    #         ax.relim(visible_only=True)
-    #         ax.autoscale_view()
-    #     self.canvas.draw_idle()
 
 class Graph:
     def __init__(self, handler, layout, label=" ", use_toolbar=True, shared_x=None, show_coords=False):

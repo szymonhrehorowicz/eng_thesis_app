@@ -33,6 +33,10 @@ class FanControlsHandler:
         self.PID.set_value = self.ui.inFanSetValue.value()
         self.BB.set_value = self.ui.inFanSetValue.value()
         self._update_equation()
+    
+    @Slot()
+    def pwm(self, value):
+        self.ui.lblFanPWM.setText(str(value))
 
     # BB
     @Slot()

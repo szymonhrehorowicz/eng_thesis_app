@@ -132,6 +132,8 @@ class MainWindow(QMainWindow):
         # Fan BB inputs
         self.ui.inFanBBHysteresis.editingFinished.connect(self.fanControlsHandler.bb_setHysteresis)
         self.ui.inFanBBHysteresis.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.ui.inFanPWM.valueChanged.connect(self.fanControlsHandler.pwm)
+        self.ui.frFanPWM.setVisible(False)
         # Fan PID inputs
         self.ui.inFanPID_Kp.editingFinished.connect(self.fanControlsHandler.pid_setKp)
         self.ui.inFanPID_Ki.editingFinished.connect(self.fanControlsHandler.pid_setKi)

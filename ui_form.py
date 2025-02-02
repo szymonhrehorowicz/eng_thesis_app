@@ -667,6 +667,49 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.btnFanControllerSetPID)
 
+        self.frFanPWM = QFrame(self.frame_6)
+        self.frFanPWM.setObjectName(u"frFanPWM")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.frFanPWM.sizePolicy().hasHeightForWidth())
+        self.frFanPWM.setSizePolicy(sizePolicy5)
+        self.frFanPWM.setFrameShape(QFrame.StyledPanel)
+        self.frFanPWM.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_20 = QHBoxLayout(self.frFanPWM)
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.horizontalLayout_20.setContentsMargins(0, 0, 0, 0)
+        self.label = QLabel(self.frFanPWM)
+        self.label.setObjectName(u"label")
+
+        self.horizontalLayout_20.addWidget(self.label)
+
+        self.inFanPWM = QSlider(self.frFanPWM)
+        self.inFanPWM.setObjectName(u"inFanPWM")
+        self.inFanPWM.setMinimumSize(QSize(150, 0))
+        self.inFanPWM.setMaximumSize(QSize(200, 16777215))
+        self.inFanPWM.setMaximum(100)
+        self.inFanPWM.setOrientation(Qt.Horizontal)
+
+        self.horizontalLayout_20.addWidget(self.inFanPWM)
+
+        self.lblFanPWM = QLabel(self.frFanPWM)
+        self.lblFanPWM.setObjectName(u"lblFanPWM")
+
+        self.horizontalLayout_20.addWidget(self.lblFanPWM)
+
+        self.label_22 = QLabel(self.frFanPWM)
+        self.label_22.setObjectName(u"label_22")
+
+        self.horizontalLayout_20.addWidget(self.label_22)
+
+        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_20.addItem(self.horizontalSpacer_5)
+
+
+        self.horizontalLayout_4.addWidget(self.frFanPWM)
+
         self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer_4)
@@ -1099,9 +1142,6 @@ class Ui_MainWindow(object):
 
         self.frame_25 = QFrame(self.pageHeaterControllerConfigPID)
         self.frame_25.setObjectName(u"frame_25")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
         sizePolicy5.setHeightForWidth(self.frame_25.sizePolicy().hasHeightForWidth())
         self.frame_25.setSizePolicy(sizePolicy5)
         self.frame_25.setMaximumSize(QSize(16777215, 90))
@@ -3037,8 +3077,8 @@ class Ui_MainWindow(object):
 
         self.container.setCurrentIndex(0)
         self.stackControllerDesc.setCurrentIndex(1)
-        self.stackControllerSelect.setCurrentIndex(1)
-        self.stackController.setCurrentIndex(2)
+        self.stackControllerSelect.setCurrentIndex(0)
+        self.stackController.setCurrentIndex(1)
         self.stackGraphs.setCurrentIndex(2)
 
 
@@ -3160,7 +3200,7 @@ class Ui_MainWindow(object):
         self.btnHeaterControllerSetRightCoil.setStatusTip(QCoreApplication.translate("MainWindow", u"Wybierz prawy czujnik temperatury", None))
 #endif // QT_CONFIG(statustip)
         self.btnHeaterControllerSetRightCoil.setText(QCoreApplication.translate("MainWindow", u"y2", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Moc	</p></body></html>", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Napi\u0119cie  </p></body></html>", None))
 #if QT_CONFIG(tooltip)
         self.inHeaterBBPower.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
 #endif // QT_CONFIG(tooltip)
@@ -3168,7 +3208,7 @@ class Ui_MainWindow(object):
         self.inHeaterBBPower.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
 #endif // QT_CONFIG(statustip)
         self.lblPower.setText(QCoreApplication.translate("MainWindow", u"0", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"W", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"V", None))
         self.label_61.setText(QCoreApplication.translate("MainWindow", u"Ch\u0142odzenie wentylatorem", None))
         self.chxFanCooling.setText("")
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Warto\u015b\u0107 zadana	</p></body></html>", None))
@@ -3205,6 +3245,9 @@ class Ui_MainWindow(object):
         self.btnFanControllerSetPID.setStatusTip(QCoreApplication.translate("MainWindow", u"Wybierz regulator PID do sterowania wentylatorem", None))
 #endif // QT_CONFIG(statustip)
         self.btnFanControllerSetPID.setText(QCoreApplication.translate("MainWindow", u"PID", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"Wype\u0142nienie PWM  ", None))
+        self.lblFanPWM.setText(QCoreApplication.translate("MainWindow", u"0", None))
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"%", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Warto\u015b\u0107 zadana	</p></body></html>", None))
 #if QT_CONFIG(tooltip)
         self.inFanSetValue.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 6000", None))
