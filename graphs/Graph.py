@@ -25,7 +25,6 @@ class VerticalToolbar(NavigationToolbar):
         unwanted_buttons = ['Customize', 'qt4_editor_options', 'Subplots']
         to_remove = []
         for x in self.toolitems:
-            print(x[0])
             if x[0] in unwanted_buttons:
                 to_remove.append(x)
         for x in to_remove:
