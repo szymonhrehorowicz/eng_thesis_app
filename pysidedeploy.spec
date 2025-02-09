@@ -5,10 +5,10 @@ title = SPC
 
 # project directory. the general assumption is that project_dir is the parent directory
 # of input_file
-project_dir = D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2
+project_dir = 'D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2'
 
 # source file path
-input_file = D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\pysidedeploy.spec
+input_file = D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\mainwindow.py
 
 # directory where exec is stored
 exec_directory = .
@@ -40,7 +40,7 @@ qml_files =
 excluded_qml_plugins = 
 
 # qt modules used. comma separated
-modules = Widgets,WebEngineWidgets,Core,SerialPort,Gui
+modules = 
 
 # qt plugins used by the application
 plugins = platformthemes,platforminputcontexts,iconengines,accessiblebridge,generic,imageformats,xcbglintegrations,platforms/darwin,egldeviceintegrations,platforms,styles
