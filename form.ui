@@ -271,6 +271,17 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QPushButton" name="btnLanguage">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="resources.qrc">
+           <normaloff>:/assets/assets/pl.ico</normaloff>:/assets/assets/pl.ico</iconset>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>

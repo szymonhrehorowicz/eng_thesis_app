@@ -1,4 +1,8 @@
 <RCC>
+    <qresource prefix="/translations">
+        <file>en.qm</file>
+        <file>pl.qm</file>
+    </qresource>
     <qresource prefix="/assets">
         <file>assets/pause.ico</file>
         <file>assets/play.ico</file>
@@ -15,5 +19,7 @@
         <file>assets/graph.ico</file>
         <file>assets/bb.png</file>
         <file alias="template">assets/template.html</file>
+        <file>assets/pl.ico</file>
+        <file>assets/en.ico</file>
     </qresource>
 </RCC>

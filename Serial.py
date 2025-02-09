@@ -1,5 +1,5 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtCore import QIODeviceBase, Slot, QByteArray
+from PySide6.QtCore import QIODeviceBase, Slot, QByteArray, QCoreApplication
 from PySide6.QtSerialPort import QSerialPort, QSerialPortInfo
 from utilities import bytes_to_float, error_dialog, get_uint8, get_uint16, get_uint32, get_float, int2
 
@@ -51,7 +51,7 @@ class Serial:
 
     def close_serial_port(self):
         self.ui.btnConnect.setText("Connect")
-        self.ui.btnConnect.setStatusTip("Połącz się z urządzeniem")
+        self.ui.btnConnect.setStatusTip(QCoreApplication.tr("Połącz się z urządzeniem"))
         self.ui.btnConnect.setChecked(False)
 
         self.ui.btnHeaterControls.setEnabled(False)
@@ -100,7 +100,7 @@ class Serial:
             # If data is True, then button was just CHECKED - connect with device
             if not self.open_serial_port():
                 self.ui.btnConnect.setChecked(False)
-                error_dialog(self.handler, "Nie znaleziono urządzenia")
+                error_dialog(self.handler, QCoreApplication.tr("Nie znaleziono urządzenia"))
         else:
             # If data is False, then button was just UNCHECKED - disconnect with device
             self.close_serial_port()
@@ -122,7 +122,7 @@ class Serial:
 
                 # Handle successful connection
                 self.ui.btnConnect.setText("Disconnect")
-                self.ui.btnConnect.setStatusTip("Rozłącz się z urządzeniem")
+                self.ui.btnConnect.setStatusTip(QCoreApplication.tr("Rozłącz się z urządzeniem"))
                 self.ui.btnHeaterControls.setEnabled(True)
                 self.ui.btnFanControls.setEnabled(True)
                 self.ui.btn_graph_Stop.setEnabled(True)
@@ -334,7 +334,7 @@ class Serial:
     def handle_error(self, error):
         if error == QSerialPort.ResourceError:
             print("Serial error\n", self._serial.errorString())
-            error_dialog(self.handler, "Połączenie z urządzeniem zostało przerwane")
+            error_dialog(self.handler, QCoreApplication.tr("Połączenie z urządzeniem zostało przerwane"))
             self.close_serial_port()
 
 """

@@ -162,6 +162,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.btnHelp)
 
+        self.btnLanguage = QPushButton(self.menubar)
+        self.btnLanguage.setObjectName(u"btnLanguage")
+        icon10 = QIcon()
+        icon10.addFile(u":/assets/assets/pl.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btnLanguage.setIcon(icon10)
+
+        self.horizontalLayout.addWidget(self.btnLanguage)
+
 
         self.verticalLayout_2.addWidget(self.menubar)
 
@@ -3138,6 +3146,7 @@ class Ui_MainWindow(object):
         self.btnHelp.setStatusTip(QCoreApplication.translate("MainWindow", u"Dowiedz si\u0119 jak korzysta\u0107 z programu", None))
 #endif // QT_CONFIG(statustip)
         self.btnHelp.setText(QCoreApplication.translate("MainWindow", u"Pomoc", None))
+        self.btnLanguage.setText("")
 #if QT_CONFIG(tooltip)
         self.controllerDescHeater.setToolTip(QCoreApplication.translate("MainWindow", u"Uruchom lub zatrzymaj prac\u0119 grza\u0142ki", None))
 #endif // QT_CONFIG(tooltip)

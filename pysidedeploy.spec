@@ -8,7 +8,7 @@ title = SPC
 project_dir = D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2
 
 # source file path
-input_file = D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\mainwindow.py
+input_file = D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\pysidedeploy.spec
 
 # directory where exec is stored
 exec_directory = .
@@ -40,7 +40,7 @@ qml_files =
 excluded_qml_plugins = 
 
 # qt modules used. comma separated
-modules = WebEngineWidgets,Widgets,SerialPort,Core,Gui
+modules = Widgets,WebEngineWidgets,Core,SerialPort,Gui
 
 # qt plugins used by the application
 plugins = platformthemes,platforminputcontexts,iconengines,accessiblebridge,generic,imageformats,xcbglintegrations,platforms/darwin,egldeviceintegrations,platforms,styles

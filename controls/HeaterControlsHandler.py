@@ -1,5 +1,5 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtCore import Slot
+from PySide6.QtCore import Slot, QCoreApplication
 
 class HeaterControlsHandler:
     R17POWER = 9
@@ -18,13 +18,13 @@ class HeaterControlsHandler:
     def change_equation_type(self):
         self.equation.set_equation_type()
         if self.equation.eq_type == "parallel":
-            self.ui.btnEquationTypeHeater.setText("równoległa")
+            self.ui.btnEquationTypeHeater.setText(QCoreApplication.tr("równoległa"))
             self.ui.frHeaterTi.hide()
             self.ui.frHeaterTd.hide()
             self.ui.frHeaterKi.show()
             self.ui.frHeaterKd.show()
         else:
-            self.ui.btnEquationTypeHeater.setText("akademicka")
+            self.ui.btnEquationTypeHeater.setText(QCoreApplication.tr("akademicka"))
             self.ui.frHeaterTi.show()
             self.ui.frHeaterTd.show()
             self.ui.frHeaterKi.hide()

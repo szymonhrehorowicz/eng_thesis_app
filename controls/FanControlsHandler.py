@@ -1,5 +1,5 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtCore import Slot
+from PySide6.QtCore import Slot, QCoreApplication
 
 class FanControlsHandler:
     def __init__(self, handler, pid, bb):
@@ -15,13 +15,13 @@ class FanControlsHandler:
     def change_equation_type(self):
         self.equation.set_equation_type()
         if self.equation.eq_type == "parallel":
-            self.ui.btnEquationTypeFan.setText("równoległa")
+            self.ui.btnEquationTypeFan.setText(QCoreApplication.tr("równoległa"))
             self.ui.frFanTi.hide()
             self.ui.frFanTd.hide()
             self.ui.frFanKi.show()
             self.ui.frFanKd.show()
         else:
-            self.ui.btnEquationTypeFan.setText("akademicka")
+            self.ui.btnEquationTypeFan.setText(QCoreApplication.tr("akademicka"))
             self.ui.frFanTi.show()
             self.ui.frFanTd.show()
             self.ui.frFanKi.hide()

@@ -1,5 +1,5 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtCore import Slot, QSize
+from PySide6.QtCore import Slot, QSize, QCoreApplication
 from PySide6.QtGui import QIcon
 from utilities import info_dialog
 
@@ -268,4 +268,4 @@ class MainMenuHandler:
 
     @Slot()
     def bb_help(self):
-        info_dialog(self.handler, "Opis sygnałów regulatora dwupołożeniowego", u":/assets/assets/bb.png")
+        info_dialog(self.handler, QCoreApplication.tr("Opis sygnałów regulatora dwupołożeniowego"), u":/assets/assets/bb.png")

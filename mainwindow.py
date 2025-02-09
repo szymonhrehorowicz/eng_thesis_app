@@ -1,8 +1,11 @@
+from email.mime import application
 import sys
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMainWindow, QAbstractSpinBox
 from PySide6.QtWebEngineWidgets import QWebEngineView
-from ui_form import Ui_MainWindow
-from PySide6.QtCore import QTimer
+from ui_form import QSize, Ui_MainWindow
+from PySide6.QtCore import QTimer, QTranslator
+from PySide6 import QtWidgets
 ###
 from check_connection import is_connected
 from MathEquation import MathEquation
@@ -28,6 +31,8 @@ import rc_resources
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.app_translator = QTranslator(self)
+        self.current_language = "pl"
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.fanPIDequationwebView = QWebEngineView()
@@ -43,6 +48,8 @@ class MainWindow(QMainWindow):
         self.ui.frFanKi.show()
         self.ui.frFanKd.show()
         self.mainMenuHandler = MainMenuHandler(self)
+        self.ui.btnLanguage.clicked.connect(self.change_language)
+
         # Controllers
         self.fanBBcontroller = BB()
         self.fanPIDcontroller = PID()
@@ -340,6 +347,21 @@ class MainWindow(QMainWindow):
     def tim_1s_IRS(self):
         if self.isSerialConnected:
             self.serial.send_ack()
+    
+    def change_language(self):
+        lang = "en" if self.current_language == "pl" else "pl"
+        
+        QApplication.instance().removeTranslator(self.app_translator)
+        if self.app_translator.load(f"{lang}.qm", ":/translations"):
+            QApplication.instance().installTranslator(self.app_translator)
+
+        self.ui.retranslateUi(self)
+
+        langIcon = QIcon()
+        langIcon.addFile(f":/assets/assets/{lang}.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.ui.btnLanguage.setIcon(langIcon)
+
+        self.current_language = lang
 
 
 if __name__ == "__main__":

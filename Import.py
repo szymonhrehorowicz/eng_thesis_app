@@ -1,5 +1,5 @@
 # This Python file uses the following encoding: utf-8
-from PySide6.QtCore import Slot
+from PySide6.QtCore import Slot, QCoreApplication
 from PySide6.QtWidgets import QFileDialog
 from openpyxl import load_workbook
 from openpyxl.utils.exceptions import InvalidFileException
@@ -13,12 +13,12 @@ class Import:
 
     @Slot()
     def load_file(self):
-        self.filename = QFileDialog.getOpenFileName(None, "Wybierz plik z nastawami regulatorow", filter="Excel files (*.xlsx)")[0]
+        self.filename = QFileDialog.getOpenFileName(None, QCoreApplication.tr("Wybierz plik z nastawami regulatorow"), filter="Excel files (*.xlsx)")[0]
 
         try:
             workbook = load_workbook(self.filename)
         except InvalidFileException:
-            error_dialog(self.handler, "Wybrano zły plik")
+            error_dialog(self.handler, QCoreApplication.tr("Wybrano zły plik"))
             return
         
         sheet = workbook.active
@@ -33,10 +33,10 @@ class Import:
             
         if len(student_idxs) == 0:
             self.handler.ui.btnImportAction.setEnabled(False)
-            error_dialog(self.handler, "W pliku nie ma żadnych poprawnych danych do wczytania")
+            error_dialog(self.handler, QCoreApplication.tr("W pliku nie ma żadnych poprawnych danych do wczytania"))
         else:
             self.handler.ui.btnImportAction.setEnabled(True)
-            success_dialog(self.handler, "Dane wczytano pomyślnie")
+            success_dialog(self.handler, QCoreApplication.tr("Dane wczytano pomyślnie"))
 
     @Slot()
     def import_data(self):
@@ -45,7 +45,7 @@ class Import:
         try:
             workbook = load_workbook(self.filename)
         except InvalidFileException:
-            error_dialog(self.handler, "Wybrano zły plik")
+            error_dialog(self.handler, QCoreApplication.tr("Wybrano zły plik"))
             return
         
         sheet = workbook.active
@@ -57,7 +57,7 @@ class Import:
                 row_of_interest = row_idx + idx_start
         
         if row_of_interest == 0:
-            error_dialog(self.handler, "W pliku nie ma danych studenta z podanym numerem albumu")
+            error_dialog(self.handler, QCoreApplication.tr("W pliku nie ma danych studenta z podanym numerem albumu"))
             return
         
         params = [elem.value for elem in tuple(sheet.rows)[row_of_interest][1:]]

@@ -4,6 +4,7 @@ from PySide6.QtWidgets import QFileDialog
 from datetime import datetime
 from openpyxl import Workbook
 from utilities import error_dialog, success_dialog
+from PySide6.QtCore import QCoreApplication
 import os
 
 class Export:
@@ -87,7 +88,7 @@ class Export:
     def export(self):
         date = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
         desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
-        fileName = QFileDialog.getSaveFileName(None, "Wybierz lokalizacje oraz nazwe pliku", f"{desktop}\\DanePomiarowe_{date}.xlsx", "Excel files (*.xlsx)")[0]
+        fileName = QFileDialog.getSaveFileName(None, QCoreApplication.tr("Wybierz lokalizacje oraz nazwe pliku"), f"{desktop}\\DanePomiarowe_{date}.xlsx", "Excel files (*.xlsx)")[0]
 
         workbook = Workbook()
         sheet = workbook.active
@@ -114,7 +115,7 @@ class Export:
         vertical_idx = 1
 
         if exportHeater:
-            sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = "Grzalka"
+            sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = QCoreApplication.tr("Grzalka")
             for master_key in list(self.data_to_export["Grzalka"].keys())[1:]:
                 vertical_idx = 2
                 if self.data_to_export["Grzalka"]["states"][master_key]:
@@ -142,7 +143,7 @@ class Export:
                             vertical_idx = 3
         if exportFan:
             vertical_idx = 1
-            sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = "Wentylator"
+            sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = QCoreApplication.tr("Wentylator")
             for master_key in list(self.data_to_export["Wentylator"].keys())[1:]:
                 vertical_idx = 2
                 if self.data_to_export["Wentylator"]["states"][master_key]:
@@ -172,9 +173,9 @@ class Export:
         # Save to file
         try:
             workbook.save(filename=fileName)
-            success_dialog(self.handler, f"Pomyślnie wyeksportowano dane do pliku:\n{fileName}")
+            success_dialog(self.handler, QCoreApplication.tr(f"Pomyślnie wyeksportowano dane do pliku:\n{fileName}"))
         except PermissionError:
-            error_dialog(self.handler, "Plik do którego chcesz nadpisać dane jest obecnie otwarty. Zamknij go i spróbuj ponownie.")
+            error_dialog(self.handler, QCoreApplication.tr("Plik do którego chcesz nadpisać dane jest obecnie otwarty. Zamknij go i spróbuj ponownie."))
         except Exception:
             pass
 
