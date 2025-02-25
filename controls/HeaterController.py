@@ -38,6 +38,15 @@ class HeaterController:
         self.pid_temp_right = []
         self.pid_mode = []
 
+    def get_none(self):
+        return [
+            self.time,
+            self.bb_temp_left,
+            self.bb_temp_right,
+            self.bb_u_max,
+            self.bb_u_min
+        ]
+
     def get_bb(self):
         return [
             self.time,

@@ -121,7 +121,6 @@ class Import:
             self.handler.ui.inHeaterPID_Kaw.setValue(float(params[self._INDICES["heater_pid_kaw"]]))
             self.handler.heaterControlsHandler.pid_setKaw()
         if params[self._INDICES["heater_coil_ref"]]:
-            print(params[self._INDICES["heater_coil_ref"]])
             if int(params[self._INDICES["heater_coil_ref"]]) == 17:
                 self.handler.mainMenuHandler.set_heater_high_power()
             else:

@@ -36,6 +36,14 @@ class FanController:
         self.pid_speed = []
         self.pid_mode = []
 
+    def get_none(self):
+        return [
+            self.time,
+            self.bb_speed,
+            self.bb_u_max,
+            self.bb_u_min
+        ]
+
     def get_bb(self):
         return [
             self.time,

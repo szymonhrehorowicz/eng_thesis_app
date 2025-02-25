@@ -1,4 +1,5 @@
 # This Python file uses the following encoding: utf-8
+from doctest import master
 from PySide6.QtCore import Slot
 from PySide6.QtWidgets import QFileDialog
 from datetime import datetime
@@ -15,6 +16,14 @@ class Export:
                 "states": {
                     "Regulator dwupolozeniowy": True,
                     "Regulator PID": True,
+                    "Brak regulatora": True,
+                },
+                "Brak regulatora":
+                {
+                    "y_1(t)": True,
+                    "y_2(t)": True,
+                    "u_max": True,
+                    "u_min": True,
                 },
                 "Regulator dwupolozeniowy": {
                     "r(t)": True,
@@ -51,6 +60,13 @@ class Export:
                 "states": {
                     "Regulator dwupolozeniowy": True,
                     "Regulator PID": True,
+                    "Brak regulatora": True,
+                },
+                "Brak regulatora":
+                {
+                    "y(t)": True,
+                    "u_max": True,
+                    "u_min": True,
                 },
                 "Regulator dwupolozeniowy": {
                     "r(t)": True,
@@ -119,7 +135,13 @@ class Export:
             for master_key in list(self.data_to_export["Grzalka"].keys())[1:]:
                 vertical_idx = 2
                 if self.data_to_export["Grzalka"]["states"][master_key]:
-                    data = self.handler.heaterController.get_bb() if master_key == "Regulator dwupolozeniowy" else self.handler.heaterController.get_pid()
+                    if master_key == "Regulator dwupolozeniowy":
+                        data = self.handler.heaterController.get_bb()
+                    elif master_key == "Regulator PID":
+                        data = self.handler.heaterController.get_pid()
+                    else:
+                        data = self.handler.heaterController.get_none()
+                    
                     if len(data[0]) > 0: 
                         sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = master_key
                         vertical_idx += 1
@@ -134,20 +156,27 @@ class Export:
                         horizontal_idx += 1
                         # Add rest of signals
                         for idx, key in enumerate(self.data_to_export["Grzalka"][master_key]):
-                            sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = key
-                            vertical_idx += 1
-                            for value in data[idx + 1]:
-                                sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = value
+                            if self.data_to_export["Grzalka"][master_key][key]:
+                                sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = key
                                 vertical_idx += 1
-                            horizontal_idx += 1
-                            vertical_idx = 3
+                                for value in data[idx + 1]:
+                                    sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = value
+                                    vertical_idx += 1
+                                horizontal_idx += 1
+                                vertical_idx = 3
         if exportFan:
             vertical_idx = 1
             sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = QCoreApplication.tr("Wentylator")
             for master_key in list(self.data_to_export["Wentylator"].keys())[1:]:
                 vertical_idx = 2
                 if self.data_to_export["Wentylator"]["states"][master_key]:
-                    data = self.handler.fanController.get_bb() if master_key == "Regulator dwupolozeniowy" else self.handler.fanController.get_pid()
+                    if master_key == "Regulator dwupolozeniowy":
+                        data = self.handler.fanController.get_bb()
+                    elif master_key == "Regulator PID":
+                        data = self.handler.fanController.get_pid()
+                    else:
+                        data = self.handler.fanController.get_none()
+
                     if len(data[0]) > 0: 
                         sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = master_key
                         vertical_idx += 1
@@ -162,13 +191,14 @@ class Export:
                         horizontal_idx += 1
                         # Add rest of signals
                         for idx, key in enumerate(self.data_to_export["Wentylator"][master_key]):
-                            sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = key
-                            vertical_idx += 1
-                            for value in data[idx + 1]:
-                                sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = value
+                            if self.data_to_export["Wentylator"][master_key][key]:
+                                sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = key
                                 vertical_idx += 1
-                            horizontal_idx += 1
-                            vertical_idx = 3
+                                for value in data[idx + 1]:
+                                    sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = value
+                                    vertical_idx += 1
+                                horizontal_idx += 1
+                                vertical_idx = 3
             
         # Save to file
         try:
@@ -181,6 +211,17 @@ class Export:
 
 
     # Main selectors
+    @Slot(bool)
+    def set_heater_none(self, state):
+        self.data_to_export["Grzalka"]["states"]["Brak regulatora"] = state
+        keys = self.data_to_export["Grzalka"]["Brak regulatora"].keys()
+        for key in keys:
+            self.data_to_export["Grzalka"]["Brak regulatora"][key] = state
+        self.handler.ui.chxExHeaterNone_y_1.setChecked(state)
+        self.handler.ui.chxExHeaterNone_y_2.setChecked(state)
+        self.handler.ui.chxExHeaterNone_u_max.setChecked(state)
+        self.handler.ui.chxExHeaterNone_u_min.setChecked(state)
+
     @Slot(bool)
     def set_heater_bb(self, state):
         self.data_to_export["Grzalka"]["states"]["Regulator dwupolozeniowy"] = state
@@ -220,6 +261,16 @@ class Export:
         self.handler.ui.chxExHeaterPID_y_1.setChecked(state)
         self.handler.ui.chxExHeaterPID_y_2.setChecked(state)
         self.handler.ui.chxExHeaterPID_mode.setChecked(state)
+
+    @Slot(bool)
+    def set_fan_none(self, state):
+        self.data_to_export["Wentylator"]["states"]["Brak regulatora"] = state
+        keys = self.data_to_export["Wentylator"]["Brak regulatora"].keys()
+        for key in keys:
+            self.data_to_export["Wentylator"]["Brak regulatora"][key] = state
+        self.handler.ui.chxExFanNone_y.setChecked(state)
+        self.handler.ui.chxExFanNone_u_max.setChecked(state)
+        self.handler.ui.chxExFanNone_u_min.setChecked(state)
     
     @Slot(bool)
     def set_fan_bb(self, state):
@@ -259,7 +310,6 @@ class Export:
         self.handler.ui.chxExFanPID_y.setChecked(state)
         self.handler.ui.chxExFanPID_mode.setChecked(state)
 
-    # Heater BANG BANG
     def sub_button_handler(self, state, handle, controller: str, _type: str):
         if state:
             self.data_to_export[controller]["states"][_type] = True
@@ -269,6 +319,25 @@ class Export:
                 self.data_to_export[controller]["states"][_type] = False
                 handle.setChecked(False)
 
+    # Heater None
+    @Slot(bool)
+    def set_heater_none_y_1(self, state):
+        self.data_to_export["Grzalka"]["Brak regulatora"]["y_1(t)"] = state
+        self.sub_button_handler(state, self.handler.ui.chxExHeaterNone, "Grzalka", "Brak regulatora")
+
+    def set_heater_none_y_2(self, state):
+        self.data_to_export["Grzalka"]["Brak regulatora"]["y_2(t)"] = state
+        self.sub_button_handler(state, self.handler.ui.chxExHeaterNone, "Grzalka", "Brak regulatora")
+
+    def set_heater_none_u_max(self, state):
+        self.data_to_export["Grzalka"]["Brak regulatora"]["u_max"] = state
+        self.sub_button_handler(state, self.handler.ui.chxExHeaterNone, "Grzalka", "Brak regulatora")
+
+    def set_heater_none_u_min(self, state):
+        self.data_to_export["Grzalka"]["Brak regulatora"]["u_min"] = state
+        self.sub_button_handler(state, self.handler.ui.chxExHeaterNone, "Grzalka", "Brak regulatora")
+
+    # Heater BANG BANG
     @Slot(bool)
     def set_heater_bb_x(self, state):
         self.data_to_export["Grzalka"]["Regulator dwupolozeniowy"]["r(t)"] = state
@@ -399,6 +468,22 @@ class Export:
     def set_heater_pid_mode(self, state):
         self.data_to_export["Grzalka"]["Regulator PID"]["stan"] = state
         self.sub_button_handler(state, self.handler.ui.chxExHeaterPID, "Grzalka", "Regulator PID")
+
+    # Fan None
+    @Slot(bool)
+    def set_fan_none_y(self, state):
+        self.data_to_export["Wentylator"]["Brak regulatora"]["y(t)"] = state
+        self.sub_button_handler(state, self.handler.ui.chxExFanNone, "Wentylator", "Brak regulatora")
+    
+    @Slot(bool)
+    def set_fan_none_u_max(self, state):
+        self.data_to_export["Wentylator"]["Brak regulatora"]["u_max"] = state
+        self.sub_button_handler(state, self.handler.ui.chxExFanNone, "Wentylator", "Brak regulatora")
+
+    @Slot(bool)
+    def set_fan_none_u_min(self, state):
+        self.data_to_export["Wentylator"]["Brak regulatora"]["u_min"] = state
+        self.sub_button_handler(state, self.handler.ui.chxExFanNone, "Wentylator", "Brak regulatora")
 
     # Fan BANG BANG
     @Slot(bool)

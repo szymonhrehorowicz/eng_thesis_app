@@ -115,8 +115,6 @@ class Serial:
 
         while len(data) > 0:
             try:
-                
-                print("start",len(data))
                 header = get_uint8(data[0])[::-1]
                 data = data[1:]
 
@@ -307,8 +305,6 @@ class Serial:
                 data = data[4:]
                 temp_bottom = bytes_to_float(data[:4])
                 data = data[4:]
-
-                print("end",len(data))
 
                 if isAllData:
                     all_data.append(speed)

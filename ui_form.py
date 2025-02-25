@@ -429,7 +429,7 @@ class Ui_MainWindow(object):
         self.inHeaterBBPower.setSizePolicy(sizePolicy4)
         self.inHeaterBBPower.setMinimumSize(QSize(150, 0))
         self.inHeaterBBPower.setMaximumSize(QSize(200, 16777215))
-        self.inHeaterBBPower.setMaximum(100)
+        self.inHeaterBBPower.setMaximum(120)
         self.inHeaterBBPower.setSingleStep(1)
         self.inHeaterBBPower.setPageStep(1)
         self.inHeaterBBPower.setOrientation(Qt.Horizontal)
@@ -2230,6 +2230,47 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_12.addWidget(self.label_36)
 
+        self.chxExHeaterNone = QCheckBox(self.frame_33)
+        self.chxExHeaterNone.setObjectName(u"chxExHeaterNone")
+        self.chxExHeaterNone.setFont(font)
+        self.chxExHeaterNone.setChecked(True)
+
+        self.verticalLayout_12.addWidget(self.chxExHeaterNone)
+
+        self.frame_7 = QFrame(self.frame_33)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setFrameShape(QFrame.NoFrame)
+        self.frame_7.setFrameShadow(QFrame.Plain)
+        self.frame_7.setLineWidth(0)
+        self.gridLayout_11 = QGridLayout(self.frame_7)
+        self.gridLayout_11.setObjectName(u"gridLayout_11")
+        self.chxExHeaterNone_y_1 = QCheckBox(self.frame_7)
+        self.chxExHeaterNone_y_1.setObjectName(u"chxExHeaterNone_y_1")
+        self.chxExHeaterNone_y_1.setChecked(True)
+
+        self.gridLayout_11.addWidget(self.chxExHeaterNone_y_1, 0, 0, 1, 1)
+
+        self.chxExHeaterNone_y_2 = QCheckBox(self.frame_7)
+        self.chxExHeaterNone_y_2.setObjectName(u"chxExHeaterNone_y_2")
+        self.chxExHeaterNone_y_2.setChecked(True)
+
+        self.gridLayout_11.addWidget(self.chxExHeaterNone_y_2, 0, 1, 1, 1)
+
+        self.chxExHeaterNone_u_max = QCheckBox(self.frame_7)
+        self.chxExHeaterNone_u_max.setObjectName(u"chxExHeaterNone_u_max")
+        self.chxExHeaterNone_u_max.setChecked(True)
+
+        self.gridLayout_11.addWidget(self.chxExHeaterNone_u_max, 1, 0, 1, 1)
+
+        self.chxExHeaterNone_u_min = QCheckBox(self.frame_7)
+        self.chxExHeaterNone_u_min.setObjectName(u"chxExHeaterNone_u_min")
+        self.chxExHeaterNone_u_min.setChecked(True)
+
+        self.gridLayout_11.addWidget(self.chxExHeaterNone_u_min, 1, 1, 1, 1)
+
+
+        self.verticalLayout_12.addWidget(self.frame_7)
+
         self.chxExHeaterBB = QCheckBox(self.frame_33)
         self.chxExHeaterBB.setObjectName(u"chxExHeaterBB")
         font4 = QFont()
@@ -2250,6 +2291,7 @@ class Ui_MainWindow(object):
         self.frame_35 = QFrame(self.frame_33)
         self.frame_35.setObjectName(u"frame_35")
         self.frame_35.setFrameShape(QFrame.NoFrame)
+        self.frame_35.setLineWidth(0)
         self.gridLayout_6 = QGridLayout(self.frame_35)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.chxExHeaterBB_u_min = QCheckBox(self.frame_35)
@@ -2450,6 +2492,41 @@ class Ui_MainWindow(object):
         self.label_46.setFont(font3)
 
         self.verticalLayout_13.addWidget(self.label_46)
+
+        self.chxExFanNone = QCheckBox(self.frame_34)
+        self.chxExFanNone.setObjectName(u"chxExFanNone")
+        self.chxExFanNone.setFont(font)
+        self.chxExFanNone.setChecked(True)
+
+        self.verticalLayout_13.addWidget(self.chxExFanNone)
+
+        self.frame_8 = QFrame(self.frame_34)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setFrameShape(QFrame.NoFrame)
+        self.frame_8.setFrameShadow(QFrame.Plain)
+        self.frame_8.setLineWidth(0)
+        self.gridLayout_10 = QGridLayout(self.frame_8)
+        self.gridLayout_10.setObjectName(u"gridLayout_10")
+        self.chxExFanNone_u_min = QCheckBox(self.frame_8)
+        self.chxExFanNone_u_min.setObjectName(u"chxExFanNone_u_min")
+        self.chxExFanNone_u_min.setChecked(True)
+
+        self.gridLayout_10.addWidget(self.chxExFanNone_u_min, 1, 1, 1, 1)
+
+        self.chxExFanNone_u_max = QCheckBox(self.frame_8)
+        self.chxExFanNone_u_max.setObjectName(u"chxExFanNone_u_max")
+        self.chxExFanNone_u_max.setChecked(True)
+
+        self.gridLayout_10.addWidget(self.chxExFanNone_u_max, 1, 0, 1, 1)
+
+        self.chxExFanNone_y = QCheckBox(self.frame_8)
+        self.chxExFanNone_y.setObjectName(u"chxExFanNone_y")
+        self.chxExFanNone_y.setChecked(True)
+
+        self.gridLayout_10.addWidget(self.chxExFanNone_y, 0, 0, 1, 1)
+
+
+        self.verticalLayout_13.addWidget(self.frame_8)
 
         self.chxExFanBB = QCheckBox(self.frame_34)
         self.chxExFanBB.setObjectName(u"chxExFanBB")
@@ -2833,6 +2910,20 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_38.addWidget(self.btnGraphsPage_y)
 
+        self.line_14 = QFrame(self.frame_41)
+        self.line_14.setObjectName(u"line_14")
+        self.line_14.setFrameShape(QFrame.Shape.VLine)
+        self.line_14.setFrameShadow(QFrame.Shadow.Sunken)
+
+        self.horizontalLayout_38.addWidget(self.line_14)
+
+        self.btnGraphPage_e = QPushButton(self.frame_41)
+        self.btnGraphPage_e.setObjectName(u"btnGraphPage_e")
+        self.btnGraphPage_e.setCheckable(True)
+        self.btnGraphPage_e.setChecked(True)
+
+        self.horizontalLayout_38.addWidget(self.btnGraphPage_e)
+
         self.line_9 = QFrame(self.frame_41)
         self.line_9.setObjectName(u"line_9")
         self.line_9.setFrameShape(QFrame.Shape.VLine)
@@ -3083,7 +3174,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.container.setCurrentIndex(0)
+        self.container.setCurrentIndex(1)
         self.stackControllerDesc.setCurrentIndex(1)
         self.stackControllerSelect.setCurrentIndex(0)
         self.stackController.setCurrentIndex(1)
@@ -3456,6 +3547,11 @@ class Ui_MainWindow(object):
         self.btnFanPID_graph_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
         self.btnFanPID_graph_u.setText(QCoreApplication.translate("MainWindow", u"u(t)", None))
         self.label_36.setText(QCoreApplication.translate("MainWindow", u"Grza\u0142ka", None))
+        self.chxExHeaterNone.setText(QCoreApplication.translate("MainWindow", u"Brak regulatora", None))
+        self.chxExHeaterNone_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
+        self.chxExHeaterNone_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
+        self.chxExHeaterNone_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
+        self.chxExHeaterNone_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
         self.chxExHeaterBB.setText(QCoreApplication.translate("MainWindow", u"Regulator dwupo\u0142o\u017ceniowy", None))
         self.chxExHeaterBB_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
         self.chxExHeaterBB_x_max.setText(QCoreApplication.translate("MainWindow", u"r_max", None))
@@ -3485,6 +3581,10 @@ class Ui_MainWindow(object):
         self.chxExHeaterPID_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
         self.chxExHeaterPID_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
         self.label_46.setText(QCoreApplication.translate("MainWindow", u"Wentylator", None))
+        self.chxExFanNone.setText(QCoreApplication.translate("MainWindow", u"Brak regulatora", None))
+        self.chxExFanNone_u_min.setText(QCoreApplication.translate("MainWindow", u"u_min", None))
+        self.chxExFanNone_u_max.setText(QCoreApplication.translate("MainWindow", u"u_max", None))
+        self.chxExFanNone_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
         self.chxExFanBB.setText(QCoreApplication.translate("MainWindow", u"Regulator dwupo\u0142o\u017ceniowy", None))
         self.chxExFanBB_mode.setText(QCoreApplication.translate("MainWindow", u"stan", None))
         self.chxExFanBB_x_max.setText(QCoreApplication.translate("MainWindow", u"r_max", None))
@@ -3528,6 +3628,7 @@ class Ui_MainWindow(object):
         self.btnGraphsPage_y_1.setText(QCoreApplication.translate("MainWindow", u"y_1(t)", None))
         self.btnGraphsPage_y_2.setText(QCoreApplication.translate("MainWindow", u"y_2(t)", None))
         self.btnGraphsPage_y.setText(QCoreApplication.translate("MainWindow", u"y(t)", None))
+        self.btnGraphPage_e.setText(QCoreApplication.translate("MainWindow", u"e(t)", None))
         self.btnGraphsPage_u_p.setText(QCoreApplication.translate("MainWindow", u"u_p(t)", None))
         self.btnGraphsPage_u_i.setText(QCoreApplication.translate("MainWindow", u"u_i(t)", None))
         self.btnGraphsPage_u_d.setText(QCoreApplication.translate("MainWindow", u"u_d(t)", None))

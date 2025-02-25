@@ -294,7 +294,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Controls">
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -859,7 +859,7 @@
                            <string>Min: 0 | Max: 100</string>
                           </property>
                           <property name="maximum">
-                           <number>100</number>
+                           <number>120</number>
                           </property>
                           <property name="singleStep">
                            <number>1</number>
@@ -4259,6 +4259,76 @@
                </widget>
               </item>
               <item>
+               <widget class="QCheckBox" name="chxExHeaterNone">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Brak regulatora</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_7">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="lineWidth">
+                 <number>0</number>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_11">
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="chxExHeaterNone_y_1">
+                   <property name="text">
+                    <string>y_1(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QCheckBox" name="chxExHeaterNone_y_2">
+                   <property name="text">
+                    <string>y_2(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QCheckBox" name="chxExHeaterNone_u_max">
+                   <property name="text">
+                    <string>u_max</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QCheckBox" name="chxExHeaterNone_u_min">
+                   <property name="text">
+                    <string>u_min</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
                <widget class="QCheckBox" name="chxExHeaterBB">
                 <property name="font">
                  <font>
@@ -4285,6 +4355,9 @@
                <widget class="QFrame" name="frame_35">
                 <property name="frameShape">
                  <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="lineWidth">
+                 <number>0</number>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_6">
                  <item row="1" column="1">
@@ -4614,6 +4687,66 @@
                 <property name="text">
                  <string>Wentylator</string>
                 </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="chxExFanNone">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Brak regulatora</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_8">
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="lineWidth">
+                 <number>0</number>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_10">
+                 <item row="1" column="1">
+                  <widget class="QCheckBox" name="chxExFanNone_u_min">
+                   <property name="text">
+                    <string>u_min</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QCheckBox" name="chxExFanNone_u_max">
+                   <property name="text">
+                    <string>u_max</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="chxExFanNone_y">
+                   <property name="text">
+                    <string>y(t)</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
               <item>
@@ -5262,6 +5395,26 @@
              </property>
              <property name="text">
               <string>y(t)</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Line" name="line_14">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnGraphPage_e">
+             <property name="text">
+              <string>e(t)</string>
              </property>
              <property name="checkable">
               <bool>true</bool>

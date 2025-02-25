@@ -229,13 +229,20 @@ class MainWindow(QMainWindow):
         self.ui.btn_graph_Clear.setEnabled(False)
 
         # Export controls
-            # Excport button
+            # Export button
         self.ui.btnExportAction.clicked.connect(self.export.export)
             # Main controls
+        self.ui.chxExHeaterNone.clicked.connect(self.export.set_heater_none)
         self.ui.chxExHeaterBB.clicked.connect(self.export.set_heater_bb)
         self.ui.chxExHeaterPID.clicked.connect(self.export.set_heater_pid)
+        self.ui.chxExFanNone.clicked.connect(self.export.set_fan_none)
         self.ui.chxExFanBB.clicked.connect(self.export.set_fan_bb)
         self.ui.chxExFanPID.clicked.connect(self.export.set_fan_pid)
+            # Heater None
+        self.ui.chxExHeaterNone_y_1.clicked.connect(self.export.set_heater_none_y_1)
+        self.ui.chxExHeaterNone_y_2.clicked.connect(self.export.set_heater_none_y_2)
+        self.ui.chxExHeaterNone_u_max.clicked.connect(self.export.set_heater_none_u_max)
+        self.ui.chxExHeaterNone_u_min.clicked.connect(self.export.set_heater_none_u_min)
             # Heater BB
         self.ui.chxExHeaterBB_x.clicked.connect(self.export.set_heater_bb_x)
         self.ui.chxExHeaterBB_x_max.clicked.connect(self.export.set_heater_bb_x_max)
@@ -264,6 +271,10 @@ class MainWindow(QMainWindow):
         self.ui.chxExHeaterPID_y_1.clicked.connect(self.export.set_heater_pid_y_1)
         self.ui.chxExHeaterPID_y_2.clicked.connect(self.export.set_heater_pid_y_2)
         self.ui.chxExHeaterPID_mode.clicked.connect(self.export.set_heater_pid_mode)
+            # Fan None
+        self.ui.chxExFanNone_y.clicked.connect(self.export.set_fan_none_y)
+        self.ui.chxExFanNone_u_max.clicked.connect(self.export.set_fan_none_u_max)
+        self.ui.chxExFanNone_u_min.clicked.connect(self.export.set_fan_none_u_min)
             # Fan BB
         self.ui.chxExFanBB_x.clicked.connect(self.export.set_fan_bb_x)
         self.ui.chxExFanBB_x_max.clicked.connect(self.export.set_fan_bb_x_max)
@@ -297,6 +308,7 @@ class MainWindow(QMainWindow):
 
         self.ui.btnGraphsPage_y.setVisible(False)
         self.ui.btnGraphsPage_x.clicked.connect(self.graphsPage.set_x)
+        self.ui.btnGraphPage_e.clicked.connect(self.graphsPage.set_e)
         self.ui.btnGraphsPage_y.clicked.connect(self.graphsPage.set_y)
         self.ui.btnGraphsPage_y_1.clicked.connect(self.graphsPage.set_y_1)
         self.ui.btnGraphsPage_y_2.clicked.connect(self.graphsPage.set_y_2)

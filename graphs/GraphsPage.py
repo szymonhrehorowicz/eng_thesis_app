@@ -270,7 +270,13 @@ class GraphsPage:
         else:
             self.fan_graph_y.controls['r(t)']["state"] = state
             self.fan_graph_y.set_line_visibility('r(t)', state)
-    
+
+    @Slot(bool)
+    def set_e(self, state):
+        # Hide error graphs
+        self.handler.ui.frame_43.setVisible(state)
+        self.handler.ui.frame_51.setVisible(state)
+
     @Slot(bool)
     def set_y(self, state):
         self.fan_graph_y.controls['y(t)']["state"] = state
