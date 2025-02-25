@@ -213,9 +213,9 @@ class Serial:
                     data = data[4:]
                     all_data.append(bytes_to_float(data[:4]) + set_heater_val)
                     data = data[4:]
-                    all_data.append(int2(get_uint16(data)) / (1000 - 1) * 12)
+                    all_data.append(round(int2(get_uint16(data)) / (1000 - 1) * 12, 1))
                     data = data[2:]
-                    all_data.append(int2(get_uint16(data)) / (1000 - 1) * 12)
+                    all_data.append(round(int2(get_uint16(data)) / (1000 - 1) * 12, 1))
                     data = data[2:]
                     # PID: int_sum: f32 | aw_int_sum: f32 | Kp: f32 | Ki: f32 | Kd: f32 | Kaw: f32 |
                     #      u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32 | max: u16 | min: u16    
@@ -241,9 +241,9 @@ class Serial:
                     data = data[4:]
                     all_data.append(bytes_to_float(data[:4]) / (1000 - 1) * 12)
                     data = data[4:]
-                    all_data.append(int2(get_uint16(data)) / (1000 - 1) * 12)
+                    all_data.append(round(int2(get_uint16(data)) / (1000 - 1) * 12, 1))
                     data = data[2:]
-                    all_data.append(int2(get_uint16(data)) / (1000 - 1) * 12)
+                    all_data.append(round(int2(get_uint16(data)) / (1000 - 1) * 12, 1))
                     data = data[2:]
                 else:
                     # [FAST]

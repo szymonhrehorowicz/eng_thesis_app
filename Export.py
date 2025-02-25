@@ -102,6 +102,12 @@ class Export:
     # Export method
     @Slot()
     def export(self):
+        key_translations = {
+            "Regulator dwupolozeniowy": "Two-state controller",
+            "Brak regulatora": "No controller",
+            "Regulator PID": "PID controller"
+        }
+
         date = datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
         desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
         fileName = QFileDialog.getSaveFileName(None, QCoreApplication.tr("Wybierz lokalizacje oraz nazwe pliku"), f"{desktop}\\DanePomiarowe_{date}.xlsx", "Excel files (*.xlsx)")[0]
@@ -131,7 +137,7 @@ class Export:
         vertical_idx = 1
 
         if exportHeater:
-            sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = QCoreApplication.tr("Grzalka")
+            sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = "Grzalka" if self.handler.current_language == "pl" else "Heater"
             for master_key in list(self.data_to_export["Grzalka"].keys())[1:]:
                 vertical_idx = 2
                 if self.data_to_export["Grzalka"]["states"][master_key]:
@@ -143,7 +149,7 @@ class Export:
                         data = self.handler.heaterController.get_none()
                     
                     if len(data[0]) > 0: 
-                        sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = master_key
+                        sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = master_key if self.handler.current_language == "pl" else key_translations[master_key]
                         vertical_idx += 1
 
                         # Add time
@@ -166,7 +172,7 @@ class Export:
                                 vertical_idx = 3
         if exportFan:
             vertical_idx = 1
-            sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = QCoreApplication.tr("Wentylator")
+            sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = "Wentylator" if self.handler.current_language == "pl" else "Fan"
             for master_key in list(self.data_to_export["Wentylator"].keys())[1:]:
                 vertical_idx = 2
                 if self.data_to_export["Wentylator"]["states"][master_key]:
@@ -178,7 +184,7 @@ class Export:
                         data = self.handler.fanController.get_none()
 
                     if len(data[0]) > 0: 
-                        sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = master_key
+                        sheet[f'{letters[horizontal_idx]}{vertical_idx}'] = master_key if self.handler.current_language == "pl" else key_translations[master_key]
                         vertical_idx += 1
 
                         # Add time

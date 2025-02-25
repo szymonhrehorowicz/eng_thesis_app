@@ -1,818 +1,813 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="en_US" sourcelanguage="pl_PL">
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="form.ui" line="17"/>
         <source>Sterowanie Procesami Ciągłymi</source>
-        <translation type="unfinished">Sterowanie Procesami Ciągłymi</translation>
+        <translation>Sterowanie Procesami Ciągłymi</translation>
     </message>
     <message>
         <location filename="form.ui" line="58"/>
         <location filename="form.ui" line="61"/>
         <source>Połącz lub Rozłącz się z urządzeniem</source>
-        <translation type="unfinished">Połącz lub Rozłącz się z urządzeniem</translation>
+        <translation>Połącz lub Rozłącz się z urządzeniem</translation>
     </message>
     <message>
         <location filename="form.ui" line="67"/>
         <source>Connect</source>
-        <translation type="unfinished">Connect</translation>
+        <translation>Connect</translation>
     </message>
     <message>
         <location filename="form.ui" line="97"/>
         <location filename="form.ui" line="100"/>
         <source>Wybierz regulator grzałki i zmień jego parametry</source>
-        <translation type="unfinished">Wybierz regulator grzałki i zmień jego parametry</translation>
+        <translation>Wybierz regulator grzałki i zmień jego parametry</translation>
     </message>
     <message>
         <location filename="form.ui" line="103"/>
-        <location filename="form.ui" line="4246"/>
+        <location filename="form.ui" line="4257"/>
         <source>Grzałka</source>
-        <translation type="unfinished">Grzałka</translation>
+        <translation>Grzałka</translation>
     </message>
     <message>
         <location filename="form.ui" line="120"/>
         <location filename="form.ui" line="123"/>
         <source>Wybierz regulator wentylatora i zmień jego parametry</source>
-        <translation type="unfinished">Wybierz regulator wentylatora i zmień jego parametry</translation>
+        <translation>Wybierz regulator wentylatora i zmień jego parametry</translation>
     </message>
     <message>
         <location filename="form.ui" line="126"/>
-        <location filename="form.ui" line="4604"/>
+        <location filename="form.ui" line="4688"/>
         <source>Wentylator</source>
-        <translation type="unfinished">Wentylator</translation>
+        <translation>Wentylator</translation>
     </message>
     <message>
         <location filename="form.ui" line="147"/>
         <source>Wykresy</source>
-        <translation type="unfinished">Wykresy</translation>
+        <translation>Wykresy</translation>
     </message>
     <message>
         <location filename="form.ui" line="161"/>
         <location filename="form.ui" line="164"/>
         <source>Zatrzymaj wykres</source>
-        <translation type="unfinished">Zatrzymaj wykres</translation>
+        <translation>Zatrzymaj wykres</translation>
     </message>
     <message>
         <location filename="form.ui" line="184"/>
         <location filename="form.ui" line="187"/>
         <source>Wyczyść wykres</source>
-        <translation type="unfinished">Wyczyść wykres</translation>
+        <translation>Wyczyść wykres</translation>
     </message>
     <message>
         <location filename="form.ui" line="220"/>
         <location filename="form.ui" line="223"/>
         <source>Eksportuj dane do pliku .xlsx</source>
-        <translation type="unfinished">Eksportuj dane do pliku .xlsx</translation>
+        <translation>Eksportuj dane do pliku .xlsx</translation>
     </message>
     <message>
         <location filename="form.ui" line="226"/>
         <source>Eksport danych</source>
-        <translation type="unfinished">Eksport danych</translation>
+        <translation>Eksport danych</translation>
     </message>
     <message>
         <location filename="form.ui" line="240"/>
         <source>Importuj nastawy</source>
-        <translation type="unfinished">Importuj nastawy</translation>
+        <translation>Importuj nastawy</translation>
     </message>
     <message>
         <location filename="form.ui" line="257"/>
         <location filename="form.ui" line="260"/>
         <source>Dowiedz się jak korzystać z programu</source>
-        <translation type="unfinished">Dowiedz się jak korzystać z programu</translation>
+        <translation>Dowiedz się jak korzystać z programu</translation>
     </message>
     <message>
         <location filename="form.ui" line="263"/>
         <source>Pomoc</source>
-        <translation type="unfinished">Pomoc</translation>
+        <translation>Pomoc</translation>
     </message>
     <message>
-        <location filename="form.ui" line="308"/>
-        <location filename="form.ui" line="311"/>
+        <location filename="form.ui" line="319"/>
+        <location filename="form.ui" line="322"/>
         <source>Uruchom lub zatrzymaj pracę grzałki</source>
-        <translation type="unfinished">Uruchom lub zatrzymaj pracę grzałki</translation>
+        <translation>Uruchom lub zatrzymaj pracę grzałki</translation>
     </message>
     <message>
-        <location filename="form.ui" line="336"/>
+        <location filename="form.ui" line="347"/>
         <source>Ustawienia grzałki</source>
-        <translation type="unfinished">Ustawienia grzałki</translation>
+        <translation>Ustawienia grzałki</translation>
     </message>
     <message>
-        <location filename="form.ui" line="382"/>
-        <location filename="form.ui" line="468"/>
+        <location filename="form.ui" line="393"/>
+        <location filename="form.ui" line="479"/>
         <source>START</source>
-        <translation type="unfinished">START</translation>
+        <translation>START</translation>
     </message>
     <message>
-        <location filename="form.ui" line="416"/>
+        <location filename="form.ui" line="427"/>
         <source>Ustawienia wentylatora</source>
-        <translation type="unfinished">Ustawienia wentylatora</translation>
+        <translation>Ustawienia wentylatora</translation>
     </message>
     <message>
-        <location filename="form.ui" line="462"/>
-        <location filename="form.ui" line="465"/>
+        <location filename="form.ui" line="473"/>
+        <location filename="form.ui" line="476"/>
         <source>Uruchom lub zatrzymaj pracę wentylatora</source>
-        <translation type="unfinished">Uruchom lub zatrzymaj pracę wentylatora</translation>
+        <translation>Uruchom lub zatrzymaj pracę wentylatora</translation>
     </message>
     <message>
-        <location filename="form.ui" line="576"/>
-        <location filename="form.ui" line="1301"/>
+        <location filename="form.ui" line="587"/>
+        <location filename="form.ui" line="1312"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wybór regulatora	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wybór regulatora	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wybór regulatora	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="583"/>
-        <location filename="form.ui" line="1308"/>
+        <location filename="form.ui" line="594"/>
+        <location filename="form.ui" line="1319"/>
         <source>Brak</source>
-        <translation type="unfinished">Brak</translation>
+        <translation>Brak</translation>
     </message>
     <message>
-        <location filename="form.ui" line="593"/>
-        <location filename="form.ui" line="596"/>
+        <location filename="form.ui" line="604"/>
+        <location filename="form.ui" line="607"/>
         <source>Wybierz dwupołożeniowy regulator do sterowania grzałką</source>
-        <translation type="unfinished">Wybierz dwupołożeniowy regulator do sterowania grzałką</translation>
+        <translation>Wybierz dwupołożeniowy regulator do sterowania grzałką</translation>
     </message>
     <message>
-        <location filename="form.ui" line="599"/>
-        <location filename="form.ui" line="1324"/>
+        <location filename="form.ui" line="610"/>
+        <location filename="form.ui" line="1335"/>
         <source>Dwupołożeniowy</source>
-        <translation type="unfinished">Dwupołożeniowy</translation>
+        <translation>Dwupołożeniowy</translation>
     </message>
     <message>
-        <location filename="form.ui" line="612"/>
-        <location filename="form.ui" line="615"/>
+        <location filename="form.ui" line="623"/>
+        <location filename="form.ui" line="626"/>
         <source>Wybierz regulator PID do sterowania grzałką</source>
-        <translation type="unfinished">Wybierz regulator PID do sterowania grzałką</translation>
+        <translation>Wybierz regulator PID do sterowania grzałką</translation>
     </message>
     <message>
-        <location filename="form.ui" line="618"/>
-        <location filename="form.ui" line="1343"/>
+        <location filename="form.ui" line="629"/>
+        <location filename="form.ui" line="1354"/>
         <source>PID</source>
-        <translation type="unfinished">PID</translation>
+        <translation>PID</translation>
     </message>
     <message>
-        <location filename="form.ui" line="656"/>
+        <location filename="form.ui" line="667"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wybór grzałki	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wybór grzałki	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wybór grzałki	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="663"/>
-        <location filename="form.ui" line="666"/>
+        <location filename="form.ui" line="674"/>
+        <location filename="form.ui" line="677"/>
         <source>Wybierz grzałkę o rezystancji 17Ω</source>
-        <translation type="unfinished">Wybierz grzałkę o rezystancji 17Ω</translation>
+        <translation>Wybierz grzałkę o rezystancji 17Ω</translation>
     </message>
     <message>
-        <location filename="form.ui" line="669"/>
+        <location filename="form.ui" line="680"/>
         <source>17 Ω</source>
-        <translation type="unfinished">17 Ω</translation>
+        <translation>17 Ω</translation>
     </message>
     <message>
-        <location filename="form.ui" line="682"/>
-        <location filename="form.ui" line="685"/>
+        <location filename="form.ui" line="693"/>
+        <location filename="form.ui" line="696"/>
         <source>Wybierz grzałkę o rezystancji 33Ω</source>
-        <translation type="unfinished">Wybierz grzałkę o rezystancji 33Ω</translation>
+        <translation>Wybierz grzałkę o rezystancji 33Ω</translation>
     </message>
     <message>
-        <location filename="form.ui" line="688"/>
+        <location filename="form.ui" line="699"/>
         <source>33 Ω</source>
-        <translation type="unfinished">33 Ω</translation>
+        <translation>33 Ω</translation>
     </message>
     <message>
-        <location filename="form.ui" line="726"/>
+        <location filename="form.ui" line="737"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wybór temperatury odniesienia	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wybór temperatury odniesienia	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wybór temperatury odniesienia	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="733"/>
-        <location filename="form.ui" line="736"/>
+        <location filename="form.ui" line="744"/>
+        <location filename="form.ui" line="747"/>
         <source>Wybierz lewy czujnik temperatury</source>
-        <translation type="unfinished">Wybierz lewy czujnik temperatury</translation>
+        <translation>Wybierz lewy czujnik temperatury</translation>
     </message>
     <message>
-        <location filename="form.ui" line="739"/>
+        <location filename="form.ui" line="750"/>
         <source>y1</source>
-        <translation type="unfinished">y1</translation>
+        <translation>y1</translation>
     </message>
     <message>
-        <location filename="form.ui" line="752"/>
-        <location filename="form.ui" line="755"/>
+        <location filename="form.ui" line="763"/>
+        <location filename="form.ui" line="766"/>
         <source>Wybierz prawy czujnik temperatury</source>
-        <translation type="unfinished">Wybierz prawy czujnik temperatury</translation>
+        <translation>Wybierz prawy czujnik temperatury</translation>
     </message>
     <message>
-        <location filename="form.ui" line="758"/>
+        <location filename="form.ui" line="769"/>
         <source>y2</source>
-        <translation type="unfinished">y2</translation>
+        <translation>y2</translation>
     </message>
     <message>
-        <location filename="form.ui" line="817"/>
+        <location filename="form.ui" line="828"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Napięcie  &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Napięcie  &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Napięcie  &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="845"/>
-        <location filename="form.ui" line="848"/>
-        <location filename="form.ui" line="975"/>
-        <location filename="form.ui" line="978"/>
-        <location filename="form.ui" line="1829"/>
-        <location filename="form.ui" line="1832"/>
-        <location filename="form.ui" line="2390"/>
-        <location filename="form.ui" line="2393"/>
+        <location filename="form.ui" line="856"/>
+        <location filename="form.ui" line="859"/>
+        <location filename="form.ui" line="986"/>
+        <location filename="form.ui" line="989"/>
+        <location filename="form.ui" line="1840"/>
+        <location filename="form.ui" line="1843"/>
+        <location filename="form.ui" line="2401"/>
+        <location filename="form.ui" line="2404"/>
         <source>Min: 0 | Max: 100</source>
-        <translation type="unfinished">Min: 0 | Max: 100</translation>
+        <translation>Min: 0 | Max: 100</translation>
     </message>
     <message>
-        <location filename="form.ui" line="873"/>
-        <location filename="form.ui" line="1409"/>
+        <location filename="form.ui" line="884"/>
+        <location filename="form.ui" line="1420"/>
         <source>0</source>
-        <translation type="unfinished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
-        <location filename="form.ui" line="880"/>
+        <location filename="form.ui" line="891"/>
         <source>V</source>
-        <translation type="unfinished">V</translation>
+        <translation>V</translation>
     </message>
     <message>
-        <location filename="form.ui" line="903"/>
+        <location filename="form.ui" line="914"/>
         <source>Chłodzenie wentylatorem</source>
-        <translation type="unfinished">Chłodzenie wentylatorem</translation>
+        <translation>Chłodzenie wentylatorem</translation>
     </message>
     <message>
-        <location filename="form.ui" line="962"/>
-        <location filename="form.ui" line="1494"/>
+        <location filename="form.ui" line="973"/>
+        <location filename="form.ui" line="1505"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wartość zadana	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wartość zadana	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wartość zadana	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="994"/>
-        <location filename="form.ui" line="1842"/>
+        <location filename="form.ui" line="1005"/>
+        <location filename="form.ui" line="1853"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;°C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;°C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;°C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1025"/>
-        <location filename="form.ui" line="1554"/>
+        <location filename="form.ui" line="1036"/>
+        <location filename="form.ui" line="1565"/>
         <source>Forma sygnału</source>
-        <translation type="unfinished">Forma sygnału</translation>
+        <translation>Forma sygnału</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1032"/>
-        <location filename="form.ui" line="1561"/>
+        <location filename="form.ui" line="1043"/>
+        <location filename="form.ui" line="1572"/>
         <source>Skok</source>
-        <translation type="unfinished">Skok</translation>
+        <translation>Skok</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1045"/>
-        <location filename="form.ui" line="1574"/>
+        <location filename="form.ui" line="1056"/>
+        <location filename="form.ui" line="1585"/>
         <source>Rampa</source>
-        <translation type="unfinished">Rampa</translation>
+        <translation>Rampa</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1055"/>
-        <location filename="form.ui" line="1584"/>
+        <location filename="form.ui" line="1066"/>
+        <location filename="form.ui" line="1595"/>
         <source>Sinusoida</source>
-        <translation type="unfinished">Sinusoida</translation>
+        <translation>Sinusoida</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1089"/>
-        <location filename="form.ui" line="1618"/>
+        <location filename="form.ui" line="1100"/>
+        <location filename="form.ui" line="1629"/>
         <source>Nachylenie</source>
-        <translation type="unfinished">Nachylenie</translation>
+        <translation>Nachylenie</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1109"/>
+        <location filename="form.ui" line="1120"/>
         <source>°C/s</source>
-        <translation type="unfinished">°C/s</translation>
+        <translation>°C/s</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1140"/>
-        <location filename="form.ui" line="1669"/>
+        <location filename="form.ui" line="1151"/>
+        <location filename="form.ui" line="1680"/>
         <source>Amplituda</source>
-        <translation type="unfinished">Amplituda</translation>
+        <translation>Amplituda</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1160"/>
+        <location filename="form.ui" line="1171"/>
         <source>°C</source>
-        <translation type="unfinished">°C</translation>
+        <translation>°C</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1191"/>
-        <location filename="form.ui" line="1720"/>
+        <location filename="form.ui" line="1202"/>
+        <location filename="form.ui" line="1731"/>
         <source>Omega</source>
-        <translation type="unfinished">Omega</translation>
+        <translation>Omega</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1208"/>
-        <location filename="form.ui" line="1737"/>
+        <location filename="form.ui" line="1219"/>
+        <location filename="form.ui" line="1748"/>
         <source>rad/s</source>
-        <translation type="unfinished">rad/s</translation>
+        <translation>rad/s</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1318"/>
-        <location filename="form.ui" line="1321"/>
+        <location filename="form.ui" line="1329"/>
+        <location filename="form.ui" line="1332"/>
         <source>Wybierz dwupołożeniowy regulator do sterowania wentylatorem</source>
-        <translation type="unfinished">Wybierz dwupołożeniowy regulator do sterowania wentylatorem</translation>
+        <translation>Wybierz dwupołożeniowy regulator do sterowania wentylatorem</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1337"/>
-        <location filename="form.ui" line="1340"/>
+        <location filename="form.ui" line="1348"/>
+        <location filename="form.ui" line="1351"/>
         <source>Wybierz regulator PID do sterowania wentylatorem</source>
-        <translation type="unfinished">Wybierz regulator PID do sterowania wentylatorem</translation>
+        <translation>Wybierz regulator PID do sterowania wentylatorem</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1380"/>
+        <location filename="form.ui" line="1391"/>
         <source>Wypełnienie PWM  </source>
-        <translation type="unfinished">Wypełnienie PWM  </translation>
+        <translation>Wypełnienie PWM  </translation>
     </message>
     <message>
-        <location filename="form.ui" line="1416"/>
+        <location filename="form.ui" line="1427"/>
         <source>%</source>
-        <translation type="unfinished">%</translation>
+        <translation>%</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1507"/>
-        <location filename="form.ui" line="1510"/>
+        <location filename="form.ui" line="1518"/>
+        <location filename="form.ui" line="1521"/>
         <source>Min: 0 | Max: 6000</source>
-        <translation type="unfinished">Min: 0 | Max: 6000</translation>
+        <translation>Min: 0 | Max: 6000</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1523"/>
-        <location filename="form.ui" line="1689"/>
-        <location filename="form.ui" line="2406"/>
+        <location filename="form.ui" line="1534"/>
+        <location filename="form.ui" line="1700"/>
+        <location filename="form.ui" line="2417"/>
         <source>RPM</source>
-        <translation type="unfinished">RPM</translation>
+        <translation>RPM</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1638"/>
+        <location filename="form.ui" line="1649"/>
         <source>RPM/s</source>
-        <translation type="unfinished">RPM/s</translation>
+        <translation>RPM/s</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1816"/>
-        <location filename="form.ui" line="2377"/>
+        <location filename="form.ui" line="1827"/>
+        <location filename="form.ui" line="2388"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Histereza	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Histereza	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Histereza	&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1928"/>
-        <location filename="form.ui" line="2492"/>
+        <location filename="form.ui" line="1939"/>
+        <location filename="form.ui" line="2503"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1941"/>
-        <location filename="form.ui" line="1944"/>
-        <location filename="form.ui" line="2002"/>
-        <location filename="form.ui" line="2005"/>
-        <location filename="form.ui" line="2063"/>
-        <location filename="form.ui" line="2066"/>
-        <location filename="form.ui" line="2127"/>
-        <location filename="form.ui" line="2130"/>
-        <location filename="form.ui" line="2191"/>
-        <location filename="form.ui" line="2194"/>
+        <location filename="form.ui" line="1952"/>
+        <location filename="form.ui" line="1955"/>
+        <location filename="form.ui" line="2013"/>
+        <location filename="form.ui" line="2016"/>
+        <location filename="form.ui" line="2074"/>
+        <location filename="form.ui" line="2077"/>
+        <location filename="form.ui" line="2138"/>
+        <location filename="form.ui" line="2141"/>
+        <location filename="form.ui" line="2202"/>
+        <location filename="form.ui" line="2205"/>
         <source>Min: 0.00 | Max: 99.99</source>
-        <translation type="unfinished">Min: 0.00 | Max: 99.99</translation>
+        <translation>Min: 0.00 | Max: 99.99</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1954"/>
+        <location filename="form.ui" line="1965"/>
         <source>V/°C</source>
-        <translation type="unfinished">V/°C</translation>
+        <translation>V/°C</translation>
     </message>
     <message>
-        <location filename="form.ui" line="1989"/>
-        <location filename="form.ui" line="2553"/>
+        <location filename="form.ui" line="2000"/>
+        <location filename="form.ui" line="2564"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;i&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;i&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;i&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2015"/>
+        <location filename="form.ui" line="2026"/>
         <source>V/°C/s</source>
-        <translation type="unfinished">V/°C/s</translation>
+        <translation>V/°C/s</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2050"/>
-        <location filename="form.ui" line="2614"/>
+        <location filename="form.ui" line="2061"/>
+        <location filename="form.ui" line="2625"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;i&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;i&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;i&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2079"/>
-        <location filename="form.ui" line="2207"/>
-        <location filename="form.ui" line="2640"/>
-        <location filename="form.ui" line="2762"/>
+        <location filename="form.ui" line="2090"/>
+        <location filename="form.ui" line="2218"/>
+        <location filename="form.ui" line="2651"/>
+        <location filename="form.ui" line="2773"/>
         <source>s</source>
-        <translation type="unfinished">s</translation>
+        <translation>s</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2114"/>
-        <location filename="form.ui" line="2675"/>
+        <location filename="form.ui" line="2125"/>
+        <location filename="form.ui" line="2686"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2143"/>
+        <location filename="form.ui" line="2154"/>
         <source>V*s/°C</source>
-        <translation type="unfinished">V*s/°C</translation>
+        <translation>V*s/°C</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2178"/>
-        <location filename="form.ui" line="2736"/>
+        <location filename="form.ui" line="2189"/>
+        <location filename="form.ui" line="2747"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2242"/>
-        <location filename="form.ui" line="2797"/>
+        <location filename="form.ui" line="2253"/>
+        <location filename="form.ui" line="2808"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;aw&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;aw&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;K&lt;/span&gt;&lt;span style=&quot; font-weight:700; vertical-align:sub;&quot;&gt;aw&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2255"/>
-        <location filename="form.ui" line="2261"/>
+        <location filename="form.ui" line="2266"/>
+        <location filename="form.ui" line="2272"/>
         <source>Min: 0.00 | Max: 999.99</source>
-        <translation type="unfinished">Min: 0.00 | Max: 999.99</translation>
+        <translation>Min: 0.00 | Max: 999.99</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2287"/>
-        <location filename="form.ui" line="2836"/>
+        <location filename="form.ui" line="2298"/>
+        <location filename="form.ui" line="2847"/>
         <source>Forma równania </source>
-        <translation type="unfinished">Forma równania </translation>
+        <translation>Forma równania </translation>
     </message>
     <message>
-        <location filename="form.ui" line="2294"/>
-        <location filename="form.ui" line="2843"/>
+        <location filename="form.ui" line="2305"/>
+        <location filename="form.ui" line="2854"/>
         <source>równoległa</source>
-        <translation type="unfinished">równoległa</translation>
+        <translation>równoległa</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2505"/>
-        <location filename="form.ui" line="2508"/>
-        <location filename="form.ui" line="2566"/>
-        <location filename="form.ui" line="2569"/>
-        <location filename="form.ui" line="2627"/>
-        <location filename="form.ui" line="2630"/>
-        <location filename="form.ui" line="2688"/>
-        <location filename="form.ui" line="2691"/>
-        <location filename="form.ui" line="2749"/>
-        <location filename="form.ui" line="2752"/>
-        <location filename="form.ui" line="2810"/>
-        <location filename="form.ui" line="2813"/>
+        <location filename="form.ui" line="2516"/>
+        <location filename="form.ui" line="2519"/>
+        <location filename="form.ui" line="2577"/>
+        <location filename="form.ui" line="2580"/>
+        <location filename="form.ui" line="2638"/>
+        <location filename="form.ui" line="2641"/>
+        <location filename="form.ui" line="2699"/>
+        <location filename="form.ui" line="2702"/>
+        <location filename="form.ui" line="2760"/>
+        <location filename="form.ui" line="2763"/>
+        <location filename="form.ui" line="2821"/>
+        <location filename="form.ui" line="2824"/>
         <source>Min: 0.0 | Max: 999.99</source>
-        <translation type="unfinished">Min: 0.0 | Max: 999.99</translation>
+        <translation>Min: 0.0 | Max: 999.99</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2518"/>
+        <location filename="form.ui" line="2529"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;V/RPM&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;V/RPM&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;V/RPM&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2579"/>
+        <location filename="form.ui" line="2590"/>
         <source>V/RPM/s</source>
-        <translation type="unfinished">V/RPM/s</translation>
+        <translation>V/RPM/s</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2701"/>
+        <location filename="form.ui" line="2712"/>
         <source>V*s/RPM</source>
-        <translation type="unfinished">V*s/RPM</translation>
+        <translation>V*s/RPM</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2952"/>
-        <location filename="form.ui" line="3388"/>
-        <location filename="form.ui" line="3807"/>
-        <location filename="form.ui" line="4089"/>
-        <location filename="form.ui" line="4282"/>
-        <location filename="form.ui" line="4544"/>
-        <location filename="form.ui" line="4660"/>
-        <location filename="form.ui" line="4872"/>
+        <location filename="form.ui" line="2963"/>
+        <location filename="form.ui" line="3399"/>
+        <location filename="form.ui" line="3818"/>
+        <location filename="form.ui" line="4100"/>
+        <location filename="form.ui" line="4321"/>
+        <location filename="form.ui" line="4366"/>
+        <location filename="form.ui" line="4628"/>
+        <location filename="form.ui" line="4722"/>
+        <location filename="form.ui" line="4804"/>
+        <location filename="form.ui" line="5016"/>
         <source>u_min</source>
-        <translation type="unfinished">u_min</translation>
+        <translation>u_min</translation>
     </message>
     <message>
-        <location filename="form.ui" line="2985"/>
-        <location filename="form.ui" line="3362"/>
-        <location filename="form.ui" line="4342"/>
-        <location filename="form.ui" line="4564"/>
-        <location filename="form.ui" line="5237"/>
+        <location filename="form.ui" line="2996"/>
+        <location filename="form.ui" line="3373"/>
+        <location filename="form.ui" line="4301"/>
+        <location filename="form.ui" line="4426"/>
+        <location filename="form.ui" line="4648"/>
+        <location filename="form.ui" line="5381"/>
         <source>y_2(t)</source>
-        <translation type="unfinished">y_2(t)</translation>
+        <translation>y_2(t)</translation>
     </message>
     <message>
-        <location filename="form.ui" line="3018"/>
-        <location filename="form.ui" line="3323"/>
-        <location filename="form.ui" line="3722"/>
-        <location filename="form.ui" line="3968"/>
-        <location filename="form.ui" line="4302"/>
-        <location filename="form.ui" line="4534"/>
-        <location filename="form.ui" line="4700"/>
-        <location filename="form.ui" line="4852"/>
-        <source>u_max</source>
-        <translation type="unfinished">u_max</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3041"/>
-        <location filename="form.ui" line="3735"/>
-        <location filename="form.ui" line="4292"/>
-        <location filename="form.ui" line="4650"/>
-        <source>r_max</source>
-        <translation type="unfinished">r_max</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3067"/>
-        <location filename="form.ui" line="3258"/>
-        <location filename="form.ui" line="3794"/>
-        <location filename="form.ui" line="4076"/>
-        <location filename="form.ui" line="4332"/>
-        <location filename="form.ui" line="4414"/>
-        <location filename="form.ui" line="4670"/>
-        <location filename="form.ui" line="4742"/>
-        <location filename="form.ui" line="5211"/>
-        <source>r(t)</source>
-        <translation type="unfinished">r(t)</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3100"/>
-        <location filename="form.ui" line="3271"/>
-        <location filename="form.ui" line="3761"/>
-        <location filename="form.ui" line="3955"/>
-        <location filename="form.ui" line="4352"/>
-        <location filename="form.ui" line="4424"/>
-        <location filename="form.ui" line="4640"/>
-        <location filename="form.ui" line="4902"/>
-        <source>stan</source>
-        <translation type="unfinished">stan</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3113"/>
-        <location filename="form.ui" line="3748"/>
-        <location filename="form.ui" line="4312"/>
-        <location filename="form.ui" line="4690"/>
-        <source>r_min</source>
-        <translation type="unfinished">r_min</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3136"/>
-        <location filename="form.ui" line="3310"/>
-        <location filename="form.ui" line="4322"/>
-        <location filename="form.ui" line="4554"/>
-        <location filename="form.ui" line="5224"/>
-        <source>y_1(t)</source>
-        <translation type="unfinished">y_1(t)</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3169"/>
-        <location filename="form.ui" line="3427"/>
-        <location filename="form.ui" line="3774"/>
-        <location filename="form.ui" line="4001"/>
-        <location filename="form.ui" line="4454"/>
-        <location filename="form.ui" line="4762"/>
-        <source>e(t)</source>
-        <translation type="unfinished">e(t)</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3179"/>
-        <location filename="form.ui" line="3297"/>
-        <location filename="form.ui" line="3820"/>
-        <location filename="form.ui" line="4125"/>
-        <location filename="form.ui" line="4514"/>
-        <location filename="form.ui" line="4752"/>
-        <location filename="form.ui" line="5319"/>
-        <source>u(t)</source>
-        <translation type="unfinished">u(t)</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3245"/>
-        <location filename="form.ui" line="3916"/>
-        <location filename="form.ui" line="4504"/>
-        <location filename="form.ui" line="4772"/>
-        <location filename="form.ui" line="5332"/>
-        <source>u_sat(t)</source>
-        <translation type="unfinished">u_sat(t)</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3284"/>
-        <location filename="form.ui" line="3929"/>
-        <location filename="form.ui" line="4394"/>
-        <location filename="form.ui" line="4802"/>
-        <source>aw_int_e(t)</source>
-        <translation type="unfinished">aw_int_e(t)</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3336"/>
-        <location filename="form.ui" line="4027"/>
-        <location filename="form.ui" line="4444"/>
-        <location filename="form.ui" line="4782"/>
-        <source>int_e(t)</source>
-        <translation type="unfinished">int_e(t)</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3349"/>
-        <location filename="form.ui" line="4014"/>
-        <location filename="form.ui" line="4494"/>
-        <location filename="form.ui" line="4812"/>
-        <location filename="form.ui" line="5286"/>
-        <source>u_i(t)</source>
-        <translation type="unfinished">u_i(t)</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3375"/>
-        <location filename="form.ui" line="4102"/>
-        <location filename="form.ui" line="4484"/>
-        <location filename="form.ui" line="4792"/>
-        <location filename="form.ui" line="5273"/>
-        <source>u_p(t)</source>
-        <translation type="unfinished">u_p(t)</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3414"/>
-        <location filename="form.ui" line="4053"/>
-        <location filename="form.ui" line="4524"/>
-        <location filename="form.ui" line="4832"/>
-        <location filename="form.ui" line="5299"/>
-        <source>u_d(t)</source>
-        <translation type="unfinished">u_d(t)</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="3646"/>
-        <location filename="form.ui" line="3942"/>
-        <location filename="form.ui" line="4680"/>
-        <location filename="form.ui" line="4892"/>
-        <location filename="form.ui" line="5253"/>
-        <source>y(t)</source>
-        <translation type="unfinished">y(t)</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="4259"/>
-        <location filename="form.ui" line="4617"/>
-        <source>Regulator dwupołożeniowy</source>
-        <translation type="unfinished">Regulator dwupołożeniowy</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="4371"/>
-        <location filename="form.ui" line="4719"/>
-        <source>Regulator PID</source>
-        <translation type="unfinished">Regulator PID</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="4404"/>
-        <location filename="form.ui" line="4842"/>
-        <source>k_i</source>
-        <translation type="unfinished">k_i</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="4434"/>
-        <location filename="form.ui" line="4862"/>
-        <source>k_d</source>
-        <translation type="unfinished">k_d</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="4464"/>
-        <location filename="form.ui" line="4882"/>
-        <source>k_aw</source>
-        <translation type="unfinished">k_aw</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="4474"/>
-        <location filename="form.ui" line="4822"/>
-        <source>k_p</source>
-        <translation type="unfinished">k_p</translation>
-    </message>
-    <message>
-        <location filename="form.ui" line="4965"/>
-        <source>Eksportuj</source>
-        <translation type="unfinished">Eksportuj</translation>
-    </message>
-    <message>
+        <location filename="form.ui" line="3029"/>
+        <location filename="form.ui" line="3334"/>
+        <location filename="form.ui" line="3733"/>
+        <location filename="form.ui" line="3979"/>
+        <location filename="form.ui" line="4311"/>
+        <location filename="form.ui" line="4386"/>
+        <location filename="form.ui" line="4618"/>
+        <location filename="form.ui" line="4732"/>
+        <location filename="form.ui" line="4844"/>
         <location filename="form.ui" line="4996"/>
+        <source>u_max</source>
+        <translation>u_max</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3052"/>
+        <location filename="form.ui" line="3746"/>
+        <location filename="form.ui" line="4376"/>
+        <location filename="form.ui" line="4794"/>
+        <source>r_max</source>
+        <translation>r_max</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3078"/>
+        <location filename="form.ui" line="3269"/>
+        <location filename="form.ui" line="3805"/>
+        <location filename="form.ui" line="4087"/>
+        <location filename="form.ui" line="4416"/>
+        <location filename="form.ui" line="4498"/>
+        <location filename="form.ui" line="4814"/>
+        <location filename="form.ui" line="4886"/>
+        <location filename="form.ui" line="5355"/>
+        <source>r(t)</source>
+        <translation>r(t)</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3111"/>
+        <location filename="form.ui" line="3282"/>
+        <location filename="form.ui" line="3772"/>
+        <location filename="form.ui" line="3966"/>
+        <location filename="form.ui" line="4436"/>
+        <location filename="form.ui" line="4508"/>
+        <location filename="form.ui" line="4784"/>
+        <location filename="form.ui" line="5046"/>
+        <source>stan</source>
+        <translation>stan</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3124"/>
+        <location filename="form.ui" line="3759"/>
+        <location filename="form.ui" line="4396"/>
+        <location filename="form.ui" line="4834"/>
+        <source>r_min</source>
+        <translation>r_min</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3147"/>
+        <location filename="form.ui" line="3321"/>
+        <location filename="form.ui" line="4291"/>
+        <location filename="form.ui" line="4406"/>
+        <location filename="form.ui" line="4638"/>
+        <location filename="form.ui" line="5368"/>
+        <source>y_1(t)</source>
+        <translation>y_1(t)</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3180"/>
+        <location filename="form.ui" line="3438"/>
+        <location filename="form.ui" line="3785"/>
+        <location filename="form.ui" line="4012"/>
+        <location filename="form.ui" line="4538"/>
+        <location filename="form.ui" line="4906"/>
+        <location filename="form.ui" line="5417"/>
+        <source>e(t)</source>
+        <translation>e(t)</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3190"/>
+        <location filename="form.ui" line="3308"/>
+        <location filename="form.ui" line="3831"/>
+        <location filename="form.ui" line="4136"/>
+        <location filename="form.ui" line="4598"/>
+        <location filename="form.ui" line="4896"/>
+        <location filename="form.ui" line="5483"/>
+        <source>u(t)</source>
+        <translation>u(t)</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3256"/>
+        <location filename="form.ui" line="3927"/>
+        <location filename="form.ui" line="4588"/>
+        <location filename="form.ui" line="4916"/>
+        <location filename="form.ui" line="5496"/>
+        <source>u_sat(t)</source>
+        <translation>u_sat(t)</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3295"/>
+        <location filename="form.ui" line="3940"/>
+        <location filename="form.ui" line="4478"/>
+        <location filename="form.ui" line="4946"/>
+        <source>aw_int_e(t)</source>
+        <translation>aw_int_e(t)</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3347"/>
+        <location filename="form.ui" line="4038"/>
+        <location filename="form.ui" line="4528"/>
+        <location filename="form.ui" line="4926"/>
+        <source>int_e(t)</source>
+        <translation>int_e(t)</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3360"/>
+        <location filename="form.ui" line="4025"/>
+        <location filename="form.ui" line="4578"/>
+        <location filename="form.ui" line="4956"/>
+        <location filename="form.ui" line="5450"/>
+        <source>u_i(t)</source>
+        <translation>u_i(t)</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3386"/>
+        <location filename="form.ui" line="4113"/>
+        <location filename="form.ui" line="4568"/>
+        <location filename="form.ui" line="4936"/>
+        <location filename="form.ui" line="5437"/>
+        <source>u_p(t)</source>
+        <translation>u_p(t)</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3425"/>
+        <location filename="form.ui" line="4064"/>
+        <location filename="form.ui" line="4608"/>
+        <location filename="form.ui" line="4976"/>
+        <location filename="form.ui" line="5463"/>
+        <source>u_d(t)</source>
+        <translation>u_d(t)</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="3657"/>
+        <location filename="form.ui" line="3953"/>
+        <location filename="form.ui" line="4742"/>
+        <location filename="form.ui" line="4824"/>
+        <location filename="form.ui" line="5036"/>
+        <location filename="form.ui" line="5397"/>
+        <source>y(t)</source>
+        <translation>y(t)</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="4269"/>
+        <location filename="form.ui" line="4700"/>
+        <source>Brak regulatora</source>
+        <translation>Brak regulatora</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="4340"/>
+        <location filename="form.ui" line="4761"/>
+        <source>Regulator dwupołożeniowy</source>
+        <translation>Regulator dwupołożeniowy</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="4455"/>
+        <location filename="form.ui" line="4863"/>
+        <source>Regulator PID</source>
+        <translation>Regulator PID</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="4488"/>
+        <location filename="form.ui" line="4986"/>
+        <source>k_i</source>
+        <translation>k_i</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="4518"/>
+        <location filename="form.ui" line="5006"/>
+        <source>k_d</source>
+        <translation>k_d</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="4548"/>
+        <location filename="form.ui" line="5026"/>
+        <source>k_aw</source>
+        <translation>k_aw</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="4558"/>
+        <location filename="form.ui" line="4966"/>
+        <source>k_p</source>
+        <translation>k_p</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="5109"/>
+        <source>Eksportuj</source>
+        <translation>Eksportuj</translation>
+    </message>
+    <message>
+        <location filename="form.ui" line="5140"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Jak korzystać z aplikacji?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;1. Połącz się z urządzeniem&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Upewnij się, że urządzenie jest zasilone oraz połączone z komputerem za pomocą przewodu USB. Następnie, naciśnij przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/uC.ico&quot;/&gt; Connect&amp;quot;. Jeśli urządzenie jest poprawnie podpięte, zakładki &amp;quot;&lt;img src=&quot;:/assets/assets/heater.ico&quot;/&gt; Grzałka&amp;quot; oraz &amp;quot;&lt;img src=&quot;:/assets/assets/fan.ico&quot;/&gt; Wentylator&amp;quot; powinny stać się dostępne.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;2. Sterowanie&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Aplikacja pozwala sterować grzałką( w postaci małych rezystorów) oraz wentylatorem. Wchodząc w zakładkę &amp;quot;&lt;img src=&quot;:/assets/assets/heater.ico&quot;/&gt; Grzałka&amp;quot; lub &amp;quot;&lt;img src=&quot;:/assets/assets/fan.ico&quot;/&gt; Wentylator&amp;quot; będziesz mógł wybrać odpowiadający Ci regulator oraz zmienić jego nastawy. &lt;/p&gt;&lt;p&gt;Po wybraniu regulatora oraz jego nastaw, możesz go uruchomić naciskając przycisk &amp;quot;START&amp;quot;, a później zatrzymać wciskając ten sam przycisk, lecz ze zmienionym napisem - &amp;quot;STOP&amp;quot;.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;3. Regulator dwupołożeniowy&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W przypadku wentylatora, możesz wybrać wartość jego prędkości obrotowej oraz szerokość strefy histerezy.&lt;/p&gt;&lt;p&gt;W przypadku grzałki, możesz wybrać wartość jej temperatury, szerokość strefy histerezy, a także moc grzałki.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;4. Regulator PID&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W obu przypadkach( grzałki i wentylatora), możesz wybrać:&lt;/p&gt;&lt;p&gt;- wartość zadaną,&lt;/p&gt;&lt;p&gt;- współczynniki wzmocnienia: proporcjonalnego, całkującego i różniczkującego,&lt;/p&gt;&lt;p&gt;- czas zdwojenia i opóźnienia,&lt;/p&gt;&lt;p&gt;- wartość współczynnika anti-windup.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;5. Sterowanie grzałką&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W zakładce sterowania grzałką znajdziesz dodatkowe przyciski, które pozwalają na wybór grzałki( 17 lub 33Ω) oraz temperatury odniesienia. &lt;/p&gt;&lt;p&gt;Obie grzałki znajdują się bezpośrednio nad wentylatorem. Lewa to ta, która jest nad 17Ω grzałka, natomiast prawa zlokalizowana nad 33Ω grzałką.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;6. Wykresy&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Każdy regulator posiada swój wykres, który przedstawia przebiegi czasowe wszystkich jego sygnałów.&lt;/p&gt;&lt;p&gt;Wykres ten możesz zatrzymać naciskając przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/pause.ico&quot;/&gt;&amp;quot; i uruchomić ponownie wciskając przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/play.ico&quot;/&gt;&amp;quot;.&lt;/p&gt;&lt;p&gt;Wykres możesz również wyczyścić wciskając przcisk &amp;quot;&lt;img src=&quot;:/assets/assets/broom.ico&quot;/&gt;&amp;quot;. &lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Uważaj&lt;/span&gt;, gdyż wyszyszczenie wykresu powoduje usunięcie danych o jego dotychczasowych przebiegach z pamięciu programu.&lt;/p&gt;&lt;p&gt;Każdy regulator posiada własną przestrzeń w pamięci programu, więc &lt;span style=&quot; font-weight:700; color:#ffaa00;&quot;&gt;wyczyszczenie jednego z nich nie spowoduje wyszyczenia pozostałych&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;Pod każdym wykresem znajdują się dodatkowe przyciski, które pozwalają na pokazywanie i ukrywanie konkretnych sygnałów.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;7. Eksport danych do pliku&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W zakładce &amp;quot;&lt;img src=&quot;:/assets/assets/export.ico&quot;/&gt; Eksport danych&amp;quot; możesz łatwo wyeksportować potrzebne Ci dane do pliku .xlsx.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Jak korzystać z aplikacji?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;1. Połącz się z urządzeniem&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Upewnij się, że urządzenie jest zasilone oraz połączone z komputerem za pomocą przewodu USB. Następnie, naciśnij przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/uC.ico&quot;/&gt; Connect&amp;quot;. Jeśli urządzenie jest poprawnie podpięte, zakładki &amp;quot;&lt;img src=&quot;:/assets/assets/heater.ico&quot;/&gt; Grzałka&amp;quot; oraz &amp;quot;&lt;img src=&quot;:/assets/assets/fan.ico&quot;/&gt; Wentylator&amp;quot; powinny stać się dostępne.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;2. Sterowanie&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Aplikacja pozwala sterować grzałką( w postaci małych rezystorów) oraz wentylatorem. Wchodząc w zakładkę &amp;quot;&lt;img src=&quot;:/assets/assets/heater.ico&quot;/&gt; Grzałka&amp;quot; lub &amp;quot;&lt;img src=&quot;:/assets/assets/fan.ico&quot;/&gt; Wentylator&amp;quot; będziesz mógł wybrać odpowiadający Ci regulator oraz zmienić jego nastawy. &lt;/p&gt;&lt;p&gt;Po wybraniu regulatora oraz jego nastaw, możesz go uruchomić naciskając przycisk &amp;quot;START&amp;quot;, a później zatrzymać wciskając ten sam przycisk, lecz ze zmienionym napisem - &amp;quot;STOP&amp;quot;.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;3. Regulator dwupołożeniowy&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W przypadku wentylatora, możesz wybrać wartość jego prędkości obrotowej oraz szerokość strefy histerezy.&lt;/p&gt;&lt;p&gt;W przypadku grzałki, możesz wybrać wartość jej temperatury, szerokość strefy histerezy, a także moc grzałki.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;4. Regulator PID&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W obu przypadkach( grzałki i wentylatora), możesz wybrać:&lt;/p&gt;&lt;p&gt;- wartość zadaną,&lt;/p&gt;&lt;p&gt;- współczynniki wzmocnienia: proporcjonalnego, całkującego i różniczkującego,&lt;/p&gt;&lt;p&gt;- czas zdwojenia i opóźnienia,&lt;/p&gt;&lt;p&gt;- wartość współczynnika anti-windup.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;5. Sterowanie grzałką&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W zakładce sterowania grzałką znajdziesz dodatkowe przyciski, które pozwalają na wybór grzałki( 17 lub 33Ω) oraz temperatury odniesienia. &lt;/p&gt;&lt;p&gt;Obie grzałki znajdują się bezpośrednio nad wentylatorem. Lewa to ta, która jest nad 17Ω grzałka, natomiast prawa zlokalizowana nad 33Ω grzałką.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;6. Wykresy&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Każdy regulator posiada swój wykres, który przedstawia przebiegi czasowe wszystkich jego sygnałów.&lt;/p&gt;&lt;p&gt;Wykres ten możesz zatrzymać naciskając przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/pause.ico&quot;/&gt;&amp;quot; i uruchomić ponownie wciskając przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/play.ico&quot;/&gt;&amp;quot;.&lt;/p&gt;&lt;p&gt;Wykres możesz również wyczyścić wciskając przcisk &amp;quot;&lt;img src=&quot;:/assets/assets/broom.ico&quot;/&gt;&amp;quot;. &lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Uważaj&lt;/span&gt;, gdyż wyszyszczenie wykresu powoduje usunięcie danych o jego dotychczasowych przebiegach z pamięciu programu.&lt;/p&gt;&lt;p&gt;Każdy regulator posiada własną przestrzeń w pamięci programu, więc &lt;span style=&quot; font-weight:700; color:#ffaa00;&quot;&gt;wyczyszczenie jednego z nich nie spowoduje wyszyczenia pozostałych&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;Pod każdym wykresem znajdują się dodatkowe przyciski, które pozwalają na pokazywanie i ukrywanie konkretnych sygnałów.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;7. Eksport danych do pliku&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W zakładce &amp;quot;&lt;img src=&quot;:/assets/assets/export.ico&quot;/&gt; Eksport danych&amp;quot; możesz łatwo wyeksportować potrzebne Ci dane do pliku .xlsx.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Jak korzystać z aplikacji?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;1. Połącz się z urządzeniem&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Upewnij się, że urządzenie jest zasilone oraz połączone z komputerem za pomocą przewodu USB. Następnie, naciśnij przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/uC.ico&quot;/&gt; Connect&amp;quot;. Jeśli urządzenie jest poprawnie podpięte, zakładki &amp;quot;&lt;img src=&quot;:/assets/assets/heater.ico&quot;/&gt; Grzałka&amp;quot; oraz &amp;quot;&lt;img src=&quot;:/assets/assets/fan.ico&quot;/&gt; Wentylator&amp;quot; powinny stać się dostępne.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;2. Sterowanie&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Aplikacja pozwala sterować grzałką( w postaci małych rezystorów) oraz wentylatorem. Wchodząc w zakładkę &amp;quot;&lt;img src=&quot;:/assets/assets/heater.ico&quot;/&gt; Grzałka&amp;quot; lub &amp;quot;&lt;img src=&quot;:/assets/assets/fan.ico&quot;/&gt; Wentylator&amp;quot; będziesz mógł wybrać odpowiadający Ci regulator oraz zmienić jego nastawy. &lt;/p&gt;&lt;p&gt;Po wybraniu regulatora oraz jego nastaw, możesz go uruchomić naciskając przycisk &amp;quot;START&amp;quot;, a później zatrzymać wciskając ten sam przycisk, lecz ze zmienionym napisem - &amp;quot;STOP&amp;quot;.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;3. Regulator dwupołożeniowy&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W przypadku wentylatora, możesz wybrać wartość jego prędkości obrotowej oraz szerokość strefy histerezy.&lt;/p&gt;&lt;p&gt;W przypadku grzałki, możesz wybrać wartość jej temperatury, szerokość strefy histerezy, a także moc grzałki.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;4. Regulator PID&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W obu przypadkach( grzałki i wentylatora), możesz wybrać:&lt;/p&gt;&lt;p&gt;- wartość zadaną,&lt;/p&gt;&lt;p&gt;- współczynniki wzmocnienia: proporcjonalnego, całkującego i różniczkującego,&lt;/p&gt;&lt;p&gt;- czas zdwojenia i opóźnienia,&lt;/p&gt;&lt;p&gt;- wartość współczynnika anti-windup.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;5. Sterowanie grzałką&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W zakładce sterowania grzałką znajdziesz dodatkowe przyciski, które pozwalają na wybór grzałki( 17 lub 33Ω) oraz temperatury odniesienia. &lt;/p&gt;&lt;p&gt;Obie grzałki znajdują się bezpośrednio nad wentylatorem. Lewa to ta, która jest nad 17Ω grzałka, natomiast prawa zlokalizowana nad 33Ω grzałką.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;6. Wykresy&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Każdy regulator posiada swój wykres, który przedstawia przebiegi czasowe wszystkich jego sygnałów.&lt;/p&gt;&lt;p&gt;Wykres ten możesz zatrzymać naciskając przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/pause.ico&quot;/&gt;&amp;quot; i uruchomić ponownie wciskając przycisk &amp;quot;&lt;img src=&quot;:/assets/assets/play.ico&quot;/&gt;&amp;quot;.&lt;/p&gt;&lt;p&gt;Wykres możesz również wyczyścić wciskając przcisk &amp;quot;&lt;img src=&quot;:/assets/assets/broom.ico&quot;/&gt;&amp;quot;. &lt;span style=&quot; font-weight:700; color:#ff0000;&quot;&gt;Uważaj&lt;/span&gt;, gdyż wyszyszczenie wykresu powoduje usunięcie danych o jego dotychczasowych przebiegach z pamięciu programu.&lt;/p&gt;&lt;p&gt;Każdy regulator posiada własną przestrzeń w pamięci programu, więc &lt;span style=&quot; font-weight:700; color:#ffaa00;&quot;&gt;wyczyszczenie jednego z nich nie spowoduje wyszyczenia pozostałych&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;Pod każdym wykresem znajdują się dodatkowe przyciski, które pozwalają na pokazywanie i ukrywanie konkretnych sygnałów.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;7. Eksport danych do pliku&lt;/span&gt;&lt;/p&gt;&lt;p&gt;W zakładce &amp;quot;&lt;img src=&quot;:/assets/assets/export.ico&quot;/&gt; Eksport danych&amp;quot; możesz łatwo wyeksportować potrzebne Ci dane do pliku .xlsx.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="5015"/>
+        <location filename="form.ui" line="5159"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wszystkie ikony w aplikacji pochodzą z otwartego źródła: Flaticon.com&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wszystkie ikony w aplikacji pochodzą z otwartego źródła: Flaticon.com&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wszystkie ikony w aplikacji pochodzą z otwartego źródła: Flaticon.com&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="form.ui" line="5028"/>
+        <location filename="form.ui" line="5172"/>
         <source>Autor: Szymon Hrehorowicz</source>
-        <translation type="unfinished">Autor: Szymon Hrehorowicz</translation>
+        <translation>Autor: Szymon Hrehorowicz</translation>
     </message>
     <message>
-        <location filename="form.ui" line="5058"/>
+        <location filename="form.ui" line="5202"/>
         <source>Wczytaj dane</source>
-        <translation type="unfinished">Wczytaj dane</translation>
+        <translation>Wczytaj dane</translation>
     </message>
     <message>
-        <location filename="form.ui" line="5091"/>
+        <location filename="form.ui" line="5235"/>
         <source>Nr albumu:</source>
-        <translation type="unfinished">Nr albumu:</translation>
+        <translation>Nr albumu:</translation>
     </message>
     <message>
-        <location filename="form.ui" line="5114"/>
+        <location filename="form.ui" line="5258"/>
         <source>Pobierz nastawy</source>
-        <translation type="unfinished">Pobierz nastawy</translation>
+        <translation>Pobierz nastawy</translation>
     </message>
     <message>
-        <location filename="form.ui" line="5160"/>
+        <location filename="form.ui" line="5304"/>
         <source>Wykresy grzalki</source>
-        <translation type="unfinished">Wykresy grzalki</translation>
+        <translation>Wykresy grzalki</translation>
     </message>
     <message>
-        <location filename="form.ui" line="5184"/>
+        <location filename="form.ui" line="5328"/>
         <source>Wykresy wentylatora</source>
-        <translation type="unfinished">Wykresy wentylatora</translation>
+        <translation>Wykresy wentylatora</translation>
     </message>
 </context>
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="Export.py" line="91"/>
         <source>Wybierz lokalizacje oraz nazwe pliku</source>
-        <translation type="unfinished">Wybierz lokalizacje oraz nazwe pliku</translation>
+        <translation type="vanished">Wybierz lokalizacje oraz nazwe pliku</translation>
     </message>
     <message>
-        <location filename="Export.py" line="119"/>
         <source>Grzalka</source>
-        <translation type="unfinished">Grzalka</translation>
+        <translation type="vanished">Grzalka</translation>
     </message>
     <message>
-        <location filename="Export.py" line="147"/>
         <source>Wentylator</source>
-        <translation type="unfinished">Wentylator</translation>
+        <translation type="vanished">Wentylator</translation>
     </message>
     <message>
-        <location filename="Export.py" line="176"/>
         <source>Pomyślnie wyeksportowano dane do pliku:
-{fileName}</source>
-        <translation type="unfinished">Pomyślnie wyeksportowano dane </translation>
+        {fileName}</source>
+        <translation type="vanished">Pomyślnie wyeksportowano dane do pliku:
+        {fileName}</translation>
     </message>
     <message>
-        <location filename="Export.py" line="178"/>
         <source>Plik do którego chcesz nadpisać dane jest obecnie otwarty. Zamknij go i spróbuj ponownie.</source>
-        <translation type="unfinished">Plik do którego chcesz nadpisać dane jest obecnie otwarty. Zamknij go i spróbuj ponownie.</translation>
+        <translation type="vanished">Plik do którego chcesz nadpisać dane jest obecnie otwarty. Zamknij go i spróbuj ponownie.</translation>
     </message>
     <message>
-        <location filename="Import.py" line="16"/>
         <source>Wybierz plik z nastawami regulatorow</source>
-        <translation type="unfinished">Wybierz plik z nastawami regulatorow</translation>
+        <translation type="vanished">Wybierz plik z nastawami regulatorow</translation>
     </message>
     <message>
-        <location filename="Import.py" line="21"/>
-        <location filename="Import.py" line="48"/>
         <source>Wybrano zły plik</source>
-        <translation type="unfinished">Wybrano zły plik</translation>
+        <translation type="vanished">Wybrano zły plik</translation>
     </message>
     <message>
-        <location filename="Import.py" line="36"/>
         <source>W pliku nie ma żadnych poprawnych danych do wczytania</source>
-        <translation type="unfinished">W pliku nie ma żadnych poprawnych danych do wczytania</translation>
+        <translation type="vanished">W pliku nie ma żadnych poprawnych danych do wczytania</translation>
     </message>
     <message>
-        <location filename="Import.py" line="39"/>
         <source>Dane wczytano pomyślnie</source>
-        <translation type="unfinished">Dane wczytano pomyślnie</translation>
+        <translation type="vanished">Dane wczytano pomyślnie</translation>
     </message>
     <message>
-        <location filename="Import.py" line="60"/>
         <source>W pliku nie ma danych studenta z podanym numerem albumu</source>
-        <translation type="unfinished">W pliku nie ma danych studenta z podanym numerem albumu</translation>
+        <translation type="vanished">W pliku nie ma danych studenta z podanym numerem albumu</translation>
     </message>
     <message>
-        <location filename="MainMenuHandler.py" line="271"/>
         <source>Opis sygnałów regulatora dwupołożeniowego</source>
-        <translation type="unfinished">Opis sygnałów regulatora dwupołożeniowego</translation>
+        <translation type="vanished">Opis sygnałów regulatora dwupołożeniowego</translation>
     </message>
     <message>
-        <location filename="Serial.py" line="54"/>
         <source>Połącz się z urządzeniem</source>
-        <translation type="unfinished">Połącz się z urządzeniem</translation>
+        <translation type="vanished">Połącz się z urządzeniem</translation>
     </message>
     <message>
-        <location filename="Serial.py" line="103"/>
         <source>Nie znaleziono urządzenia</source>
-        <translation type="unfinished">Nie znaleziono urządzenia</translation>
+        <translation type="vanished">Nie znaleziono urządzenia</translation>
     </message>
     <message>
-        <location filename="Serial.py" line="125"/>
         <source>Rozłącz się z urządzeniem</source>
-        <translation type="unfinished">Rozłącz się z urządzeniem</translation>
+        <translation type="vanished">Rozłącz się z urządzeniem</translation>
     </message>
     <message>
-        <location filename="Serial.py" line="337"/>
         <source>Połączenie z urządzeniem zostało przerwane</source>
-        <translation type="unfinished">Połączenie z urządzeniem zostało przerwane</translation>
+        <translation type="vanished">Połączenie z urządzeniem zostało przerwane</translation>
     </message>
     <message>
-        <location filename="controls/FanControlsHandler.py" line="18"/>
-        <location filename="controls/HeaterControlsHandler.py" line="21"/>
         <source>równoległa</source>
-        <translation type="unfinished">równoległa</translation>
+        <translation type="vanished">równoległa</translation>
     </message>
     <message>
-        <location filename="controls/FanControlsHandler.py" line="24"/>
-        <location filename="controls/HeaterControlsHandler.py" line="27"/>
         <source>akademicka</source>
-        <translation type="unfinished">akademicka</translation>
+        <translation type="vanished">akademicka</translation>
     </message>
 </context>
 </TS>

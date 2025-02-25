@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 12.0.0, 2025-02-24T11:34:55. -->
+<!-- Written by QtCreator 12.0.0, 2025-02-25T18:55:28. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -181,12 +181,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">utils.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/utils.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/utils.py</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Import.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Import.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Import.py</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\Import.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.11">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -197,14 +199,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">COM.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/COM.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/COM.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">graphs\FanBBGraph.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/FanBBGraph.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/FanBBGraph.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\COM.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\graphs\FanBBGraph.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.12">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -215,12 +217,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">FanController.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/FanController.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/FanController.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">graphs\FanPIDGraph.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/FanPIDGraph.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/FanPIDGraph.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\graphs\FanPIDGraph.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.13">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -231,12 +235,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">HeaterController.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/HeaterController.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/HeaterController.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">graphs\Graph.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/Graph.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/Graph.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\graphs\Graph.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.14">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -247,12 +253,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">FanBBGraph.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/FanBBGraph.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/FanBBGraph.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">graphs\GraphsPage.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/GraphsPage.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/GraphsPage.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\graphs\GraphsPage.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.15">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -263,12 +271,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">FanPIDGraph.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/FanPIDGraph.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/FanPIDGraph.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">graphs\HeaterBBGraph.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/HeaterBBGraph.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/HeaterBBGraph.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\graphs\HeaterBBGraph.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.16">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -279,12 +289,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">HeaterBBGraph.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/HeaterBBGraph.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/HeaterBBGraph.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">graphs\HeaterPIDGraph.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/HeaterPIDGraph.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs/HeaterPIDGraph.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\graphs\HeaterPIDGraph.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/graphs</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.17">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -295,12 +307,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">HeaterPIDGraph.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/HeaterPIDGraph.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/HeaterPIDGraph.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">controls\BB.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/BB.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/BB.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\controls\BB.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.18">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -311,14 +325,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">StackedWidget.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/StackedWidget.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/StackedWidget.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">controls\FanController.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/FanController.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/FanController.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\StackedWidget.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\controls\FanController.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.19">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -329,14 +343,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">utilities.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/utilities.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/utilities.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">controls\FanControlsHandler.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/FanControlsHandler.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/FanControlsHandler.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\utilities.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\controls\FanControlsHandler.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.2">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -365,14 +379,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Export.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Export.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Export.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">controls\HeaterController.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/HeaterController.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/HeaterController.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\Export.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\controls\HeaterController.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.21">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -383,14 +397,32 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Import.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Import.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Import.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">controls\HeaterControlsHandler.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/HeaterControlsHandler.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/HeaterControlsHandler.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\Import.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\controls\HeaterControlsHandler.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls</value>
+   </valuemap>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.22">
+    <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
+    <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
+    <value type="int" key="Analyzer.Valgrind.Callgrind.CostFormat">0</value>
+    <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
+    <valuelist type="QVariantList" key="CustomOutputParsers"/>
+    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">controls\PID.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/PID.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls/PID.py</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\controls\PID.py</value>
+    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/controls</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.3">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -419,12 +451,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">FanControlsHandler.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/FanControlsHandler.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/FanControlsHandler.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Serial.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Serial.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Serial.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\Serial.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.5">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -435,10 +469,10 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">HeaterControlsHandler.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/HeaterControlsHandler.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/HeaterControlsHandler.py</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">utils.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/utils.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/utils.py</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
    </valuemap>
@@ -451,12 +485,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">PID.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/PID.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/PID.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">COM.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/COM.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/COM.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\COM.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.7">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -467,12 +503,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">BB.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/BB.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/BB.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">StackedWidget.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/StackedWidget.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/StackedWidget.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\StackedWidget.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.8">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -483,12 +521,14 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Graph.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Graph.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Graph.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">utilities.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/utilities.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/utilities.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\utilities.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.9">
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
@@ -499,16 +539,16 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Serial.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Serial.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Serial.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Export.py</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Export.py</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2/Export.py</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\Serial.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Script">D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\Export.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/ENGINEERING/IT/LANGUAGES/CPP/PracaInzV2</value>
    </valuemap>
-   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">22</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">23</value>
   </valuemap>
  </data>
  <data>
