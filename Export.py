@@ -1,5 +1,4 @@
 # This Python file uses the following encoding: utf-8
-from doctest import master
 from PySide6.QtCore import Slot
 from PySide6.QtWidgets import QFileDialog
 from datetime import datetime

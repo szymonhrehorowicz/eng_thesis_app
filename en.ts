@@ -159,8 +159,8 @@
     <message>
         <location filename="form.ui" line="674"/>
         <location filename="form.ui" line="677"/>
-        <source>Wybierz grzałkę o rezystancji 17Ω</source>
-        <translation>Select 17 Ω heater</translation>
+        <source>Wybierz grzałkę o rezystancji 60Ω</source>
+        <translation>Select 60 Ω heater</translation>
     </message>
     <message>
         <location filename="form.ui" line="680"/>
@@ -170,8 +170,8 @@
     <message>
         <location filename="form.ui" line="693"/>
         <location filename="form.ui" line="696"/>
-        <source>Wybierz grzałkę o rezystancji 33Ω</source>
-        <translation>Select 33 Ω heater</translation>
+        <source>Wybierz grzałkę o rezystancji 120Ω</source>
+        <translation>Select 120 Ω heater</translation>
     </message>
     <message>
         <location filename="form.ui" line="699"/>

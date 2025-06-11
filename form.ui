@@ -294,7 +294,7 @@
        </sizepolicy>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Controls">
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -671,13 +671,13 @@
                      <item>
                       <widget class="QPushButton" name="btnHeaterControllerSetHighPower">
                        <property name="toolTip">
-                        <string>Wybierz grzałkę o rezystancji 17Ω</string>
+                        <string>Wybierz grzałkę o rezystancji 60Ω</string>
                        </property>
                        <property name="statusTip">
-                        <string>Wybierz grzałkę o rezystancji 17Ω</string>
+                        <string>Wybierz grzałkę o rezystancji 60Ω</string>
                        </property>
                        <property name="text">
-                        <string>17 Ω</string>
+                        <string>60 Ω</string>
                        </property>
                        <property name="checkable">
                         <bool>true</bool>
@@ -690,13 +690,13 @@
                      <item>
                       <widget class="QPushButton" name="btnHeaterControllerSetLowPower">
                        <property name="toolTip">
-                        <string>Wybierz grzałkę o rezystancji 33Ω</string>
+                        <string>Wybierz grzałkę o rezystancji 120Ω</string>
                        </property>
                        <property name="statusTip">
-                        <string>Wybierz grzałkę o rezystancji 33Ω</string>
+                        <string>Wybierz grzałkę o rezystancji 120Ω</string>
                        </property>
                        <property name="text">
-                        <string>33 Ω</string>
+                        <string>120 Ω</string>
                        </property>
                        <property name="checkable">
                         <bool>true</bool>
