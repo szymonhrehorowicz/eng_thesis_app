@@ -206,7 +206,9 @@ class COM:
             omega = '0' + omega
         msg += omega
         # POWER: 000 - 100
-        msg += str(self.handler.ui.inHeaterBBPower.value()).zfill(3)
+        is_high_power = self.handler.ui.btnHeaterControllerSetHighPower.isChecked()
+        power_value = self.handler.ui.inHeaterBBPower.value()
+        msg += str(int(power_value / 2 if is_high_power else power_value)).zfill(3)
         # 17/33R : 0 - COIL_B | 1 - COIL_A
         msg += '1' if self.handler.ui.btnHeaterControllerSetHighPower.isChecked() else '0'
         # LEFT/RIGHT: 

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'form.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.9.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.setWindowModality(Qt.NonModal)
+        MainWindow.setWindowModality(Qt.WindowModality.NonModal)
         MainWindow.resize(1688, 939)
         icon = QIcon()
         icon.addFile(u":/assets/assets/oscilloscope.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
@@ -48,7 +48,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.menubar.sizePolicy().hasHeightForWidth())
         self.menubar.setSizePolicy(sizePolicy)
-        self.menubar.setFrameShape(QFrame.NoFrame)
+        self.menubar.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout = QHBoxLayout(self.menubar)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.btnConnect = QPushButton(self.menubar)
@@ -211,8 +211,8 @@ class Ui_MainWindow(object):
 
         self.frame_59 = QFrame(self.controllerDescHeater)
         self.frame_59.setObjectName(u"frame_59")
-        self.frame_59.setFrameShape(QFrame.StyledPanel)
-        self.frame_59.setFrameShadow(QFrame.Raised)
+        self.frame_59.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_59.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_17 = QHBoxLayout(self.frame_59)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
         self.horizontalLayout_17.setContentsMargins(0, 0, 0, 0)
@@ -246,8 +246,8 @@ class Ui_MainWindow(object):
 
         self.frame_57 = QFrame(self.controllerDescFan)
         self.frame_57.setObjectName(u"frame_57")
-        self.frame_57.setFrameShape(QFrame.StyledPanel)
-        self.frame_57.setFrameShadow(QFrame.Raised)
+        self.frame_57.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_57.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_18 = QHBoxLayout(self.frame_57)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
@@ -280,22 +280,22 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.frame_4 = QFrame(self.pageHeaterControllerSelect)
         self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setFrameShape(QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.frame_4.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_18 = QVBoxLayout(self.frame_4)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
         self.frame_5 = QFrame(self.frame_4)
         self.frame_5.setObjectName(u"frame_5")
         self.frame_5.setMaximumSize(QSize(16777215, 26))
-        self.frame_5.setFrameShape(QFrame.StyledPanel)
-        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.frame_5.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_56 = QHBoxLayout(self.frame_5)
         self.horizontalLayout_56.setObjectName(u"horizontalLayout_56")
         self.horizontalLayout_56.setContentsMargins(0, 0, 0, 0)
         self.frame_9 = QFrame(self.frame_5)
         self.frame_9.setObjectName(u"frame_9")
-        self.frame_9.setFrameShape(QFrame.NoFrame)
+        self.frame_9.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_14 = QHBoxLayout(self.frame_9)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
@@ -335,7 +335,7 @@ class Ui_MainWindow(object):
 
         self.frame_10 = QFrame(self.frame_5)
         self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setFrameShape(QFrame.NoFrame)
+        self.frame_10.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_15 = QHBoxLayout(self.frame_10)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
@@ -362,7 +362,7 @@ class Ui_MainWindow(object):
 
         self.frame_11 = QFrame(self.frame_5)
         self.frame_11.setObjectName(u"frame_11")
-        self.frame_11.setFrameShape(QFrame.NoFrame)
+        self.frame_11.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_16 = QHBoxLayout(self.frame_11)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
@@ -403,14 +403,14 @@ class Ui_MainWindow(object):
 
         self.frame_64 = QFrame(self.frame_5)
         self.frame_64.setObjectName(u"frame_64")
-        self.frame_64.setFrameShape(QFrame.StyledPanel)
-        self.frame_64.setFrameShadow(QFrame.Raised)
+        self.frame_64.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_64.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_54 = QHBoxLayout(self.frame_64)
         self.horizontalLayout_54.setObjectName(u"horizontalLayout_54")
         self.horizontalLayout_54.setContentsMargins(0, 0, 0, 0)
         self.frame_3 = QFrame(self.frame_64)
         self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setFrameShape(QFrame.NoFrame)
+        self.frame_3.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_6 = QHBoxLayout(self.frame_3)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -429,11 +429,11 @@ class Ui_MainWindow(object):
         self.inHeaterBBPower.setSizePolicy(sizePolicy4)
         self.inHeaterBBPower.setMinimumSize(QSize(150, 0))
         self.inHeaterBBPower.setMaximumSize(QSize(200, 16777215))
-        self.inHeaterBBPower.setMaximum(120)
-        self.inHeaterBBPower.setSingleStep(1)
+        self.inHeaterBBPower.setMaximum(100)
+        self.inHeaterBBPower.setSingleStep(0)
         self.inHeaterBBPower.setPageStep(1)
-        self.inHeaterBBPower.setOrientation(Qt.Horizontal)
-        self.inHeaterBBPower.setTickPosition(QSlider.NoTicks)
+        self.inHeaterBBPower.setOrientation(Qt.Orientation.Horizontal)
+        self.inHeaterBBPower.setTickPosition(QSlider.TickPosition.NoTicks)
         self.inHeaterBBPower.setTickInterval(1)
 
         self.horizontalLayout_6.addWidget(self.inHeaterBBPower)
@@ -473,14 +473,14 @@ class Ui_MainWindow(object):
 
         self.frHeaterConfig = QFrame(self.frame_4)
         self.frHeaterConfig.setObjectName(u"frHeaterConfig")
-        self.frHeaterConfig.setFrameShape(QFrame.StyledPanel)
-        self.frHeaterConfig.setFrameShadow(QFrame.Raised)
+        self.frHeaterConfig.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frHeaterConfig.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_49 = QHBoxLayout(self.frHeaterConfig)
         self.horizontalLayout_49.setObjectName(u"horizontalLayout_49")
         self.horizontalLayout_49.setContentsMargins(0, 0, 0, 0)
         self.frHeaterSetValue = QFrame(self.frHeaterConfig)
         self.frHeaterSetValue.setObjectName(u"frHeaterSetValue")
-        self.frHeaterSetValue.setFrameShape(QFrame.NoFrame)
+        self.frHeaterSetValue.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_9 = QHBoxLayout(self.frHeaterSetValue)
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
@@ -508,8 +508,8 @@ class Ui_MainWindow(object):
 
         self.frame_63 = QFrame(self.frHeaterConfig)
         self.frame_63.setObjectName(u"frame_63")
-        self.frame_63.setFrameShape(QFrame.StyledPanel)
-        self.frame_63.setFrameShadow(QFrame.Raised)
+        self.frame_63.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_63.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_50 = QHBoxLayout(self.frame_63)
         self.horizontalLayout_50.setObjectName(u"horizontalLayout_50")
         self.horizontalLayout_50.setContentsMargins(0, 0, 0, 0)
@@ -542,8 +542,8 @@ class Ui_MainWindow(object):
 
         self.frHeaterRefSlope = QFrame(self.frHeaterConfig)
         self.frHeaterRefSlope.setObjectName(u"frHeaterRefSlope")
-        self.frHeaterRefSlope.setFrameShape(QFrame.StyledPanel)
-        self.frHeaterRefSlope.setFrameShadow(QFrame.Raised)
+        self.frHeaterRefSlope.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frHeaterRefSlope.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_51 = QHBoxLayout(self.frHeaterRefSlope)
         self.horizontalLayout_51.setObjectName(u"horizontalLayout_51")
         self.horizontalLayout_51.setContentsMargins(0, 0, 0, 0)
@@ -569,8 +569,8 @@ class Ui_MainWindow(object):
 
         self.frHeaterRefAmplitude = QFrame(self.frHeaterConfig)
         self.frHeaterRefAmplitude.setObjectName(u"frHeaterRefAmplitude")
-        self.frHeaterRefAmplitude.setFrameShape(QFrame.StyledPanel)
-        self.frHeaterRefAmplitude.setFrameShadow(QFrame.Raised)
+        self.frHeaterRefAmplitude.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frHeaterRefAmplitude.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_52 = QHBoxLayout(self.frHeaterRefAmplitude)
         self.horizontalLayout_52.setObjectName(u"horizontalLayout_52")
         self.horizontalLayout_52.setContentsMargins(0, 0, 0, 0)
@@ -596,8 +596,8 @@ class Ui_MainWindow(object):
 
         self.frHeaterRefOmega = QFrame(self.frHeaterConfig)
         self.frHeaterRefOmega.setObjectName(u"frHeaterRefOmega")
-        self.frHeaterRefOmega.setFrameShape(QFrame.StyledPanel)
-        self.frHeaterRefOmega.setFrameShadow(QFrame.Raised)
+        self.frHeaterRefOmega.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frHeaterRefOmega.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_53 = QHBoxLayout(self.frHeaterRefOmega)
         self.horizontalLayout_53.setObjectName(u"horizontalLayout_53")
         self.horizontalLayout_53.setContentsMargins(0, 0, 0, 0)
@@ -638,16 +638,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.frame = QFrame(self.pageFanControllerSelect)
         self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_19 = QVBoxLayout(self.frame)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.verticalLayout_19.setContentsMargins(0, 0, 0, 0)
         self.frame_6 = QFrame(self.frame)
         self.frame_6.setObjectName(u"frame_6")
         self.frame_6.setMaximumSize(QSize(16777215, 26))
-        self.frame_6.setFrameShape(QFrame.StyledPanel)
-        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.frame_6.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_4 = QHBoxLayout(self.frame_6)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -682,8 +682,8 @@ class Ui_MainWindow(object):
         sizePolicy5.setVerticalStretch(0)
         sizePolicy5.setHeightForWidth(self.frFanPWM.sizePolicy().hasHeightForWidth())
         self.frFanPWM.setSizePolicy(sizePolicy5)
-        self.frFanPWM.setFrameShape(QFrame.StyledPanel)
-        self.frFanPWM.setFrameShadow(QFrame.Raised)
+        self.frFanPWM.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frFanPWM.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_20 = QHBoxLayout(self.frFanPWM)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
         self.horizontalLayout_20.setContentsMargins(0, 0, 0, 0)
@@ -697,7 +697,7 @@ class Ui_MainWindow(object):
         self.inFanPWM.setMinimumSize(QSize(150, 0))
         self.inFanPWM.setMaximumSize(QSize(200, 16777215))
         self.inFanPWM.setMaximum(100)
-        self.inFanPWM.setOrientation(Qt.Horizontal)
+        self.inFanPWM.setOrientation(Qt.Orientation.Horizontal)
 
         self.horizontalLayout_20.addWidget(self.inFanPWM)
 
@@ -727,14 +727,14 @@ class Ui_MainWindow(object):
 
         self.frFanConfig = QFrame(self.frame)
         self.frFanConfig.setObjectName(u"frFanConfig")
-        self.frFanConfig.setFrameShape(QFrame.StyledPanel)
-        self.frFanConfig.setFrameShadow(QFrame.Raised)
+        self.frFanConfig.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frFanConfig.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_48 = QHBoxLayout(self.frFanConfig)
         self.horizontalLayout_48.setObjectName(u"horizontalLayout_48")
         self.horizontalLayout_48.setContentsMargins(0, 0, 0, 0)
         self.frFanSetValue = QFrame(self.frFanConfig)
         self.frFanSetValue.setObjectName(u"frFanSetValue")
-        self.frFanSetValue.setFrameShape(QFrame.NoFrame)
+        self.frFanSetValue.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_23 = QHBoxLayout(self.frFanSetValue)
         self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
         self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
@@ -760,8 +760,8 @@ class Ui_MainWindow(object):
 
         self.frame_61 = QFrame(self.frFanConfig)
         self.frame_61.setObjectName(u"frame_61")
-        self.frame_61.setFrameShape(QFrame.StyledPanel)
-        self.frame_61.setFrameShadow(QFrame.Raised)
+        self.frame_61.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_61.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_44 = QHBoxLayout(self.frame_61)
         self.horizontalLayout_44.setObjectName(u"horizontalLayout_44")
         self.horizontalLayout_44.setContentsMargins(0, 0, 0, 0)
@@ -794,8 +794,8 @@ class Ui_MainWindow(object):
 
         self.frFanRefSlope = QFrame(self.frFanConfig)
         self.frFanRefSlope.setObjectName(u"frFanRefSlope")
-        self.frFanRefSlope.setFrameShape(QFrame.StyledPanel)
-        self.frFanRefSlope.setFrameShadow(QFrame.Raised)
+        self.frFanRefSlope.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frFanRefSlope.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_45 = QHBoxLayout(self.frFanRefSlope)
         self.horizontalLayout_45.setObjectName(u"horizontalLayout_45")
         self.horizontalLayout_45.setContentsMargins(0, 0, 0, 0)
@@ -821,8 +821,8 @@ class Ui_MainWindow(object):
 
         self.frFanRefAmplitude = QFrame(self.frFanConfig)
         self.frFanRefAmplitude.setObjectName(u"frFanRefAmplitude")
-        self.frFanRefAmplitude.setFrameShape(QFrame.StyledPanel)
-        self.frFanRefAmplitude.setFrameShadow(QFrame.Raised)
+        self.frFanRefAmplitude.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frFanRefAmplitude.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_46 = QHBoxLayout(self.frFanRefAmplitude)
         self.horizontalLayout_46.setObjectName(u"horizontalLayout_46")
         self.horizontalLayout_46.setContentsMargins(0, 0, 0, 0)
@@ -848,8 +848,8 @@ class Ui_MainWindow(object):
 
         self.frFanRefOmega = QFrame(self.frFanConfig)
         self.frFanRefOmega.setObjectName(u"frFanRefOmega")
-        self.frFanRefOmega.setFrameShape(QFrame.StyledPanel)
-        self.frFanRefOmega.setFrameShadow(QFrame.Raised)
+        self.frFanRefOmega.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frFanRefOmega.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_47 = QHBoxLayout(self.frFanRefOmega)
         self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
         self.horizontalLayout_47.setContentsMargins(0, 0, 0, 0)
@@ -894,11 +894,11 @@ class Ui_MainWindow(object):
         self.pageHeaterControllerConfigBB.setObjectName(u"pageHeaterControllerConfigBB")
         self.horizontalLayout_2 = QHBoxLayout(self.pageHeaterControllerConfigBB)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.horizontalLayout_2.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.frame_2 = QFrame(self.pageHeaterControllerConfigBB)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.NoFrame)
+        self.frame_2.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_5 = QHBoxLayout(self.frame_2)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
@@ -940,13 +940,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.frame_22 = QFrame(self.pageHeaterControllerConfigPID)
         self.frame_22.setObjectName(u"frame_22")
-        self.frame_22.setFrameShape(QFrame.NoFrame)
+        self.frame_22.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_30 = QHBoxLayout(self.frame_22)
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
         self.horizontalLayout_30.setContentsMargins(0, 0, 0, 0)
         self.frHeaterKp = QFrame(self.frame_22)
         self.frHeaterKp.setObjectName(u"frHeaterKp")
-        self.frHeaterKp.setFrameShape(QFrame.NoFrame)
+        self.frHeaterKp.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_10 = QHBoxLayout(self.frHeaterKp)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
@@ -972,7 +972,7 @@ class Ui_MainWindow(object):
 
         self.frHeaterKi = QFrame(self.frame_22)
         self.frHeaterKi.setObjectName(u"frHeaterKi")
-        self.frHeaterKi.setFrameShape(QFrame.NoFrame)
+        self.frHeaterKi.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_11 = QHBoxLayout(self.frHeaterKi)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
         self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
@@ -1005,7 +1005,7 @@ class Ui_MainWindow(object):
 
         self.frHeaterTi = QFrame(self.frame_22)
         self.frHeaterTi.setObjectName(u"frHeaterTi")
-        self.frHeaterTi.setFrameShape(QFrame.NoFrame)
+        self.frHeaterTi.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_31 = QHBoxLayout(self.frHeaterTi)
         self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
         self.horizontalLayout_31.setContentsMargins(0, 0, 0, 0)
@@ -1038,7 +1038,7 @@ class Ui_MainWindow(object):
 
         self.frHeaterKd = QFrame(self.frame_22)
         self.frHeaterKd.setObjectName(u"frHeaterKd")
-        self.frHeaterKd.setFrameShape(QFrame.NoFrame)
+        self.frHeaterKd.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_12 = QHBoxLayout(self.frHeaterKd)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
@@ -1071,7 +1071,7 @@ class Ui_MainWindow(object):
 
         self.frHeaterTd = QFrame(self.frame_22)
         self.frHeaterTd.setObjectName(u"frHeaterTd")
-        self.frHeaterTd.setFrameShape(QFrame.NoFrame)
+        self.frHeaterTd.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_8 = QHBoxLayout(self.frHeaterTd)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
@@ -1104,7 +1104,7 @@ class Ui_MainWindow(object):
 
         self.frHeaterRest = QFrame(self.frame_22)
         self.frHeaterRest.setObjectName(u"frHeaterRest")
-        self.frHeaterRest.setFrameShape(QFrame.NoFrame)
+        self.frHeaterRest.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_13 = QHBoxLayout(self.frHeaterRest)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
@@ -1153,7 +1153,7 @@ class Ui_MainWindow(object):
         sizePolicy5.setHeightForWidth(self.frame_25.sizePolicy().hasHeightForWidth())
         self.frame_25.setSizePolicy(sizePolicy5)
         self.frame_25.setMaximumSize(QSize(16777215, 90))
-        self.frame_25.setFrameShape(QFrame.NoFrame)
+        self.frame_25.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_6 = QVBoxLayout(self.frame_25)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -1173,7 +1173,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
         self.frame_13 = QFrame(self.pageFanControllerConfigBB)
         self.frame_13.setObjectName(u"frame_13")
-        self.frame_13.setFrameShape(QFrame.NoFrame)
+        self.frame_13.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_21 = QHBoxLayout(self.frame_13)
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
         self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
@@ -1215,13 +1215,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.frame_20 = QFrame(self.pageFanControllerConfigPID)
         self.frame_20.setObjectName(u"frame_20")
-        self.frame_20.setFrameShape(QFrame.NoFrame)
+        self.frame_20.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_22 = QHBoxLayout(self.frame_20)
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
         self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
         self.frFanKp = QFrame(self.frame_20)
         self.frFanKp.setObjectName(u"frFanKp")
-        self.frFanKp.setFrameShape(QFrame.NoFrame)
+        self.frFanKp.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_24 = QHBoxLayout(self.frFanKp)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
         self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
@@ -1247,7 +1247,7 @@ class Ui_MainWindow(object):
 
         self.frFanKi = QFrame(self.frame_20)
         self.frFanKi.setObjectName(u"frFanKi")
-        self.frFanKi.setFrameShape(QFrame.NoFrame)
+        self.frFanKi.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_25 = QHBoxLayout(self.frFanKi)
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
         self.horizontalLayout_25.setContentsMargins(0, 0, 0, 0)
@@ -1280,7 +1280,7 @@ class Ui_MainWindow(object):
 
         self.frFanTi = QFrame(self.frame_20)
         self.frFanTi.setObjectName(u"frFanTi")
-        self.frFanTi.setFrameShape(QFrame.NoFrame)
+        self.frFanTi.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_28 = QHBoxLayout(self.frFanTi)
         self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
         self.horizontalLayout_28.setContentsMargins(0, 0, 0, 0)
@@ -1313,7 +1313,7 @@ class Ui_MainWindow(object):
 
         self.frFanKd = QFrame(self.frame_20)
         self.frFanKd.setObjectName(u"frFanKd")
-        self.frFanKd.setFrameShape(QFrame.NoFrame)
+        self.frFanKd.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_26 = QHBoxLayout(self.frFanKd)
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
         self.horizontalLayout_26.setContentsMargins(0, 0, 0, 0)
@@ -1346,7 +1346,7 @@ class Ui_MainWindow(object):
 
         self.frFanTd = QFrame(self.frame_20)
         self.frFanTd.setObjectName(u"frFanTd")
-        self.frFanTd.setFrameShape(QFrame.NoFrame)
+        self.frFanTd.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_29 = QHBoxLayout(self.frFanTd)
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
         self.horizontalLayout_29.setContentsMargins(0, 0, 0, 0)
@@ -1379,7 +1379,7 @@ class Ui_MainWindow(object):
 
         self.frFanRest = QFrame(self.frame_20)
         self.frFanRest.setObjectName(u"frFanRest")
-        self.frFanRest.setFrameShape(QFrame.NoFrame)
+        self.frFanRest.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_27 = QHBoxLayout(self.frFanRest)
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
         self.horizontalLayout_27.setContentsMargins(0, 0, 0, 0)
@@ -1425,7 +1425,7 @@ class Ui_MainWindow(object):
         self.frame_26 = QFrame(self.pageFanControllerConfigPID)
         self.frame_26.setObjectName(u"frame_26")
         self.frame_26.setMaximumSize(QSize(16777215, 90))
-        self.frame_26.setFrameShape(QFrame.NoFrame)
+        self.frame_26.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_7 = QVBoxLayout(self.frame_26)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
@@ -1465,7 +1465,7 @@ class Ui_MainWindow(object):
         self.frame_29.setObjectName(u"frame_29")
         sizePolicy3.setHeightForWidth(self.frame_29.sizePolicy().hasHeightForWidth())
         self.frame_29.setSizePolicy(sizePolicy3)
-        self.frame_29.setFrameShape(QFrame.NoFrame)
+        self.frame_29.setFrameShape(QFrame.Shape.NoFrame)
         self.gridLayout_4 = QGridLayout(self.frame_29)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -1478,15 +1478,15 @@ class Ui_MainWindow(object):
 
         self.lcdHeaterBB_x_max = QLCDNumber(self.frame_29)
         self.lcdHeaterBB_x_max.setObjectName(u"lcdHeaterBB_x_max")
-        self.lcdHeaterBB_x_max.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterBB_x_max.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterBB_x_max.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterBB_x_max.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_4.addWidget(self.lcdHeaterBB_x_max, 1, 5, 1, 1)
 
         self.lcdHeaterBB_y_2 = QLCDNumber(self.frame_29)
         self.lcdHeaterBB_y_2.setObjectName(u"lcdHeaterBB_y_2")
-        self.lcdHeaterBB_y_2.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterBB_y_2.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterBB_y_2.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterBB_y_2.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_4.addWidget(self.lcdHeaterBB_y_2, 1, 2, 1, 1)
 
@@ -1499,15 +1499,15 @@ class Ui_MainWindow(object):
 
         self.lcdHeaterBB_mode = QLCDNumber(self.frame_29)
         self.lcdHeaterBB_mode.setObjectName(u"lcdHeaterBB_mode")
-        self.lcdHeaterBB_mode.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterBB_mode.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterBB_mode.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterBB_mode.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_4.addWidget(self.lcdHeaterBB_mode, 1, 9, 1, 1)
 
         self.lcdHeaterBB_u_max = QLCDNumber(self.frame_29)
         self.lcdHeaterBB_u_max.setObjectName(u"lcdHeaterBB_u_max")
-        self.lcdHeaterBB_u_max.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterBB_u_max.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterBB_u_max.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterBB_u_max.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_4.addWidget(self.lcdHeaterBB_u_max, 1, 7, 1, 1)
 
@@ -1520,8 +1520,8 @@ class Ui_MainWindow(object):
 
         self.lcdHeaterBB_x = QLCDNumber(self.frame_29)
         self.lcdHeaterBB_x.setObjectName(u"lcdHeaterBB_x")
-        self.lcdHeaterBB_x.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterBB_x.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterBB_x.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterBB_x.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_4.addWidget(self.lcdHeaterBB_x, 1, 0, 1, 1)
 
@@ -1545,15 +1545,15 @@ class Ui_MainWindow(object):
 
         self.lcdHeaterBB_x_min = QLCDNumber(self.frame_29)
         self.lcdHeaterBB_x_min.setObjectName(u"lcdHeaterBB_x_min")
-        self.lcdHeaterBB_x_min.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterBB_x_min.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterBB_x_min.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterBB_x_min.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_4.addWidget(self.lcdHeaterBB_x_min, 1, 6, 1, 1)
 
         self.lcdHeaterBB_e = QLCDNumber(self.frame_29)
         self.lcdHeaterBB_e.setObjectName(u"lcdHeaterBB_e")
-        self.lcdHeaterBB_e.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterBB_e.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterBB_e.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterBB_e.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_4.addWidget(self.lcdHeaterBB_e, 1, 3, 1, 1)
 
@@ -1573,8 +1573,8 @@ class Ui_MainWindow(object):
 
         self.lcdHeaterBB_u_min = QLCDNumber(self.frame_29)
         self.lcdHeaterBB_u_min.setObjectName(u"lcdHeaterBB_u_min")
-        self.lcdHeaterBB_u_min.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterBB_u_min.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterBB_u_min.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterBB_u_min.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_4.addWidget(self.lcdHeaterBB_u_min, 1, 8, 1, 1)
 
@@ -1587,15 +1587,15 @@ class Ui_MainWindow(object):
 
         self.lcdHeaterBB_y_1 = QLCDNumber(self.frame_29)
         self.lcdHeaterBB_y_1.setObjectName(u"lcdHeaterBB_y_1")
-        self.lcdHeaterBB_y_1.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterBB_y_1.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterBB_y_1.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterBB_y_1.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_4.addWidget(self.lcdHeaterBB_y_1, 1, 1, 1, 1)
 
         self.lcdHeaterBB_u = QLCDNumber(self.frame_29)
         self.lcdHeaterBB_u.setObjectName(u"lcdHeaterBB_u")
-        self.lcdHeaterBB_u.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterBB_u.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterBB_u.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterBB_u.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_4.addWidget(self.lcdHeaterBB_u, 1, 4, 1, 1)
 
@@ -1632,7 +1632,7 @@ class Ui_MainWindow(object):
         self.frame_30.setObjectName(u"frame_30")
         sizePolicy3.setHeightForWidth(self.frame_30.sizePolicy().hasHeightForWidth())
         self.frame_30.setSizePolicy(sizePolicy3)
-        self.frame_30.setFrameShape(QFrame.NoFrame)
+        self.frame_30.setFrameShape(QFrame.Shape.NoFrame)
         self.gridLayout_2 = QGridLayout(self.frame_30)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -1740,99 +1740,99 @@ class Ui_MainWindow(object):
 
         self.lcdHeaterPID_x = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_x.setObjectName(u"lcdHeaterPID_x")
-        self.lcdHeaterPID_x.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_x.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_x.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_x.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_x, 1, 0, 1, 1)
 
         self.lcdHeaterPID_y_1 = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_y_1.setObjectName(u"lcdHeaterPID_y_1")
-        self.lcdHeaterPID_y_1.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_y_1.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_y_1.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_y_1.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_y_1, 1, 2, 1, 1)
 
         self.lcdHeaterPID_y_2 = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_y_2.setObjectName(u"lcdHeaterPID_y_2")
-        self.lcdHeaterPID_y_2.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_y_2.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_y_2.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_y_2.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_y_2, 1, 3, 1, 1)
 
         self.lcdHeaterPID_e = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_e.setObjectName(u"lcdHeaterPID_e")
-        self.lcdHeaterPID_e.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_e.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_e.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_e.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_e, 1, 4, 1, 1)
 
         self.lcdHeaterPID_int_e = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_int_e.setObjectName(u"lcdHeaterPID_int_e")
-        self.lcdHeaterPID_int_e.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_int_e.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_int_e.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_int_e.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_int_e, 1, 5, 1, 1)
 
         self.lcdHeaterPID_aw_int_e = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_aw_int_e.setObjectName(u"lcdHeaterPID_aw_int_e")
-        self.lcdHeaterPID_aw_int_e.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_aw_int_e.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_aw_int_e.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_aw_int_e.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_aw_int_e, 1, 6, 1, 1)
 
         self.lcdHeaterPID_u = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_u.setObjectName(u"lcdHeaterPID_u")
-        self.lcdHeaterPID_u.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_u.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_u.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_u.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_u, 1, 7, 1, 1)
 
         self.lcdHeaterPID_u_sat = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_u_sat.setObjectName(u"lcdHeaterPID_u_sat")
-        self.lcdHeaterPID_u_sat.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_u_sat.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_u_sat.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_u_sat.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_u_sat, 1, 8, 1, 1)
 
         self.lcdHeaterPID_u_max = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_u_max.setObjectName(u"lcdHeaterPID_u_max")
-        self.lcdHeaterPID_u_max.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_u_max.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_u_max.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_u_max.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_u_max, 1, 9, 1, 1)
 
         self.lcdHeaterPID_u_min = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_u_min.setObjectName(u"lcdHeaterPID_u_min")
-        self.lcdHeaterPID_u_min.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_u_min.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_u_min.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_u_min.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_u_min, 1, 10, 1, 1)
 
         self.lcdHeaterPID_u_p = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_u_p.setObjectName(u"lcdHeaterPID_u_p")
-        self.lcdHeaterPID_u_p.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_u_p.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_u_p.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_u_p.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_u_p, 1, 11, 1, 1)
 
         self.lcdHeaterPID_u_i = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_u_i.setObjectName(u"lcdHeaterPID_u_i")
-        self.lcdHeaterPID_u_i.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_u_i.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_u_i.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_u_i.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_u_i, 1, 12, 1, 1)
 
         self.lcdHeaterPID_u_d = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_u_d.setObjectName(u"lcdHeaterPID_u_d")
-        self.lcdHeaterPID_u_d.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_u_d.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_u_d.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_u_d.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_u_d, 1, 17, 1, 1)
 
         self.lcdHeaterPID_mode = QLCDNumber(self.frame_30)
         self.lcdHeaterPID_mode.setObjectName(u"lcdHeaterPID_mode")
-        self.lcdHeaterPID_mode.setFrameShadow(QFrame.Plain)
-        self.lcdHeaterPID_mode.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdHeaterPID_mode.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdHeaterPID_mode.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_2.addWidget(self.lcdHeaterPID_mode, 1, 18, 1, 1)
 
@@ -1857,14 +1857,14 @@ class Ui_MainWindow(object):
         self.frame_27.setObjectName(u"frame_27")
         sizePolicy3.setHeightForWidth(self.frame_27.sizePolicy().hasHeightForWidth())
         self.frame_27.setSizePolicy(sizePolicy3)
-        self.frame_27.setFrameShape(QFrame.NoFrame)
+        self.frame_27.setFrameShape(QFrame.Shape.NoFrame)
         self.gridLayout_3 = QGridLayout(self.frame_27)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
         self.lcdFanBB_mode = QLCDNumber(self.frame_27)
         self.lcdFanBB_mode.setObjectName(u"lcdFanBB_mode")
-        self.lcdFanBB_mode.setFrameShadow(QFrame.Plain)
-        self.lcdFanBB_mode.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanBB_mode.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanBB_mode.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_3.addWidget(self.lcdFanBB_mode, 1, 9, 1, 1)
 
@@ -1877,29 +1877,29 @@ class Ui_MainWindow(object):
 
         self.lcdFanBB_u_min = QLCDNumber(self.frame_27)
         self.lcdFanBB_u_min.setObjectName(u"lcdFanBB_u_min")
-        self.lcdFanBB_u_min.setFrameShadow(QFrame.Plain)
-        self.lcdFanBB_u_min.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanBB_u_min.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanBB_u_min.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_3.addWidget(self.lcdFanBB_u_min, 1, 7, 1, 1)
 
         self.lcdFanBB_y = QLCDNumber(self.frame_27)
         self.lcdFanBB_y.setObjectName(u"lcdFanBB_y")
-        self.lcdFanBB_y.setFrameShadow(QFrame.Plain)
-        self.lcdFanBB_y.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanBB_y.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanBB_y.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_3.addWidget(self.lcdFanBB_y, 1, 1, 1, 1)
 
         self.lcdFanBB_u_max = QLCDNumber(self.frame_27)
         self.lcdFanBB_u_max.setObjectName(u"lcdFanBB_u_max")
-        self.lcdFanBB_u_max.setFrameShadow(QFrame.Plain)
-        self.lcdFanBB_u_max.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanBB_u_max.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanBB_u_max.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_3.addWidget(self.lcdFanBB_u_max, 1, 6, 1, 1)
 
         self.lcdFanBB_x_min = QLCDNumber(self.frame_27)
         self.lcdFanBB_x_min.setObjectName(u"lcdFanBB_x_min")
-        self.lcdFanBB_x_min.setFrameShadow(QFrame.Plain)
-        self.lcdFanBB_x_min.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanBB_x_min.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanBB_x_min.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_3.addWidget(self.lcdFanBB_x_min, 1, 5, 1, 1)
 
@@ -1909,8 +1909,8 @@ class Ui_MainWindow(object):
 
         self.lcdFanBB_x_max = QLCDNumber(self.frame_27)
         self.lcdFanBB_x_max.setObjectName(u"lcdFanBB_x_max")
-        self.lcdFanBB_x_max.setFrameShadow(QFrame.Plain)
-        self.lcdFanBB_x_max.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanBB_x_max.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanBB_x_max.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_3.addWidget(self.lcdFanBB_x_max, 1, 4, 1, 1)
 
@@ -1950,8 +1950,8 @@ class Ui_MainWindow(object):
 
         self.lcdFanBB_x = QLCDNumber(self.frame_27)
         self.lcdFanBB_x.setObjectName(u"lcdFanBB_x")
-        self.lcdFanBB_x.setFrameShadow(QFrame.Plain)
-        self.lcdFanBB_x.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanBB_x.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanBB_x.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_3.addWidget(self.lcdFanBB_x, 1, 0, 1, 1)
 
@@ -1977,15 +1977,15 @@ class Ui_MainWindow(object):
 
         self.lcdFanBB_e = QLCDNumber(self.frame_27)
         self.lcdFanBB_e.setObjectName(u"lcdFanBB_e")
-        self.lcdFanBB_e.setFrameShadow(QFrame.Plain)
-        self.lcdFanBB_e.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanBB_e.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanBB_e.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_3.addWidget(self.lcdFanBB_e, 1, 2, 1, 1)
 
         self.lcdFanBB_u = QLCDNumber(self.frame_27)
         self.lcdFanBB_u.setObjectName(u"lcdFanBB_u")
-        self.lcdFanBB_u.setFrameShadow(QFrame.Plain)
-        self.lcdFanBB_u.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanBB_u.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanBB_u.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout_3.addWidget(self.lcdFanBB_u, 1, 3, 1, 1)
 
@@ -2010,14 +2010,14 @@ class Ui_MainWindow(object):
         self.frame_28.setObjectName(u"frame_28")
         sizePolicy3.setHeightForWidth(self.frame_28.sizePolicy().hasHeightForWidth())
         self.frame_28.setSizePolicy(sizePolicy3)
-        self.frame_28.setFrameShape(QFrame.NoFrame)
+        self.frame_28.setFrameShape(QFrame.Shape.NoFrame)
         self.gridLayout = QGridLayout(self.frame_28)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.lcdFanPID_int_e = QLCDNumber(self.frame_28)
         self.lcdFanPID_int_e.setObjectName(u"lcdFanPID_int_e")
-        self.lcdFanPID_int_e.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_int_e.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_int_e.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_int_e.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_int_e, 1, 4, 1, 1)
 
@@ -2058,15 +2058,15 @@ class Ui_MainWindow(object):
 
         self.lcdFanPID_x = QLCDNumber(self.frame_28)
         self.lcdFanPID_x.setObjectName(u"lcdFanPID_x")
-        self.lcdFanPID_x.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_x.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_x.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_x.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_x, 1, 0, 1, 1)
 
         self.lcdFanPID_aw_int_e = QLCDNumber(self.frame_28)
         self.lcdFanPID_aw_int_e.setObjectName(u"lcdFanPID_aw_int_e")
-        self.lcdFanPID_aw_int_e.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_aw_int_e.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_aw_int_e.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_aw_int_e.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_aw_int_e, 1, 5, 1, 1)
 
@@ -2104,8 +2104,8 @@ class Ui_MainWindow(object):
 
         self.lcdFanPID_y = QLCDNumber(self.frame_28)
         self.lcdFanPID_y.setObjectName(u"lcdFanPID_y")
-        self.lcdFanPID_y.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_y.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_y.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_y.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_y, 1, 1, 1, 1)
 
@@ -2132,8 +2132,8 @@ class Ui_MainWindow(object):
 
         self.lcdFanPID_e = QLCDNumber(self.frame_28)
         self.lcdFanPID_e.setObjectName(u"lcdFanPID_e")
-        self.lcdFanPID_e.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_e.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_e.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_e.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_e, 1, 2, 1, 1)
 
@@ -2146,57 +2146,57 @@ class Ui_MainWindow(object):
 
         self.lcdFanPID_u = QLCDNumber(self.frame_28)
         self.lcdFanPID_u.setObjectName(u"lcdFanPID_u")
-        self.lcdFanPID_u.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_u.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_u.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_u.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_u, 1, 7, 1, 1)
 
         self.lcdFanPID_u_sat = QLCDNumber(self.frame_28)
         self.lcdFanPID_u_sat.setObjectName(u"lcdFanPID_u_sat")
-        self.lcdFanPID_u_sat.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_u_sat.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_u_sat.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_u_sat.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_u_sat, 1, 8, 1, 1)
 
         self.lcdFanPID_u_p = QLCDNumber(self.frame_28)
         self.lcdFanPID_u_p.setObjectName(u"lcdFanPID_u_p")
-        self.lcdFanPID_u_p.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_u_p.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_u_p.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_u_p.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_u_p, 1, 9, 1, 1)
 
         self.lcdFanPID_u_i = QLCDNumber(self.frame_28)
         self.lcdFanPID_u_i.setObjectName(u"lcdFanPID_u_i")
-        self.lcdFanPID_u_i.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_u_i.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_u_i.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_u_i.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_u_i, 1, 10, 1, 1)
 
         self.lcdFanPID_u_d = QLCDNumber(self.frame_28)
         self.lcdFanPID_u_d.setObjectName(u"lcdFanPID_u_d")
-        self.lcdFanPID_u_d.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_u_d.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_u_d.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_u_d.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_u_d, 1, 11, 1, 1)
 
         self.lcdFanPID_u_max = QLCDNumber(self.frame_28)
         self.lcdFanPID_u_max.setObjectName(u"lcdFanPID_u_max")
-        self.lcdFanPID_u_max.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_u_max.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_u_max.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_u_max.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_u_max, 1, 12, 1, 1)
 
         self.lcdFanPID_u_min = QLCDNumber(self.frame_28)
         self.lcdFanPID_u_min.setObjectName(u"lcdFanPID_u_min")
-        self.lcdFanPID_u_min.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_u_min.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_u_min.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_u_min.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_u_min, 1, 13, 1, 1)
 
         self.lcdFanPID_mode = QLCDNumber(self.frame_28)
         self.lcdFanPID_mode.setObjectName(u"lcdFanPID_mode")
-        self.lcdFanPID_mode.setFrameShadow(QFrame.Plain)
-        self.lcdFanPID_mode.setSegmentStyle(QLCDNumber.Flat)
+        self.lcdFanPID_mode.setFrameShadow(QFrame.Shadow.Plain)
+        self.lcdFanPID_mode.setSegmentStyle(QLCDNumber.SegmentStyle.Flat)
 
         self.gridLayout.addWidget(self.lcdFanPID_mode, 1, 14, 1, 1)
 
@@ -2214,12 +2214,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.frame_31 = QFrame(self.Export)
         self.frame_31.setObjectName(u"frame_31")
-        self.frame_31.setFrameShape(QFrame.NoFrame)
+        self.frame_31.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_32 = QHBoxLayout(self.frame_31)
         self.horizontalLayout_32.setObjectName(u"horizontalLayout_32")
         self.frame_33 = QFrame(self.frame_31)
         self.frame_33.setObjectName(u"frame_33")
-        self.frame_33.setFrameShape(QFrame.NoFrame)
+        self.frame_33.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_12 = QVBoxLayout(self.frame_33)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.label_36 = QLabel(self.frame_33)
@@ -2239,8 +2239,8 @@ class Ui_MainWindow(object):
 
         self.frame_7 = QFrame(self.frame_33)
         self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setFrameShape(QFrame.NoFrame)
-        self.frame_7.setFrameShadow(QFrame.Plain)
+        self.frame_7.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_7.setFrameShadow(QFrame.Shadow.Plain)
         self.frame_7.setLineWidth(0)
         self.gridLayout_11 = QGridLayout(self.frame_7)
         self.gridLayout_11.setObjectName(u"gridLayout_11")
@@ -2290,7 +2290,7 @@ class Ui_MainWindow(object):
 
         self.frame_35 = QFrame(self.frame_33)
         self.frame_35.setObjectName(u"frame_35")
-        self.frame_35.setFrameShape(QFrame.NoFrame)
+        self.frame_35.setFrameShape(QFrame.Shape.NoFrame)
         self.frame_35.setLineWidth(0)
         self.gridLayout_6 = QGridLayout(self.frame_35)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
@@ -2361,7 +2361,7 @@ class Ui_MainWindow(object):
 
         self.frame_36 = QFrame(self.frame_33)
         self.frame_36.setObjectName(u"frame_36")
-        self.frame_36.setFrameShape(QFrame.NoFrame)
+        self.frame_36.setFrameShape(QFrame.Shape.NoFrame)
         self.gridLayout_7 = QGridLayout(self.frame_36)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.chxExHeaterPID_aw_int_e = QCheckBox(self.frame_36)
@@ -2484,7 +2484,7 @@ class Ui_MainWindow(object):
 
         self.frame_34 = QFrame(self.frame_31)
         self.frame_34.setObjectName(u"frame_34")
-        self.frame_34.setFrameShape(QFrame.NoFrame)
+        self.frame_34.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_13 = QVBoxLayout(self.frame_34)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.label_46 = QLabel(self.frame_34)
@@ -2502,8 +2502,8 @@ class Ui_MainWindow(object):
 
         self.frame_8 = QFrame(self.frame_34)
         self.frame_8.setObjectName(u"frame_8")
-        self.frame_8.setFrameShape(QFrame.NoFrame)
-        self.frame_8.setFrameShadow(QFrame.Plain)
+        self.frame_8.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_8.setFrameShadow(QFrame.Shadow.Plain)
         self.frame_8.setLineWidth(0)
         self.gridLayout_10 = QGridLayout(self.frame_8)
         self.gridLayout_10.setObjectName(u"gridLayout_10")
@@ -2544,7 +2544,7 @@ class Ui_MainWindow(object):
 
         self.frame_37 = QFrame(self.frame_34)
         self.frame_37.setObjectName(u"frame_37")
-        self.frame_37.setFrameShape(QFrame.NoFrame)
+        self.frame_37.setFrameShape(QFrame.Shape.NoFrame)
         self.gridLayout_8 = QGridLayout(self.frame_37)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
         self.chxExFanBB_mode = QCheckBox(self.frame_37)
@@ -2608,7 +2608,7 @@ class Ui_MainWindow(object):
 
         self.frame_38 = QFrame(self.frame_34)
         self.frame_38.setObjectName(u"frame_38")
-        self.frame_38.setFrameShape(QFrame.NoFrame)
+        self.frame_38.setFrameShape(QFrame.Shape.NoFrame)
         self.gridLayout_9 = QGridLayout(self.frame_38)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.chxExFanPID_x = QCheckBox(self.frame_38)
@@ -2730,7 +2730,7 @@ class Ui_MainWindow(object):
         self.frame_32.setObjectName(u"frame_32")
         sizePolicy2.setHeightForWidth(self.frame_32.sizePolicy().hasHeightForWidth())
         self.frame_32.setSizePolicy(sizePolicy2)
-        self.frame_32.setFrameShape(QFrame.NoFrame)
+        self.frame_32.setFrameShape(QFrame.Shape.NoFrame)
         self.gridLayout_5 = QGridLayout(self.frame_32)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
@@ -2796,7 +2796,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.frame_40 = QFrame(self.Import)
         self.frame_40.setObjectName(u"frame_40")
-        self.frame_40.setFrameShape(QFrame.NoFrame)
+        self.frame_40.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_34 = QHBoxLayout(self.frame_40)
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
         self.btnImportLoad = QPushButton(self.frame_40)
@@ -2814,7 +2814,7 @@ class Ui_MainWindow(object):
 
         self.frame_39 = QFrame(self.Import)
         self.frame_39.setObjectName(u"frame_39")
-        self.frame_39.setFrameShape(QFrame.NoFrame)
+        self.frame_39.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_33 = QHBoxLayout(self.frame_39)
         self.horizontalLayout_33.setObjectName(u"horizontalLayout_33")
         self.label_48 = QLabel(self.frame_39)
@@ -2852,7 +2852,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
         self.frame_41 = QFrame(self.Graphs)
         self.frame_41.setObjectName(u"frame_41")
-        self.frame_41.setFrameShape(QFrame.NoFrame)
+        self.frame_41.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_38 = QHBoxLayout(self.frame_41)
         self.horizontalLayout_38.setObjectName(u"horizontalLayout_38")
         self.btnGraphsPageHeater = QPushButton(self.frame_41)
@@ -2985,7 +2985,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_26.setObjectName(u"verticalLayout_26")
         self.frame_44 = QFrame(self.pageGraphsPageHeater)
         self.frame_44.setObjectName(u"frame_44")
-        self.frame_44.setFrameShape(QFrame.NoFrame)
+        self.frame_44.setFrameShape(QFrame.Shape.NoFrame)
         self.frame_44.setLineWidth(0)
         self.horizontalLayout_37 = QHBoxLayout(self.frame_44)
         self.horizontalLayout_37.setSpacing(0)
@@ -2995,7 +2995,7 @@ class Ui_MainWindow(object):
         self.frame_45.setObjectName(u"frame_45")
         sizePolicy6.setHeightForWidth(self.frame_45.sizePolicy().hasHeightForWidth())
         self.frame_45.setSizePolicy(sizePolicy6)
-        self.frame_45.setFrameShape(QFrame.NoFrame)
+        self.frame_45.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_23 = QVBoxLayout(self.frame_45)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
@@ -3012,7 +3012,7 @@ class Ui_MainWindow(object):
 
         self.frame_43 = QFrame(self.pageGraphsPageHeater)
         self.frame_43.setObjectName(u"frame_43")
-        self.frame_43.setFrameShape(QFrame.NoFrame)
+        self.frame_43.setFrameShape(QFrame.Shape.NoFrame)
         self.frame_43.setLineWidth(0)
         self.horizontalLayout_35 = QHBoxLayout(self.frame_43)
         self.horizontalLayout_35.setSpacing(0)
@@ -3022,7 +3022,7 @@ class Ui_MainWindow(object):
         self.frame_49.setObjectName(u"frame_49")
         sizePolicy6.setHeightForWidth(self.frame_49.sizePolicy().hasHeightForWidth())
         self.frame_49.setSizePolicy(sizePolicy6)
-        self.frame_49.setFrameShape(QFrame.NoFrame)
+        self.frame_49.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_25 = QVBoxLayout(self.frame_49)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
         self.verticalLayout_25.setContentsMargins(0, 0, 0, 0)
@@ -3039,7 +3039,7 @@ class Ui_MainWindow(object):
 
         self.frame_42 = QFrame(self.pageGraphsPageHeater)
         self.frame_42.setObjectName(u"frame_42")
-        self.frame_42.setFrameShape(QFrame.NoFrame)
+        self.frame_42.setFrameShape(QFrame.Shape.NoFrame)
         self.frame_42.setLineWidth(0)
         self.horizontalLayout_36 = QHBoxLayout(self.frame_42)
         self.horizontalLayout_36.setSpacing(0)
@@ -3049,7 +3049,7 @@ class Ui_MainWindow(object):
         self.frame_47.setObjectName(u"frame_47")
         sizePolicy6.setHeightForWidth(self.frame_47.sizePolicy().hasHeightForWidth())
         self.frame_47.setSizePolicy(sizePolicy6)
-        self.frame_47.setFrameShape(QFrame.NoFrame)
+        self.frame_47.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_24 = QVBoxLayout(self.frame_47)
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
         self.verticalLayout_24.setContentsMargins(0, 0, 0, 0)
@@ -3072,8 +3072,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.frame_50 = QFrame(self.pageGraphsPageFan)
         self.frame_50.setObjectName(u"frame_50")
-        self.frame_50.setFrameShape(QFrame.NoFrame)
-        self.frame_50.setFrameShadow(QFrame.Plain)
+        self.frame_50.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_50.setFrameShadow(QFrame.Shadow.Plain)
         self.frame_50.setLineWidth(0)
         self.horizontalLayout_39 = QHBoxLayout(self.frame_50)
         self.horizontalLayout_39.setSpacing(0)
@@ -3083,8 +3083,8 @@ class Ui_MainWindow(object):
         self.frame_55.setObjectName(u"frame_55")
         sizePolicy6.setHeightForWidth(self.frame_55.sizePolicy().hasHeightForWidth())
         self.frame_55.setSizePolicy(sizePolicy6)
-        self.frame_55.setFrameShape(QFrame.NoFrame)
-        self.frame_55.setFrameShadow(QFrame.Plain)
+        self.frame_55.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_55.setFrameShadow(QFrame.Shadow.Plain)
         self.verticalLayout_27 = QVBoxLayout(self.frame_55)
         self.verticalLayout_27.setObjectName(u"verticalLayout_27")
         self.verticalLayout_27.setContentsMargins(0, 0, 0, 0)
@@ -3101,8 +3101,8 @@ class Ui_MainWindow(object):
 
         self.frame_51 = QFrame(self.pageGraphsPageFan)
         self.frame_51.setObjectName(u"frame_51")
-        self.frame_51.setFrameShape(QFrame.NoFrame)
-        self.frame_51.setFrameShadow(QFrame.Plain)
+        self.frame_51.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_51.setFrameShadow(QFrame.Shadow.Plain)
         self.frame_51.setLineWidth(0)
         self.horizontalLayout_40 = QHBoxLayout(self.frame_51)
         self.horizontalLayout_40.setSpacing(0)
@@ -3112,8 +3112,8 @@ class Ui_MainWindow(object):
         self.frame_54.setObjectName(u"frame_54")
         sizePolicy6.setHeightForWidth(self.frame_54.sizePolicy().hasHeightForWidth())
         self.frame_54.setSizePolicy(sizePolicy6)
-        self.frame_54.setFrameShape(QFrame.NoFrame)
-        self.frame_54.setFrameShadow(QFrame.Plain)
+        self.frame_54.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_54.setFrameShadow(QFrame.Shadow.Plain)
         self.verticalLayout_28 = QVBoxLayout(self.frame_54)
         self.verticalLayout_28.setObjectName(u"verticalLayout_28")
         self.verticalLayout_28.setContentsMargins(0, 0, 0, 0)
@@ -3132,8 +3132,8 @@ class Ui_MainWindow(object):
         self.frame_52.setObjectName(u"frame_52")
         sizePolicy5.setHeightForWidth(self.frame_52.sizePolicy().hasHeightForWidth())
         self.frame_52.setSizePolicy(sizePolicy5)
-        self.frame_52.setFrameShape(QFrame.NoFrame)
-        self.frame_52.setFrameShadow(QFrame.Plain)
+        self.frame_52.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_52.setFrameShadow(QFrame.Shadow.Plain)
         self.frame_52.setLineWidth(0)
         self.horizontalLayout_41 = QHBoxLayout(self.frame_52)
         self.horizontalLayout_41.setSpacing(0)
@@ -3143,8 +3143,8 @@ class Ui_MainWindow(object):
         self.frame_53.setObjectName(u"frame_53")
         sizePolicy6.setHeightForWidth(self.frame_53.sizePolicy().hasHeightForWidth())
         self.frame_53.setSizePolicy(sizePolicy6)
-        self.frame_53.setFrameShape(QFrame.NoFrame)
-        self.frame_53.setFrameShadow(QFrame.Plain)
+        self.frame_53.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_53.setFrameShadow(QFrame.Shadow.Plain)
         self.verticalLayout_29 = QVBoxLayout(self.frame_53)
         self.verticalLayout_29.setObjectName(u"verticalLayout_29")
         self.verticalLayout_29.setContentsMargins(0, 0, 0, 0)
@@ -3302,10 +3302,10 @@ class Ui_MainWindow(object):
         self.btnHeaterControllerSetRightCoil.setText(QCoreApplication.translate("MainWindow", u"y2", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Napi\u0119cie  </p></body></html>", None))
 #if QT_CONFIG(tooltip)
-        self.inHeaterBBPower.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
+        self.inHeaterBBPower.setToolTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 6", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(statustip)
-        self.inHeaterBBPower.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 100", None))
+        self.inHeaterBBPower.setStatusTip(QCoreApplication.translate("MainWindow", u"Min: 0 | Max: 6", None))
 #endif // QT_CONFIG(statustip)
         self.lblPower.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"V", None))

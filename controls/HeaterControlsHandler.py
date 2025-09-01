@@ -44,7 +44,9 @@ class HeaterControlsHandler:
 
     @Slot(int)
     def bb_setPower(self, value):
-        self.BB.power = value / 10
+        is_high_power = self.ui.btnHeaterControllerSetHighPower.isChecked()
+        coefficient = 0.5 if is_high_power else 1.0
+        self.BB.power = value / 100.0 * 12 * coefficient
         power = str(self.BB.power)
         self.ui.lblPower.setText(power[:power.index('.') + 2])
 

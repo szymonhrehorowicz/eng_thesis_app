@@ -163,16 +163,29 @@ class MainMenuHandler:
         self.handler.ui.stackController.setVisible(False)
         self.handler.ui.frHeaterConfig.setVisible(False)
         self.handler.ui.stackGraphs.setCurrentIndex(INDICES["heater_bb"])
+
+    def update_power_slider(self, is_high_power):
+        if is_high_power:
+            self.handler.ui.inHeaterBBPower.setToolTip("Min: 0 | Max: 6")
+            self.handler.ui.inHeaterBBPower.setStatusTip("Min: 0 | Max: 6")
+        else:
+            self.handler.ui.inHeaterBBPower.setToolTip("Min: 0 | Max: 12")
+            self.handler.ui.inHeaterBBPower.setStatusTip("Min: 0 | Max: 12")
+        self.handler.heaterControlsHandler.bb_setPower(self.handler.ui.inHeaterBBPower.value())
     
     @Slot()
     def set_heater_high_power(self):
         self.handler.ui.btnHeaterControllerSetHighPower.setChecked(True)
         self.handler.ui.btnHeaterControllerSetLowPower.setChecked(False)
 
+        self.update_power_slider(True)
+
     @Slot()
     def set_heater_low_power(self):
         self.handler.ui.btnHeaterControllerSetHighPower.setChecked(False)
         self.handler.ui.btnHeaterControllerSetLowPower.setChecked(True)
+
+        self.update_power_slider(False)
 
     @Slot()
     def set_heater_right_coil(self):
