@@ -1,7 +1,15 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtCore import QIODeviceBase, Slot, QByteArray, QCoreApplication
 from PySide6.QtSerialPort import QSerialPort, QSerialPortInfo
-from utilities import bytes_to_float, error_dialog, get_uint8, get_uint16, get_uint32, get_float, int2
+from utilities import (
+    bytes_to_float,
+    error_dialog,
+    get_uint8,
+    get_uint16,
+    get_uint32,
+    get_float,
+    int2,
+)
 
 BLANK_STRING = "N/A"
 DEBUG = True
@@ -11,6 +19,7 @@ MSG_FAN_ON_OFF = 1
 MSG_HEATER_ON_OFF = 2
 MSG_TEMP_REF = 3
 MSG_COIL_REF = 4
+
 
 class Serial:
     def __init__(self, handler):
@@ -25,6 +34,7 @@ class Serial:
     """
     PUBLIC
     """
+
     def send_ack(self):
         self.write_data(QByteArray("0\n"))
 
@@ -72,6 +82,7 @@ class Serial:
     """
     PRIVATE
     """
+
     def __get_available_ports(self):
         ports_info = []
         for info in QSerialPortInfo.availablePorts():
@@ -94,13 +105,16 @@ class Serial:
     """
     SLOTs
     """
+
     @Slot(bool)
     def slot_btnConnect(self, data):
         if data:
             # If data is True, then button was just CHECKED - connect with device
             if not self.open_serial_port():
                 self.ui.btnConnect.setChecked(False)
-                error_dialog(self.handler, QCoreApplication.tr("Nie znaleziono urządzenia"))
+                error_dialog(
+                    self.handler, QCoreApplication.tr("Nie znaleziono urządzenia")
+                )
         else:
             # If data is False, then button was just UNCHECKED - disconnect with device
             self.close_serial_port()
@@ -120,13 +134,15 @@ class Serial:
 
                 # Handle successful connection
                 self.ui.btnConnect.setText("Disconnect")
-                self.ui.btnConnect.setStatusTip(QCoreApplication.tr("Rozłącz się z urządzeniem"))
+                self.ui.btnConnect.setStatusTip(
+                    QCoreApplication.tr("Rozłącz się z urządzeniem")
+                )
                 self.ui.btnHeaterControls.setEnabled(True)
                 self.ui.btnFanControls.setEnabled(True)
                 self.ui.btn_graph_Stop.setEnabled(True)
                 if self.first_msg:
                     self.ui.btn_graph_Clear.setEnabled(True)
-                    self.first_msg = False 
+                    self.first_msg = False
                 """
                 Byte 0 : 
                 0: ALL/FAST | 1: FAN OFF/ON | 2: COIL OFF/ON | 3: TEMP_REF_TOP/TEMP_REF_BOTTOM | 
@@ -134,9 +150,9 @@ class Serial:
                 """
                 binarized_data = [bin(elem)[2:].zfill(8) for elem in data]
                 # Handle header
-                isAllData = header[MSG_ALL_FAST] == '0'
-                isFanOn = header[MSG_FAN_ON_OFF] == '1'
-                isHeaterOn = header[MSG_HEATER_ON_OFF] == '1'
+                isAllData = header[MSG_ALL_FAST] == "0"
+                isFanOn = header[MSG_FAN_ON_OFF] == "1"
+                isHeaterOn = header[MSG_HEATER_ON_OFF] == "1"
                 refTemp = header[MSG_TEMP_REF]
                 refCoil = header[MSG_COIL_REF]
                 # Handle data
@@ -148,7 +164,7 @@ class Serial:
                 if isAllData:
                     # [ALL]
                     """
-                        FAN
+                    FAN
                     """
                     # Common: reference_value: f32 | error: f32
                     set_val_fan = bytes_to_float(data[:4])
@@ -169,28 +185,32 @@ class Serial:
                     all_data.append(int2(get_uint16(data)) / (1680 - 1) * 12.0)
                     data = data[2:]
                     # PID: int_sum: f32 | aw_int_sum: f32 | Kp: f32 | Ki: f32 | Kd: f32 | Kaw: f32 |
-                    #      u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32 | max: u16 | min: u16    
-                    all_data.append(bytes_to_float(data[:4])) # int_sum
+                    #      u: u16 | u_sat: f32 | u_p: f32 | u_i: f32 | u_d: f32 | max: u16 | min: u16
+                    all_data.append(bytes_to_float(data[:4]))  # int_sum
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0) #aw_int_sum
+                    all_data.append(
+                        bytes_to_float(data[:4]) / (1680 - 1) * 12.0
+                    )  # aw_int_sum
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4])) # Kp
+                    all_data.append(bytes_to_float(data[:4]))  # Kp
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4])) # Ki
+                    all_data.append(bytes_to_float(data[:4]))  # Ki
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4])) # Kd
+                    all_data.append(bytes_to_float(data[:4]))  # Kd
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4])) # Kaw
+                    all_data.append(bytes_to_float(data[:4]))  # Kaw
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0) # u
+                    all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0)  # u
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0) # u_sat
+                    all_data.append(
+                        bytes_to_float(data[:4]) / (1680 - 1) * 12.0
+                    )  # u_sat
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0) # u_p
+                    all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0)  # u_p
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0) # u_i
+                    all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0)  # u_i
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0) # u_d
+                    all_data.append(bytes_to_float(data[:4]) / (1680 - 1) * 12.0)  # u_d
                     data = data[4:]
                     all_data.append(int2(get_uint16(data)) / (1680 - 1) * 12.0)
                     data = data[2:]
@@ -218,47 +238,53 @@ class Serial:
                     all_data.append(round(int2(get_uint16(data)) / (1000 - 1) * 12, 1))
                     data = data[2:]
                     # PID: int_sum: f32 | aw_int_sum: f32 | Kp: f32 | Ki: f32 | Kd: f32 | Kaw: f32 |
-                    #      u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32 | max: u16 | min: u16    
-                    all_data.append(bytes_to_float(data[:4]))
+                    #      u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32 | max: u16 | min: u16
+                    all_data.append(bytes_to_float(data[:4]))  # int_sum
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]) / (1000 - 1) * 12)
+                    all_data.append(
+                        bytes_to_float(data[:4]) / (1000 - 1) * 12
+                    )  # aw_int_sum
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]))
+                    all_data.append(bytes_to_float(data[:4]))  # kp
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]))
+                    all_data.append(bytes_to_float(data[:4]))  # ki
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]))
+                    all_data.append(bytes_to_float(data[:4]))  # kd
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]))
+                    all_data.append(bytes_to_float(data[:4]))  # kaw
                     data = data[4:]
                     # all_data.append(bytes_to_float(data[:4]) / (1000 - 1) * 12)
-                    all_data.append(bytes_to_float(data[:4]))
+                    all_data.append(bytes_to_float(data[:4]))  # u
                     data = data[4:]
-                    all_data.append(bytes_to_float(data[:4]) / (1000 - 1) * 12)
+                    all_data.append(bytes_to_float(data[:4]))  # u_sat
                     # all_data.append(bytes_to_float(data[:4]))
                     data = data[4:]
                     # all_data.append(bytes_to_float(data[:4]) / (1000 - 1) * 12)
-                    all_data.append(bytes_to_float(data[:4]))
+                    all_data.append(bytes_to_float(data[:4]))  # up
                     data = data[4:]
                     # all_data.append(bytes_to_float(data[:4]) / (1000 - 1) * 12)
-                    all_data.append(bytes_to_float(data[:4]))
+                    all_data.append(bytes_to_float(data[:4]))  # ui
                     data = data[4:]
                     # all_data.append(bytes_to_float(data[:4]) / (1000 - 1) * 12)
-                    all_data.append(bytes_to_float(data[:4]))
+                    all_data.append(bytes_to_float(data[:4]))  # ud
                     data = data[4:]
-                    all_data.append(round(int2(get_uint16(data)) / (1000 - 1) * 12, 1))
+                    all_data.append(
+                        round(int2(get_uint16(data)) / (1000 - 1) * 12, 1)
+                    )  # max
                     data = data[2:]
-                    all_data.append(round(int2(get_uint16(data)) / (1000 - 1) * 12, 1))
+                    all_data.append(
+                        round(int2(get_uint16(data)) / (1000 - 1) * 12, 1)
+                    )  # min
                     data = data[2:]
                 else:
                     # [FAST]
                     """
-                        FAN
+                    FAN
                     """
                     # Bang-Bang: cmd: u8
                     fast_data.append(int2(get_uint8(data[0])))
                     data = data[1:]
-                    # PID      : error: f32 | int_sum: f32 | aw_int_sum: f32 | u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32   
+                    # PID      : error: f32 | int_sum: f32 | aw_int_sum: f32 | u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32
                     all_data.append(bytes_to_float(data[:4]))
                     data = data[4:]
                     all_data.append(bytes_to_float(data[:4]))
@@ -281,7 +307,7 @@ class Serial:
                     # Bang-Bang: cmd: u8
                     fast_data.append(int2(get_uint8(data[0])))
                     data = data[1:]
-                    # PID      : error: f32 | int_sum: f32 | aw_int_sum: f32 | u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32   
+                    # PID      : error: f32 | int_sum: f32 | aw_int_sum: f32 | u: u16 | u_sat: u16 | u_p: f32 | u_i: f32 | u_d: f32
                     all_data.append(bytes_to_float(data[:4]))
                     data = data[4:]
                     all_data.append(bytes_to_float(data[:4]))
@@ -330,17 +356,22 @@ class Serial:
             except:
                 pass
 
-
     @Slot(QSerialPort.SerialPortError)
     def handle_error(self, error):
         if error == QSerialPort.ResourceError:
             print("Serial error\n", self._serial.errorString())
-            error_dialog(self.handler, QCoreApplication.tr("Połączenie z urządzeniem zostało przerwane"))
+            error_dialog(
+                self.handler,
+                QCoreApplication.tr("Połączenie z urządzeniem zostało przerwane"),
+            )
             self.close_serial_port()
+
 
 """
 UTILS
 """
+
+
 class Settings:
     def __init__(self):
         self.name = ""
@@ -349,6 +380,7 @@ class Settings:
         self.parity = QSerialPort.NoParity
         self.stop_bits = QSerialPort.OneStop
         self.flow_control = QSerialPort.SoftwareControl
+
 
 class SerialPortInfo:
     def __init__(self):
