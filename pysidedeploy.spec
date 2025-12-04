@@ -5,10 +5,10 @@ title = SPC
 
 # project directory. the general assumption is that project_dir is the parent directory
 # of input_file
-project_dir = 'D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2'
+project_dir = .\
 
 # source file path
-input_file = D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\mainwindow.py
+input_file = C:\_git\eng_thesis_app\mainwindow.py
 
 # directory where exec is stored
 exec_directory = .
@@ -17,12 +17,12 @@ exec_directory = .
 project_file = PracaInzV2.pyproject
 
 # application icon
-icon = D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\icon.ico
+icon = .\icon.ico
 
 [python]
 
 # python path
-python_path = D:\ENGINEERING\IT\LANGUAGES\CPP\PracaInzV2\venv\Scripts\python.exe
+python_path = C:\_git\eng_thesis_app\venv\Scripts\python.exe
 
 # python packages to install
 packages = Nuitka==2.4.8
@@ -40,7 +40,7 @@ qml_files =
 excluded_qml_plugins = 
 
 # qt modules used. comma separated
-modules = 
+modules = SerialPort,Gui,WebEngineWidgets,Widgets,Core
 
 # qt plugins used by the application
 plugins = platformthemes,platforminputcontexts,iconengines,accessiblebridge,generic,imageformats,xcbglintegrations,platforms/darwin,egldeviceintegrations,platforms,styles
@@ -74,7 +74,7 @@ extra_args = --quiet --noinclude-qt-translations --windows-console-mode=disable
 # build mode
 # possible options = [release, debug]
 # release creates an aab, while debug creates an apk
-mode = debug
+mode = release
 
 # contrains path to pyside6 and shiboken6 recipe dir
 recipe_dir = 
